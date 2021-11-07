@@ -1,0 +1,23 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
+
+export const ForWhomItem = ({ text, reason }) => {
+  return (
+    <li className="py-2">
+      <div className="flex items-center">
+        <div>
+          <span className={classNames("text-xs font-semibold w-8 h-8 uppercase text-gray-800 mr-3 inline-flex items-center justify-center rounded-full", { 'bg-green-200': reason === 'yes', 'bg-red-200': reason === "no" })}>
+            {reason === "yes" ?
+              <FontAwesomeIcon icon={faCheck} className="text-green-500 w-3" /> :
+              <FontAwesomeIcon icon={faTimes} className="text-red-400 w-3" />
+            }
+          </span>
+        </div>
+        <div>
+          <h4 className="text-gray-700">{text}</h4>
+        </div>
+      </div>
+    </li>
+  );
+}

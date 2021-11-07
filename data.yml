@@ -1,0 +1,673 @@
+pl:
+  title: <span class="font-semibold">React.js + Next.js</span> od A do Z
+  subtitle: Kurs Budowania Stron Internetowych dla Początkujących
+  joinButton: Chcę dołączyć
+
+  newsletter:
+    lead: Informacje o kursie, materiały dodatkowe, porady dt. nauki programowania
+    button: Zapisuję się
+
+  meta:
+    description: Parktyczny, 12-tygodniowy kurs budowania stron internetowy przy użyciu React.js z wykorzystaniem Next.js
+    facebook:
+      site_name: React.js + Next.js od A do Z
+      locale: pl_PL
+      url: https://reactnextaz.com
+    twitter:
+      site: React.js + Next.js od A do Z
+      creator: Jakub Neander
+      domain: reactnextaz.com
+
+  modules:
+    - name: "Git"
+      description: System kontroli wersji do śledzenia zmian w plikach
+      points:
+        - Inicjalizacja repozytorium
+        - Rejestrowanie nowych zmian
+        - Przegląd zmian w repozytorium
+    - name: REST API
+      description: API zbudowane według ograniczeń narzuconych przez architekturę REST
+      points:
+        - Pojęcie zasobu webowego i kolekcji
+        - Rodzaje ścieżek, metody zapytań w API
+        - Rodzaje odpowiedzi i idempotencja
+    - name: HTML
+      description: Język znaczników hypertext
+      points:
+        - Struktura strony webowej
+        - Layout przy użyciu Flex i Grid
+        - HTML a JSX
+    - name: Tailwind CSS
+      description: Obsługa CSS przy użyciu Tailwind.
+      points:
+        - Pomocnicze klasy CSS
+        - Usuwanie niewykorzystanych klas
+        - Dodatek Tailwind UI
+    - name: Responsive Web Development (RWD)
+      description: Dostosowywanie strony pod różne wielkości ekranów
+      points:
+        - Breakpoints
+        - Warunkowe wykorzystanie CSS
+        - Kontrola widoczności elementów strony
+    - name: TypeScript
+      description: Wykorzystanie TypeScript w React.js
+      points:
+        - Co to są typy?
+        - Kontrola kształtu danych
+        - Inferencja typów
+    - name: Markdown
+      description: Język znaczników przeznaczony do formatowania tekstów.
+      points:
+        - Sposoby formatowanie tekstu
+        - Transformacja danych
+        - "MDX: React.js wewnątrz Markdown"
+    - name: Node.js
+      description: Środowisko uruchomieniowe JavaScript poza przeglądarką
+      points:
+        - Node.js a przeglądarka
+        - Instalacja bibliotek Node.js
+        - Budowanie świadomości wykonania kodu
+    - name: SEO
+      description: Search Engine Optimization (SEO), czyli dostosowanie strony pod wyszukiwarki
+      points:
+        - Ustawienie danych <meta>
+        - Kanoniczne adresy URL
+        - Wprowadzenie do OpenGraph
+    - name: GraphQL
+      description: Język zapytań do komunikacji klient-serwer oparty o strukturę grafową
+      points:
+        - Zapytania grafowe
+        - Pobieranie danych z serwerów
+        - Przykład integracji z YouTube API
+    - name: Deployment
+      description: Proces przenoszenia strony internetowej ze środowiska produkcyjnego na produkcyjne
+      points:
+        - Środowisko deweloperskie a produkcyjne
+        - Wykorzystanie Git do deploymentu
+        - Podgląd zmian przed-produkcyjnych
+    - name: Hosting
+      description: Infrastruktura potrzebna do zapewnienia ciągłego dostępu do strony internetowej
+      points:
+        - Uruchomienia strony na produkcji
+        - Własny hosting
+        - Dedykowane platformy hostingowe
+
+  faq_title: FAQ (Często Zadawane Pytania)
+  faq:
+    - question: Czy po tym kursie zostanę programistą?
+      answer: >
+        Niestety nie. Każdy zawód wymaga lat doświadczenia, aby wykonywać go dobrze. Po tym kursie będziesz mieć całościowy pogląd na tworzenie
+        prostych stron internetowy przy użyciu React.js. Będziesz w stanie (na podstawowym poziomie) połączyć wszystkie elementy, aby stworzyć nowoczesną i
+        interaktywną stronę internetową od A do Z. Kurs pozwoli także wybrać dalszą drogę i zgłębić tajniki frontendu, backendu, TypeScriptu, itd.
+    - question: W jakim jęzku będzie prowadzone szkolenie?
+      answer: >
+        Szkolenie będzie prowadzone w języku angielskim, ale z polskimi napisami. Znajomość języka angielskiego jest konieczna w pracy programisty. W ten
+        sposób chcę przygotować i oswoić uczestników z tym językiem. Rozmowy na chacie i w ramach Q&A będą prowadzone po polsku w zależności od chęci i
+        odwagi uczestników.
+    - question: Jak dokładnie przebiega szkolenie?
+      answer: >
+        Przez 12 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem stron internetowych w React.js. Każdy tydzień to wycinek
+        funkcjonalności docelowej strony internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec tygodnia
+        będzie do wykonania zadanie domowe. Po 12 tygodniach nauki rozpoczynamy wykonanie projektu w grupach 2-3 osobowych. Projekty będą autorskie.
+        Może to być projekt rozwiązania zagadnienia biznesowego lub osobistego problemu, np. automatyzacja jakiejś czynności. Projekty będą na bieżąco
+        konsultowane z prowadzącym w okresie 3 tygodni (tzw. Office Hours). Po tym czasie każdy zespół będzie prezentował swój projekt.
+    - question: Nigdy nie programowałem. Czy ten kurs jest dla mnie?
+      answer: Tak. Kurs zakłada brak znajomości programowania. Niemniej, szkolenie wprowadza wiele pojęć jednocześnie. Nie potrzeba też ścisłego umysłu. Wielu programistów wywodzi się z nauk humanistycznych. Niemniej ważna jest determinacja, zaangażowanie i regularność.
+    - question: Co, jeśli szkolenie nie przypadnie mi do gustu lub okaże się za trudne bądź za proste?
+      answer: W ciągu dwóch pierwszych tygodni możesz zrezygnować z uczestnictwa i pieniądze zostaną Ci zwrócone.
+    - question: Czy są zniżki studenckie?
+      answer: Przykro mi, ale nie oferuję zniżek studenckich.
+    - question: Czy można dokonać zakupu na raty?
+      answer: Przykro mi, ale nie ma takiej możliwości.
+    - question: Czy można otrzymać fakturę VAT na firmę?
+      answer: Tak, w czasie zamówienia podaj dane firmy wraz z NIP. W odpowiedzi zostanie wysłana Ci faktura.
+    - question: Czy dostęp do kursu jest dożywotni?
+      answer: Tak, po zakończeniu kursu otrzymujesz dożytowni dostęp do wszystkich lekcji.
+    - question: Czy kurs będzie aktualizowany?
+      answer: >
+        Tak, planuję nie tylko aktualizować, ale też rozwijać tematykę kursu. Aktualizacje będą darmowe. Nowe moduły zaś rozszerzające zakres kursu mogą być dodatkowo płatne - zastanawiam się nad ostateczną formą rozwoju tego kursu.
+
+  author:
+
+  pricing:
+    title: Poznaj tajniki tworzenia stron internetowych przy użyciu React.js i Next.js
+    choose: Wybierz pakiet
+    presale: Przedsprzedaż do 24 stycznia 2021
+    info: >
+      * ceny obowiązują tylko dla obywateli Polski
+    full:
+      buy: Kup
+      key: "full"
+      name: Pełen Pakiet
+      cheaper: mniej o
+      until: do 24/01/2021
+      price:
+        regular: 1399
+        discounted: 999
+      currency: zł
+      elements:
+        - kurs wideo
+        - napisy w wersji polskiej, angielskiej i francuskiej
+        - konsultacje wideo (grupowo)
+        - dostęp do <strong>prywatnego kanału Discord</strong> z autorem i współuczestnikami kursu
+    basic:
+      buy: Kup
+      key: "basic"
+      name: Tylko Wideo
+      cheaper: mniej o
+      until: do 24/01/2021
+      currency: zł
+      price:
+        regular: 999
+        discounted: 699
+      elements:
+        - kurs wideo
+        - napisy w wersji polskiej, angielskiej i francuskiej
+
+  agenda:
+    title: Plan Kursu
+    subtitle: (w trakcie ustalania szczegółów; może ulec drobnym zmianom w najbliższych dniach)
+    unit: Week
+    weeks:
+      - title: Wprowadzenie do Next.js
+        points:
+          - Konfiguracja Next.js z TypeScript & Tailwind CSS
+          - Dodawanie stron
+          - Nawigacja i przekazywanie danych
+          - Dynamiczne strony
+          - Generowanie ścieżek dla stron dynamicznych
+          - Strony statyczne i pre-rendering
+      - title: Prototypowanie z Tailwind CSS
+        points:
+          - Konfiguracja wtyczek Tailwind, m.in. Tailwind UI
+          - RWD i Breakpoints w Tailwind CSS
+          - Podstawy Flexbox i Grid
+          - Przylepiony Navbar z użyciem Flexbox i Tailwind CSS
+          - Konfiguracja nawigacji dla urządzeń mobilnych
+          - Statyczne zasoby oraz obsługa obrazków
+      - title: Organizacja projektu Next.js
+        points:
+          - Wycinki stron jako komponenty w React.js
+          - Konfiguracja sekcji <head> i <body>
+          - Szablony dla layoutów
+          - Nawigacja z użyciem aktywnych odnośników
+          - Wyświetlanie kolekcji w React.js
+          - Krótko o React Dev Tools
+      - title: Zarządzanie danymi
+        points:
+          - Co to jest YAML
+          - Pobieranie danych dla stron Next.js z plików YAML
+          - Używanie innych formatów do przechowywania danych
+          - Prosta internacjonalizacja (i18n) przy użyciu YAML
+          - Współdzielenie danych przy użyciu React.js Context
+      - title: Markdown i MDX
+        points:
+          - Co to jest Markdown?
+          - Sekcja Frontmatter w Markdown
+          - Użycie biblioteki `react-markdown` w Next.js
+          - Co to jest MDX?
+          - Konfiguracja `next-mdx-remote`
+          - Umieszczanie linków Next.js w plikach MDX
+      - title: Pogłębianie wiedzy o React.js i Next.js
+        points:
+          - Destrukturyzacja propsów w komponentach React.js
+          - Normalizacja danych, aby przyspieszyć dostęp
+          - Kategoryzowanie danych przy użyciu tagów
+          - Użycie dynamicznych komponentów w React.js
+      - title: Optymalizacja strony dla wyszukiwarek (SEO)
+        points:
+          - Na czym polega optymalizacja stron pod wyszukiwarki
+          - Definicja meta atrybutów dla stron
+          - Wprowadzenie do OpenGraph
+          - Rodzaje bytów definiujących zawartość w OpenGraph
+          - Generowanie obrazów dla OpenGraph
+          - Użycie biblioteki `next-seo`
+      - title: Budowanie APIs
+        points:
+          - Co to jest API?
+          - Pobieranie danych ze zdalnych lokalizacji
+          - Wykonywanie zapytań HTTP z komponentów React.js
+          - Tworzenie funkcji obsługujących zapytania HTTP w API
+          - Routing po stronie serwera
+      - title: Formularze
+        points:
+          - Jak działają formulrze HTML?
+          - Budowanie formularza w React.js z użyciem `react-hook-form`
+          - Prosta walidacja formularzy
+          - Obsługa zgłoszeń formularzy po stronie Next.js
+          - Budowa newslettera przy integracji z MailerLite
+      - title: Używanie GraphQL
+        points:
+          - Wprowadzenie do GraphQL
+          - Omówienie zalet GraphQL
+          - Wykonywanie zapytań GraphQL
+          - Integracja z API YouTube przy użyciu GraphQL
+          - Zapisywanie zapytań GraphQL po stronie serwera
+      - title: Deployment i Hostowanie
+        points:
+          - Zmienne środowiskowe
+          - Środowisko deweloperskie a produkcyjne
+          - Deployment przy użyciu Git
+          - Konfiguracja własnych domen
+          - Hostowanie na platformie Vercel
+          - Hostowanie Next.js na własnym serwerze
+      - title: Zakończenie
+        points:
+          - Konfiguracja podświetlania kodu
+          - Użycie dynamicznych klas CSS w React.js
+          - Dodawania Favicon
+          - Integracja z FontAwesome
+          - Tworzenie spisu treści dla strony Next.js
+          - Dodawanie własnych kolorów w Tailwind CSS
+          - "i kilka innych... :)"
+
+  status:
+    link: Powrót do strony głównej
+    success:
+      blob: >
+        Dzięki za złożenie zamówienia. Na Twój adres e-mail została wysłana faktura potwierdzająca zakup. W ciągu kilku dni dostaniejsz wiadomość z informacją o kolejnych krokach. Dla przypomnienia, kurs rozpoczenie się w lutym 2021.
+    cancel:
+      blob: >
+        Twoje zamówienie zostało anulowane.
+
+  order:
+    title: Zamówienie
+    form:
+      fname: Imię
+      lname: Nazwisko
+      email: Adres E-mail
+      confirm: Potwierdzam, że zapoznałem się z <Link href="/terms/"><a className="text-blue-500 hover:text-blue-600">Regulaminem</a></Link> i zgadzam się na jego warunki.
+      invoice_title: Faktura?
+      invoice_checkbox_name: I'd like an invoice
+      invoice_checkbox_desc: Select if you would like us to send you an invoice
+      required: Pole wymagane
+      company_name: Nazwa Firmy
+      address: Adres
+      city: Miasto
+      zipcode: Kod pocztowy
+      taxnumber: Numer NIP
+    button: Zamawiam i płacę
+    info: Nastąpi przekierowanie do płatności Stripe
+
+en:
+  language: english
+  title: <span class="font-semibold">React.js + Next.js</span> from A to Z
+  subtitle: Get Up and Running with <span class="font-semibold text-blue-400">React.js</span> & <span class="font-semibold text-gray-500">Next.js</span> from Scratch
+  joinButton: I want to participate
+  start: Sep 2021
+
+  newsletter:
+    lead: News about the course, additional material, guides, programming tips & tricks
+    button: Subscribe
+
+  navigation:
+    - name: For Whom
+      href: "#forwhom"
+    - name: Structure
+      href: "#content"
+    - name: Agenda
+      href: "#agenda"
+    - name: FAQ
+      href: "#faq"
+
+  meta:
+    description: Practical, 12-week introduction to building websites with React.js & Next.js
+    facebook:
+      site_name: React.js + Next.js from A to Z
+      locale: en_US
+      url: https://reactnextaz.com
+    twitter:
+      site: React.js + Next.js from A to Z
+      creator: Jakub Neander
+      domain: reactnextaz.com
+
+  summary:
+    - <strong>Next.js 11+ ready</strong>
+    - 12 weeks (<span class="font-bold">18h</span>) + 3 weeks final project (<span class="font-bold">30h</span>)
+    - Comprehensive introduction to React.js & Next.js
+    - It covers <span class="font-semibold">TypeScript</span>, <span class="font-semibold">Tailwind CSS</span> & <span class="font-semibold">GraphQL</span>
+    - Instructor with over <span class="font-semibold">15 years</span> of professional experience
+
+  content:
+    title: Course Structure
+    arguments:
+      - title: 12 week video course
+        image: /lessons.svg
+        description: >
+          This course contains over 100 lessons and more than 18h of videos. You will get a life-time access along with future updates.
+          Logically arranged material will help you learn React.js and Next.js fast.
+      - title: Live Consultations
+        image: /conference-call.svg
+        description: >
+          During the course you will have a chance to interact with the instructor. I'll be available
+          at designed times each week to quickly respond to your questions. The interactions will happen over textual chats and as
+          group video conferences.
+      - title: Access to a closed community
+        image: /group-chat.svg
+        description: >
+          Learning alone is hard. This course is not only about the logically arranged content to speed up your learning process,
+          but also it will provide access to a community of fellow learners. Being surrounded by people with similar goals may
+          further increase your motivation and learning capacity.
+
+  principals:
+    - name: React.js
+      description: A JavaScript library for building User Interfaces.
+      points:
+        - Basics of JavaScript & JSX
+        - "React.js Model: UI = a function of state"
+        - Components & Composition
+        - React Hooks
+        - Dynamic CSS Styles
+    - name: Next.js
+      description: Next.js is a React.js, front-end development web framework.
+      points:
+        - Pages, Layouts and Partials
+        - Navigation, Menu and Active Links
+        - Dynamically Generated Paths
+        - Passing Data to Pages and Layouts
+        - Data Fetching from Filesystem & Remote Locations
+
+  unit:
+    title: Topics
+    paragraph_1: >
+      This course focuses on <strong class="font-semibold">2 main</strong> and <strong class="font-semibold">9 supplementary</strong> topics, that
+      will provide a comprehensive and practical introduction to building basic websites in React.js using Next.js.
+    paragraph_2: >
+      The course will be delivered over a period of <strong class="font-semibold">12 weeks</strong> in a form of an online, video course of
+      about <strong class="font-semibold">18 hours</strong> and available via a closed platform. During the course the instructor will be available
+      in designed time slots to respond to the participants if necessary. In addition, the participants are obliged to actively take part in weekly
+      summaries as well as timely prepare all the homework. The time needed for the homework is not calculated into the length of this course.
+    paragraph_3: >
+      Moreover, all participants will be working (preferably in groups of 2-3 people) for about 3 weeks on a
+      <strong class="font-semibold">final project</strong>, i.e. a custom website of their own design. Each group member will need spend around 20 to 40
+      hours to deliver this project.
+
+  modules:
+    - name: "Git"
+      description: A version-control system for tracking changes in files
+      points:
+        - Repository initialization
+        - Tracking code changes
+        - Viewing the repository content
+    - name: REST API
+      description: An API built according to REST contrains
+      points:
+        - Web Resources & Collection
+        - Paths, Routes and Request Methods
+        - Responses & Idempotence
+    - name: HTML
+      description: A markup language for web pages
+      points:
+        - A structure of a web page
+        - Layouts with Flexbox & Grid
+        - HTML vs JSX
+    - name: Tailwind CSS
+      description: A utility-first CSS Framework
+      points:
+        - A set of utility classes
+        - Purging unused CSS classes
+        - Configuring plugins, e.g. Tailwind UI
+    - name: Responsive Web Development (RWD)
+      description: A technique to render web pages well on screens of various sizes
+      points:
+        - Breakpoints
+        - Conditional CSS
+        - Controlling Visibility
+    - name: TypeScript
+      description: A superset of JavaScript that adds optional static typing
+      points:
+        - What are types?
+        - Controlling the shape of data
+        - Type inference
+    - name: Markdown
+      description: A lightweight markup language with plain-text-formatting syntax
+      points:
+        - Formatting text
+        - Data transformations
+        - "MDX: React.js inside Markdown"
+    - name: Node.js
+      description: A runtime environment to execute JavaScript code outside of a web browser
+      points:
+        - Node.js vs Browser
+        - Installing Node.js dependencies
+        - Modes of execution
+    - name: Search Engine Optimization (SEO)
+      description: A process of improving the website traffic from search engines
+      points:
+        - Setting the page metadata
+        - Canonical URLs
+        - Introduction to OpenGraph
+    - name: GraphQL
+      description: A data query and manipulation language for APIs
+      points:
+        - Graph Queries
+        - Fetching data from remote locations
+        - GraphQL integration with YouTube API
+    - name: Deployment
+      description: A process to make a software system available to use
+      points:
+        - Development vs Production enviroments
+        - Using Git for Deployment
+        - Deployments Previews with Git branches
+    - name: Hosting
+      description: The infrastructure necessary to make the website accessible
+      points:
+        - Running a website in production on Vercel
+        - Self-hosting Next.js website
+        - Dedicated hosting platforms
+
+  faq_title: FAQ (Frequently Asked Questions)
+  faq:
+    - question: Will this course make me a programmer?
+      answer: >
+        Unfortunetly, the answer is no. Each profession requires years of experience. After this course, however, you will have a comprehensive view on
+        building websites in React.js with Next.js. You will be able (on a basic level) to understand different pieces needed to build such websites.
+        This course will be also a good entry point for further exploration of programming and specializtion. It will be easier for you to follow up
+        with the front-end or back-end programming. During the course I will make suggestions on potential next steps. Rembember however this is just
+        the beginning and the road ahead is long!
+    - question: How does the teaching look exactly?
+      answer: >
+        For 12 weeks we will be discussing various programming concepts. Each module contains not only theory, but practical examples, and there will
+        be a homework afterwards. Each day will provide teaching materials that can span several of those modules. After 12 weeks of lessons we will
+        start a final project that can focus on a real-life scenerio. There will be office hourse with the instructors for each group during that
+        period. At the end, we will do a demo day where each group will be presenting their project.
+    - question: I've never programmed. Is this course for me?
+      answer: >
+        Yes. This course assumes no prior programming knowledge. At the same time there will be many optional concepts introduced along the way. There
+        is no need for mathematical brain here. In fact, many programmers have humanist background. It is important, however, to be determined,
+        involved and consistent.
+    - question: What if I realized this course is too difficult, too easy or I simply don't like it ?
+      answer: >
+        You have two weeks to cancel and I will return you the money. No question asked.
+    - question: Can I have an invoice?
+      answer: >
+        Yes, provide your company details during the purchase
+
+  author:
+    title: Meet Jakub
+    paragraphs:
+      - Jakub has over 15 years of professional experience. He started his career in 2004 in a <a href="https://www.psnc.pl/about/whats-psnc/">Supercomputing & Networking</a> Center where he worked on queue systems for SPARC computers and on the service integration for the <a href="http://vlab.psnc.pl/">Virtual Laboratory</a> project using the SOAP technology. He then worked in Bank Zachodni WBK (nowadays <a href="https://www.santander.pl/">Santander</a>) as a Java/Java EE programmer & architect on various projects related to e-banking, including the flagship Centrum24 project.
+      - He studied Computer Science with Artificial Intelligence in <a href="https://amu.edu.pl/en">Adam Mickiewicz University</a> & <a href="http://www.u-psud.fr/en/index.html">Paris-Sud University</a>. He worked in a computer research laboratory called LIMSI in Paris. He was awarded the French Government scholarship for his work on AI related to the analysis and processing of spatio-temporal information from natural language texts. He also studied digital business and modern technologies at <a href="https://www.hec.edu/en">HEC Paris</a> and <a href="https://www.telecom-paris.fr/">Telecom Paristech</a>.
+      - Since 2011 he runs a software consultancy in Paris, where he advises corporate clients and public institutions. In the period of 2006 - 2017 he organized various programming conferences as a hobby. In 2006, he started the first programming conference about Ruby & Python in Poland. In 2014-2017 he organized <a href="https://polyconf.com/">PolyConf</a>, a conference on advanced technologies for programmers interested in polyglot approach to software development. Those conferences were held in Poland, Czech Republic, Hungry, France and Brazil.
+      - He is a recent alumn of the fantastic <a href="https://www.recurse.com/">Recurse Center</a> (you should apply!), an educational retreat for programmers in New York City. During his batch, he worked on improving the JavaScript tooling, notably by building a TypeScript programming environment inspired by Self & Smalltalk called <a href="https://kretes.dev/">Kretes</a>.
+
+  forwhom:
+    title: For Whom?
+    description: >
+      The course is tailored for beginners. If you are looking for a gentle introduction to programming, or already programming, but using a programming language
+      other than JavaScript, this course is for you. On top of that, if you need a quick jump-start for learning Next.js, you will also benefit from this
+      offering.
+    yes:
+      title: "This course is for you, if:"
+      reasons:
+        - you want to learn how to build an interactive website
+        - you're looking for a practical introduction to React.js
+        - you want to get familiar with modern ways of creating websites
+        - you're looking for a simpler introduction to programming than learning about full-stack web applications
+    no:
+      title: "This course is NOT for you, if:"
+      reasons:
+        - you know frontend, backend and how to pass data between them
+        - you are not interested in React, nor in Next.js
+        - you already know how to write web applications and SPAs
+
+  pricing:
+    title: React.js + Next.js from A to Z
+    choose: Choose Your Package
+    presale: Pre-Sale Discount until August 31, 2021
+    vat: VAT incl.
+    full:
+      buy: Buy
+      key: "full"
+      name: The Full Package
+      cheaper: off by
+      price:
+        regular: 549
+        discounted: 399
+      currency: €
+      elements:
+        - The video course
+        - Transcripts to all videos
+        - Video consultations
+        - Access to a private Discrod channel with the instructor and fellow readers
+    basic:
+      buy: Buy
+      key: "basic"
+      name: Just The Video
+      cheaper: off by
+      currency: €
+      price:
+        regular: 399
+        discounted: 279
+      elements:
+        - The video course
+        - Transcripts to all videos
+
+  agenda:
+    title: Agenda
+    subtitle: (work-in-progress, it will certainly change in the upcoming days)
+    unit: Week
+    weeks:
+      - title: Getting Started with Next.js
+        points:
+          - Setting up Next.js with TypeScript & Tailwind CSS
+          - Adding pages
+          - Navigation & data passing
+          - Dynamic & catch-all pages
+          - Pre-generating dynamic pages and their paths
+          - Static websites & Pre-rendering
+      - title: Prototyping with Tailwind CSS
+        points:
+          - Configuring Tailwind plugins, including Taiwlind UI
+          - RWD & Breakpoints in Tailwind CSS
+          - Basics of Flexbox & Grid
+          - Sticky Navbar with Flexbox & Tailwind CSS
+          - Setup navigation for mobile devices
+          - Static assets & Images
+      - title: Arranging the Project
+        points:
+          - Pages partials as React.js components
+          - Customizing the <head> / <body> sections
+          - Layout templates
+          - Navigation with active links
+          - Displaying collections in React.js
+          - React Dev Tools
+      - title: Data management
+        points:
+          - What is YAML
+          - Fetching data for Next.js pages from YAML files
+          - Using other data formats
+          - Building an internationalization (i18n) with YAML
+          - Sharing data across with React.js Context
+      - title: Markdown & MDX
+        points:
+          - What is Markdown?
+          - Markdown's Frontmatter
+          - Using `react-markdown` in Next.js
+          - What is MDX?
+          - Configuring `next-mdx-remote`
+          - Wrapping links in MDX files with `<Link>`
+      - title: Digging Deeper
+        points:
+          - Destructuring props in React.js components
+          - Normalizing content for quick access
+          - Categorizing content with topics
+          - Using dynamic components
+      - title: Search Engine Optimization
+        points:
+          - What is Search Engine Optimization
+          - Defining meta attributes per page
+          - Introduction to OpenGraph
+          - "OpenGraph Entities: Article, Video, etc"
+          - Pre-generated OpenGraph images
+          - Configuring SEO with `next-seo`
+      - title: Building APIs
+        points:
+          - What is API?
+          - Fetching data from remote locations
+          - Making HTTP requests from React.js to endpoints
+          - Creating API handlers
+          - Server-side routing
+      - title: Forms
+        points:
+          - How HTML forms work
+          - Building a form in React.js with `react-hook-form`
+          - Forms validation
+          - Receiving form submissions in Next.js
+          - Building a newsletter integration with MailerLite
+      - title: Using GraphQL
+        points:
+          - Short intro to GraphQL
+          - Adventanges of GraphQL
+          - Making GraphQL queries
+          - Integrating with YouTube API using GraphQL
+          - Persisting GraphQL queries server-side
+      - title: Deployment & Hosting
+        points:
+          - Environment variables
+          - Development vs Production
+          - Deploying with Git + Preview Branches
+          - Configuring a custom domain
+          - Hosting on Vercel
+          - Self-hosting Next.js
+      - title: Finishing up
+        points:
+          - Code highlighting
+          - Dynamic CSS classes in React.js
+          - Adding Favicon
+          - Integrating with FontAwesome
+          - Creating a Table of Contents
+          - Custom colors in Tailwind CSS
+
+  status:
+    link: Go to the main page
+    title: Payment Status
+    cancel:
+      title: Cancelled
+      blob: >
+        Your order has been cancelled.
+    success:
+      title: Success
+      blob: >
+        Thanks for your order. You will soon receive an order confirmation along with an invoice, 
+        if you opted for one. In the following days, I will send you more info regarding the next steps. 
+        The course is planned to start in September, 2021. Stay tuned!
+
+  order:
+    title: Your Order
+    form:
+      fname: First Name
+      lname: Last Name
+      email: E-mail Address
+      confirm: Potwierdzam, że zapoznałem się z <a href="/terms" className="text-blue-500 hover:text-blue-600">Regulaminem</a> i zgadzam się na jego warunki.
+      invoice_title: Invoice?
+      invoice_checkbox_name: Invoice for your company
+      invoice_checkbox_desc: Select if you would like me to issue an invoice for your company
+      required: Required
+      company_name: Company Name
+      address: Address
+      city: City
+      zipcode: Zip Code
+      taxnumber: Tax Number
+    button: Buy
+    info: There will be a redirection to Stripe payments
