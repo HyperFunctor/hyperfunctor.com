@@ -20,11 +20,13 @@ export function Newsletter() {
       method: "POST",
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
     const { error } = await res.json();
 
     inputEl.current.value = "";
 
     if (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- @todo
       setMessage(error);
       return;
     }

@@ -2,9 +2,8 @@ import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 
 import "../styles/main.css";
-import { PL } from "../seo.config";
-
 import { AppWrapper } from "../components/AppContext";
+import { PL } from "../seo.config";
 
 const MyApp = ({
   Component,

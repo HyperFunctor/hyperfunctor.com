@@ -1,6 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// @ts-nocheck
+/* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 
-export default async (req, res) => {
+const handler = async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
@@ -15,10 +16,12 @@ export default async (req, res) => {
 
     // 6. Send a POST request to Mailchimp.
     const response = await fetch(
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo
       `https://api.mailerlite.com/api/v2/groups/${GROUP}/subscribers`,
       {
         body: JSON.stringify(data),
         headers: {
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo
           "X-MailerLite-ApiKey": `${APIKEY}`,
           "Content-Type": "application/json",
         },
@@ -37,3 +40,5 @@ export default async (req, res) => {
     return res.status(500).json({ error: error.message || error.toString() });
   }
 };
+
+export default handler;

@@ -1,9 +1,11 @@
 import { promises as fs } from "fs";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import Head from "next/head";
-import { MDXComponent } from "../components/NextMdx";
-import { serialize } from "next-mdx-remote/serialize";
+
 import { InferGetStaticPropsType } from "next";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import Head from "next/head";
+
+import { MDXComponent } from "../components/NextMdx";
 
 export default function RegulaminPage({
   markdown,

@@ -1,8 +1,22 @@
-import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 
 import { checkout } from "../../lib";
 import { InferGetStaticPathsType, InferGetStaticPropsType } from "../../types";
+
+interface BundleFormData {
+  first_name?: string;
+  last_name?: string;
+  email?: string;
+  terms?: string;
+  coupon?: string;
+  invoice?: string;
+  company_name?: string;
+  street_address?: string;
+  city?: string;
+  postal_code?: string;
+  nip?: string;
+}
 
 export default function Order({
   bundle,
@@ -12,7 +26,8 @@ export default function Order({
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm<BundleFormData>();
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- @todo
   const onSubmit = handleSubmit((data) => checkout(bundle.key, data));
 
   const invoice = watch("invoice");
@@ -323,7 +338,7 @@ export default function Order({
   );
 }
 
-export async function getStaticProps({
+export function getStaticProps({
   params,
 }: InferGetStaticPathsType<typeof getStaticPaths>) {
   const bundle = bundles[params.bundle];
@@ -333,7 +348,7 @@ export async function getStaticProps({
   } as const;
 }
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
   const paths = [
     { params: { bundle: "basic" } },
     { params: { bundle: "full" } },
