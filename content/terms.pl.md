@@ -9,13 +9,14 @@ Niniejszy Regulamin określa zasady korzystania z serwisu internetowego reactnex
 Fundacja Zaiste z siedzibą w Poznaniu przy ul. Grobla 7/20, 61-858 Poznań, wpisana do KRS pod numerem 0000519071, NIP 779-242-40-14, REGON 302809535, email: hello@zaiste.org
 
 Użyte w niniejszym regulaminie określenia mają następujące znaczenie:
-* Klient – osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, składająca Zamówienia i dokonująca zakupu Produktów w Sklepie;
-* Produkt – produkty fizyczne (materialne), produkty elektroniczne (treści cyfrowe) dostępne w Sklepie;
-* Regulamin – niniejszy regulamin, dostępny pod adresem https://reactnextaz.pl/terms/;
-* Sklep – serwis internetowy dostępny pod adresem https://reactnextaz.pl, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
-* Umowa sprzedaży – umowa sprzedaży Produktów zawarta pomiędzy Właścicielem a Klientem z wykorzystaniem serwisu internetowego Sklepu;
-* Właściciel – Fundacja Zaiste z siedzibą w Poznaniu przy ul. Grobla 7/20, 61-858 Poznań, wpisana do KRS pod numerem 0000519071, NIP 779-242-40-14, REGON 302809535, email: hello@zaiste.org, prowadzący sprzedaż za pośrednictwem Sklepu;
-* Zamówienie – oświadczenie woli Klienta zmierzające do zawarcia Umowy sprzedaży, stanowiące ofertę zawarcia umowy sprzedaży, określające w szczególności rodzaj i ilość Produktu.
+
+- Klient – osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, składająca Zamówienia i dokonująca zakupu Produktów w Sklepie;
+- Produkt – produkty fizyczne (materialne), produkty elektroniczne (treści cyfrowe) dostępne w Sklepie;
+- Regulamin – niniejszy regulamin, dostępny pod adresem https://reactnextaz.pl/terms/;
+- Sklep – serwis internetowy dostępny pod adresem https://reactnextaz.pl, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
+- Umowa sprzedaży – umowa sprzedaży Produktów zawarta pomiędzy Właścicielem a Klientem z wykorzystaniem serwisu internetowego Sklepu;
+- Właściciel – Fundacja Zaiste z siedzibą w Poznaniu przy ul. Grobla 7/20, 61-858 Poznań, wpisana do KRS pod numerem 0000519071, NIP 779-242-40-14, REGON 302809535, email: hello@zaiste.org, prowadzący sprzedaż za pośrednictwem Sklepu;
+- Zamówienie – oświadczenie woli Klienta zmierzające do zawarcia Umowy sprzedaży, stanowiące ofertę zawarcia umowy sprzedaży, określające w szczególności rodzaj i ilość Produktu.
 
 Materiały użyte do prezentacji produktów, tj.: zdjęcia, opisy i inne są częścią Sklepu, stanowią własność jego Właściciela i chronione są prawami autorskimi. Zabrania się ich używania w celach handlowych lub prezentacji w jakichkolwiek mediach bez zgody Właściciela.
 
@@ -45,9 +46,10 @@ Wypełniając formularz Klient ma obowiązek podania prawidłowych danych osobow
 Podany adres e-mail oraz numer telefonu kontaktowego mogą zostać wykorzystane jedynie do kontaktu w procesie realizacji zamówienia, chyba że Klient wyrazi zgodę na kontakt w innych celach (np. newsletter).
 
 Kupujący przed akceptacją Zamówienia zostanie poinformowany o:
-* głównych cechach Produktu,
-* łącznej cenie lub wynagrodzeniu za Produkt wraz z podatkami, a także opłatach za transport, dostarczenie, usługi pocztowe oraz o innych kosztach,
-* możliwości odstąpienia od umowy.
+
+- głównych cechach Produktu,
+- łącznej cenie lub wynagrodzeniu za Produkt wraz z podatkami, a także opłatach za transport, dostarczenie, usługi pocztowe oraz o innych kosztach,
+- możliwości odstąpienia od umowy.
 
 Klient wyraża wolę zawarcia Umowy sprzedaży poprzez naciśnięcie przycisku „zamówienie z obowiązkiem zapłaty” lub równoważnego.
 
@@ -68,8 +70,9 @@ Wszystkie ceny Produktów podawane są w polskich złotych i zawierają podatek 
 Do każdego zakupu dokonanego przez Klienta dołączany jest dowód zakupu: faktura VAT przesyłany drogą elektroniczną. Na żądanie Klienta dowód zakupu zostanie doręczony w wersji papierowej.
 
 Klient może dokonać płatności za zakupione Produkty w następujący sposób:
-* kartą poprzez elektroniczny system Stripe
-* przelewem lub blik poprzez elektroniczny system Stripe
+
+- kartą poprzez elektroniczny system Stripe
+- przelewem lub blik poprzez elektroniczny system Stripe
 
 Płatności są obsługiwane przez spółkę Stripe Ltd.
 
@@ -117,19 +120,20 @@ W przypadku uznania reklamacji Produkt uszkodzony zostanie naprawiony lub wymien
 
 ### 7. WYMAGANIA TECHNICZNE, FUNKCJONALNOŚĆ I INTEROPERACYJNOŚĆ TREŚCI CYFROWYCH, ŚWIADCZENIE USŁUG DROGĄ ELEKTRONICZNĄ
 
-Właściciel świadczy na  rzecz  Klienta usługę drogą elektroniczną polegającą na umożliwieniu zawarcia umowy o dostarczenie Produktów elektronicznych oraz fizycznych oraz korzystania z niektórych Produktów elektronicznych.
+Właściciel świadczy na rzecz Klienta usługę drogą elektroniczną polegającą na umożliwieniu zawarcia umowy o dostarczenie Produktów elektronicznych oraz fizycznych oraz korzystania z niektórych Produktów elektronicznych.
 
 Do zawarcia umowy sprzedaży nie jest konieczne posiadanie konta w Sklepie.
 
 Świadczenie usługi dostępu do funkcjonalności Sklepu następuje nieodpłatnie. Nabycie Produktów dostępnych w Sklepie następuje odpłatnie.
 
 Do złożenia zamówienia i skorzystania z funkcjonalności Sklepu, a także do skorzystania z Produktów elektronicznych, konieczne jest:
-* posiadanie aktywnego konta poczty elektronicznej (do dokonywania zakupów w Sklepie),
-przeglądarka internetowa uwzględniająca bieżące aktualizacje, z włączoną obsługą języka JavaScript,
-* włączona obsługa cookies w przeglądarce,
-* dostęp do Internetu,
-* zainstalowanie aplikacji umożliwiających odczytywanie plików PDF,
-* możliwość odtwarzania materiałów wideo (do korzystania z niektórych Produktów elektronicznych).
+
+- posiadanie aktywnego konta poczty elektronicznej (do dokonywania zakupów w Sklepie),
+  przeglądarka internetowa uwzględniająca bieżące aktualizacje, z włączoną obsługą języka JavaScript,
+- włączona obsługa cookies w przeglądarce,
+- dostęp do Internetu,
+- zainstalowanie aplikacji umożliwiających odczytywanie plików PDF,
+- możliwość odtwarzania materiałów wideo (do korzystania z niektórych Produktów elektronicznych).
 
 Sklep wykorzystuje pliki cookies w celu zabezpieczenia bezpieczeństwa i wysokiego poziomu obsługi Klientów. Klient może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies – określić warunki ich przechowywania i uzyskiwania dostępu przez pliki cookies do swojego urządzenia za pomocą ustawień przeglądarki internetowej lub za pomocą konfiguracji usługi.
 

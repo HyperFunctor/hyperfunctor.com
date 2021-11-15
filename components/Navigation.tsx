@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export const Navigation = ({ navigation }) => {
   return (
@@ -7,22 +7,32 @@ export const Navigation = ({ navigation }) => {
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <Link href="/">
             <a className="text-sm font-semibold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase">
-              <span className="text-blue-400 font-extrabold">React.js + Next.js</span> od <span className="font-extrabold">A</span> do <span className="font-extrabold">Z</span>
+              <span className="text-blue-400 font-extrabold">
+                React.js + Next.js
+              </span>{" "}
+              od <span className="font-extrabold">A</span> do{" "}
+              <span className="font-extrabold">Z</span>
             </a>
           </Link>
         </div>
-        <div className="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden" id="example-collapse-navbar">
+        <div
+          className="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden"
+          id="example-collapse-navbar"
+        >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-            {navigation.map(({ name, href }, idx) =>
+            {navigation.map(({ name, href }, idx) => (
               <li className="flex items-center" key={idx}>
-                <a className="hover:text-gray-500 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href={href}>
+                <a
+                  className="hover:text-gray-500 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                  href={href}
+                >
                   <span className="inline-block ml-2">{name}</span>
                 </a>
               </li>
-            )}
+            ))}
           </ul>
         </div>
       </div>
     </nav>
   );
-}
+};

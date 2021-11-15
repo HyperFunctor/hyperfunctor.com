@@ -1,12 +1,16 @@
 export const Price = ({ amount, currency }) => {
-  if (['€','$'].includes(currency)) {
+  if (["€", "$"].includes(currency)) {
     return (
-      <>{currency}{amount}</>
+      <>
+        {currency}
+        {amount}
+      </>
     );
-
   } else {
     return (
-      <>{amount} {currency}</>
+      <>
+        {amount} {currency}
+      </>
     );
   }
-}
+};

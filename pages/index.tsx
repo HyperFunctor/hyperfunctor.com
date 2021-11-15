@@ -1,12 +1,18 @@
-import { promises as fs } from 'fs';
-import yaml from 'js-yaml';
-import Head from 'next/head';
+import { promises as fs } from "fs";
+import yaml from "js-yaml";
+import Head from "next/head";
 
 import {
-  Agenda, CourseContent, Base, ForWhom, LearningUnitList, FAQ, AboutAuthor,
+  Agenda,
+  CourseContent,
+  Base,
+  ForWhom,
+  LearningUnitList,
+  FAQ,
+  AboutAuthor,
   Hero2,
-} from '../components';
-import { LogoCloud } from '../components/LogoCloud';
+} from "../components";
+import { LogoCloud } from "../components/LogoCloud";
 
 export default function Home({ website, branch }) {
   return (
@@ -18,24 +24,23 @@ export default function Home({ website, branch }) {
       <Hero2 />
       <LogoCloud />
       <ForWhom />
-      <CourseContent  />
+      <CourseContent />
       <LearningUnitList />
       <Agenda {...website} />
       {/* <Pricing  /> */}
       <FAQ {...website} />
       <AboutAuthor {...website} />
     </Base>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const f = await fs.readFile('data.yml', 'utf8');
+  const f = await fs.readFile("data.yml", "utf8");
   const data = yaml.load(f);
-  const lang = process.env.GIT_BRANCH === 'english' ? 'en' : 'pl';
+  const lang = process.env.GIT_BRANCH === "english" ? "en" : "pl";
   const { [lang]: website } = data;
 
   return {
-    props: { website }
-  }
+    props: { website },
+  };
 }
-

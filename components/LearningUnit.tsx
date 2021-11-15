@@ -1,4 +1,4 @@
-import { LearningPoint } from './LearningPoint';
+import { LearningPoint } from "./LearningPoint";
 
 export const LearningUnit = ({ index, name, description, points = [] }) => {
   return (
@@ -14,10 +14,12 @@ export const LearningUnit = ({ index, name, description, points = [] }) => {
         </div>
         <div className="px-4 py-2 bg-gray-50 border-t border-gray-200">
           <ul className="list-none">
-            {points.map((point, idx) => <LearningPoint point={point} key={idx}/>)}
+            {points.map((point, idx) => (
+              <LearningPoint point={point} key={idx} />
+            ))}
           </ul>
         </div>
       </div>
     </div>
   );
-}
+};

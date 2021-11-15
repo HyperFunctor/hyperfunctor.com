@@ -1,9 +1,9 @@
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo } from "next-seo";
 
-import '../styles/main.css'
-import { PL } from '../seo.config';
+import "../styles/main.css";
+import { PL } from "../seo.config";
 
-import { AppWrapper } from '../components/AppContext';
+import { AppWrapper } from "../components/AppContext";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </AppWrapper>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

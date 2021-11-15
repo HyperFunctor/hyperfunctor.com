@@ -1,10 +1,9 @@
-import React from 'react';
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import React from "react";
+import { ChevronRightIcon } from "@heroicons/react/solid";
 
-interface Props {
-}
+interface Props {}
 
-export const BlogNotification = ({ }: Props) => {
+export const BlogNotification = ({}: Props) => {
   return (
     <div>
       <a href="#" className="inline-flex space-x-4">
@@ -12,10 +11,13 @@ export const BlogNotification = ({ }: Props) => {
           Co nowego?
         </span>
         <span className="inline-flex items-center text-sm font-medium text-gray-600 space-x-1">
-          <span>Nasz kurs jest kompatybilny z <span className='font-bold'>Next.js 12</span></span>
+          <span>
+            Nasz kurs jest kompatybilny z{" "}
+            <span className="font-bold">Next.js 12</span>
+          </span>
           <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
         </span>
       </a>
     </div>
   );
-}
+};

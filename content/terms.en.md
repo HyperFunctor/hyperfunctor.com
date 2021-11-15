@@ -30,7 +30,7 @@ You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion
 
 The headings used in this agreement are included for convenience only and will not limit or otherwise affect these Terms.
 
-## Section 3: Accuracy, Completeness and Timeliness of Information 
+## Section 3: Accuracy, Completeness and Timeliness of Information
 
 We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.
 
@@ -136,7 +136,7 @@ These Terms of Service and any policies or operating rules posted by us on this 
 
 ## Section 18: Governing Law
 
-These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of Poznań, Poland. 
+These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of Poznań, Poland.
 
 ## Section 19: Changes to Terms of Service
 

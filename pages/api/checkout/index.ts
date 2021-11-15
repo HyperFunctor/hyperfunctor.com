@@ -1,14 +1,13 @@
 import { NextApiHandler } from "next";
 import Stripe from "stripe";
 
-export const stripe = new Stripe(
-  process.env.STRIPE_SECRET_KEY!,
-  { apiVersion: "2020-08-27" },
-);
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: "2020-08-27",
+});
 
 // Malarkey
 
-const isWorldwide = process.env.GIT_BRANCH === 'english'
+const isWorldwide = process.env.GIT_BRANCH === "english";
 
 const PolandTaxRate = process.env.STRIPE_POLAND_TAXRATE;
 const PolandBasicPrice = process.env.STRIPE_POLAND_BASIC_PRICE;
@@ -22,9 +21,18 @@ const FullPrice = process.env.STRIPE_FULL_PRICE;
 const FullDiscount = process.env.STRIPE_FULL_DISCOUNT;
 
 const handler: NextApiHandler = async (req, res) => {
-  const { method, query: { type } } = req;
+  const {
+    method,
+    query: { type },
+  } = req;
 
-  let basicPrice, basicDiscount, fullPrice, fullDiscount, domain, success_url, cancel_url;
+  let basicPrice,
+    basicDiscount,
+    fullPrice,
+    fullDiscount,
+    domain,
+    success_url,
+    cancel_url;
 
   let payment_method_types = [];
 
@@ -33,15 +41,15 @@ const handler: NextApiHandler = async (req, res) => {
     basicDiscount = BasicDiscount;
     fullPrice = FullPrice;
     fullDiscount = FullDiscount;
-    payment_method_types = ['card'];
-    domain = 'https://reactnextaz.com';
+    payment_method_types = ["card"];
+    domain = "https://reactnextaz.com";
   } else {
     basicPrice = PolandBasicPrice;
     basicDiscount = PolandBasicDiscount;
     fullPrice = PolandFullPrice;
     fullDiscount = PolandFullDiscount;
-    payment_method_types = ['card', 'p24'];
-    domain = 'https://reactnextaz.pl';
+    payment_method_types = ["card", "p24"];
+    domain = "https://reactnextaz.pl";
   }
 
   const coupon = type === "basic" ? basicDiscount : fullDiscount;
@@ -51,11 +59,13 @@ const handler: NextApiHandler = async (req, res) => {
 
   const payload = {
     discounts: [{ coupon }],
-    line_items: [{
-      tax_rates,
-      price,
-      quantity: 1,
-    }],
+    line_items: [
+      {
+        tax_rates,
+        price,
+        quantity: 1,
+      },
+    ],
   };
 
   console.log(JSON.stringify(payload));
@@ -64,7 +74,7 @@ const handler: NextApiHandler = async (req, res) => {
     try {
       const params: Stripe.Checkout.SessionCreateParams = {
         ...payload,
-        payment_method_types, 
+        payment_method_types,
         mode: "payment",
         success_url: `${domain}/success/?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${domain}/cancel/`,

@@ -5,10 +5,8 @@ export const FAQEntry = ({ question, answer }) => {
         {question}
       </dt>
       <dd className="mt-2 md:mt-0 md:col-span-7">
-        <p className="text-base leading-6 text-gray-700">
-          {answer}
-        </p>
+        <p className="text-base leading-6 text-gray-700">{answer}</p>
       </dd>
     </div>
   );
-}
+};

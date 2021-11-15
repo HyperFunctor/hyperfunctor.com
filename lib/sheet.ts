@@ -1,12 +1,14 @@
-import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { GoogleSpreadsheet } from "google-spreadsheet";
 
-const { private_key } = require('../key.json');
+const { private_key } = require("../key.json");
 
-const doc = new GoogleSpreadsheet('1lp5hCX-C4BJSBDiXRcpzycA-4wa9YYUVFeqU9_TBZPc');
+const doc = new GoogleSpreadsheet(
+  "1lp5hCX-C4BJSBDiXRcpzycA-4wa9YYUVFeqU9_TBZPc"
+);
 const auth = {
   client_email: process.env.GOOGLE_CLIENT_EMAIL,
-  private_key,  // ENV variable doesn't work, \n issue probably
-}
+  private_key, // ENV variable doesn't work, \n issue probably
+};
 
 export const addOrder = async (order) => {
   await doc.useServiceAccountAuth(auth);
@@ -15,7 +17,7 @@ export const addOrder = async (order) => {
   const sheet = doc.sheetsByIndex[4]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
 
   const a = await sheet.addRow(order);
-}
+};
 
 export const findOrder = async (id) => {
   await doc.useServiceAccountAuth(auth);
@@ -23,7 +25,7 @@ export const findOrder = async (id) => {
   const sheet = doc.sheetsByIndex[4]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
 
   const rows = await sheet.getRows();
-  const result = rows.filter(row => row.id === id);
+  const result = rows.filter((row) => row.id === id);
 
   return result;
-}
+};
