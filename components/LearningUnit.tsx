@@ -1,6 +1,18 @@
-import { LearningPoint } from './LearningPoint';
+import { LearningPoint } from "./LearningPoint";
 
-export const LearningUnit = ({ index, name, description, points = [] }) => {
+interface LearningUnitProps {
+  index: number;
+  name: string;
+  description: string;
+  points?: string[];
+}
+
+export const LearningUnit = ({
+  index,
+  name,
+  description,
+  points = [],
+}: LearningUnitProps) => {
   return (
     <div className="">
       <div className="flex flex-col min-w-0 break-words bg-white w-full border border-gray-100 hover:shadow-2xl hover:border-gray-300 rounded-sm">
@@ -14,10 +26,12 @@ export const LearningUnit = ({ index, name, description, points = [] }) => {
         </div>
         <div className="px-4 py-2 bg-gray-50 border-t border-gray-200">
           <ul className="list-none">
-            {points.map((point, idx) => <LearningPoint point={point} key={idx}/>)}
+            {points.map((point, idx) => (
+              <LearningPoint point={point} key={idx} />
+            ))}
           </ul>
         </div>
       </div>
     </div>
   );
-}
+};
