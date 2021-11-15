@@ -1,10 +1,12 @@
 // @ts-nocheck
+/* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 import Link from "next/link";
 
 import { Price } from "./Price";
 
 export const PricingPackage = ({ className, pkg }) => {
   return (
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo
     <div className={`overflow-hidden mt-12 lg:mt-0 ${className}`}>
       <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
         <div>
@@ -54,6 +56,7 @@ export const PricingPackage = ({ className, pkg }) => {
           ))}
         </ul>
         <div className="mt-6 rounded-md shadow">
+          {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo */}
           <Link href={`/order/${pkg.key}`}>
             <a className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-400 hover:bg-blue-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
               {pkg.buy}

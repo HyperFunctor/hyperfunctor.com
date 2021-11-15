@@ -1,8 +1,6 @@
 import React from "react";
 
-interface Props {}
-
-export const LogoCloud = ({}: Props) => {
+export const LogoCloud = ({}) => {
   return (
     <div className="bg-white border-t">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">

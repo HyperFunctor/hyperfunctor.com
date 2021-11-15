@@ -1,6 +1,7 @@
 import invariant from "invariant";
 import { NextApiHandler } from "next";
 import Stripe from "stripe";
+
 import { errorToString } from "../../../lib/responseUtils";
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {

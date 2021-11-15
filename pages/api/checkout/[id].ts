@@ -1,5 +1,8 @@
+// @ts-nocheck
+/* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 import { NextApiHandler } from "next";
 import Stripe from "stripe";
+
 import { errorToString } from "../../../lib/responseUtils";
 import { findOrder } from "../../../lib/sheet";
 
@@ -79,6 +82,7 @@ const handler: NextApiHandler = async (req, res) => {
         "X-inFakt-ApiKey": APIKEY ?? "",
         "Content-Type": "application/json",
       };
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- @todo
       const body = JSON.stringify(InvoiceTemplate(order));
       const r = await fetch(`https://api.infakt.pl/v3/invoices.json`, {
         method,
@@ -102,3 +106,5 @@ const handler: NextApiHandler = async (req, res) => {
 };
 
 export default handler;
+
+declare const x: any;

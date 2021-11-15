@@ -8,6 +8,7 @@ const method = "POST";
 
 export const checkout = async (type: string, data: object) => {
   const response = await fetch(`/api/checkout/?type=${type}`, { method });
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
   const { id: sessionId } = await response.json();
 
   const headers = { "Content-Type": "application/json" };
@@ -15,6 +16,7 @@ export const checkout = async (type: string, data: object) => {
   const date = new Date().toISOString();
 
   const body = JSON.stringify({
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
     id: sessionId,
     paid: false,
     bundle: type.toUpperCase(),
@@ -28,6 +30,7 @@ export const checkout = async (type: string, data: object) => {
     throw new Error("Something wrong with Stripe");
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
   const result = await stripe.redirectToCheckout({ sessionId });
 
   if (result.error) {

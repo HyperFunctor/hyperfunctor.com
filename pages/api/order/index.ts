@@ -1,14 +1,12 @@
 import { NextApiHandler } from "next";
-import { errorToString } from "../../../lib/responseUtils";
 
+import { errorToString } from "../../../lib/responseUtils";
 import { addOrder } from "../../../lib/sheet";
 
 const handler: NextApiHandler = async (req, res) => {
-  const { method, body } = req;
-
-  if (method === "POST") {
+  if (req.method === "POST") {
     try {
-      await addOrder(body);
+      await addOrder(req.body);
       res.status(200).json({ status: "OK" });
     } catch (error) {
       res.status(500).json({ message: errorToString(error) });

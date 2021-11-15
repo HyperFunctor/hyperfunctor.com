@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access -- @todo */
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useSWR from "swr";
@@ -5,9 +6,11 @@ import useSWR from "swr";
 export default function SuccessPage() {
   const router = useRouter();
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
   const { data, error } = useSWR(
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo
     router.query.session_id ? `/api/checkout/${router.query.session_id}` : null,
-    (url) => fetch(url).then((res) => res.json())
+    (url: string) => fetch(url).then((res) => res.json())
   );
 
   if (error) return <div>failed to load</div>;

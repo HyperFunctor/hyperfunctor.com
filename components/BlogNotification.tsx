@@ -1,9 +1,7 @@
-import React from "react";
 import { ChevronRightIcon } from "@heroicons/react/solid";
+import React from "react";
 
-interface Props {}
-
-export const BlogNotification = ({}: Props) => {
+export const BlogNotification = ({}) => {
   return (
     <div>
       <a href="#" className="inline-flex space-x-4">

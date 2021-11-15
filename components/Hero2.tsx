@@ -1,11 +1,6 @@
-import {
-  CheckIcon,
-  LightBulbIcon,
-  LightningBoltIcon,
-  StarIcon,
-} from "@heroicons/react/solid";
+import { StarIcon } from "@heroicons/react/solid";
+
 import { BlogNotification } from "./BlogNotification";
-import { LogoCloud } from "./LogoCloud";
 
 const points = [
   '12 tygodni nauki (<span class="font-bold">15h</span>) + 3 tygodnie projekt końcowy (<span class="font-bold">30h</span>)',

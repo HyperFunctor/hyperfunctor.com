@@ -1,16 +1,15 @@
-import { promises as fs } from "fs";
 import Head from "next/head";
 import React from "react";
-import { AboutAuthor } from "../components/AboutAuthor";
-import { Agenda } from "../components/Agenda";
-import { CourseContent } from "../components/CourseContent";
-import { FAQ } from "../components/FAQ";
-import { ForWhom } from "../components/ForWhom";
-import { Hero2 } from "../components/Hero2";
-import { Layout } from "../components/Layout";
-import { LearningUnitList } from "../components/LearningUnitList";
 
+import { FAQ } from "../components/FAQ/FAQ";
+import { Hero2 } from "../components/Hero2";
 import { LogoCloud } from "../components/LogoCloud";
+import { Agenda } from "../components/agenda/Agenda";
+import { AboutAuthor } from "../components/authors/AboutAuthor";
+import { CourseContent } from "../components/courseContent/CourseContent";
+import { ForWhom } from "../components/forWhom/ForWhom";
+import { Layout } from "../components/layout/Layout";
+import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
 
 export default function Home() {
   return (

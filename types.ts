@@ -10,6 +10,6 @@ export type InferGetStaticPathsType<T extends (...args: any) => any> = Awaited<
 
 export type InferGetStaticPropsType<T> = T extends (
   ...args: any[]
-) => Promise<GetStaticPropsResult<infer P>>
+) => Promise<GetStaticPropsResult<infer P>> | GetStaticPropsResult<infer P>
   ? P
   : never;
