@@ -1,15 +1,22 @@
 import Image from "next/image";
 
+interface CourseContentItemProps {
+  image: string;
+  title: string;
+  direction: "reverse" | "";
+  description: string;
+}
+
 export const CourseContentItem = ({
   image,
   title,
   direction = "",
   description,
-}) => {
+}: CourseContentItemProps) => {
   return (
     <div
       className={`flex ${
-        direction == "reverse" ? "flex-row-reverse" : ""
+        direction === "reverse" ? "flex-row-reverse" : ""
       } flex-wrap items-center`}
     >
       <div className="w-full md:w-1/2 pb-4 flex justify-center">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Footer = ({ newsletter }) => {
+export const Footer = () => {
   return (
     <footer className="bg-gray-800" aria-labelledby="footerHeading">
       <h2 id="footerHeading" className="sr-only">
@@ -34,7 +34,10 @@ export const Footer = ({ newsletter }) => {
             <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
               Newsletter
             </h3>
-            <p className="mt-2 text-base text-gray-300">{newsletter.title}</p>
+            <p className="mt-2 text-base text-gray-300">
+              Informacje o kursie, materiały dodatkowe, porady dt. nauki
+              programowania
+            </p>
           </div>
           <form className="mt-4 sm:flex sm:max-w-md lg:mt-0">
             <label htmlFor="emailAddress" className="sr-only">
@@ -53,7 +56,7 @@ export const Footer = ({ newsletter }) => {
                 type="submit"
                 className="w-full bg-blue-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
               >
-                {newsletter.button}
+                Zapisuję się
               </button>
             </div>
           </form>

@@ -1,7 +1,7 @@
 import { AuthorJakub } from "./AuthorJakub";
 import { AuthorMichal } from "./AuthorMichal";
 
-export const AboutAuthor = ({ author }) => {
+export const AboutAuthor = ({}) => {
   return (
     <section className="relative py-16 bg-white">
       <a id="about" className="top-4"></a>

@@ -1,11 +1,16 @@
 import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
 
 import "../styles/main.css";
 import { PL } from "../seo.config";
 
 import { AppWrapper } from "../components/AppContext";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({
+  Component,
+  pageProps,
+  source,
+}: AppProps & { source: string }) => {
   return (
     <>
       <DefaultSeo {...PL} />
@@ -14,6 +19,6 @@ function MyApp({ Component, pageProps }) {
       </AppWrapper>
     </>
   );
-}
+};
 
 export default MyApp;

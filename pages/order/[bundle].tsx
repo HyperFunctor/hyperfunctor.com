@@ -362,7 +362,7 @@ export async function getStaticPaths() {
   const paths = [
     { params: { bundle: "basic" } },
     { params: { bundle: "full" } },
-  ];
+  ] as const;
 
   return {
     paths,

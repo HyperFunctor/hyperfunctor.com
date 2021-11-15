@@ -1,4 +1,10 @@
-export const AgendaWeek = ({ number, title, unit, points = [] }) => {
+interface AgendaWeekProps {
+  number: number;
+  title: string;
+  points: string[];
+}
+
+export const AgendaWeek = ({ number, title, points = [] }: AgendaWeekProps) => {
   return (
     <div className="">
       <div className="flex flex-col min-w-0 break-words bg-white w-full hover:bg-gray-50 rounded-lg">

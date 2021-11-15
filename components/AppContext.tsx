@@ -1,15 +1,31 @@
-import { createContext, useContext } from "react";
+import invariant from "invariant";
+import { createContext, ReactNode, useContext, useMemo } from "react";
 
-const AppContext = createContext<Record<string, any>>({});
+interface AppContextData {
+  title: string;
+}
 
-export function AppWrapper({ children }) {
-  let state = {
-    title: "Hello, World",
-  };
+const AppContext = createContext<AppContextData | null>(null);
+
+interface AppWrapperProps {
+  children: ReactNode;
+}
+
+export function AppWrapper({ children }: AppWrapperProps) {
+  const state = useMemo(
+    () => ({
+      title: "Hello, World",
+    }),
+    []
+  );
 
   return <AppContext.Provider value={state}>{children}</AppContext.Provider>;
 }
 
 export function useAppContext() {
-  return useContext(AppContext);
+  const ctx = useContext(AppContext);
+
+  invariant(!!ctx, `Missing AppContextProvider!`);
+
+  return ctx;
 }
