@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
-import classNames from "classnames";
+import clsx from "clsx";
 
 export const ForWhomItem = ({ text, reason }) => {
   return (
@@ -8,7 +8,7 @@ export const ForWhomItem = ({ text, reason }) => {
       <div className="flex items-center">
         <div>
           <span
-            className={classNames(
+            className={clsx(
               "text-xs font-semibold w-8 h-8 uppercase text-gray-800 mr-3 inline-flex items-center justify-center rounded-full",
               {
                 "bg-green-200": reason === "yes",
