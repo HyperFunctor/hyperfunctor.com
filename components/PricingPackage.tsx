@@ -1,4 +1,4 @@
-import React from "react";
+// @ts-nocheck
 import Link from "next/link";
 
 import { Price } from "./Price";
@@ -13,19 +13,16 @@ export const PricingPackage = ({ className, pkg }) => {
           </span>
         </div>
         <div className="mt-4 flex items-baseline text-6xl leading-none font-extrabold">
-          <Price amount={pkg.price.discounted} currency={pkg.currency} />
+          {pkg.price.discounted} zł
           <span className="ml-4 text-3xl leading-8 font-medium text-gray-500 line-through">
             {" "}
-            <Price amount={pkg.price.regular} currency={pkg.currency} />{" "}
+            {pkg.price.regular} zł{" "}
           </span>
         </div>
         <div className="text-center text-gray-500 mt-2">
           {pkg.cheaper}{" "}
           <span className="font-bold text-blue-500">
-            <Price
-              amount={pkg.price.regular - pkg.price.discounted}
-              currency={pkg.currency}
-            />
+            {pkg.price.regular - pkg.price.discounted} zł
           </span>{" "}
           {pkg.until}
         </div>

@@ -1,33 +1,27 @@
-import { promises as fs } from "fs";
 import { useForm } from "react-hook-form";
-import yaml from "js-yaml";
 import Link from "next/link";
 
 import { checkout } from "../../lib";
-import { Price } from "../../components";
+import { InferGetStaticPathsType, InferGetStaticPropsType } from "../../types";
 
-export default function Order({ website, bundle, lang }) {
+export default function Order({
+  bundle,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = handleSubmit((data) => checkout(bundle, data));
-
-  const { pricing } = website;
+  const onSubmit = handleSubmit((data) => checkout(bundle.key, data));
 
   const invoice = watch("invoice");
-  const pkg = pricing[bundle];
-  const required_message = website.order.form.required;
 
   return (
     <section className="py-16">
       <div className="max-w-screen-sm container mx-auto">
         <form action="#" method="POST" onSubmit={onSubmit}>
-          <h1 className="font-bold text-3xl text-center mb-8">
-            {website.order.title}
-          </h1>
+          <h1 className="font-bold text-3xl text-center mb-8">Zamówienie</h1>
           <div className="mt-10 sm:mt-0">
             <div className="mt-5 md:mt-0 md:col-span-2">
               <div className="shadow overflow-hidden sm:rounded-md">
@@ -38,7 +32,7 @@ export default function Order({ website, bundle, lang }) {
                         htmlFor="first_name"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        {website.order.form.fname}
+                        Imię
                       </label>
                       <input
                         {...register("first_name", { required: true })}
@@ -52,7 +46,7 @@ export default function Order({ website, bundle, lang }) {
                         }`}
                       />
                       <p className="mt-1 text-red-500 text-sm">
-                        {errors.first_name && required_message}
+                        {errors.first_name && `Pole wymagane`}
                       </p>
                     </div>
 
@@ -61,7 +55,7 @@ export default function Order({ website, bundle, lang }) {
                         htmlFor="last_name"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        {website.order.form.lname}
+                        Nazwisko
                       </label>
                       <input
                         {...register("last_name", { required: true })}
@@ -71,7 +65,7 @@ export default function Order({ website, bundle, lang }) {
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                       <p className="mt-1 text-red-500 text-sm">
-                        {errors.last_name && required_message}
+                        {errors.last_name && `Pole wymagane`}
                       </p>
                     </div>
 
@@ -80,7 +74,7 @@ export default function Order({ website, bundle, lang }) {
                         htmlFor="email"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        {website.order.form.email}
+                        Adres E-mail
                       </label>
                       <input
                         {...register("email", { required: true })}
@@ -90,7 +84,7 @@ export default function Order({ website, bundle, lang }) {
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                       <p className="mt-1 text-red-500 text-sm">
-                        {errors.email && required_message}
+                        {errors.email && `Pole wymagane`}
                       </p>
                     </div>
 
@@ -108,33 +102,25 @@ export default function Order({ website, bundle, lang }) {
                             htmlFor="invoice"
                             className="font-medium text-gray-700"
                           >
-                            {lang === "pl" ? (
+                            {
                               <div>
                                 Potwierdzam, że zapoznałem się z{" "}
                                 <Link href="/terms/">
-                                  <a className="text-blue-500 hover:text-blue-600">
+                                  <a
+                                    className="text-blue-500 hover:text-blue-600"
+                                    target="_blank"
+                                  >
                                     Regulaminem
                                   </a>
                                 </Link>{" "}
                                 i zgadzam się na jego warunki.
                               </div>
-                            ) : (
-                              <div>
-                                {" "}
-                                I acknowledge that I have read and agree to the{" "}
-                                <Link href="/terms/">
-                                  <a className="text-blue-500 hover:text-blue-600">
-                                    Terms of Service
-                                  </a>
-                                </Link>{" "}
-                                and Privacy Policy.{" "}
-                              </div>
-                            )}
+                            }
                           </label>
                         </div>
                       </div>
                       <p className="mt-1 text-red-500 text-sm">
-                        {errors.terms && required_message}
+                        {errors.terms && `Pole wymagane`}
                       </p>
                     </div>
                   </div>
@@ -180,7 +166,7 @@ export default function Order({ website, bundle, lang }) {
                 <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                   <fieldset>
                     <legend className="text-base font-medium text-gray-900">
-                      {website.order.form.invoice_title}
+                      Faktura?
                     </legend>
                     <div className="mt-4 space-y-4">
                       <div className="flex items-start">
@@ -196,10 +182,10 @@ export default function Order({ website, bundle, lang }) {
                             htmlFor="invoice"
                             className="font-medium text-gray-700"
                           >
-                            {website.order.form.invoice_checkbox_name}
+                            I&apos;d like an invoice
                           </label>
                           <p className="text-gray-500">
-                            {website.order.form.invoice_checkbox_desc}
+                            Select if you would like us to send you an invoice
                           </p>
                         </div>
                       </div>
@@ -210,7 +196,7 @@ export default function Order({ website, bundle, lang }) {
                               htmlFor="company_name"
                               className="block text-sm font-medium text-gray-700"
                             >
-                              {website.order.form.company_name}
+                              Nazwa Firmy
                             </label>
                             <input
                               {...register("company_name", { required: true })}
@@ -219,7 +205,7 @@ export default function Order({ website, bundle, lang }) {
                               className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             />
                             <p className="mt-1 text-red-500 text-sm">
-                              {errors.company_name && required_message}
+                              {errors.company_name && `Pole wymagane`}
                             </p>
                           </div>
 
@@ -228,7 +214,7 @@ export default function Order({ website, bundle, lang }) {
                               htmlFor="street_address"
                               className="block text-sm font-medium text-gray-700"
                             >
-                              {website.order.form.address}
+                              Adres
                             </label>
                             <input
                               {...register("street_address", {
@@ -240,7 +226,7 @@ export default function Order({ website, bundle, lang }) {
                               className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             />
                             <p className="mt-1 text-red-500 text-sm">
-                              {errors.street_address && required_message}
+                              {errors.street_address && `Pole wymagane`}
                             </p>
                           </div>
 
@@ -249,7 +235,7 @@ export default function Order({ website, bundle, lang }) {
                               htmlFor="city"
                               className="block text-sm font-medium text-gray-700"
                             >
-                              {website.order.form.city}
+                              Miasto
                             </label>
                             <input
                               {...register("city", { required: true })}
@@ -258,7 +244,7 @@ export default function Order({ website, bundle, lang }) {
                               className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             />
                             <p className="mt-1 text-red-500 text-sm">
-                              {errors.city && required_message}
+                              {errors.city && `Pole wymagane`}
                             </p>
                           </div>
 
@@ -267,7 +253,7 @@ export default function Order({ website, bundle, lang }) {
                               htmlFor="postal_code"
                               className="block text-sm font-medium text-gray-700"
                             >
-                              {website.order.form.zipcode}
+                              Kod pocztowy
                             </label>
                             <input
                               {...register("postal_code", { required: true })}
@@ -277,7 +263,7 @@ export default function Order({ website, bundle, lang }) {
                               className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             />
                             <p className="mt-1 text-red-500 text-sm">
-                              {errors.postal_code && required_message}
+                              {errors.postal_code && `Pole wymagane`}
                             </p>
                           </div>
 
@@ -286,7 +272,7 @@ export default function Order({ website, bundle, lang }) {
                               htmlFor="nip"
                               className="block text-sm font-medium text-gray-700"
                             >
-                              {website.order.form.taxnumber}
+                              Numer NIP
                             </label>
                             <input
                               {...register("nip", {})}
@@ -295,18 +281,9 @@ export default function Order({ website, bundle, lang }) {
                               className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                             />
                             <p className="mt-1 text-red-500 text-sm">
-                              {errors.nip && required_message}
+                              {errors.nip && `Pole wymagane`}
                             </p>
                           </div>
-
-                          {/* <div className="col-span-6 sm:col-span-4">
-                            <label htmlFor="country" className="block text-sm font-medium text-gray-700">Country / Region</label>
-                            <select id="country" name="country" autoComplete="country" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                              <option>United States</option>
-                              <option>Canada</option>
-                              <option>Mexico</option>
-                            </select>
-                          </div> */}
                         </div>
                       )}
                     </div>
@@ -316,27 +293,27 @@ export default function Order({ website, bundle, lang }) {
 
               <div className="mt-5 shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
-                  <h4 className="font-semibold text-2xl">{pricing.title}</h4>
-                  <p className="mt-2 text-gray-600 text-lg">{pkg.name}</p>
+                  <h4 className="font-semibold text-2xl">
+                    Poznaj tajniki tworzenia stron internetowych przy użyciu
+                    React.js i Next.js
+                  </h4>
+                  <p className="mt-2 text-gray-600 text-lg">{bundle.name}</p>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <div className="font-bold text-3xl">
-                    <Price
-                      amount={pkg.price.discounted}
-                      currency={pkg.currency}
-                    />
+                    {bundle.price.discounted} zł
                   </div>
-                  <div className="text-gray-600 text-sm">{pricing.vat}</div>
+                  <div className="text-gray-600 text-sm">+&nbsp;VAT</div>
                 </div>
               </div>
               <button
                 type="submit"
                 className="mt-4 inline-flex w-full justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                {website.order.button}
+                Zamawiam i płacę
               </button>
               <div className="mt-2 text-center text-gray-500">
-                {website.order.info}
+                Nastąpi przekierowanie do płatności Stripe
               </div>
             </div>
           </div>
@@ -346,18 +323,16 @@ export default function Order({ website, bundle, lang }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const f = await fs.readFile("data.yml", "utf8");
-  const data = yaml.load(f);
-  const lang = process.env.GIT_BRANCH === "english" ? "en" : "pl";
-  const { [lang]: website } = data;
-
-  const bundle = params.bundle;
+export async function getStaticProps({
+  params,
+}: InferGetStaticPathsType<typeof getStaticPaths>) {
+  const bundle = bundles[params.bundle];
 
   return {
-    props: { website, bundle, lang },
-  };
+    props: { bundle },
+  } as const;
 }
+
 export async function getStaticPaths() {
   const paths = [
     { params: { bundle: "basic" } },
@@ -369,3 +344,37 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+const bundles = {
+  full: {
+    buy: "Kup",
+    key: "full",
+    name: "Pełen Pakiet",
+    cheaper: "mniej o",
+    until: "do 24/01/2021",
+    currency: "zł",
+    price: {
+      regular: 1399,
+      discounted: 999,
+    },
+    elements: [
+      `kurs wideo`,
+      `napisy w wersji polskiej, angielskiej i francuskiej`,
+      `konsultacje wideo (grupowo)`,
+      `dostęp do <strong>prywatnego kanału Discord</strong> z autorem i współuczestnikami kursu`,
+    ],
+  },
+  basic: {
+    buy: "Kup",
+    key: "basic",
+    name: "Tylko Wideo",
+    cheaper: "mniej o",
+    until: "do 24/01/2021",
+    currency: "zł",
+    price: {
+      regular: 999,
+      discounted: 699,
+    },
+    elements: [`kurs wideo`],
+  },
+} as const;

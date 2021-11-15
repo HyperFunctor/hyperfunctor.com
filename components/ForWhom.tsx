@@ -1,28 +1,5 @@
 import { ForWhomItem } from "./ForWhomIteam";
 
-const data = {
-  title: "Dla Kogo?",
-  description:
-    "Kurs jest zbudowany z myślą o osobach początkujących. Jeśli szukasz pierwszego kontaktu z programowaniem bądź programujesz w języku innymi niż JavaScript, ten kurs jest dla Ciebie. Ponadto, jeśli czujesz, że brakuje Ci wiedzy w pewnych obszarach (na przykład umiesz budować aplikacje frontendowe, ale nie jest dla Ciebie do końca jasne, jak połączyć je z backendem) również skorzystasz z udziału w tym kursie.",
-  yes: {
-    title: "Kurs jest dla Ciebie, jeśli:",
-    reasons: [
-      "chcesz nauczyć się budować interaktywną stronę internetową",
-      "szukasz praktycznego wprowadzenia do React.js",
-      "chcesz poznać nowoczesne sposoby tworzenia stron internetowych",
-      "szukasz prostszego wprowadzenia do programowania przed nauką pisania pełnoprawnych aplikacji webowych",
-    ],
-  },
-  no: {
-    title: "Kurs NIE jest dla Ciebie, jeśli:",
-    reasons: [
-      "znasz zarówno frontend, backend i sposoby komunikacji między nimi",
-      "nie interesuje Cię ani React.js, ani Next.js",
-      "potrafisz już pisać aplikacje webowe",
-    ],
-  },
-};
-
 export const ForWhom = () => {
   return (
     <section
@@ -59,4 +36,27 @@ export const ForWhom = () => {
       </div>
     </section>
   );
+};
+
+const data = {
+  title: "Dla Kogo?",
+  description:
+    "Kurs jest zbudowany z myślą o osobach początkujących. Jeśli szukasz pierwszego kontaktu z programowaniem bądź programujesz w języku innymi niż JavaScript, ten kurs jest dla Ciebie. Ponadto, jeśli czujesz, że brakuje Ci wiedzy w pewnych obszarach (na przykład umiesz budować aplikacje frontendowe, ale nie jest dla Ciebie do końca jasne, jak połączyć je z backendem) również skorzystasz z udziału w tym kursie.",
+  yes: {
+    title: "Kurs jest dla Ciebie, jeśli:",
+    reasons: [
+      "chcesz nauczyć się budować interaktywną stronę internetową",
+      "szukasz praktycznego wprowadzenia do React.js",
+      "chcesz poznać nowoczesne sposoby tworzenia stron internetowych",
+      "szukasz prostszego wprowadzenia do programowania przed nauką pisania pełnoprawnych aplikacji webowych",
+    ],
+  },
+  no: {
+    title: "Kurs NIE jest dla Ciebie, jeśli:",
+    reasons: [
+      "znasz zarówno frontend, backend i sposoby komunikacji między nimi",
+      "nie interesuje Cię ani React.js, ani Next.js",
+      "potrafisz już pisać aplikacje webowe",
+    ],
+  },
 };

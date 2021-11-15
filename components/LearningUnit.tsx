@@ -1,6 +1,18 @@
 import { LearningPoint } from "./LearningPoint";
 
-export const LearningUnit = ({ index, name, description, points = [] }) => {
+interface LearningUnitProps {
+  index: number;
+  name: string;
+  description: string;
+  points?: string[];
+}
+
+export const LearningUnit = ({
+  index,
+  name,
+  description,
+  points = [],
+}: LearningUnitProps) => {
   return (
     <div className="">
       <div className="flex flex-col min-w-0 break-words bg-white w-full border border-gray-100 hover:shadow-2xl hover:border-gray-300 rounded-sm">

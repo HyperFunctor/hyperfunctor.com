@@ -49,27 +49,29 @@ export const LearningUnitList = () => {
         <p
           className="text-lg leading-relaxed font-light mb-8"
           dangerouslySetInnerHTML={{ __html: data.unit.paragraph_1 }}
-        ></p>
+        />
         <p
           className="text-lg leading-relaxed font-light mb-8"
           dangerouslySetInnerHTML={{ __html: data.unit.paragraph_2 }}
-        ></p>
+        />
         <p
           className="text-lg leading-relaxed font-light mb-8"
           dangerouslySetInnerHTML={{ __html: data.unit.paragraph_3 }}
-        ></p>
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {data.principals.map((module, idx) => (
-            <LearningUnit {...module} index={idx} key={idx} />
+            <LearningUnit
+              name={module.name}
+              description={module.description}
+              points={module.points}
+              index={idx}
+              key={idx}
+            />
           ))}
         </div>
 
         <hr className="my-8" />
-
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.modules.map((module, idx) => <LearningUnit {...module} key={idx} />)}
-        </div> */}
       </div>
     </section>
   );

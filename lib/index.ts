@@ -24,6 +24,10 @@ export const checkout = async (type: string, data: object) => {
   await fetch(`/api/order/`, { method, body, headers });
 
   const stripe = await stripePromise;
+  if (!stripe) {
+    throw new Error("Something wrong with Stripe");
+  }
+
   const result = await stripe.redirectToCheckout({ sessionId });
 
   if (result.error) {

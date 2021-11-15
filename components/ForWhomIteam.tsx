@@ -2,7 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import clsx from "clsx";
 
-export const ForWhomItem = ({ text, reason }) => {
+interface ForWhomItemProps {
+  text: string;
+  reason: string;
+}
+
+export const ForWhomItem = ({ text, reason }: ForWhomItemProps) => {
   return (
     <li className="py-2">
       <div className="flex items-center">

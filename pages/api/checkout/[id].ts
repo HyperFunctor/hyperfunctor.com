@@ -1,5 +1,6 @@
 import { NextApiHandler } from "next";
 import Stripe from "stripe";
+import { errorToString } from "../../../lib/responseUtils";
 import { findOrder } from "../../../lib/sheet";
 
 const APIKEY = process.env.INFAKT_APIKEY;
@@ -27,6 +28,13 @@ const InvoiceTemplate = ({
   postal_code,
   nip,
   bundle,
+}: {
+  company_name: string;
+  street_address: string;
+  city: string;
+  postal_code: string;
+  nip: string;
+  bundle: string;
 }) => ({
   invoice: {
     payment_method: "other",
@@ -68,7 +76,7 @@ const handler: NextApiHandler = async (req, res) => {
     } else {
       const method = "POST";
       const headers = {
-        "X-inFakt-ApiKey": APIKEY,
+        "X-inFakt-ApiKey": APIKEY ?? "",
         "Content-Type": "application/json",
       };
       const body = JSON.stringify(InvoiceTemplate(order));
@@ -89,7 +97,7 @@ const handler: NextApiHandler = async (req, res) => {
 
     res.status(200).json({ status: payment_intent.status });
   } catch (err) {
-    res.status(500).json({ statusCode: 500, message: err.message });
+    res.status(500).json({ message: errorToString(err) });
   }
 };
 

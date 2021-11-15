@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Newsletter } from "./Newsletter";
 import { PricingPackage } from "./PricingPackage";
 

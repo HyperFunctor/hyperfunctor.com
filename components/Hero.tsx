@@ -3,12 +3,23 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import Image from "next/image";
 
-export const Hero = ({ title, subtitle, summary, joinButton, start }) => {
+interface HeroProps {
+  title: string;
+  subtitle: string;
+  summary: string[];
+  joinButton: string;
+  start: string;
+}
+
+export const Hero = ({
+  title,
+  subtitle,
+  summary,
+  joinButton,
+  start,
+}: HeroProps) => {
   return (
-    <div
-      className="bg-white pt-8 pb-8 flex content-center items-center justify-center"
-      style={{ minHeight: "50vh" }}
-    >
+    <div className="bg-white min-h-[50vh] pt-8 pb-8 flex content-center items-center justify-center">
       <div className="container mx-auto px-8">
         <div className="flex flex-wrap items-center">
           <div className="w-full md:w-2/3">
@@ -22,7 +33,7 @@ export const Hero = ({ title, subtitle, summary, joinButton, start }) => {
             ></h2>
             <ul className="list-none mt-6">
               {summary.map((argument, idx) => (
-                <li className="py-2" key={idx + 1}>
+                <li className="py-2" key={argument}>
                   <div className="flex items-center">
                     <div>
                       <span className="text-xs font-semibold w-8 h-8 uppercase text-gray-800 bg-green-200 mr-3  inline-flex items-center justify-center rounded-full">

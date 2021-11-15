@@ -1,11 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { FormEventHandler, useRef, useState } from "react";
 
 export function Newsletter() {
-  const inputEl = useRef(null);
+  const inputEl = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState("");
 
-  const onSubmit = async (e) => {
+  const onSubmit: FormEventHandler = async (e) => {
     e.preventDefault();
+    if (!inputEl.current) {
+      return;
+    }
 
     const email = inputEl.current.value;
 

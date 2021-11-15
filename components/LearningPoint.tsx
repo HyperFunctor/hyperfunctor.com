@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-export const LearningPoint = ({ point }) => {
+interface LearningPointProps {
+  point: string;
+}
+
+export const LearningPoint = ({ point }: LearningPointProps) => {
   return (
     <li className="py-2">
       <div className="flex items-center">

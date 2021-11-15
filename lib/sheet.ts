@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
 const { private_key } = require("../key.json");

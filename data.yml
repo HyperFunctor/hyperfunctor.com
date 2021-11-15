@@ -89,60 +89,7 @@ pl:
         - Dedykowane platformy hostingowe
 
   pricing:
-    title: Poznaj tajniki tworzenia stron internetowych przy użyciu React.js i Next.js
     choose: Wybierz pakiet
     presale: Przedsprzedaż do 24 stycznia 2021
     info: >
       * ceny obowiązują tylko dla obywateli Polski
-    full:
-      buy: Kup
-      key: "full"
-      name: Pełen Pakiet
-      cheaper: mniej o
-      until: do 24/01/2021
-      price:
-        regular: 1399
-        discounted: 999
-      currency: zł
-      elements:
-        - kurs wideo
-        - napisy w wersji polskiej, angielskiej i francuskiej
-        - konsultacje wideo (grupowo)
-        - dostęp do <strong>prywatnego kanału Discord</strong> z autorem i współuczestnikami kursu
-    basic:
-      buy: Kup
-      key: "basic"
-      name: Tylko Wideo
-      cheaper: mniej o
-      until: do 24/01/2021
-      currency: zł
-      price:
-        regular: 999
-        discounted: 699
-      elements:
-        - kurs wideo
-        - napisy w wersji polskiej, angielskiej i francuskiej
-
-  status:
-    cancel:
-      blob: >
-        Twoje zamówienie zostało anulowane.
-
-  order:
-    title: Zamówienie
-    form:
-      fname: Imię
-      lname: Nazwisko
-      email: Adres E-mail
-      confirm: Potwierdzam, że zapoznałem się z <Link href="/terms/"><a className="text-blue-500 hover:text-blue-600">Regulaminem</a></Link> i zgadzam się na jego warunki.
-      invoice_title: Faktura?
-      invoice_checkbox_name: I'd like an invoice
-      invoice_checkbox_desc: Select if you would like us to send you an invoice
-      required: Pole wymagane
-      company_name: Nazwa Firmy
-      address: Adres
-      city: Miasto
-      zipcode: Kod pocztowy
-      taxnumber: Numer NIP
-    button: Zamawiam i płacę
-    info: Nastąpi przekierowanie do płatności Stripe
