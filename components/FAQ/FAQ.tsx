@@ -1,7 +1,11 @@
 import { FaqFragment } from "../../generated/graphql";
 import { FAQEntry } from "./FAQEntry";
 
-export const FAQ = ({ faqs }: { faqs: FaqFragment[] }) => {
+interface Props {
+ faqs: FaqFragment[] 
+}
+
+export const FAQ = ({ faqs }: Props) => {
   return (
     <section className="py-16 bg-gradient-to-r from-gray-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-8">
@@ -14,9 +18,7 @@ export const FAQ = ({ faqs }: { faqs: FaqFragment[] }) => {
 
         <dl>
           {faqs.map((entry) => (
-            <FAQEntry
-              {...entry}
-            />
+            <FAQEntry {...entry} />
           ))}
         </dl>
       </div>
