@@ -1,0 +1,12 @@
+query Website {
+  faqs(first: 10) {
+    ...FAQFragment
+  }
+  reasons {
+    title
+    image {
+      url
+    }
+    description
+  }
+}
