@@ -22,6 +22,7 @@ specifiers:
   '@typescript-eslint/parser': 5.4.0
   autoprefixer: ^10.4.0
   classnames: ^2.3.1
+  clsx: ^1.1.1
   eslint: <8.0.0
   eslint-config-next: 12.0.3
   google-spreadsheet: ^3.2.0
@@ -51,6 +52,7 @@ dependencies:
   '@apollo/client': 3.4.17_graphql@16.0.1+react@17.0.2
   '@heroicons/react': 1.0.5_react@17.0.2
   '@stripe/stripe-js': 1.21.1
+  clsx: 1.1.1
   google-spreadsheet: 3.2.0
   graphql: 16.0.1
   invariant: 2.2.4
@@ -2748,6 +2750,11 @@ packages:
     resolution: {integrity: sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=}
     engines: {node: '>=0.8'}
     dev: true
+
+  /clsx/1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+    engines: {node: '>=6'}
+    dev: false
 
   /code-point-at/1.1.0:
     resolution: {integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=}
