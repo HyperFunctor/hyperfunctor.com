@@ -8,3 +8,5 @@ generates:
       - "typescript-operations"
       - "typescript-react-apollo"
       - "typescript-apollo-client-helpers"
+    config:
+      dedupeOperationSuffix: true

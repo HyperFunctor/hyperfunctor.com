@@ -14,7 +14,11 @@ import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
 import { WebsiteDocument, WebsiteQuery } from '../generated/graphql';
 import { apolloClient } from './_app';
 
-export default function Home({ website }) {
+interface Props {
+  website: WebsiteQuery
+}
+
+export default function Home({ website }: Props) {
   return (
     <Layout>
       <Head>

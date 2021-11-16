@@ -3,10 +3,6 @@ query Website {
     ...FAQFragment
   }
   reasons {
-    title
-    image {
-      url
-    }
-    description
+    ...ReasonFragment
   }
 }

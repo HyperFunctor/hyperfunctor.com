@@ -1,0 +1,7 @@
+fragment ReasonFragment on Reason {
+  title
+  image {
+    url
+  }
+  description
+}

@@ -682,6 +682,450 @@ export type AssetWhereUniqueInput = {
   id?: Maybe<Scalars['ID']>;
 };
 
+export type Author = Node & {
+  __typename?: 'Author';
+  bio?: Maybe<Scalars['String']>;
+  /** The time the document was created */
+  createdAt: Scalars['DateTime'];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Author>;
+  /** List of Author versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars['ID'];
+  name?: Maybe<Scalars['String']>;
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  scheduledIn: Array<ScheduledOperation>;
+  /** System stage field */
+  stage: Stage;
+  /** The time the document was updated */
+  updatedAt: Scalars['DateTime'];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+};
+
+
+export type AuthorCreatedByArgs = {
+  locales?: Maybe<Array<Locale>>;
+};
+
+
+export type AuthorDocumentInStagesArgs = {
+  includeCurrent?: Scalars['Boolean'];
+  inheritLocale?: Scalars['Boolean'];
+  stages?: Array<Stage>;
+};
+
+
+export type AuthorHistoryArgs = {
+  limit?: Scalars['Int'];
+  skip?: Scalars['Int'];
+  stageOverride?: Maybe<Stage>;
+};
+
+
+export type AuthorPublishedByArgs = {
+  locales?: Maybe<Array<Locale>>;
+};
+
+
+export type AuthorScheduledInArgs = {
+  after?: Maybe<Scalars['String']>;
+  before?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  locales?: Maybe<Array<Locale>>;
+  skip?: Maybe<Scalars['Int']>;
+  where?: Maybe<ScheduledOperationWhereInput>;
+};
+
+
+export type AuthorUpdatedByArgs = {
+  locales?: Maybe<Array<Locale>>;
+};
+
+export type AuthorConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: Maybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: AuthorWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type AuthorConnection = {
+  __typename?: 'AuthorConnection';
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<AuthorEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type AuthorCreateInput = {
+  bio?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  name?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type AuthorCreateManyInlineInput = {
+  /** Connect multiple existing Author documents */
+  connect?: Maybe<Array<AuthorWhereUniqueInput>>;
+  /** Create and connect multiple existing Author documents */
+  create?: Maybe<Array<AuthorCreateInput>>;
+};
+
+export type AuthorCreateOneInlineInput = {
+  /** Connect one existing Author document */
+  connect?: Maybe<AuthorWhereUniqueInput>;
+  /** Create and connect one Author document */
+  create?: Maybe<AuthorCreateInput>;
+};
+
+/** An edge in a connection. */
+export type AuthorEdge = {
+  __typename?: 'AuthorEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: Author;
+};
+
+/** Identifies documents */
+export type AuthorManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: Maybe<Array<AuthorWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: Maybe<Array<AuthorWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: Maybe<Array<AuthorWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: Maybe<Scalars['String']>;
+  bio?: Maybe<Scalars['String']>;
+  /** All values containing the given string. */
+  bio_contains?: Maybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  bio_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  bio_in?: Maybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  bio_not?: Maybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  bio_not_contains?: Maybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  bio_not_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  bio_not_in?: Maybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  bio_not_starts_with?: Maybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  bio_starts_with?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: Maybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: Maybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  createdAt_lt?: Maybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: Maybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: Maybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: Maybe<Array<Scalars['DateTime']>>;
+  createdBy?: Maybe<UserWhereInput>;
+  id?: Maybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: Maybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: Maybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: Maybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: Maybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: Maybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: Maybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: Maybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: Maybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars['String']>;
+  /** All values containing the given string. */
+  name_contains?: Maybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  name_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  name_in?: Maybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  name_not?: Maybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  name_not_contains?: Maybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  name_not_in?: Maybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  name_starts_with?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: Maybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: Maybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: Maybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: Maybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: Maybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: Maybe<Array<Scalars['DateTime']>>;
+  publishedBy?: Maybe<UserWhereInput>;
+  scheduledIn_every?: Maybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: Maybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: Maybe<ScheduledOperationWhereInput>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: Maybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: Maybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: Maybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: Maybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: Maybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: Maybe<Array<Scalars['DateTime']>>;
+  updatedBy?: Maybe<UserWhereInput>;
+};
+
+export enum AuthorOrderByInput {
+  BioAsc = 'bio_ASC',
+  BioDesc = 'bio_DESC',
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  PublishedAtAsc = 'publishedAt_ASC',
+  PublishedAtDesc = 'publishedAt_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+export type AuthorUpdateInput = {
+  bio?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+};
+
+export type AuthorUpdateManyInlineInput = {
+  /** Connect multiple existing Author documents */
+  connect?: Maybe<Array<AuthorConnectInput>>;
+  /** Create and connect multiple Author documents */
+  create?: Maybe<Array<AuthorCreateInput>>;
+  /** Delete multiple Author documents */
+  delete?: Maybe<Array<AuthorWhereUniqueInput>>;
+  /** Disconnect multiple Author documents */
+  disconnect?: Maybe<Array<AuthorWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Author documents */
+  set?: Maybe<Array<AuthorWhereUniqueInput>>;
+  /** Update multiple Author documents */
+  update?: Maybe<Array<AuthorUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Author documents */
+  upsert?: Maybe<Array<AuthorUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type AuthorUpdateManyInput = {
+  bio?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+};
+
+export type AuthorUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: AuthorUpdateManyInput;
+  /** Document search */
+  where: AuthorWhereInput;
+};
+
+export type AuthorUpdateOneInlineInput = {
+  /** Connect existing Author document */
+  connect?: Maybe<AuthorWhereUniqueInput>;
+  /** Create and connect one Author document */
+  create?: Maybe<AuthorCreateInput>;
+  /** Delete currently connected Author document */
+  delete?: Maybe<Scalars['Boolean']>;
+  /** Disconnect currently connected Author document */
+  disconnect?: Maybe<Scalars['Boolean']>;
+  /** Update single Author document */
+  update?: Maybe<AuthorUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Author document */
+  upsert?: Maybe<AuthorUpsertWithNestedWhereUniqueInput>;
+};
+
+export type AuthorUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: AuthorUpdateInput;
+  /** Unique document search */
+  where: AuthorWhereUniqueInput;
+};
+
+export type AuthorUpsertInput = {
+  /** Create document if it didn't exist */
+  create: AuthorCreateInput;
+  /** Update document if it exists */
+  update: AuthorUpdateInput;
+};
+
+export type AuthorUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: AuthorUpsertInput;
+  /** Unique document search */
+  where: AuthorWhereUniqueInput;
+};
+
+/** Identifies documents */
+export type AuthorWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: Maybe<Array<AuthorWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: Maybe<Array<AuthorWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: Maybe<Array<AuthorWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: Maybe<Scalars['String']>;
+  bio?: Maybe<Scalars['String']>;
+  /** All values containing the given string. */
+  bio_contains?: Maybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  bio_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  bio_in?: Maybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  bio_not?: Maybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  bio_not_contains?: Maybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  bio_not_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  bio_not_in?: Maybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  bio_not_starts_with?: Maybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  bio_starts_with?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: Maybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: Maybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  createdAt_lt?: Maybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: Maybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: Maybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: Maybe<Array<Scalars['DateTime']>>;
+  createdBy?: Maybe<UserWhereInput>;
+  id?: Maybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: Maybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: Maybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: Maybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: Maybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: Maybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: Maybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: Maybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: Maybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars['String']>;
+  /** All values containing the given string. */
+  name_contains?: Maybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  name_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  name_in?: Maybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  name_not?: Maybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  name_not_contains?: Maybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  name_not_ends_with?: Maybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  name_not_in?: Maybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  name_not_starts_with?: Maybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  name_starts_with?: Maybe<Scalars['String']>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: Maybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: Maybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: Maybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: Maybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: Maybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: Maybe<Array<Scalars['DateTime']>>;
+  publishedBy?: Maybe<UserWhereInput>;
+  scheduledIn_every?: Maybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: Maybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: Maybe<ScheduledOperationWhereInput>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: Maybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: Maybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: Maybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: Maybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: Maybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: Maybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: Maybe<Array<Scalars['DateTime']>>;
+  updatedBy?: Maybe<UserWhereInput>;
+};
+
+/** References Author record uniquely */
+export type AuthorWhereUniqueInput = {
+  id?: Maybe<Scalars['ID']>;
+};
+
 export type BatchPayload = {
   __typename?: 'BatchPayload';
   /** The number of nodes that have been affected by the Batch operation. */
@@ -1250,7 +1694,7 @@ export type ImageTransformationInput = {
 /** Locale system enumeration */
 export enum Locale {
   /** System locale */
-  En = 'en'
+  Pl = 'pl'
 }
 
 /** Representing a geolocation point with latitude and longitude */
@@ -1280,6 +1724,8 @@ export type Mutation = {
    * @deprecated Asset mutations will be overhauled soon
    */
   createAsset?: Maybe<Asset>;
+  /** Create one author */
+  createAuthor?: Maybe<Author>;
   /** Create one faq */
   createFaq?: Maybe<Faq>;
   /** Create one reason */
@@ -1288,6 +1734,8 @@ export type Mutation = {
   createScheduledRelease?: Maybe<ScheduledRelease>;
   /** Delete one asset from _all_ existing stages. Returns deleted document. */
   deleteAsset?: Maybe<Asset>;
+  /** Delete one author from _all_ existing stages. Returns deleted document. */
+  deleteAuthor?: Maybe<Author>;
   /** Delete one faq from _all_ existing stages. Returns deleted document. */
   deleteFaq?: Maybe<Faq>;
   /**
@@ -1297,6 +1745,13 @@ export type Mutation = {
   deleteManyAssets: BatchPayload;
   /** Delete many Asset documents, return deleted documents */
   deleteManyAssetsConnection: AssetConnection;
+  /**
+   * Delete many Author documents
+   * @deprecated Please use the new paginated many mutation (deleteManyAuthorsConnection)
+   */
+  deleteManyAuthors: BatchPayload;
+  /** Delete many Author documents, return deleted documents */
+  deleteManyAuthorsConnection: AuthorConnection;
   /**
    * Delete many Faq documents
    * @deprecated Please use the new paginated many mutation (deleteManyFaqsConnection)
@@ -1319,6 +1774,8 @@ export type Mutation = {
   deleteScheduledRelease?: Maybe<ScheduledRelease>;
   /** Publish one asset */
   publishAsset?: Maybe<Asset>;
+  /** Publish one author */
+  publishAuthor?: Maybe<Author>;
   /** Publish one faq */
   publishFaq?: Maybe<Faq>;
   /**
@@ -1328,6 +1785,13 @@ export type Mutation = {
   publishManyAssets: BatchPayload;
   /** Publish many Asset documents */
   publishManyAssetsConnection: AssetConnection;
+  /**
+   * Publish many Author documents
+   * @deprecated Please use the new paginated many mutation (publishManyAuthorsConnection)
+   */
+  publishManyAuthors: BatchPayload;
+  /** Publish many Author documents */
+  publishManyAuthorsConnection: AuthorConnection;
   /**
    * Publish many Faq documents
    * @deprecated Please use the new paginated many mutation (publishManyFaqsConnection)
@@ -1346,18 +1810,24 @@ export type Mutation = {
   publishReason?: Maybe<Reason>;
   /** Schedule to publish one asset */
   schedulePublishAsset?: Maybe<Asset>;
+  /** Schedule to publish one author */
+  schedulePublishAuthor?: Maybe<Author>;
   /** Schedule to publish one faq */
   schedulePublishFaq?: Maybe<Faq>;
   /** Schedule to publish one reason */
   schedulePublishReason?: Maybe<Reason>;
   /** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishAsset?: Maybe<Asset>;
+  /** Unpublish one author from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  scheduleUnpublishAuthor?: Maybe<Author>;
   /** Unpublish one faq from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishFaq?: Maybe<Faq>;
   /** Unpublish one reason from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishReason?: Maybe<Reason>;
   /** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishAsset?: Maybe<Asset>;
+  /** Unpublish one author from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishAuthor?: Maybe<Author>;
   /** Unpublish one faq from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishFaq?: Maybe<Faq>;
   /**
@@ -1367,6 +1837,13 @@ export type Mutation = {
   unpublishManyAssets: BatchPayload;
   /** Find many Asset documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyAssetsConnection: AssetConnection;
+  /**
+   * Unpublish many Author documents
+   * @deprecated Please use the new paginated many mutation (unpublishManyAuthorsConnection)
+   */
+  unpublishManyAuthors: BatchPayload;
+  /** Find many Author documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManyAuthorsConnection: AuthorConnection;
   /**
    * Unpublish many Faq documents
    * @deprecated Please use the new paginated many mutation (unpublishManyFaqsConnection)
@@ -1385,6 +1862,8 @@ export type Mutation = {
   unpublishReason?: Maybe<Reason>;
   /** Update one asset */
   updateAsset?: Maybe<Asset>;
+  /** Update one author */
+  updateAuthor?: Maybe<Author>;
   /** Update one faq */
   updateFaq?: Maybe<Faq>;
   /**
@@ -1394,6 +1873,13 @@ export type Mutation = {
   updateManyAssets: BatchPayload;
   /** Update many Asset documents */
   updateManyAssetsConnection: AssetConnection;
+  /**
+   * Update many authors
+   * @deprecated Please use the new paginated many mutation (updateManyAuthorsConnection)
+   */
+  updateManyAuthors: BatchPayload;
+  /** Update many Author documents */
+  updateManyAuthorsConnection: AuthorConnection;
   /**
    * Update many faqs
    * @deprecated Please use the new paginated many mutation (updateManyFaqsConnection)
@@ -1414,6 +1900,8 @@ export type Mutation = {
   updateScheduledRelease?: Maybe<ScheduledRelease>;
   /** Upsert one asset */
   upsertAsset?: Maybe<Asset>;
+  /** Upsert one author */
+  upsertAuthor?: Maybe<Author>;
   /** Upsert one faq */
   upsertFaq?: Maybe<Faq>;
   /** Upsert one reason */
@@ -1423,6 +1911,11 @@ export type Mutation = {
 
 export type MutationCreateAssetArgs = {
   data: AssetCreateInput;
+};
+
+
+export type MutationCreateAuthorArgs = {
+  data: AuthorCreateInput;
 };
 
 
@@ -1446,6 +1939,11 @@ export type MutationDeleteAssetArgs = {
 };
 
 
+export type MutationDeleteAuthorArgs = {
+  where: AuthorWhereUniqueInput;
+};
+
+
 export type MutationDeleteFaqArgs = {
   where: FaqWhereUniqueInput;
 };
@@ -1463,6 +1961,21 @@ export type MutationDeleteManyAssetsConnectionArgs = {
   last?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
   where?: Maybe<AssetManyWhereInput>;
+};
+
+
+export type MutationDeleteManyAuthorsArgs = {
+  where?: Maybe<AuthorManyWhereInput>;
+};
+
+
+export type MutationDeleteManyAuthorsConnectionArgs = {
+  after?: Maybe<Scalars['ID']>;
+  before?: Maybe<Scalars['ID']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  where?: Maybe<AuthorManyWhereInput>;
 };
 
 
@@ -1520,6 +2033,12 @@ export type MutationPublishAssetArgs = {
 };
 
 
+export type MutationPublishAuthorArgs = {
+  to?: Array<Stage>;
+  where: AuthorWhereUniqueInput;
+};
+
+
 export type MutationPublishFaqArgs = {
   to?: Array<Stage>;
   where: FaqWhereUniqueInput;
@@ -1547,6 +2066,24 @@ export type MutationPublishManyAssetsConnectionArgs = {
   to?: Array<Stage>;
   where?: Maybe<AssetManyWhereInput>;
   withDefaultLocale?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type MutationPublishManyAuthorsArgs = {
+  to?: Array<Stage>;
+  where?: Maybe<AuthorManyWhereInput>;
+};
+
+
+export type MutationPublishManyAuthorsConnectionArgs = {
+  after?: Maybe<Scalars['ID']>;
+  before?: Maybe<Scalars['ID']>;
+  first?: Maybe<Scalars['Int']>;
+  from?: Maybe<Stage>;
+  last?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  to?: Array<Stage>;
+  where?: Maybe<AuthorManyWhereInput>;
 };
 
 
@@ -1603,6 +2140,14 @@ export type MutationSchedulePublishAssetArgs = {
 };
 
 
+export type MutationSchedulePublishAuthorArgs = {
+  releaseAt?: Maybe<Scalars['DateTime']>;
+  releaseId?: Maybe<Scalars['String']>;
+  to?: Array<Stage>;
+  where: AuthorWhereUniqueInput;
+};
+
+
 export type MutationSchedulePublishFaqArgs = {
   releaseAt?: Maybe<Scalars['DateTime']>;
   releaseId?: Maybe<Scalars['String']>;
@@ -1629,6 +2174,14 @@ export type MutationScheduleUnpublishAssetArgs = {
 };
 
 
+export type MutationScheduleUnpublishAuthorArgs = {
+  from?: Array<Stage>;
+  releaseAt?: Maybe<Scalars['DateTime']>;
+  releaseId?: Maybe<Scalars['String']>;
+  where: AuthorWhereUniqueInput;
+};
+
+
 export type MutationScheduleUnpublishFaqArgs = {
   from?: Array<Stage>;
   releaseAt?: Maybe<Scalars['DateTime']>;
@@ -1650,6 +2203,12 @@ export type MutationUnpublishAssetArgs = {
   locales?: Maybe<Array<Locale>>;
   unpublishBase?: Maybe<Scalars['Boolean']>;
   where: AssetWhereUniqueInput;
+};
+
+
+export type MutationUnpublishAuthorArgs = {
+  from?: Array<Stage>;
+  where: AuthorWhereUniqueInput;
 };
 
 
@@ -1678,6 +2237,24 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
   stage?: Maybe<Stage>;
   unpublishBase?: Maybe<Scalars['Boolean']>;
   where?: Maybe<AssetManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyAuthorsArgs = {
+  from?: Array<Stage>;
+  where?: Maybe<AuthorManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyAuthorsConnectionArgs = {
+  after?: Maybe<Scalars['ID']>;
+  before?: Maybe<Scalars['ID']>;
+  first?: Maybe<Scalars['Int']>;
+  from?: Array<Stage>;
+  last?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  stage?: Maybe<Stage>;
+  where?: Maybe<AuthorManyWhereInput>;
 };
 
 
@@ -1729,6 +2306,12 @@ export type MutationUpdateAssetArgs = {
 };
 
 
+export type MutationUpdateAuthorArgs = {
+  data: AuthorUpdateInput;
+  where: AuthorWhereUniqueInput;
+};
+
+
 export type MutationUpdateFaqArgs = {
   data: FaqUpdateInput;
   where: FaqWhereUniqueInput;
@@ -1749,6 +2332,23 @@ export type MutationUpdateManyAssetsConnectionArgs = {
   last?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
   where?: Maybe<AssetManyWhereInput>;
+};
+
+
+export type MutationUpdateManyAuthorsArgs = {
+  data: AuthorUpdateManyInput;
+  where?: Maybe<AuthorManyWhereInput>;
+};
+
+
+export type MutationUpdateManyAuthorsConnectionArgs = {
+  after?: Maybe<Scalars['ID']>;
+  before?: Maybe<Scalars['ID']>;
+  data: AuthorUpdateManyInput;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  where?: Maybe<AuthorManyWhereInput>;
 };
 
 
@@ -1804,6 +2404,12 @@ export type MutationUpsertAssetArgs = {
 };
 
 
+export type MutationUpsertAuthorArgs = {
+  upsert: AuthorUpsertInput;
+  where: AuthorWhereUniqueInput;
+};
+
+
 export type MutationUpsertFaqArgs = {
   upsert: FaqUpsertInput;
   where: FaqWhereUniqueInput;
@@ -1855,6 +2461,14 @@ export type Query = {
   assets: Array<Asset>;
   /** Retrieve multiple assets using the Relay connection interface */
   assetsConnection: AssetConnection;
+  /** Retrieve a single author */
+  author?: Maybe<Author>;
+  /** Retrieve document version */
+  authorVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple authors */
+  authors: Array<Author>;
+  /** Retrieve multiple authors using the Relay connection interface */
+  authorsConnection: AuthorConnection;
   /** Retrieve a single faq */
   faq?: Maybe<Faq>;
   /** Retrieve document version */
@@ -1929,6 +2543,44 @@ export type QueryAssetsConnectionArgs = {
   skip?: Maybe<Scalars['Int']>;
   stage?: Stage;
   where?: Maybe<AssetWhereInput>;
+};
+
+
+export type QueryAuthorArgs = {
+  locales?: Array<Locale>;
+  stage?: Stage;
+  where: AuthorWhereUniqueInput;
+};
+
+
+export type QueryAuthorVersionArgs = {
+  where: VersionWhereInput;
+};
+
+
+export type QueryAuthorsArgs = {
+  after?: Maybe<Scalars['String']>;
+  before?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  locales?: Array<Locale>;
+  orderBy?: Maybe<AuthorOrderByInput>;
+  skip?: Maybe<Scalars['Int']>;
+  stage?: Stage;
+  where?: Maybe<AuthorWhereInput>;
+};
+
+
+export type QueryAuthorsConnectionArgs = {
+  after?: Maybe<Scalars['String']>;
+  before?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+  locales?: Array<Locale>;
+  orderBy?: Maybe<AuthorOrderByInput>;
+  skip?: Maybe<Scalars['Int']>;
+  stage?: Stage;
+  where?: Maybe<AuthorWhereInput>;
 };
 
 
@@ -2674,7 +3326,7 @@ export type ScheduledOperationUpdatedByArgs = {
   locales?: Maybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Asset | Faq | Reason;
+export type ScheduledOperationAffectedDocument = Asset | Author | Faq | Reason;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -4062,17 +4714,28 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type FaqFragmentFragment = { __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined };
+export type FaqFragment = { __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined };
+
+export type ReasonFragment = { __typename?: 'Reason', title?: string | null | undefined, description?: string | null | undefined, image?: { __typename?: 'Asset', url: string } | null | undefined };
 
 export type WebsiteQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type WebsiteQuery = { __typename?: 'Query', faqs: Array<{ __typename?: 'Faq', question?: string | null | undefined, answer?: string | null | undefined }>, reasons: Array<{ __typename?: 'Reason', title?: string | null | undefined, description?: string | null | undefined, image?: { __typename?: 'Asset', url: string } | null | undefined }> };
 
-export const FaqFragmentFragmentDoc = gql`
+export const FaqFragmentDoc = gql`
     fragment FAQFragment on Faq {
   question
   answer
+}
+    `;
+export const ReasonFragmentDoc = gql`
+    fragment ReasonFragment on Reason {
+  title
+  image {
+    url
+  }
+  description
 }
     `;
 export const WebsiteDocument = gql`
@@ -4081,14 +4744,11 @@ export const WebsiteDocument = gql`
     ...FAQFragment
   }
   reasons {
-    title
-    image {
-      url
-    }
-    description
+    ...ReasonFragment
   }
 }
-    ${FaqFragmentFragmentDoc}`;
+    ${FaqFragmentDoc}
+${ReasonFragmentDoc}`;
 
 /**
  * __useWebsiteQuery__
@@ -4155,6 +4815,33 @@ export type AssetEdgeFieldPolicy = {
 	cursor?: FieldPolicy<any> | FieldReadFunction<any>,
 	node?: FieldPolicy<any> | FieldReadFunction<any>
 };
+export type AuthorKeySpecifier = ('bio' | 'createdAt' | 'createdBy' | 'documentInStages' | 'history' | 'id' | 'name' | 'publishedAt' | 'publishedBy' | 'scheduledIn' | 'stage' | 'updatedAt' | 'updatedBy' | AuthorKeySpecifier)[];
+export type AuthorFieldPolicy = {
+	bio?: FieldPolicy<any> | FieldReadFunction<any>,
+	createdAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	createdBy?: FieldPolicy<any> | FieldReadFunction<any>,
+	documentInStages?: FieldPolicy<any> | FieldReadFunction<any>,
+	history?: FieldPolicy<any> | FieldReadFunction<any>,
+	id?: FieldPolicy<any> | FieldReadFunction<any>,
+	name?: FieldPolicy<any> | FieldReadFunction<any>,
+	publishedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	publishedBy?: FieldPolicy<any> | FieldReadFunction<any>,
+	scheduledIn?: FieldPolicy<any> | FieldReadFunction<any>,
+	stage?: FieldPolicy<any> | FieldReadFunction<any>,
+	updatedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	updatedBy?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type AuthorConnectionKeySpecifier = ('aggregate' | 'edges' | 'pageInfo' | AuthorConnectionKeySpecifier)[];
+export type AuthorConnectionFieldPolicy = {
+	aggregate?: FieldPolicy<any> | FieldReadFunction<any>,
+	edges?: FieldPolicy<any> | FieldReadFunction<any>,
+	pageInfo?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type AuthorEdgeKeySpecifier = ('cursor' | 'node' | AuthorEdgeKeySpecifier)[];
+export type AuthorEdgeFieldPolicy = {
+	cursor?: FieldPolicy<any> | FieldReadFunction<any>,
+	node?: FieldPolicy<any> | FieldReadFunction<any>
+};
 export type BatchPayloadKeySpecifier = ('count' | BatchPayloadKeySpecifier)[];
 export type BatchPayloadFieldPolicy = {
 	count?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4206,16 +4893,20 @@ export type LocationFieldPolicy = {
 	latitude?: FieldPolicy<any> | FieldReadFunction<any>,
 	longitude?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MutationKeySpecifier = ('createAsset' | 'createFaq' | 'createReason' | 'createScheduledRelease' | 'deleteAsset' | 'deleteFaq' | 'deleteManyAssets' | 'deleteManyAssetsConnection' | 'deleteManyFaqs' | 'deleteManyFaqsConnection' | 'deleteManyReasons' | 'deleteManyReasonsConnection' | 'deleteReason' | 'deleteScheduledOperation' | 'deleteScheduledRelease' | 'publishAsset' | 'publishFaq' | 'publishManyAssets' | 'publishManyAssetsConnection' | 'publishManyFaqs' | 'publishManyFaqsConnection' | 'publishManyReasons' | 'publishManyReasonsConnection' | 'publishReason' | 'schedulePublishAsset' | 'schedulePublishFaq' | 'schedulePublishReason' | 'scheduleUnpublishAsset' | 'scheduleUnpublishFaq' | 'scheduleUnpublishReason' | 'unpublishAsset' | 'unpublishFaq' | 'unpublishManyAssets' | 'unpublishManyAssetsConnection' | 'unpublishManyFaqs' | 'unpublishManyFaqsConnection' | 'unpublishManyReasons' | 'unpublishManyReasonsConnection' | 'unpublishReason' | 'updateAsset' | 'updateFaq' | 'updateManyAssets' | 'updateManyAssetsConnection' | 'updateManyFaqs' | 'updateManyFaqsConnection' | 'updateManyReasons' | 'updateManyReasonsConnection' | 'updateReason' | 'updateScheduledRelease' | 'upsertAsset' | 'upsertFaq' | 'upsertReason' | MutationKeySpecifier)[];
+export type MutationKeySpecifier = ('createAsset' | 'createAuthor' | 'createFaq' | 'createReason' | 'createScheduledRelease' | 'deleteAsset' | 'deleteAuthor' | 'deleteFaq' | 'deleteManyAssets' | 'deleteManyAssetsConnection' | 'deleteManyAuthors' | 'deleteManyAuthorsConnection' | 'deleteManyFaqs' | 'deleteManyFaqsConnection' | 'deleteManyReasons' | 'deleteManyReasonsConnection' | 'deleteReason' | 'deleteScheduledOperation' | 'deleteScheduledRelease' | 'publishAsset' | 'publishAuthor' | 'publishFaq' | 'publishManyAssets' | 'publishManyAssetsConnection' | 'publishManyAuthors' | 'publishManyAuthorsConnection' | 'publishManyFaqs' | 'publishManyFaqsConnection' | 'publishManyReasons' | 'publishManyReasonsConnection' | 'publishReason' | 'schedulePublishAsset' | 'schedulePublishAuthor' | 'schedulePublishFaq' | 'schedulePublishReason' | 'scheduleUnpublishAsset' | 'scheduleUnpublishAuthor' | 'scheduleUnpublishFaq' | 'scheduleUnpublishReason' | 'unpublishAsset' | 'unpublishAuthor' | 'unpublishFaq' | 'unpublishManyAssets' | 'unpublishManyAssetsConnection' | 'unpublishManyAuthors' | 'unpublishManyAuthorsConnection' | 'unpublishManyFaqs' | 'unpublishManyFaqsConnection' | 'unpublishManyReasons' | 'unpublishManyReasonsConnection' | 'unpublishReason' | 'updateAsset' | 'updateAuthor' | 'updateFaq' | 'updateManyAssets' | 'updateManyAssetsConnection' | 'updateManyAuthors' | 'updateManyAuthorsConnection' | 'updateManyFaqs' | 'updateManyFaqsConnection' | 'updateManyReasons' | 'updateManyReasonsConnection' | 'updateReason' | 'updateScheduledRelease' | 'upsertAsset' | 'upsertAuthor' | 'upsertFaq' | 'upsertReason' | MutationKeySpecifier)[];
 export type MutationFieldPolicy = {
 	createAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	createAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	createFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	createReason?: FieldPolicy<any> | FieldReadFunction<any>,
 	createScheduledRelease?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	deleteAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteManyAssets?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteManyAssetsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
+	deleteManyAuthors?: FieldPolicy<any> | FieldReadFunction<any>,
+	deleteManyAuthorsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteManyFaqs?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteManyFaqsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteManyReasons?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -4224,33 +4915,44 @@ export type MutationFieldPolicy = {
 	deleteScheduledOperation?: FieldPolicy<any> | FieldReadFunction<any>,
 	deleteScheduledRelease?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	publishAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishManyAssets?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishManyAssetsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
+	publishManyAuthors?: FieldPolicy<any> | FieldReadFunction<any>,
+	publishManyAuthorsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishManyFaqs?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishManyFaqsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishManyReasons?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishManyReasonsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	publishReason?: FieldPolicy<any> | FieldReadFunction<any>,
 	schedulePublishAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	schedulePublishAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	schedulePublishFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	schedulePublishReason?: FieldPolicy<any> | FieldReadFunction<any>,
 	scheduleUnpublishAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	scheduleUnpublishAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	scheduleUnpublishFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	scheduleUnpublishReason?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	unpublishAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishManyAssets?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishManyAssetsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
+	unpublishManyAuthors?: FieldPolicy<any> | FieldReadFunction<any>,
+	unpublishManyAuthorsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishManyFaqs?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishManyFaqsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishManyReasons?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishManyReasonsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	unpublishReason?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	updateAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateManyAssets?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateManyAssetsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
+	updateManyAuthors?: FieldPolicy<any> | FieldReadFunction<any>,
+	updateManyAuthorsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateManyFaqs?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateManyFaqsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateManyReasons?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -4258,6 +4960,7 @@ export type MutationFieldPolicy = {
 	updateReason?: FieldPolicy<any> | FieldReadFunction<any>,
 	updateScheduledRelease?: FieldPolicy<any> | FieldReadFunction<any>,
 	upsertAsset?: FieldPolicy<any> | FieldReadFunction<any>,
+	upsertAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
 	upsertFaq?: FieldPolicy<any> | FieldReadFunction<any>,
 	upsertReason?: FieldPolicy<any> | FieldReadFunction<any>
 };
@@ -4274,12 +4977,16 @@ export type PageInfoFieldPolicy = {
 	pageSize?: FieldPolicy<any> | FieldReadFunction<any>,
 	startCursor?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type QueryKeySpecifier = ('asset' | 'assetVersion' | 'assets' | 'assetsConnection' | 'faq' | 'faqVersion' | 'faqs' | 'faqsConnection' | 'node' | 'reason' | 'reasonVersion' | 'reasons' | 'reasonsConnection' | 'scheduledOperation' | 'scheduledOperations' | 'scheduledOperationsConnection' | 'scheduledRelease' | 'scheduledReleases' | 'scheduledReleasesConnection' | 'user' | 'users' | 'usersConnection' | QueryKeySpecifier)[];
+export type QueryKeySpecifier = ('asset' | 'assetVersion' | 'assets' | 'assetsConnection' | 'author' | 'authorVersion' | 'authors' | 'authorsConnection' | 'faq' | 'faqVersion' | 'faqs' | 'faqsConnection' | 'node' | 'reason' | 'reasonVersion' | 'reasons' | 'reasonsConnection' | 'scheduledOperation' | 'scheduledOperations' | 'scheduledOperationsConnection' | 'scheduledRelease' | 'scheduledReleases' | 'scheduledReleasesConnection' | 'user' | 'users' | 'usersConnection' | QueryKeySpecifier)[];
 export type QueryFieldPolicy = {
 	asset?: FieldPolicy<any> | FieldReadFunction<any>,
 	assetVersion?: FieldPolicy<any> | FieldReadFunction<any>,
 	assets?: FieldPolicy<any> | FieldReadFunction<any>,
 	assetsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
+	author?: FieldPolicy<any> | FieldReadFunction<any>,
+	authorVersion?: FieldPolicy<any> | FieldReadFunction<any>,
+	authors?: FieldPolicy<any> | FieldReadFunction<any>,
+	authorsConnection?: FieldPolicy<any> | FieldReadFunction<any>,
 	faq?: FieldPolicy<any> | FieldReadFunction<any>,
 	faqVersion?: FieldPolicy<any> | FieldReadFunction<any>,
 	faqs?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -4448,6 +5155,18 @@ export type StrictTypedTypePolicies = {
 	AssetEdge?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | AssetEdgeKeySpecifier | (() => undefined | AssetEdgeKeySpecifier),
 		fields?: AssetEdgeFieldPolicy,
+	},
+	Author?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | AuthorKeySpecifier | (() => undefined | AuthorKeySpecifier),
+		fields?: AuthorFieldPolicy,
+	},
+	AuthorConnection?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | AuthorConnectionKeySpecifier | (() => undefined | AuthorConnectionKeySpecifier),
+		fields?: AuthorConnectionFieldPolicy,
+	},
+	AuthorEdge?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | AuthorEdgeKeySpecifier | (() => undefined | AuthorEdgeKeySpecifier),
+		fields?: AuthorEdgeFieldPolicy,
 	},
 	BatchPayload?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | BatchPayloadKeySpecifier | (() => undefined | BatchPayloadKeySpecifier),
