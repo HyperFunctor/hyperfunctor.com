@@ -1,4 +1,5 @@
 import { FaqFragment } from "../../generated/graphql";
+
 import { FAQEntry } from "./FAQEntry";
 
 interface Props {
@@ -17,8 +18,8 @@ export const FAQ = ({ faqs }: Props) => {
         </h2>
 
         <dl>
-          {faqs.map((entry) => (
-            <FAQEntry {...entry} />
+          {faqs.map((entry, idx) => (
+            <FAQEntry {...entry} key={idx}/>
           ))}
         </dl>
       </div>

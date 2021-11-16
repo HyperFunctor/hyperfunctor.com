@@ -1,5 +1,6 @@
-import { CourseContentItem } from "./CourseContentItem";
 import { ReasonFragment } from "../../generated/graphql";
+
+import { CourseContentItem } from "./CourseContentItem";
 
 interface Props {
   reasons: ReasonFragment[];

@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { ReasonFragment } from "../../generated/graphql";
 
 export const CourseContentItem = ({

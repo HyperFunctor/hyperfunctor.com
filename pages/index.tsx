@@ -1,6 +1,6 @@
+import { ApolloQueryResult } from '@apollo/client';
 import Head from "next/head";
 import React from "react";
-import { ApolloQueryResult } from '@apollo/client';
 
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero2 } from "../components/Hero2";
@@ -11,7 +11,9 @@ import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
+
 import { WebsiteDocument, WebsiteQuery } from '../generated/graphql';
+
 import { apolloClient } from './_app';
 
 interface Props {
