@@ -10,7 +10,7 @@ export const getApolloClient = (
   initialState?: NormalizedCacheObject
 ) => {
   const httpLink = createHttpLink({
-    uri: "https://api-eu-central-1.graphcms.com/v2/ckvz13wjd3x7001wd2x9j6na1/master",
+    uri: process.env.GRAPHCMS_API_URL,
   });
   return new ApolloClient({
     link: httpLink,
