@@ -308,10 +308,10 @@ export default function Order({
 
               <div className="mt-5 shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
-                  <h4 className="font-semibold text-2xl">
+                  <p className="font-semibold text-2xl">
                     Poznaj tajniki tworzenia stron internetowych przy użyciu
                     React.js i Next.js
-                  </h4>
+                  </p>
                   <p className="mt-2 text-gray-600 text-lg">{bundle.name}</p>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">

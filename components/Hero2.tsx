@@ -42,12 +42,10 @@ export function Hero2() {
                             />
                           </span>
                         </div>
-                        <div>
-                          <h4
-                            className="text-gray-700"
-                            dangerouslySetInnerHTML={{ __html: argument }}
-                          ></h4>
-                        </div>
+                        <span
+                          className="text-gray-700"
+                          dangerouslySetInnerHTML={{ __html: argument }}
+                        />
                       </div>
                     </li>
                   ))}

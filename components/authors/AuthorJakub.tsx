@@ -23,19 +23,19 @@ export const AuthorJakub = () => {
         className="bg-white text-blue-400 text-2xl font-normal focus:outline-none mr-2"
         href="https://twitter.com/zaiste"
       >
-        <i className="fab fa-twitter"></i>
+        <span className="fab fa-twitter" aria-label="Twitter Jakuba" />
       </a>
       <a
         className="bg-white text-gray-900 text-2xl font-normal focus:outline-none mr-2"
         href="https://github.com/zaiste/"
       >
-        <i className="fab fa-github"></i>
+        <span className="fab fa-github" aria-label="Github Jakuba" />
       </a>
       <a
         className="bg-white text-gray-900 text-2xl font-normal focus:outline-none mr-2"
         href="https://zaiste.net/"
       >
-        <i className="fas fa-link"></i>
+        <span className="fas fa-link" aria-label="Link Jakuba" />
       </a>
     </div>
   );
