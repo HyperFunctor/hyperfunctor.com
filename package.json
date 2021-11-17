@@ -16,7 +16,7 @@
     "@stripe/stripe-js": "^1.21.1",
     "clsx": "^1.1.1",
     "google-spreadsheet": "^3.2.0",
-    "graphql": "^16.0.1",
+    "graphql": "15.7.2",
     "invariant": "2.2.4",
     "next": "^12.0.3",
     "next-mdx-remote": "^3.0.8",
@@ -33,9 +33,10 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
-    "@graphql-codegen/cli": "2.2.2",
+    "@graphql-codegen/cli": "2.3.0",
+    "@graphql-codegen/import-types-preset": "2.1.7",
     "@graphql-codegen/introspection": "2.1.0",
-    "@graphql-codegen/typescript": "2.3.1",
+    "@graphql-codegen/typescript": "2.4.0",
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.7",
     "@graphql-codegen/typescript-operations": "2.2.0",
     "@graphql-codegen/typescript-react-apollo": "3.2.1",
@@ -49,13 +50,14 @@
     "autoprefixer": "^10.4.0",
     "classnames": "^2.3.1",
     "eslint": "<8.0.0",
-    "eslint-config-next": "12.0.3",
+    "eslint-config-next": "12.0.4",
+    "graphql-codegen-apollo-next-ssr": "1.7.1",
     "husky": "7.0.4",
     "js-yaml": "^4.1.0",
     "lint-staged": "12.0.2",
     "postcss": "^8.3.11",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^7.0.0",
     "prettier": "2.4.1",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.4.4"
@@ -65,9 +67,8 @@
       "eslint --resolve-plugins-relative-to . --fix",
       "yarn prettier --write"
     ],
-    "*.{json,md,yaml,yml,scss,css}": [
+    "*.{json,md,yaml,yml,graphql,scss,css}": [
       "yarn prettier --write"
     ]
-  },
-  "packageManager": "yarn@3.1.0"
+  }
 }

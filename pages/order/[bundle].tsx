@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-import { checkout } from "../../lib";
+import { checkout } from "../../lib/stripeCheckout";
 import { InferGetStaticPathsType, InferGetStaticPropsType } from "../../types";
 
 interface BundleFormData {

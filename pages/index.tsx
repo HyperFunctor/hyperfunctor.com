@@ -1,5 +1,4 @@
-import { ApolloQueryResult } from "@apollo/client";
-import Head from "next/head";
+import { GetStaticPropsResult } from "next";
 import React from "react";
 
 import { FAQ } from "../components/FAQ/FAQ";
@@ -11,43 +10,36 @@ import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
-import { WebsiteDocument, WebsiteQuery } from "../generated/graphql";
+import { ssrWebsite } from "../generated/page";
+import { InferGetStaticPropsType } from "../types";
 
-import { apolloClient } from "./_app";
+type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-interface Props {
-  website: WebsiteQuery;
-}
-
-export default function Home({ website }: Props) {
+export default function HomePage({ data: { faqs, reasons } }: HomePageProps) {
   return (
     <Layout>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Hero2 />
       <LogoCloud />
       <ForWhom />
-      <CourseContent {...website} />
+      <CourseContent reasons={reasons} />
       <LearningUnitList />
       <Agenda />
-      {/* <Pricing  /> */}
-      <FAQ {...website} />
+      <FAQ faqs={faqs} />
       <AboutAuthor />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const result: ApolloQueryResult<WebsiteQuery | undefined> =
-    await apolloClient.query({
-      query: WebsiteDocument,
-      variables: {},
-    });
+  const { props } = await ssrWebsite.getServerPage({});
 
-  const { data: website } = result;
+  if (props.error) {
+    return {
+      notFound: true as const,
+    };
+  }
+
   return {
-    props: { website },
+    props: { data: props.data },
   };
 }
