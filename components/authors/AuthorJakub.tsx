@@ -9,9 +9,13 @@ export const AuthorJakub = () => {
       </h2>
 
       <div className="flex justify-center">
-        <Image src="/neander.png" width={300} height={300} />
+        <Image
+          src="/neander.png"
+          width={300}
+          height={300}
+          alt="Zdjęcie Jakuba"
+        />
       </div>
-
 
       <hr className="my-6" />
 

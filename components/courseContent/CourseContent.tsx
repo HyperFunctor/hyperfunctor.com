@@ -1,11 +1,7 @@
-import { DeepReadonly } from "ts-essentials";
-
-import { ReasonFragment } from "../../generated/graphql";
-
-import { CourseContentItem } from "./CourseContentItem";
+import { CourseContentItem, ReasonItem } from "./CourseContentItem";
 
 interface CourseContentProps {
-  reasons: DeepReadonly<ReasonFragment[]>;
+  reasons: readonly ReasonItem[];
 }
 
 export const CourseContent = ({ reasons }: CourseContentProps) => {

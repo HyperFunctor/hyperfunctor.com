@@ -13,6 +13,7 @@
   "dependencies": {
     "@apollo/client": "^3.4.17",
     "@heroicons/react": "^1.0.5",
+    "@plaiceholder/next": "2.2.0",
     "@stripe/stripe-js": "^1.21.1",
     "clsx": "^1.1.1",
     "google-spreadsheet": "^3.2.0",
@@ -21,11 +22,13 @@
     "next": "^12.0.3",
     "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
+    "plaiceholder": "2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.19.5",
     "react-markdown": "^7.1.0",
     "semver": "^7.3.5",
+    "sharp": "0.29.3",
     "stripe": "^8.188.0",
     "swr": "^1.0.1",
     "ts-essentials": "9.0.0"
@@ -41,6 +44,7 @@
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.7",
     "@graphql-codegen/typescript-operations": "2.2.0",
     "@graphql-codegen/typescript-react-apollo": "3.2.1",
+    "@svgr/webpack": "5.5.0",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
     "@types/invariant": "2.2.35",
@@ -61,7 +65,8 @@
     "postcss-preset-env": "^7.0.0",
     "prettier": "2.4.1",
     "tailwindcss": "^2.2.19",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "webpack-bundle-analyzer": "4.5.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

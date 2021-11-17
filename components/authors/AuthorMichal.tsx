@@ -10,7 +10,12 @@ export const AuthorMichal = () => {
 
       <div className="flex justify-center">
         <div className="inline-block h-64 w-64 rounded-full border-8">
-          <Image src="/miszczyszyn.jpg" width={300} height={300} />
+          <Image
+            src="/miszczyszyn.jpg"
+            width={300}
+            height={300}
+            alt="zdjęcie Michała"
+          />
         </div>
       </div>
 

@@ -2,6 +2,8 @@ fragment ReasonFragment on Reason {
   title
   image {
     url
+    width
+    height
   }
   description
 }

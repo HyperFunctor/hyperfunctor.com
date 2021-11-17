@@ -69,7 +69,12 @@ export const Hero = ({
           <div className="w-full md:w-1/3">
             <div className="flex flex-col justify-center items-center">
               <div className="my-8 flex flex-col justify-center">
-                <Image src="/reactnext.png" width={900} height={600} />
+                <Image
+                  src="/reactnext.png"
+                  width={900}
+                  height={600}
+                  alt="React.js, Next.js, TypeScript, GraphQL, TailwindCSS"
+                />
               </div>
             </div>
           </div>

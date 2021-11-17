@@ -4,9 +4,13 @@ import { DeepReadonly } from "ts-essentials";
 import { ReasonFragment } from "../../generated/graphql";
 
 interface CourseContentItemProps {
-  reason: DeepReadonly<ReasonFragment>;
+  reason: ReasonItem;
   direction: "reverse" | "";
 }
+
+export type ReasonItem = DeepReadonly<
+  ReasonFragment & { plaiceholder?: string | null }
+>;
 
 export const CourseContentItem = ({
   reason,
@@ -19,12 +23,15 @@ export const CourseContentItem = ({
       } flex-wrap items-center`}
     >
       <div className="w-full md:w-1/2 pb-4 flex justify-center">
-        <img
-          src={reason.image?.url}
-          alt="Picture of the author"
-          width={360}
-          height={360}
-        />
+        {reason.image && (
+          <Image
+            src={reason.image.url}
+            alt=""
+            width={360}
+            height={360}
+            blurDataURL={reason.plaiceholder || undefined}
+          />
+        )}
       </div>
       <div className="w-full md:w-1/2 pb-4">
         <h3 className="text-2xl font-bold">{reason.title}</h3>

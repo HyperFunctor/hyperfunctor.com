@@ -1,4 +1,4 @@
-import { GetStaticPropsResult } from "next";
+import { getPlaiceholder } from "plaiceholder";
 import React from "react";
 
 import { FAQ } from "../components/FAQ/FAQ";
@@ -31,15 +31,37 @@ export default function HomePage({ data: { faqs, reasons } }: HomePageProps) {
 }
 
 export async function getStaticProps() {
-  const { props } = await ssrWebsite.getServerPage({});
+  const response = await ssrWebsite.getServerPage({});
 
-  if (props.error) {
+  if (response.props.error) {
     return {
       notFound: true as const,
     };
   }
 
+  const data = {
+    faqs: response.props.data.faqs,
+    reasons: await Promise.all(
+      response.props.data.reasons.map(async (r) => {
+        const plaiceholder = r.image?.url
+          ? await getPlaiceholder(r.image.url)
+          : null;
+        return {
+          ...r,
+          ...(plaiceholder && {
+            image: {
+              width: plaiceholder.img.width,
+              height: plaiceholder.img.height,
+              url: plaiceholder.img.src,
+            },
+            plaiceholder: plaiceholder.base64,
+          }),
+        };
+      })
+    ),
+  };
+
   return {
-    props: { data: props.data },
+    props: { data },
   };
 }
