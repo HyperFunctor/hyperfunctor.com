@@ -11,17 +11,17 @@ extensions:
           - "typescript-react-apollo"
         config:
           reactApolloVersion: 3
-          withHooks: true
+          withHooks: false
           withHOC: false
           withComponent: false
-          exportFragmentSpreadSubTypes: true
-          documentMode: graphQLTag
+          immutableTypes: true
+          dedupeOperationSuffix: true
       generated/page.tsx:
         config:
+          reactApolloVersion: 3
           documentMode: external
           importDocumentNodeExternallyFrom: ./graphql
-          reactApolloVersion: 3
-          withHooks: true
+          withHooks: false
           withHOC: false
           apolloClientInstanceImport: "../lib/apolloClient"
         preset: import-types
