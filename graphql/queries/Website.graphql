@@ -1,0 +1,8 @@
+query Website {
+  faqs(first: 10) {
+    ...FAQFragment
+  }
+  reasons {
+    ...ReasonFragment
+  }
+}

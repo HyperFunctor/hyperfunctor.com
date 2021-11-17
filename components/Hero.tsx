@@ -42,12 +42,10 @@ export const Hero = ({
                         />
                       </span>
                     </div>
-                    <div>
-                      <h4
-                        className="text-gray-700"
-                        dangerouslySetInnerHTML={{ __html: argument }}
-                      ></h4>
-                    </div>
+                    <span
+                      className="text-gray-700"
+                      dangerouslySetInnerHTML={{ __html: argument }}
+                    />
                   </div>
                 </li>
               ))}
@@ -69,7 +67,12 @@ export const Hero = ({
           <div className="w-full md:w-1/3">
             <div className="flex flex-col justify-center items-center">
               <div className="my-8 flex flex-col justify-center">
-                <Image src="/reactnext.png" width={900} height={600} />
+                <Image
+                  src="/reactnext.png"
+                  width={900}
+                  height={600}
+                  alt="React.js, Next.js, TypeScript, GraphQL, TailwindCSS"
+                />
               </div>
             </div>
           </div>

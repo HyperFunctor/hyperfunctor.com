@@ -1,4 +1,5 @@
-import { GetStaticProps, GetStaticPropsResult } from "next";
+import { GetStaticPropsResult } from "next";
+import { DeepReadonly } from "ts-essentials";
 
 export type Awaited<T> = T extends Promise<infer R> ? Awaited<R> : T;
 
@@ -11,5 +12,5 @@ export type InferGetStaticPathsType<T extends (...args: any) => any> = Awaited<
 export type InferGetStaticPropsType<T> = T extends (
   ...args: any[]
 ) => Promise<GetStaticPropsResult<infer P>> | GetStaticPropsResult<infer P>
-  ? P
+  ? DeepReadonly<Exclude<P, undefined>>
   : never;

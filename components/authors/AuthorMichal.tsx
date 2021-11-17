@@ -10,7 +10,12 @@ export const AuthorMichal = () => {
 
       <div className="flex justify-center">
         <div className="inline-block h-64 w-64 rounded-full border-8">
-          <Image src="/miszczyszyn.jpg" width={300} height={300} />
+          <Image
+            src="/miszczyszyn.jpg"
+            width={300}
+            height={300}
+            alt="zdjęcie Michała"
+          />
         </div>
       </div>
 
@@ -22,19 +27,19 @@ export const AuthorMichal = () => {
         className="bg-white text-blue-400 text-2xl font-normal focus:outline-none mr-2"
         href="https://twitter.com/zaiste"
       >
-        <i className="fab fa-twitter"></i>
+        <span className="fab fa-twitter" aria-label="Twitter Michała" />
       </a>
       <a
         className="bg-white text-gray-900 text-2xl font-normal focus:outline-none mr-2"
         href="https://github.com/zaiste/"
       >
-        <i className="fab fa-github"></i>
+        <span className="fab fa-github" aria-label="Github Michała" />
       </a>
       <a
         className="bg-white text-gray-900 text-2xl font-normal focus:outline-none mr-2"
         href="https://zaiste.net/"
       >
-        <i className="fas fa-link"></i>
+        <span className="fas fa-link" aria-label="Link Michała" />
       </a>
     </div>
   );

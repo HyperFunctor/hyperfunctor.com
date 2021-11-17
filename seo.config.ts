@@ -1,4 +1,6 @@
-export const PL = {
+import { NextSeoProps } from "next-seo";
+
+export const seo: NextSeoProps = {
   title: "React.js + Next.js od A do Z - Kurs Programowania w 12 tygodni",
   description:
     "Kurs jest zbudowany z myślą o osobach początkujących. Jeśli szukasz pierwszego kontaktu z programowaniem bądź programujesz w języku innymi niż JavaScript, ten kurs jest dla Ciebie.",

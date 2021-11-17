@@ -1,17 +1,20 @@
 import Image from "next/image";
+import { DeepReadonly } from "ts-essentials";
+
+import { ReasonFragment } from "../../generated/graphql";
 
 interface CourseContentItemProps {
-  image: string;
-  title: string;
+  reason: ReasonItem;
   direction: "reverse" | "";
-  description: string;
 }
 
+export type ReasonItem = DeepReadonly<
+  ReasonFragment & { plaiceholder?: string | null }
+>;
+
 export const CourseContentItem = ({
-  image,
-  title,
-  direction = "",
-  description,
+  reason,
+  direction,
 }: CourseContentItemProps) => {
   return (
     <div
@@ -20,11 +23,19 @@ export const CourseContentItem = ({
       } flex-wrap items-center`}
     >
       <div className="w-full md:w-1/2 pb-4 flex justify-center">
-        <img src={image} alt="Picture of the author" width={360} height={360} />
+        {reason.image && (
+          <Image
+            src={reason.image.url}
+            alt=""
+            width={360}
+            height={360}
+            blurDataURL={reason.plaiceholder || undefined}
+          />
+        )}
       </div>
       <div className="w-full md:w-1/2 pb-4">
-        <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="mt-2 text-lg text-gray-600">{description}</p>
+        <h3 className="text-2xl font-bold">{reason.title}</h3>
+        <p className="mt-2 text-lg text-gray-600">{reason.description}</p>
       </div>
     </div>
   );

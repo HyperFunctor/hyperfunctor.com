@@ -28,9 +28,7 @@ export const ForWhomItem = ({ text, reason }: ForWhomItemProps) => {
             )}
           </span>
         </div>
-        <div>
-          <h4 className="text-gray-700">{text}</h4>
-        </div>
+        <span className="text-gray-700">{text}</span>
       </div>
     </li>
   );

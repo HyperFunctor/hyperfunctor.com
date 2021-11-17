@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { getPlaiceholder } from "plaiceholder";
 import React from "react";
 
 import { FAQ } from "../components/FAQ/FAQ";
@@ -10,23 +10,58 @@ import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
+import { ssrWebsite } from "../generated/page";
+import { InferGetStaticPropsType } from "../types";
 
-export default function Home() {
+type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function HomePage({ data: { faqs, reasons } }: HomePageProps) {
   return (
     <Layout>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Hero2 />
       <LogoCloud />
       <ForWhom />
-      <CourseContent />
+      <CourseContent reasons={reasons} />
       <LearningUnitList />
       <Agenda />
-      {/* <Pricing  /> */}
-      <FAQ />
+      <FAQ faqs={faqs} />
       <AboutAuthor />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const response = await ssrWebsite.getServerPage({});
+
+  if (response.props.error) {
+    return {
+      notFound: true as const,
+    };
+  }
+
+  const data = {
+    faqs: response.props.data.faqs,
+    reasons: await Promise.all(
+      response.props.data.reasons.map(async (r) => {
+        const plaiceholder = r.image?.url
+          ? await getPlaiceholder(r.image.url)
+          : null;
+        return {
+          ...r,
+          ...(plaiceholder && {
+            image: {
+              width: plaiceholder.img.width,
+              height: plaiceholder.img.height,
+              url: plaiceholder.img.src,
+            },
+            plaiceholder: plaiceholder.base64,
+          }),
+        };
+      })
+    ),
+  };
+
+  return {
+    props: { data },
+  };
 }
