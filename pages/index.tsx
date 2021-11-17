@@ -1,4 +1,4 @@
-import { ApolloQueryResult } from '@apollo/client';
+import { ApolloQueryResult } from "@apollo/client";
 import Head from "next/head";
 import React from "react";
 
@@ -11,13 +11,12 @@ import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
+import { WebsiteDocument, WebsiteQuery } from "../generated/graphql";
 
-import { WebsiteDocument, WebsiteQuery } from '../generated/graphql';
-
-import { apolloClient } from './_app';
+import { apolloClient } from "./_app";
 
 interface Props {
-  website: WebsiteQuery
+  website: WebsiteQuery;
 }
 
 export default function Home({ website }: Props) {
@@ -38,17 +37,17 @@ export default function Home({ website }: Props) {
       <AboutAuthor />
     </Layout>
   );
-};
+}
 
 export async function getStaticProps() {
   const result: ApolloQueryResult<WebsiteQuery | undefined> =
-    await apolloClient.query({ 
-      query: WebsiteDocument, 
-      variables: {} 
+    await apolloClient.query({
+      query: WebsiteDocument,
+      variables: {},
     });
 
-  const { data: website } = result; 
+  const { data: website } = result;
   return {
-    props: { website }
-  }
+    props: { website },
+  };
 }

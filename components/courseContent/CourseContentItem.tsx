@@ -7,7 +7,7 @@ export const CourseContentItem = ({
   title,
   direction = "",
   description,
-}: ReasonFragment & { direction: "reverse" | ""} ) => {
+}: ReasonFragment & { direction: "reverse" | "" }) => {
   return (
     <div
       className={`flex ${
@@ -15,7 +15,12 @@ export const CourseContentItem = ({
       } flex-wrap items-center`}
     >
       <div className="w-full md:w-1/2 pb-4 flex justify-center">
-        <img src={image?.url} alt="Picture of the author" width={360} height={360} />
+        <img
+          src={image?.url}
+          alt="Picture of the author"
+          width={360}
+          height={360}
+        />
       </div>
       <div className="w-full md:w-1/2 pb-4">
         <h3 className="text-2xl font-bold">{title}</h3>
