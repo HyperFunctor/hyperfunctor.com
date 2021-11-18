@@ -1,4 +1,0 @@
-fragment FAQFragment on Faq {
-  question
-  answer
-}
