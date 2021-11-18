@@ -1,10 +1,12 @@
 fragment AgendaWeekFragment on AgendaWeek {
+  __typename
   id
   title
   items
 }
 
 fragment ReasonFragment on Reason {
+  __typename
   id
   title
   description
@@ -16,12 +18,14 @@ fragment ReasonFragment on Reason {
 }
 
 fragment FaqFragment on Faq {
+  __typename
   id
   question
   answer
 }
 
 fragment AuthorFragment on Author {
+  __typename
   id
   name
   bio
@@ -42,22 +46,26 @@ fragment CourseDetailsFragment on Website {
   courseDetailsBox
 }
 
+fragment SectionsFragment on Website {
+  sections {
+    id
+    title
+    subTitle
+    content {
+      ...AgendaWeekFragment
+      ...ReasonFragment
+      ...FaqFragment
+      ...AuthorFragment
+    }
+  }
+}
+
 query Website {
   websites(first: 1) {
     id
     startDate
     ...CourseDetailsFragment
     ...InternshipsFragment
-    sections {
-      id
-      title
-      subTitle
-      content {
-        ...AgendaWeekFragment
-        ...ReasonFragment
-        ...FaqFragment
-        ...AuthorFragment
-      }
-    }
+    ...SectionsFragment
   }
 }

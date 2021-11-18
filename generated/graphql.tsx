@@ -6800,14 +6800,14 @@ export enum _SystemDateTimeFieldVariation {
 }
 
 export type AgendaWeekFragment = {
-  readonly __typename?: "AgendaWeek";
+  readonly __typename: "AgendaWeek";
   readonly id: string;
   readonly title: string;
   readonly items: ReadonlyArray<string>;
 };
 
 export type ReasonFragment = {
-  readonly __typename?: "Reason";
+  readonly __typename: "Reason";
   readonly id: string;
   readonly title: string;
   readonly description?: string | null | undefined;
@@ -6823,14 +6823,14 @@ export type ReasonFragment = {
 };
 
 export type FaqFragment = {
-  readonly __typename?: "Faq";
+  readonly __typename: "Faq";
   readonly id: string;
   readonly question: string;
   readonly answer: string;
 };
 
 export type AuthorFragment = {
-  readonly __typename?: "Author";
+  readonly __typename: "Author";
   readonly id: string;
   readonly name: string;
   readonly bio?: string | null | undefined;
@@ -6854,6 +6854,51 @@ export type CourseDetailsFragment = {
   readonly courseDetailsBox: ReadonlyArray<string>;
 };
 
+export type SectionsFragment = {
+  readonly __typename?: "Website";
+  readonly sections: ReadonlyArray<{
+    readonly __typename?: "Section";
+    readonly id: string;
+    readonly title: string;
+    readonly subTitle?: string | null | undefined;
+    readonly content: ReadonlyArray<
+      | {
+          readonly __typename: "AgendaWeek";
+          readonly id: string;
+          readonly title: string;
+          readonly items: ReadonlyArray<string>;
+        }
+      | {
+          readonly __typename: "Author";
+          readonly id: string;
+          readonly name: string;
+          readonly bio?: string | null | undefined;
+        }
+      | {
+          readonly __typename: "Faq";
+          readonly id: string;
+          readonly question: string;
+          readonly answer: string;
+        }
+      | {
+          readonly __typename: "Reason";
+          readonly id: string;
+          readonly title: string;
+          readonly description?: string | null | undefined;
+          readonly image?:
+            | {
+                readonly __typename?: "Asset";
+                readonly width?: number | null | undefined;
+                readonly height?: number | null | undefined;
+                readonly url: string;
+              }
+            | null
+            | undefined;
+        }
+    >;
+  }>;
+};
+
 export type WebsiteQueryVariables = Exact<{ [key: string]: never }>;
 
 export type WebsiteQuery = {
@@ -6865,6 +6910,13 @@ export type WebsiteQuery = {
     readonly courseDetailsTitle?: string | null | undefined;
     readonly courseDetailsParagraph?: string | null | undefined;
     readonly courseDetailsBox: ReadonlyArray<string>;
+    readonly internships: ReadonlyArray<{
+      readonly __typename?: "Asset";
+      readonly id: string;
+      readonly url: string;
+      readonly width?: number | null | undefined;
+      readonly height?: number | null | undefined;
+    }>;
     readonly sections: ReadonlyArray<{
       readonly __typename?: "Section";
       readonly id: string;
@@ -6872,25 +6924,25 @@ export type WebsiteQuery = {
       readonly subTitle?: string | null | undefined;
       readonly content: ReadonlyArray<
         | {
-            readonly __typename?: "AgendaWeek";
+            readonly __typename: "AgendaWeek";
             readonly id: string;
             readonly title: string;
             readonly items: ReadonlyArray<string>;
           }
         | {
-            readonly __typename?: "Author";
+            readonly __typename: "Author";
             readonly id: string;
             readonly name: string;
             readonly bio?: string | null | undefined;
           }
         | {
-            readonly __typename?: "Faq";
+            readonly __typename: "Faq";
             readonly id: string;
             readonly question: string;
             readonly answer: string;
           }
         | {
-            readonly __typename?: "Reason";
+            readonly __typename: "Reason";
             readonly id: string;
             readonly title: string;
             readonly description?: string | null | undefined;
@@ -6906,49 +6958,9 @@ export type WebsiteQuery = {
           }
       >;
     }>;
-    readonly internships: ReadonlyArray<{
-      readonly __typename?: "Asset";
-      readonly id: string;
-      readonly url: string;
-      readonly width?: number | null | undefined;
-      readonly height?: number | null | undefined;
-    }>;
   }>;
 };
 
-export const AgendaWeekFragmentDoc = gql`
-  fragment AgendaWeekFragment on AgendaWeek {
-    id
-    title
-    items
-  }
-`;
-export const ReasonFragmentDoc = gql`
-  fragment ReasonFragment on Reason {
-    id
-    title
-    description
-    image {
-      width
-      height
-      url
-    }
-  }
-`;
-export const FaqFragmentDoc = gql`
-  fragment FaqFragment on Faq {
-    id
-    question
-    answer
-  }
-`;
-export const AuthorFragmentDoc = gql`
-  fragment AuthorFragment on Author {
-    id
-    name
-    bio
-  }
-`;
 export const InternshipsFragmentDoc = gql`
   fragment InternshipsFragment on Website {
     internships {
@@ -6966,6 +6978,62 @@ export const CourseDetailsFragmentDoc = gql`
     courseDetailsBox
   }
 `;
+export const AgendaWeekFragmentDoc = gql`
+  fragment AgendaWeekFragment on AgendaWeek {
+    __typename
+    id
+    title
+    items
+  }
+`;
+export const ReasonFragmentDoc = gql`
+  fragment ReasonFragment on Reason {
+    __typename
+    id
+    title
+    description
+    image {
+      width
+      height
+      url
+    }
+  }
+`;
+export const FaqFragmentDoc = gql`
+  fragment FaqFragment on Faq {
+    __typename
+    id
+    question
+    answer
+  }
+`;
+export const AuthorFragmentDoc = gql`
+  fragment AuthorFragment on Author {
+    __typename
+    id
+    name
+    bio
+  }
+`;
+export const SectionsFragmentDoc = gql`
+  fragment SectionsFragment on Website {
+    sections {
+      id
+      title
+      subTitle
+      content {
+        ...AgendaWeekFragment
+        ...ReasonFragment
+        ...FaqFragment
+        ...AuthorFragment
+      }
+    }
+  }
+  ${AgendaWeekFragmentDoc}
+  ${ReasonFragmentDoc}
+  ${FaqFragmentDoc}
+  ${AuthorFragmentDoc}
+`;
 export const WebsiteDocument = gql`
   query Website {
     websites(first: 1) {
@@ -6973,25 +7041,12 @@ export const WebsiteDocument = gql`
       startDate
       ...CourseDetailsFragment
       ...InternshipsFragment
-      sections {
-        id
-        title
-        subTitle
-        content {
-          ...AgendaWeekFragment
-          ...ReasonFragment
-          ...FaqFragment
-          ...AuthorFragment
-        }
-      }
+      ...SectionsFragment
     }
   }
   ${CourseDetailsFragmentDoc}
   ${InternshipsFragmentDoc}
-  ${AgendaWeekFragmentDoc}
-  ${ReasonFragmentDoc}
-  ${FaqFragmentDoc}
-  ${AuthorFragmentDoc}
+  ${SectionsFragmentDoc}
 `;
 export type WebsiteQueryResult = Apollo.QueryResult<
   WebsiteQuery,
