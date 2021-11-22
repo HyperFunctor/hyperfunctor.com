@@ -1,7 +1,6 @@
 import { promises as fs } from "fs";
 
 import { InferGetStaticPropsType } from "next";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 
