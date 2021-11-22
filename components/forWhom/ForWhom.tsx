@@ -4,7 +4,7 @@ export const ForWhom = () => {
   return (
     <section
       className="relative py-16 bg-gradient-to-r from-pink-50 to-gray-50 border-t-4 border-pink-400"
-      id="forwhom"
+      id="dlakogo"
     >
       <div className="max-w-7xl mx-auto px-8">
         <h2 className="mt-2 mb-8 text-center leading-9 font-extrabold sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-none">

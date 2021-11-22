@@ -10,3 +10,7 @@ html {
   opacity: 0.9;
   backdrop-filter: blur(4px);
 }
+
+[id] {
+  scroll-margin: 4rem 0 0 0;
+}
