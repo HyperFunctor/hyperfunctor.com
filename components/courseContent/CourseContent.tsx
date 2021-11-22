@@ -1,10 +1,10 @@
-import { SectionMetadata } from "../../types";
+import { SectionMetadataMDX } from "../../props";
 
 import { CourseContentItem, ReasonItem } from "./CourseContentItem";
 
 interface CourseContentProps {
-  reasons: readonly ReasonItem[];
-  readonly section: SectionMetadata;
+  readonly reasons: readonly ReasonItem[];
+  readonly section: SectionMetadataMDX;
 }
 
 export const CourseContent = ({ reasons, section }: CourseContentProps) => {

@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-import { AuthorFragment } from "../../generated/graphql";
+import { AuthorFragmentMDX } from "../../props";
+import { MDXComponent } from "../NextMdx";
 
 interface AuthorProps {
-  author: AuthorFragment;
+  author: AuthorFragmentMDX;
 }
 
 export const Author = ({ author }: AuthorProps) => {
@@ -25,27 +26,41 @@ export const Author = ({ author }: AuthorProps) => {
 
       <hr className="my-6" />
 
-      {/* @todo mdx */}
-      <p>{author.bio}</p>
+      <div className="prose-lg">
+        {author.bio && <MDXComponent {...author.bio} />}
+      </div>
 
-      {/* <a
-        className="bg-white text-blue-400 text-2xl font-normal focus:outline-none mr-2"
-        href="https://twitter.com/zaiste"
-      >
-        <span className="fab fa-twitter" aria-label="Twitter Jakuba" />
-      </a>
-      <a
-        className="bg-white text-gray-900 text-2xl font-normal focus:outline-none mr-2"
-        href="https://github.com/zaiste/"
-      >
-        <span className="fab fa-github" aria-label="Github Jakuba" />
-      </a>
-      <a
-        className="bg-white text-gray-900 text-2xl font-normal focus:outline-none mr-2"
-        href="https://zaiste.net/"
-      >
-        <span className="fas fa-link" aria-label="Link Jakuba" />
-      </a> */}
+      {/* @todo */}
+      <ul>
+        {author.socialMedias.map((sm) => {
+          const { className, label } = matchSm(sm);
+          return (
+            <a
+              key={sm}
+              className="bg-white text-blue-400 text-2xl font-normal focus:outline-none mr-2"
+              href={sm}
+            >
+              <span className={className} aria-label={label} />
+            </a>
+          );
+        })}
+      </ul>
     </div>
   );
 };
+
+function matchSm(socialMedia: string) {
+  if (socialMedia.startsWith("https://facebook.com/")) {
+    return { className: "fab fa-facebook", label: "Facebook" };
+  }
+  if (socialMedia.startsWith("https://twitter.com/")) {
+    return { className: "fab fa-twitter", label: "Twitter" };
+  }
+  if (socialMedia.startsWith("https://linkedin.com/")) {
+    return { className: "fab fa-linkedin", label: "LinkedIn" };
+  }
+  if (socialMedia.startsWith("https://github.com/")) {
+    return { className: "fab fa-github", label: "Github" };
+  }
+  return { className: "fas fa-link", label: "Link" };
+}

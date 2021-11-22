@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import { getPlaiceholder } from "plaiceholder";
 import { Fragment } from "react";
 
@@ -46,24 +48,33 @@ export default function HomePage({
 }: HomePageProps) {
   return (
     <Layout>
-      <Hero2 />
+      <Hero2 startDate={otherData.startDate} />
       <LogoCloud internships={otherData.internships} />
       <ForWhom />
-      {sections.map((s) => {
-        return (
-          <Fragment key={s.id}>
-            <SectionContent section={s} />
-          </Fragment>
-        );
+      {sections.map((s, idx) => {
+        if (idx === 1) {
+          return (
+            <Fragment key={s.id}>
+              <SectionContent section={s} />
+              <LearningUnitList
+                courseDetailsTitle={otherData.courseDetailsTitle}
+                courseDetailsParagraph={otherData.courseDetailsParagraph}
+                courseDetailsBox={otherData.courseDetailsBox}
+              />
+            </Fragment>
+          );
+        }
+        return <SectionContent section={s} key={s.id} />;
       })}
-
-      <LearningUnitList
-        courseDetailsTitle={otherData.courseDetailsTitle}
-        courseDetailsParagraph={otherData.courseDetailsParagraph}
-        courseDetailsBox={otherData.courseDetailsBox}
-      />
     </Layout>
   );
+}
+
+function toMdx(content: string | undefined | null) {
+  if (content === null || content === undefined) {
+    return content;
+  }
+  return serialize(content);
 }
 
 export async function getStaticProps() {
@@ -78,30 +89,51 @@ export async function getStaticProps() {
 
   const data = {
     ...website,
+    courseDetailsParagraph: await toMdx(website.courseDetailsParagraph),
+    courseDetailsBox: await Promise.all(
+      website.courseDetailsBox.map((content) => toMdx(content))
+    ),
     sections: await Promise.all(
       website.sections.map(async (section) => {
         return {
           ...section,
+          subTitle: await toMdx(section.subTitle),
           content: await Promise.all(
             section.content.map(async (content) => {
-              if (content.__typename === "Reason") {
-                const plaiceholder = content.image?.url
-                  ? await getPlaiceholder(content.image.url)
-                  : null;
+              switch (content.__typename) {
+                case "Reason": {
+                  const plaiceholder = content.image?.url
+                    ? await getPlaiceholder(content.image.url)
+                    : null;
 
-                return {
-                  ...content,
-                  ...(plaiceholder && {
-                    image: {
-                      width: plaiceholder.img.width,
-                      height: plaiceholder.img.height,
-                      url: plaiceholder.img.src,
-                    },
-                    plaiceholder: plaiceholder.base64,
-                  }),
-                };
-              } else {
-                return content;
+                  return {
+                    ...content,
+                    description: await toMdx(content.description),
+                    ...(plaiceholder && {
+                      image: {
+                        width: plaiceholder.img.width,
+                        height: plaiceholder.img.height,
+                        url: plaiceholder.img.src,
+                      },
+                      plaiceholder: plaiceholder.base64,
+                    }),
+                  };
+                }
+                case "Author": {
+                  return {
+                    ...content,
+                    bio: await toMdx(content.bio),
+                  };
+                }
+                case "Faq": {
+                  return {
+                    ...content,
+                    answer: await toMdx(content.answer),
+                  };
+                }
+                default: {
+                  return content;
+                }
               }
             })
           ),

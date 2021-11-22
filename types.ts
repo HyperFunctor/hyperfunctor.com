@@ -21,3 +21,7 @@ export type SectionMetadata = Omit<
   SectionsFragment["sections"][number],
   "content"
 >;
+
+export type Replace<Obj extends object, K extends keyof Obj, V> = {
+  [Key in keyof Obj]: Key extends K ? V : Obj[Key];
+};

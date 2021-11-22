@@ -1,11 +1,12 @@
 import { AgendaWeekFragment, SectionsFragment } from "../../generated/graphql";
-import { SectionMetadata } from "../../types";
+import { SectionMetadataMDX } from "../../props";
+import { MDXComponent } from "../NextMdx";
 
 import { AgendaWeek } from "./AgendaWeek";
 
 interface AgendaProps {
   readonly agenda: readonly AgendaWeekFragment[];
-  readonly section: SectionMetadata;
+  readonly section: SectionMetadataMDX;
 }
 
 export const Agenda = ({ agenda, section }: AgendaProps) => {
@@ -16,8 +17,7 @@ export const Agenda = ({ agenda, section }: AgendaProps) => {
           {section.title}
         </h2>
         <p className="text-center text-lg mb-8 text-gray-600">
-          (w trakcie ustalania szczegółów; może ulec drobnym zmianom w
-          najbliższych dniach)
+          {section.subTitle && <MDXComponent {...section.subTitle} />}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {agenda.map((item, idx) => (

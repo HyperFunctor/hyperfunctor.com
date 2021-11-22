@@ -1,11 +1,10 @@
-import { AuthorFragment } from "../../generated/graphql";
-import { SectionMetadata } from "../../types";
+import { AuthorFragmentMDX, SectionMetadataMDX } from "../../props";
 
 import { Author } from "./Author";
 
 interface AboutAuthorProps {
-  readonly authors: readonly AuthorFragment[];
-  readonly section: SectionMetadata;
+  readonly authors: readonly AuthorFragmentMDX[];
+  readonly section: SectionMetadataMDX;
 }
 
 export const AboutAuthor = ({ authors }: AboutAuthorProps) => {

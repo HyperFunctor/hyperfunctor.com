@@ -1,6 +1,8 @@
 import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
+import { formatDate } from "../lib/utils";
+
 import { BlogNotification } from "./BlogNotification";
 
 const points = [
@@ -12,10 +14,10 @@ const points = [
   "Dla najlepszych: płatne praktyki zawodowe w IT",
 ];
 
-export function Hero2() {
+export function Hero2({ startDate }: { startDate: string }) {
   return (
     <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
-      <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
+      <div className="pt-8 overflow-hidden sm:pt-12 lg:relative">
         <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
           <div>
             <div>{/* Logo */}</div>
@@ -78,7 +80,7 @@ export function Hero2() {
                     Kurs zaczyna się
                   </span>{" "}
                   <span className="font-medium text-pink-600">
-                    18 stycznia 2022
+                    {formatDate(startDate)}
                   </span>
                 </div>
               </div>

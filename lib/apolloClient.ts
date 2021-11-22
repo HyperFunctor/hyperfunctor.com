@@ -16,5 +16,6 @@ export const getApolloClient = (
     link: httpLink,
     cache: new InMemoryCache().restore(initialState || {}),
     ssrMode: !process.browser,
+    assumeImmutableResults: true,
   });
 };

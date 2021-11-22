@@ -1,4 +1,5 @@
-import { CourseDetailsFragment } from "../../generated/graphql";
+import { CourseDetailsFragmentMDX } from "../../props";
+import { MDXComponent } from "../NextMdx";
 
 import { LearningUnit } from "./LearningUnit";
 
@@ -6,7 +7,7 @@ export const LearningUnitList = ({
   courseDetailsTitle,
   courseDetailsParagraph,
   courseDetailsBox,
-}: CourseDetailsFragment) => {
+}: CourseDetailsFragmentMDX) => {
   return (
     <section className="pb-20 bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-8">
@@ -14,15 +15,16 @@ export const LearningUnitList = ({
           {courseDetailsTitle}
         </h2>
 
-        <div className="text-lg leading-relaxed font-light mb-8">
-          {/* @todo MDX */}
-          {courseDetailsParagraph}
+        <div className="text-lg leading-relaxed font-light mb-8 prose-xl">
+          {courseDetailsParagraph && (
+            <MDXComponent {...courseDetailsParagraph} />
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {courseDetailsBox.map((box, idx) => (
-            <LearningUnit key={idx} content={box} />
-          ))}
+          {courseDetailsBox.map(
+            (box, idx) => box && <LearningUnit key={idx} content={box} />
+          )}
         </div>
 
         <hr className="my-8" />

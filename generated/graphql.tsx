@@ -21,7 +21,7 @@ export type Scalars = {
   /** A date string, such as 2007-12-03 (YYYY-MM-DD), compliant with ISO 8601 standard for representation of dates using the Gregorian calendar. */
   Date: any;
   /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the date-timeformat outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representationof dates and times using the Gregorian calendar. */
-  DateTime: any;
+  DateTime: string;
   Hex: any;
   /** Raw JSON value */
   Json: any;
@@ -1153,6 +1153,7 @@ export type Author = Node & {
   readonly publishedBy?: Maybe<User>;
   readonly scheduledIn: ReadonlyArray<ScheduledOperation>;
   readonly section?: Maybe<Section>;
+  readonly socialMedias: ReadonlyArray<Scalars["String"]>;
   /** System stage field */
   readonly stage: Stage;
   /** The time the document was updated */
@@ -1221,6 +1222,7 @@ export type AuthorCreateInput = {
   readonly createdAt?: InputMaybe<Scalars["DateTime"]>;
   readonly name: Scalars["String"];
   readonly section?: InputMaybe<SectionCreateOneInlineInput>;
+  readonly socialMedias?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
   readonly updatedAt?: InputMaybe<Scalars["DateTime"]>;
 };
 
@@ -1350,6 +1352,22 @@ export type AuthorManyWhereInput = {
   readonly scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   readonly scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
   readonly section?: InputMaybe<SectionWhereInput>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  readonly socialMedias?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  readonly socialMedias_contains_all?: InputMaybe<
+    ReadonlyArray<Scalars["String"]>
+  >;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  readonly socialMedias_contains_none?: InputMaybe<
+    ReadonlyArray<Scalars["String"]>
+  >;
+  /** Matches if the field array contains at least one item provided to the filter */
+  readonly socialMedias_contains_some?: InputMaybe<
+    ReadonlyArray<Scalars["String"]>
+  >;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  readonly socialMedias_not?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
   readonly updatedAt?: InputMaybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   readonly updatedAt_gt?: InputMaybe<Scalars["DateTime"]>;
@@ -1379,6 +1397,8 @@ export enum AuthorOrderByInput {
   NameDesc = "name_DESC",
   PublishedAtAsc = "publishedAt_ASC",
   PublishedAtDesc = "publishedAt_DESC",
+  SocialMediasAsc = "socialMedias_ASC",
+  SocialMediasDesc = "socialMedias_DESC",
   UpdatedAtAsc = "updatedAt_ASC",
   UpdatedAtDesc = "updatedAt_DESC",
 }
@@ -1387,6 +1407,7 @@ export type AuthorUpdateInput = {
   readonly bio?: InputMaybe<Scalars["String"]>;
   readonly name?: InputMaybe<Scalars["String"]>;
   readonly section?: InputMaybe<SectionUpdateOneInlineInput>;
+  readonly socialMedias?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
 };
 
 export type AuthorUpdateManyInlineInput = {
@@ -1413,6 +1434,7 @@ export type AuthorUpdateManyInlineInput = {
 export type AuthorUpdateManyInput = {
   readonly bio?: InputMaybe<Scalars["String"]>;
   readonly name?: InputMaybe<Scalars["String"]>;
+  readonly socialMedias?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
 };
 
 export type AuthorUpdateManyWithNestedWhereInput = {
@@ -1561,6 +1583,22 @@ export type AuthorWhereInput = {
   readonly scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   readonly scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
   readonly section?: InputMaybe<SectionWhereInput>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  readonly socialMedias?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  readonly socialMedias_contains_all?: InputMaybe<
+    ReadonlyArray<Scalars["String"]>
+  >;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  readonly socialMedias_contains_none?: InputMaybe<
+    ReadonlyArray<Scalars["String"]>
+  >;
+  /** Matches if the field array contains at least one item provided to the filter */
+  readonly socialMedias_contains_some?: InputMaybe<
+    ReadonlyArray<Scalars["String"]>
+  >;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  readonly socialMedias_not?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
   readonly updatedAt?: InputMaybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   readonly updatedAt_gt?: InputMaybe<Scalars["DateTime"]>;
@@ -5751,6 +5789,14 @@ export type SectionWhereUniqueInput = {
   readonly id?: InputMaybe<Scalars["ID"]>;
 };
 
+export enum SocialMedia {
+  Facebook = "facebook",
+  Github = "github",
+  Link = "link",
+  Linkedin = "linkedin",
+  Twitter = "twitter",
+}
+
 /** Stage system enumeration */
 export enum Stage {
   /** The Draft is the default stage for all your content. */
@@ -6834,6 +6880,7 @@ export type AuthorFragment = {
   readonly id: string;
   readonly name: string;
   readonly bio?: string | null | undefined;
+  readonly socialMedias: ReadonlyArray<string>;
 };
 
 export type InternshipsFragment = {
@@ -6873,6 +6920,7 @@ export type SectionsFragment = {
           readonly id: string;
           readonly name: string;
           readonly bio?: string | null | undefined;
+          readonly socialMedias: ReadonlyArray<string>;
         }
       | {
           readonly __typename: "Faq";
@@ -6906,7 +6954,7 @@ export type WebsiteQuery = {
   readonly websites: ReadonlyArray<{
     readonly __typename?: "Website";
     readonly id: string;
-    readonly startDate: any;
+    readonly startDate: string;
     readonly courseDetailsTitle?: string | null | undefined;
     readonly courseDetailsParagraph?: string | null | undefined;
     readonly courseDetailsBox: ReadonlyArray<string>;
@@ -6934,6 +6982,7 @@ export type WebsiteQuery = {
             readonly id: string;
             readonly name: string;
             readonly bio?: string | null | undefined;
+            readonly socialMedias: ReadonlyArray<string>;
           }
         | {
             readonly __typename: "Faq";
@@ -7013,6 +7062,7 @@ export const AuthorFragmentDoc = gql`
     id
     name
     bio
+    socialMedias
   }
 `;
 export const SectionsFragmentDoc = gql`

@@ -18,3 +18,14 @@ export const groupByType = <
     [Key in Collection[number][F]]: Filter<Collection, Key>;
   };
 };
+
+export const formatDate = (d: string | Date) => {
+  const date = typeof d === "string" ? new Date(d) : d;
+
+  const format = new Intl.DateTimeFormat("pl", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  return format.format(date);
+};

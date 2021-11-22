@@ -29,6 +29,7 @@ fragment AuthorFragment on Author {
   id
   name
   bio
+  socialMedias
 }
 
 fragment InternshipsFragment on Website {

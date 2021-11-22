@@ -1,13 +1,12 @@
 import { DeepReadonly } from "ts-essentials";
 
-import { FaqFragment } from "../../generated/graphql";
-import { SectionMetadata } from "../../types";
+import { FaqFragmentMDX, SectionMetadataMDX } from "../../props";
 
 import { FAQEntry } from "./FAQEntry";
 
 interface FaqProps {
-  faqs: DeepReadonly<FaqFragment[]>;
-  readonly section: SectionMetadata;
+  faqs: DeepReadonly<FaqFragmentMDX[]>;
+  readonly section: SectionMetadataMDX;
 }
 
 export const FAQ = ({ faqs, section }: FaqProps) => {

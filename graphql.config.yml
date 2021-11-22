@@ -16,6 +16,8 @@ extensions:
           withComponent: false
           immutableTypes: true
           dedupeOperationSuffix: true
+          scalars:
+            DateTime: string
       generated/page.tsx:
         config:
           reactApolloVersion: 3
@@ -24,6 +26,8 @@ extensions:
           withHooks: false
           withHOC: false
           apolloClientInstanceImport: "../lib/apolloClient"
+          scalars:
+            DateTime: Date
         preset: import-types
         presetConfig:
           typesPath: ./graphql

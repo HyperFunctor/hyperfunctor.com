@@ -7,9 +7,9 @@ interface LearningPointProps {
 
 export const LearningPoint = ({ point }: LearningPointProps) => {
   return (
-    <li className="py-2">
+    <li className="">
       <div className="flex items-center">
-        <div className="text-sm font-semibold inline-block py-1 px-1 text-gray-800 mr-2">
+        <div className="">
           <FontAwesomeIcon icon={faCheck} className="text-blue-400 w-3" />
         </div>
         <span className="">{point}</span>
