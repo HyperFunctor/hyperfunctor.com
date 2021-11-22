@@ -1,22 +1,14 @@
-import { LearningPoint } from "./LearningPoint";
-
 interface LearningUnitProps {
-  index: number;
-  name: string;
-  description: string;
-  points?: string[];
+  content: string;
 }
 
-export const LearningUnit = ({
-  index,
-  name,
-  description,
-  points = [],
-}: LearningUnitProps) => {
+export const LearningUnit = ({ content }: LearningUnitProps) => {
   return (
     <div className="">
       <div className="flex flex-col min-w-0 break-words bg-white w-full border border-gray-100 hover:shadow-2xl hover:border-gray-300 rounded-sm">
-        <div className="px-4 py-5 flex-auto border-t-4 border-blue-400">
+        {content}
+        {/* @todo mdx */}
+        {/* <div className="px-4 py-5 flex-auto border-t-4 border-blue-400">
           <div className="flex items-center mb-3">
             <h6 className="text-xl font-semibold">{name}</h6>
           </div>
@@ -30,7 +22,7 @@ export const LearningUnit = ({
               <LearningPoint point={point} key={idx} />
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

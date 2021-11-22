@@ -1,19 +1,27 @@
+import { AgendaWeekFragment, SectionsFragment } from "../../generated/graphql";
+import { SectionMetadata } from "../../types";
+
 import { AgendaWeek } from "./AgendaWeek";
 
-export const Agenda = () => {
+interface AgendaProps {
+  readonly agenda: readonly AgendaWeekFragment[];
+  readonly section: SectionMetadata;
+}
+
+export const Agenda = ({ agenda, section }: AgendaProps) => {
   return (
     <section className="relative py-16 bg-white" id="agenda">
       <div className="max-w-7xl mx-auto px-8">
         <h2 className="mt-2 mb-2 text-center leading-9 font-extrabold sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-none">
-          Plan Kursu
+          {section.title}
         </h2>
         <p className="text-center text-lg mb-8 text-gray-600">
           (w trakcie ustalania szczegółów; może ulec drobnym zmianom w
           najbliższych dniach)
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {agendaItems.map((item, idx) => (
-            <AgendaWeek number={idx + 1} key={idx + 1} {...item} />
+          {agenda.map((item, idx) => (
+            <AgendaWeek key={item.id} number={idx + 1} item={item} />
           ))}
         </div>
       </div>

@@ -1,8 +1,71 @@
-query Website {
-  faqs(first: 10) {
-    ...FAQFragment
+fragment AgendaWeekFragment on AgendaWeek {
+  __typename
+  id
+  title
+  items
+}
+
+fragment ReasonFragment on Reason {
+  __typename
+  id
+  title
+  description
+  image {
+    width
+    height
+    url
   }
-  reasons {
-    ...ReasonFragment
+}
+
+fragment FaqFragment on Faq {
+  __typename
+  id
+  question
+  answer
+}
+
+fragment AuthorFragment on Author {
+  __typename
+  id
+  name
+  bio
+}
+
+fragment InternshipsFragment on Website {
+  internships {
+    id
+    url
+    width
+    height
+  }
+}
+
+fragment CourseDetailsFragment on Website {
+  courseDetailsTitle
+  courseDetailsParagraph
+  courseDetailsBox
+}
+
+fragment SectionsFragment on Website {
+  sections {
+    id
+    title
+    subTitle
+    content {
+      ...AgendaWeekFragment
+      ...ReasonFragment
+      ...FaqFragment
+      ...AuthorFragment
+    }
+  }
+}
+
+query Website {
+  websites(first: 1) {
+    id
+    startDate
+    ...CourseDetailsFragment
+    ...InternshipsFragment
+    ...SectionsFragment
   }
 }
