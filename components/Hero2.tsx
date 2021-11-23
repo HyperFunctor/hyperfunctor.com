@@ -2,19 +2,19 @@ import { StarIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 
 import { formatDate } from "../lib/utils";
+import { SectionMetadataMDX } from "../props";
 
 import { BlogNotification } from "./BlogNotification";
+import { MDXComponent } from "./NextMdx";
+import * as cl from "./hero2.module.css";
 
-const points = [
-  '12 tygodni nauki (<span class="font-bold">15h</span>) + 3 tygodnie projekt końcowy (<span class="font-bold">30h</span>)',
-  "Całościowe wprowadzenie do React.js",
-  "Uzywamy TypeScript",
-  "Najpopularniejsze narzędzie dla React.js: Next.js w wersji 12",
-  "Dwóch prowadzących z wieloletnim doświadczeniem zawodowym",
-  "Dla najlepszych: płatne praktyki zawodowe w IT",
-];
-
-export function Hero2({ startDate }: { startDate: string }) {
+export function Hero2({
+  startDate,
+  section,
+}: {
+  startDate: string;
+  section: SectionMetadataMDX;
+}) {
   return (
     <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative">
@@ -24,34 +24,10 @@ export function Hero2({ startDate }: { startDate: string }) {
             <div>
               <BlogNotification />
               <div className="mt-6 sm:max-w-xl">
-                <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">
-                  Zacznij programować <br />{" "}
-                  <span className="text-pink-400">juz dziś</span>
-                </h1>
-                <p className="mt-6 text-xl text-gray-500">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo.
-                </p>
-                <ul className="list-none mt-6">
-                  {points.map((argument, idx) => (
-                    <li className="py-2" key={idx + 1}>
-                      <div className="flex items-center">
-                        <div>
-                          <span className="text-xs font-semibold w-8 h-8 uppercase text-gray-800 bg-yellow-50 mr-3  inline-flex items-center justify-center rounded-full">
-                            <StarIcon
-                              className="h-5 w-5 text-yellow-300"
-                              aria-hidden="true"
-                            />
-                          </span>
-                        </div>
-                        <span
-                          className="text-gray-700"
-                          dangerouslySetInnerHTML={{ __html: argument }}
-                        />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                {/* @ts-ignore */}
+                <div className={cl.content}>
+                  {section.subTitle && <MDXComponent {...section.subTitle} />}
+                </div>
               </div>
               <form action="#" className="mt-12 sm:max-w-lg sm:w-full sm:flex">
                 <div className="min-w-0 flex-1">

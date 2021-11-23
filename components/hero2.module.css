@@ -1,0 +1,21 @@
+.content h2 {
+  @apply text-5xl font-extrabold text-gray-900 tracking-tight;
+}
+
+.content h2 strong {
+  @apply text-pink-400;
+}
+
+.content p {
+  @apply mt-6 text-xl text-gray-500;
+}
+
+.content ul {
+  @apply list-none mt-6;
+}
+
+.content ul li {
+  @apply py-2 text-gray-700 pl-11;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fcd34d' viewBox='0 0 32 32'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23FFFBEB'/%3E%3Cpath d='M11.05 4.93a1 1 0 0 1 1.9 0l1.07 3.29a1 1 0 0 0 .95.69h3.46a1 1 0 0 1 .6 1.8l-2.8 2.04a1 1 0 0 0-.37 1.12l1.07 3.3a1 1 0 0 1-1.54 1.11l-2.8-2.03a1 1 0 0 0-1.18 0l-2.8 2.03a1 1 0 0 1-1.54-1.12l1.07-3.29a1 1 0 0 0-.36-1.12l-2.8-2.03a1 1 0 0 1 .59-1.81h3.46a1 1 0 0 0 .95-.69l1.07-3.3z'/%3E%3C/svg%3E")
+    no-repeat left calc(50% + 5px) / 40px;
+}

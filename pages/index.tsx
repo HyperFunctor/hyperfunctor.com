@@ -20,11 +20,17 @@ type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 type Section = HomePageProps["data"]["sections"][number];
 interface SectionContentProps {
   section: Section;
+  startDate: string;
 }
 
 const SectionContent = ({
   section: { content, ...section },
+  startDate,
 }: SectionContentProps) => {
+  if (content.length === 0) {
+    return <Hero2 startDate={startDate} section={section} />;
+  }
+
   // assumption: All elements in the content actually have the same type
   const contents = groupByType(content, "__typename");
 
@@ -48,14 +54,13 @@ export default function HomePage({
 }: HomePageProps) {
   return (
     <Layout>
-      <Hero2 startDate={otherData.startDate} />
-      <LogoCloud internships={otherData.internships} />
-      <ForWhom />
       {sections.map((s, idx) => {
         if (idx === 1) {
           return (
             <Fragment key={s.id}>
-              <SectionContent section={s} />
+              <LogoCloud internships={otherData.internships} />
+              <ForWhom />
+              <SectionContent startDate={otherData.startDate} section={s} />
               <LearningUnitList
                 courseDetailsTitle={otherData.courseDetailsTitle}
                 courseDetailsParagraph={otherData.courseDetailsParagraph}
@@ -64,7 +69,13 @@ export default function HomePage({
             </Fragment>
           );
         }
-        return <SectionContent section={s} key={s.id} />;
+        return (
+          <SectionContent
+            section={s}
+            key={s.id}
+            startDate={otherData.startDate}
+          />
+        );
       })}
     </Layout>
   );
