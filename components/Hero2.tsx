@@ -1,10 +1,8 @@
-import { StarIcon } from "@heroicons/react/solid";
-import Image from "next/image";
-
 import { formatDate } from "../lib/utils";
 import { SectionMetadataMDX } from "../props";
 
 import { BlogNotification } from "./BlogNotification";
+import { Newsletter } from "./Newsletter";
 import { MDXComponent } from "./NextMdx";
 import * as cl from "./hero2.module.css";
 
@@ -17,39 +15,19 @@ export function Hero2({
 }) {
   return (
     <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
-      <div className="pt-8 overflow-hidden sm:pt-12 lg:relative">
-        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
-          <div>
+      <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
+        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-3 lg:gap-24">
+          <div className="col-span-2 bg-white">
             <div>{/* Logo */}</div>
             <div>
               <BlogNotification />
-              <div className="mt-6 sm:max-w-xl">
+              <div className="mt-6 sm:max-w-2xl z-40 ">
                 {/* @ts-ignore */}
                 <div className={cl.content}>
                   {section.subTitle && <MDXComponent {...section.subTitle} />}
                 </div>
               </div>
-              <form action="#" className="mt-12 sm:max-w-lg sm:w-full sm:flex">
-                <div className="min-w-0 flex-1">
-                  <label htmlFor="hero-email" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="hero-email"
-                    type="email"
-                    className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div className="mt-4 sm:mt-0 sm:ml-3">
-                  <button
-                    type="submit"
-                    className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-600 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10"
-                  >
-                    Chcę wziąć udział
-                  </button>
-                </div>
-              </form>
+              <Newsletter />
               <div className="mt-6">
                 <div className="min-w-0 flex-1 py-1 text-gray-500 sm:py-3">
                   <span className="font-medium text-gray-900">
@@ -63,13 +41,15 @@ export function Hero2({
             </div>
           </div>
           <div className="z-10 flex items-center justify-center">
-            <Image
-              className="inline-block h-64 w-64 rounded-full border-8"
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-              width={256}
-              height={256}
-            />
+            <div>
+              {/* <Image
+                className="inline-block h-64 w-64 rounded-full border-8"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+                width={256}
+                height={256}
+              /> */}
+            </div>
           </div>
         </div>
 

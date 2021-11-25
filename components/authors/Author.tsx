@@ -16,12 +16,12 @@ export const Author = ({ author }: AuthorProps) => {
 
       <div className="flex justify-center">
         <Image
-          src="/neander.png"
-          width={300}
-          height={300}
+          src={author.avatar?.url!}
+          className="rounded-full"
+          width={240}
+          height={240}
           alt="Zdjęcie Jakuba"
         />
-        {/* @todo image */}
       </div>
 
       <hr className="my-6" />

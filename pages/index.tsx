@@ -1,4 +1,3 @@
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { getPlaiceholder } from "plaiceholder";
 import { Fragment } from "react";
@@ -34,9 +33,9 @@ const SectionContent = ({
   // assumption: All elements in the content actually have the same type
   const contents = groupByType(content, "__typename");
 
-  if (contents.AgendaWeek) {
-    return <Agenda section={section} agenda={contents.AgendaWeek} />;
-  }
+  // if (contents.AgendaWeek) {
+  //   return <Agenda section={section} agenda={contents.AgendaWeek} />;
+  // }
   if (contents.Author) {
     return <AboutAuthor section={section} authors={contents.Author} />;
   }
@@ -58,7 +57,7 @@ export default function HomePage({
         if (idx === 1) {
           return (
             <Fragment key={s.id}>
-              <LogoCloud internships={otherData.internships} />
+              {otherData.internships.length > 0 && <LogoCloud internships={otherData.internships} />}
               <ForWhom />
               <SectionContent startDate={otherData.startDate} section={s} />
               <LearningUnitList

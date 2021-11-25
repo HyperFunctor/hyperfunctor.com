@@ -31,27 +31,36 @@ export function Newsletter() {
       return;
     }
 
-    setMessage("Success! You joined the waiting list.");
+    setMessage("Udało się! Jesteś na liście oczekujących.");
   };
 
   return (
     <>
-      <form className="mt-4 flex max-w-md mx-auto" onSubmit={onSubmit}>
-        <input
-          aria-label="Email address"
-          type="email"
-          required
-          ref={inputEl}
-          className="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
-          placeholder="Enter your email"
-        />
-        <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-          <button className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-400 focus:outline-none focus:bg-blue-400 transition duration-150 ease-in-out">
-            Notify me
+      <form className="mt-12 sm:max-w-lg sm:w-full sm:flex" onSubmit={onSubmit}>
+        <div className="min-w-0 flex-1">
+          <label htmlFor="hero-email" className="sr-only">
+            Email address
+          </label>
+          <input
+            id="hero-email"
+            aria-label="Email address"
+            type="email"
+            ref={inputEl}
+            className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            placeholder="Podaj adres email"
+            required
+          />
+        </div>
+        <div className="mt-4 sm:mt-0 sm:ml-3">
+          <button
+            type="submit"
+            className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-600 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10"
+          >
+            Chcę wziąć udział
           </button>
         </div>
       </form>
-      <div className="mt-2 text-gray-200">{message ? message : ``}</div>
+      <div className="mt-2 text-gray-500">{message ? message : ``}</div>
     </>
   );
 }

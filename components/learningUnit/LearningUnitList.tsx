@@ -9,7 +9,7 @@ export const LearningUnitList = ({
   courseDetailsBox,
 }: CourseDetailsFragmentMDX) => {
   return (
-    <section className="pb-20 bg-gray-100 py-16">
+    <section className="pb-20 bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-8">
         <h2 className="mt-2 mb-8 text-center leading-9 font-extrabold sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-none">
           {courseDetailsTitle}

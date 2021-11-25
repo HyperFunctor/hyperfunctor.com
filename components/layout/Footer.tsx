@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Newsletter } from "../Newsletter";
+
 export const Footer = () => {
   return (
     <footer className="bg-gray-800" aria-labelledby="footerHeading">
@@ -39,30 +41,13 @@ export const Footer = () => {
               programowania
             </p>
           </div>
-          <form className="mt-4 sm:flex sm:max-w-md lg:mt-0">
-            <label htmlFor="emailAddress" className="sr-only">
-              Email address
-            </label>
-            <input
-              type="email"
-              name="emailAddress"
-              id="emailAddress"
-              required
-              className="appearance-none min-w-0 w-full bg-white border border-transparent rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400 sm:max-w-xs"
-              placeholder="Twój aders e-mail"
-            />
-            <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-              <button
-                type="submit"
-                className="w-full bg-blue-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
-              >
-                Zapisuję się
-              </button>
-            </div>
-          </form>
+          <div className="max-w-md lg:mt-0">
+            <Newsletter />
+          </div>
+
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
+          {/* <div className="flex space-x-6 md:order-2">
             <a
               href="https://www.youtube.com/channel/UCzgkOWKcwy0uhYilE6bd1Lg"
               className="text-gray-400 hover:text-gray-300"
@@ -115,12 +100,12 @@ export const Footer = () => {
                 />
               </svg>
             </a>
-          </div>
+          </div> */}
           <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-            &copy; 2021 Fundacja Zaiste. All rights reserved.
+            &copy; 2021 zaisteprogramuj.pl Wszystkie prawa zastrzeżone.
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
