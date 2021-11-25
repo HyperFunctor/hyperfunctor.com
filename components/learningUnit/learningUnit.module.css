@@ -1,5 +1,5 @@
 .content {
-  @apply flex-auto border-t-4 border-blue-400;
+  @apply flex-auto border-t-4 border-pink-400;
 }
 
 .content h3 {
@@ -19,7 +19,7 @@
 }
 
 .content :global(.task-list-item) input[type="checkbox"] {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' class='svg-inline--fa fa-check fa-w-16 text-blue-400 w-3' data-icon='check' data-prefix='fas' viewBox='0 0 512 512'%3E%3Cpath fill='rgb(96, 165, 250)' d='M173.9 439.4 7.5 273c-10-10-10-26.2 0-36.2l36.2-36.2c10-10 26.2-10 36.2 0l112.1 112 240.1-240c10-10 26.2-10 36.2 0l36.2 36.2c10 10 10 26.2 0 36.2L210.1 439.4c-10 10-26.2 10-36.2 0z'/%3E%3C/svg%3E")
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' class='svg-inline--fa fa-check fa-w-16 text-pink-400 w-3' data-icon='check' data-prefix='fas' viewBox='0 0 512 512'%3E%3Cpath fill='rgb(96, 165, 250)' d='M173.9 439.4 7.5 273c-10-10-10-26.2 0-36.2l36.2-36.2c10-10 26.2-10 36.2 0l112.1 112 240.1-240c10-10 26.2-10 36.2 0l36.2 36.2c10 10 10 26.2 0 36.2L210.1 439.4c-10 10-26.2 10-36.2 0z'/%3E%3C/svg%3E")
     no-repeat;
   @apply pl-6;
 }

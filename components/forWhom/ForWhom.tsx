@@ -3,7 +3,7 @@ import { ForWhomItem } from "./ForWhomIteam";
 export const ForWhom = () => {
   return (
     <section
-      className="relative py-16 bg-gradient-to-r from-pink-50 to-gray-50 border-t-4 border-pink-400"
+      className="relative py-16 bg-gradient-to-r from-gray-50 to-pink-50 border-t-4 border-pink-400"
       id="dlakogo"
     >
       <div className="max-w-7xl mx-auto px-8">
