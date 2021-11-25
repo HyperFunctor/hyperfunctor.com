@@ -474,6 +474,7 @@ export type Aggregate = {
 /** Asset system model */
 export type Asset = Node & {
   readonly __typename?: "Asset";
+  readonly avatarAuthor: ReadonlyArray<Author>;
   readonly companyLogoWebsite: ReadonlyArray<Website>;
   /** The time the document was created */
   readonly createdAt: Scalars["DateTime"];
@@ -515,6 +516,18 @@ export type Asset = Node & {
   readonly url: Scalars["String"];
   /** The file width */
   readonly width?: Maybe<Scalars["Float"]>;
+};
+
+/** Asset system model */
+export type AssetAvatarAuthorArgs = {
+  after?: InputMaybe<Scalars["String"]>;
+  before?: InputMaybe<Scalars["String"]>;
+  first?: InputMaybe<Scalars["Int"]>;
+  last?: InputMaybe<Scalars["Int"]>;
+  locales?: InputMaybe<ReadonlyArray<Locale>>;
+  orderBy?: InputMaybe<AuthorOrderByInput>;
+  skip?: InputMaybe<Scalars["Int"]>;
+  where?: InputMaybe<AuthorWhereInput>;
 };
 
 /** Asset system model */
@@ -625,6 +638,7 @@ export type AssetConnection = {
 };
 
 export type AssetCreateInput = {
+  readonly avatarAuthor?: InputMaybe<AuthorCreateManyInlineInput>;
   readonly companyLogoWebsite?: InputMaybe<WebsiteCreateManyInlineInput>;
   readonly createdAt?: InputMaybe<Scalars["DateTime"]>;
   readonly fileName: Scalars["String"];
@@ -694,6 +708,9 @@ export type AssetManyWhereInput = {
   readonly OR?: InputMaybe<ReadonlyArray<AssetWhereInput>>;
   /** Contains search across all appropriate fields. */
   readonly _search?: InputMaybe<Scalars["String"]>;
+  readonly avatarAuthor_every?: InputMaybe<AuthorWhereInput>;
+  readonly avatarAuthor_none?: InputMaybe<AuthorWhereInput>;
+  readonly avatarAuthor_some?: InputMaybe<AuthorWhereInput>;
   readonly companyLogoWebsite_every?: InputMaybe<WebsiteWhereInput>;
   readonly companyLogoWebsite_none?: InputMaybe<WebsiteWhereInput>;
   readonly companyLogoWebsite_some?: InputMaybe<WebsiteWhereInput>;
@@ -804,6 +821,7 @@ export type AssetTransformationInput = {
 };
 
 export type AssetUpdateInput = {
+  readonly avatarAuthor?: InputMaybe<AuthorUpdateManyInlineInput>;
   readonly companyLogoWebsite?: InputMaybe<WebsiteUpdateManyInlineInput>;
   readonly fileName?: InputMaybe<Scalars["String"]>;
   readonly handle?: InputMaybe<Scalars["String"]>;
@@ -948,6 +966,9 @@ export type AssetWhereInput = {
   readonly OR?: InputMaybe<ReadonlyArray<AssetWhereInput>>;
   /** Contains search across all appropriate fields. */
   readonly _search?: InputMaybe<Scalars["String"]>;
+  readonly avatarAuthor_every?: InputMaybe<AuthorWhereInput>;
+  readonly avatarAuthor_none?: InputMaybe<AuthorWhereInput>;
+  readonly avatarAuthor_some?: InputMaybe<AuthorWhereInput>;
   readonly companyLogoWebsite_every?: InputMaybe<WebsiteWhereInput>;
   readonly companyLogoWebsite_none?: InputMaybe<WebsiteWhereInput>;
   readonly companyLogoWebsite_some?: InputMaybe<WebsiteWhereInput>;
@@ -1135,6 +1156,7 @@ export type AssetWhereUniqueInput = {
 
 export type Author = Node & {
   readonly __typename?: "Author";
+  readonly avatar?: Maybe<Asset>;
   readonly bio?: Maybe<Scalars["String"]>;
   /** The time the document was created */
   readonly createdAt: Scalars["DateTime"];
@@ -1160,6 +1182,10 @@ export type Author = Node & {
   readonly updatedAt: Scalars["DateTime"];
   /** User that last updated this document */
   readonly updatedBy?: Maybe<User>;
+};
+
+export type AuthorAvatarArgs = {
+  locales?: InputMaybe<ReadonlyArray<Locale>>;
 };
 
 export type AuthorCreatedByArgs = {
@@ -1218,6 +1244,7 @@ export type AuthorConnection = {
 };
 
 export type AuthorCreateInput = {
+  readonly avatar?: InputMaybe<AssetCreateOneInlineInput>;
   readonly bio?: InputMaybe<Scalars["String"]>;
   readonly createdAt?: InputMaybe<Scalars["DateTime"]>;
   readonly name: Scalars["String"];
@@ -1259,6 +1286,7 @@ export type AuthorManyWhereInput = {
   readonly OR?: InputMaybe<ReadonlyArray<AuthorWhereInput>>;
   /** Contains search across all appropriate fields. */
   readonly _search?: InputMaybe<Scalars["String"]>;
+  readonly avatar?: InputMaybe<AssetWhereInput>;
   readonly bio?: InputMaybe<Scalars["String"]>;
   /** All values containing the given string. */
   readonly bio_contains?: InputMaybe<Scalars["String"]>;
@@ -1404,6 +1432,7 @@ export enum AuthorOrderByInput {
 }
 
 export type AuthorUpdateInput = {
+  readonly avatar?: InputMaybe<AssetUpdateOneInlineInput>;
   readonly bio?: InputMaybe<Scalars["String"]>;
   readonly name?: InputMaybe<Scalars["String"]>;
   readonly section?: InputMaybe<SectionUpdateOneInlineInput>;
@@ -1490,6 +1519,7 @@ export type AuthorWhereInput = {
   readonly OR?: InputMaybe<ReadonlyArray<AuthorWhereInput>>;
   /** Contains search across all appropriate fields. */
   readonly _search?: InputMaybe<Scalars["String"]>;
+  readonly avatar?: InputMaybe<AssetWhereInput>;
   readonly bio?: InputMaybe<Scalars["String"]>;
   /** All values containing the given string. */
   readonly bio_contains?: InputMaybe<Scalars["String"]>;
@@ -6881,6 +6911,10 @@ export type AuthorFragment = {
   readonly name: string;
   readonly bio?: string | null | undefined;
   readonly socialMedias: ReadonlyArray<string>;
+  readonly avatar?:
+    | { readonly __typename?: "Asset"; readonly url: string }
+    | null
+    | undefined;
 };
 
 export type InternshipsFragment = {
@@ -6921,6 +6955,10 @@ export type SectionsFragment = {
           readonly name: string;
           readonly bio?: string | null | undefined;
           readonly socialMedias: ReadonlyArray<string>;
+          readonly avatar?:
+            | { readonly __typename?: "Asset"; readonly url: string }
+            | null
+            | undefined;
         }
       | {
           readonly __typename: "Faq";
@@ -6983,6 +7021,10 @@ export type WebsiteQuery = {
             readonly name: string;
             readonly bio?: string | null | undefined;
             readonly socialMedias: ReadonlyArray<string>;
+            readonly avatar?:
+              | { readonly __typename?: "Asset"; readonly url: string }
+              | null
+              | undefined;
           }
         | {
             readonly __typename: "Faq";
@@ -7061,6 +7103,9 @@ export const AuthorFragmentDoc = gql`
     __typename
     id
     name
+    avatar {
+      url
+    }
     bio
     socialMedias
   }
