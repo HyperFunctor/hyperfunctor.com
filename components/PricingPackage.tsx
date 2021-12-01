@@ -2,8 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return */
 import Link from "next/link";
 
-import { Price } from "./Price";
-
 export const PricingPackage = ({ className, pkg }) => {
   return (
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo

@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero2 } from "../components/Hero2";
 import { LogoCloud } from "../components/LogoCloud";
-import { Agenda } from "../components/agenda/Agenda";
+import { Pricing } from "../components/Pricing";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
 import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
@@ -20,6 +20,31 @@ type Section = HomePageProps["data"]["sections"][number];
 interface SectionContentProps {
   section: Section;
   startDate: string;
+}
+
+export const pricing = {
+  title: "Kurs Next.js",
+  choose: "Wybierz pakiet",
+  presale: "Przedsprzedaż do 24 stycznia 2021",
+  info: "* ceny obowiązują tylko dla obywateli Polski",
+  vat: "cena uwzględnia 23% VAT",
+  full: {
+    buy: "Kup",
+    key: "full",
+    name: "Pełen Pakiet",
+    cheaper: "mniej o",
+    until: "do 24/01/2021",
+    price: {
+      regular: 7500,
+      discounted: 1125
+    },
+    elements: [
+      "kurs wideo",
+      "napisy w wersji polskiej, angielskiej i francuskiej",
+      "konsultacje wideo (grupowo)",
+      "dostęp do <strong>prywatnego kanału Discord</strong> z autorem i współuczestnikami kursu"
+    ]
+  },
 }
 
 const SectionContent = ({
