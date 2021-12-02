@@ -1,8 +1,5 @@
 query PostList {
-	posts(first: 10) {
-    title
-    slug
-    body
+  posts(first: 10) {
+    ...PostFragment
   }
 }
-

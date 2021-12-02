@@ -7550,6 +7550,30 @@ export enum _SystemDateTimeFieldVariation {
   Localization = "localization",
 }
 
+export type PostFragment = {
+  readonly __typename?: "Post";
+  readonly title?: string | null | undefined;
+  readonly slug?: string | null | undefined;
+  readonly body?: string | null | undefined;
+};
+
+export type PostElementQueryVariables = Exact<{
+  slug: Scalars["String"];
+}>;
+
+export type PostElementQuery = {
+  readonly __typename?: "Query";
+  readonly post?:
+    | {
+        readonly __typename?: "Post";
+        readonly title?: string | null | undefined;
+        readonly slug?: string | null | undefined;
+        readonly body?: string | null | undefined;
+      }
+    | null
+    | undefined;
+};
+
 export type PostListQueryVariables = Exact<{ [key: string]: never }>;
 
 export type PostListQuery = {
@@ -7739,6 +7763,13 @@ export type WebsiteQuery = {
   }>;
 };
 
+export const PostFragmentDoc = gql`
+  fragment PostFragment on Post {
+    title
+    slug
+    body
+  }
+`;
 export const InternshipsFragmentDoc = gql`
   fragment InternshipsFragment on Website {
     internships {
@@ -7816,14 +7847,25 @@ export const SectionsFragmentDoc = gql`
   ${FaqFragmentDoc}
   ${AuthorFragmentDoc}
 `;
+export const PostElementDocument = gql`
+  query PostElement($slug: String!) {
+    post(where: { slug: $slug }) {
+      ...PostFragment
+    }
+  }
+  ${PostFragmentDoc}
+`;
+export type PostElementQueryResult = Apollo.QueryResult<
+  PostElementQuery,
+  PostElementQueryVariables
+>;
 export const PostListDocument = gql`
   query PostList {
     posts(first: 10) {
-      title
-      slug
-      body
+      ...PostFragment
     }
   }
+  ${PostFragmentDoc}
 `;
 export type PostListQueryResult = Apollo.QueryResult<
   PostListQuery,
