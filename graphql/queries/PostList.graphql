@@ -1,0 +1,8 @@
+query PostList {
+	posts(first: 10) {
+    title
+    slug
+    body
+  }
+}
+
