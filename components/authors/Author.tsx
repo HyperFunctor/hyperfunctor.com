@@ -26,7 +26,7 @@ export const Author = ({ author }: AuthorProps) => {
 
       <hr className="my-6" />
 
-      <div className="prose-lg">
+      <div className="prose-brand prose-lg">
         {author.bio && <MDXComponent {...author.bio} />}
       </div>
 
