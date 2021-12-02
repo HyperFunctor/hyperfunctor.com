@@ -46,7 +46,7 @@ export function Newsletter() {
             aria-label="Email address"
             type="email"
             ref={inputEl}
-            className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-pink-500 focus:ring-pink-500"
             placeholder="Podaj adres email"
             required
           />
@@ -54,7 +54,7 @@ export function Newsletter() {
         <div className="mt-4 sm:mt-0 sm:ml-3">
           <button
             type="submit"
-            className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-600 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10"
+            className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-600 text-base font-medium text-white shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:px-10"
           >
             Chcę wziąć udział
           </button>
