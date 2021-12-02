@@ -63,30 +63,28 @@ const handler: NextApiHandler = async (req, res) => {
     const payment_intent: Stripe.PaymentIntent =
       session.payment_intent as Stripe.PaymentIntent;
 
-    // const [order] = await findOrder(id);
-    // if (method !== "POST") {
-    //   order.paid = "TRUE";
-    // } else {
-    //   const method = "POST";
-    //   const headers = {
-    //     "X-inFakt-ApiKey": APIKEY,
-    //     "Content-Type": "application/json",
-    //   };
-    //   const body = JSON.stringify(InvoiceTemplate(order));
-    //   const r = await fetch(`https://api.infakt.pl/v3/invoices.json`, {
-    //     method,
-    //     body,
-    //     headers,
-    //   });
-
-    //   if (r.status !== 201) {
-    //     const result = await r.json();
-    //     console.error(result);
-    //   }
-
-    //   order.invoice = "TRUE";
-    // }
-    // await order.save();
+    const [order] = await findOrder(id);
+    if (method !== "POST") {
+      order.paid = "TRUE";
+    } else {
+      // const method = "POST";
+      // const headers = {
+      //   "X-inFakt-ApiKey": APIKEY,
+      //   "Content-Type": "application/json",
+      // };
+      // const body = JSON.stringify(InvoiceTemplate(order));
+      // const r = await fetch(`https://api.infakt.pl/v3/invoices.json`, {
+      //   method,
+      //   body,
+      //   headers,
+      // });
+      // if (r.status !== 201) {
+      //   const result = await r.json();
+      //   console.error(result);
+      // }
+      // order.invoice = "TRUE";
+    }
+    await order.save();
 
     res.status(200).json({ status: payment_intent.status });
   } catch (error: any) {

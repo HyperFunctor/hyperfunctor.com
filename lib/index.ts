@@ -10,8 +10,6 @@ export const checkout = async (type: string, data: object) => {
   const response = await fetch(`/api/checkout/?type=${type}`, { method });
   const { id: sessionId } = await response.json();
 
-  console.log("Session", sessionId);
-
   const headers = { "Content-Type": "application/json" };
 
   const date = new Date().toISOString();

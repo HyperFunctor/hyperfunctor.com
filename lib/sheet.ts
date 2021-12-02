@@ -10,11 +10,13 @@ const auth = {
   private_key, // ENV variable doesn't work, \n issue probably
 };
 
-export const addOrder = async (order: Record<string, string>) => {
+export const addOrder = async (
+  order: Record<string, string | boolean | number>
+) => {
   await doc.useServiceAccountAuth(auth);
   await doc.loadInfo();
 
-  const sheet = doc.sheetsByIndex[4]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+  const sheet = doc.sheetsByTitle["Orders"];
 
   const a = await sheet.addRow(order);
 };
@@ -22,7 +24,7 @@ export const addOrder = async (order: Record<string, string>) => {
 export const findOrder = async (id: string) => {
   await doc.useServiceAccountAuth(auth);
   await doc.loadInfo();
-  const sheet = doc.sheetsByIndex[4]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+  const sheet = doc.sheetsByTitle["Orders"];
 
   const rows = await sheet.getRows();
   const result = rows.filter((row) => row.id === id);

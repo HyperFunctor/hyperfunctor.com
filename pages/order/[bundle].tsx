@@ -1,6 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
+import Stripe from 'stripe';
 
 import { checkout, formatAsMoney } from '../../lib';
 import { pricing } from '../index';
@@ -137,11 +138,11 @@ export default function Order({ bundle }: OrderPageProps) {
                           <input {...register("nip", {})} type="text" id="nip" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                           <p className="mt-1 text-red-500 text-sm">{errors.nip && required_message}</p>
                         </div>
-                      </div >}
-                    </div >
-                  </fieldset >
-                </div >
-              </div >
+                      </div>}
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
 
               <div className="mt-5 shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
@@ -177,17 +178,22 @@ export default function Order({ bundle }: OrderPageProps) {
 }
 
 export function getStaticProps({ params }: any) {
-
   return {
     props: { bundle: 'full' }
   }
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: "2020-08-27",
+  });
+
+  const { data } = await stripe.promotionCodes.list({ limit: 10 });
+  const codes = data.filter(_ => _.active).map(_ => _.code)
+  const paths = codes.map(_ => ({ params: { bundle: _.toLowerCase() } }))
+
   return {
-    paths: [
-      { params: { bundle: 'vicky50' } } // See the "paths" section below
-    ],
-    fallback: true
+    paths,
+    fallback: false
   };
 }

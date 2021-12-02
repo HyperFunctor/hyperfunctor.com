@@ -7,7 +7,7 @@ const handler: NextApiHandler = async (req, res) => {
 
   if (method === "POST") {
     try {
-      await addOrder(body as Record<string, string>);
+      await addOrder(body as Record<string, string | boolean | number>);
       res.status(200).json({ status: "OK" });
     } catch (error: any) {
       res.status(500).json({ statusCode: 500, message: error.message });

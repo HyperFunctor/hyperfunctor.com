@@ -37,8 +37,6 @@ const handler: NextApiHandler = async (req, res) => {
     ],
   };
 
-  console.log(JSON.stringify(payload));
-
   if (method === "POST") {
     try {
       const params: Stripe.Checkout.SessionCreateParams = {
@@ -46,7 +44,7 @@ const handler: NextApiHandler = async (req, res) => {
         payment_method_types,
         locale: "pl",
         mode: "payment",
-        success_url: `${domain}/success/?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${domain}/order/success/?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${domain}/cancel/`,
       };
       const checkoutSession = await stripe.checkout.sessions.create(params);
