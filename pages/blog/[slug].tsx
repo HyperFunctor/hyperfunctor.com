@@ -1,35 +1,62 @@
-import { Layout } from "../../components/layout/Layout";
+import { InferGetStaticPropsType } from "next";
+import { serialize } from "next-mdx-remote/serialize";
 
-export default function Post() {
+import { MDXComponent } from "../../components/NextMdx";
+import { Layout } from "../../components/layout/Layout";
+import { ssrPostElement, ssrPostList } from "../../generated/page";
+
+type PostPageProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function Post({ post }: PostPageProps) {
   return (
     <Layout>
-      <div className="bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-          <header className="text-center py-8 xl:pb-16">
+      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="max-w-lg mx-auto px-4 sm:px-6 xl:max-w-7xl xl:px-0">
+          <header className="py-8 xl:pb-16">
             <div>
-              <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl md:text-5xl md:leading-xl">
-                Garlic bread with cheese: What the science tells us
+              <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+                {post?.title}
               </h1>
             </div>
           </header>
           <div className="grid grid-cols-4">
-            <div></div>
             <div className="col-span-3">
               <main className="prose lg:prose-lg max-w-none">
-                <p>
-                  For years parents have espoused the health benefits of eating garlic bread with cheese to their
-                  children, with the food earning such an iconic status in our culture that kids will often dress
-                  up as warm, cheesy loaf for Halloween.
-                </p>
-                <p>
-                  But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-                  springing up around the country.
-                </p>
+                {post?.body && <MDXComponent {...post?.body} />}
               </main>
             </div>
+            <div>Author info</div>
           </div>
         </div>
       </div>
     </Layout>
   )
+}
+
+function toMdx(content: string | undefined | null) {
+  if (content === null || content === undefined) {
+    return content;
+  }
+  return serialize(content);
+}
+
+export async function getStaticPaths() {
+  const { props: { data } } = await ssrPostList.getServerPage({})
+
+  const paths = data.posts.map(_ => ({ params: { slug: _.slug } }))
+
+  return {
+    paths,
+    fallback: false
+  };
+}
+
+export async function getStaticProps({ params: { slug } }: any) {
+  const { props: { data } } = await ssrPostElement.getServerPage({ variables: { slug } });
+
+  return {
+    props: {
+      post: { ...data.post, body: await toMdx(data.post?.body as string) }
+    }
+  }
 }

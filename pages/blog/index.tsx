@@ -15,20 +15,21 @@ export default function PostListPage({ posts }: PostListPageProps) {
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Blog</h2>
             <div className="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
               <p className="text-xl text-gray-500">Get weekly articles in your inbox on how to grow your business.</p>
-
             </div>
           </div>
           <div className="mt-6 pt-10 grid gap-16 grid-cols-3">
             <div className="col-span-2">
               {posts.map((post) => (
                 <div key={post.title} className="mb-8">
-                  <a href="#" className="block">
-                    <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                    <p className="text-sm text-gray-500">
-                      {/* <time dateTime={post.datetime}>{post.date}</time> */}
-                    </p>
-                    <p className="mt-3 text-base text-gray-500">{post.body}</p>
-                  </a>
+                  <Link href={`/blog/${post.slug}`}>
+                    <a className="block">
+                      <p className="text-xl font-semibold text-gray-900">{post.title}</p>
+                      <p className="text-sm text-gray-500">
+                        {/* <time dateTime={post.datetime}>{post.date}</time> */}
+                      </p>
+                      <p className="mt-3 text-base text-gray-500">{post.body}</p>
+                    </a>
+                  </Link>
                   <div className="mt-3">
                     <Link href={`/blog/${post.slug}`}>
                       <a className="text-base font-semibold text-yellow-600 hover:text-yellow-500">
@@ -49,7 +50,6 @@ export default function PostListPage({ posts }: PostListPageProps) {
 }
 
 export async function getStaticProps() {
-  console.log('hello')
   const { props: { data: { posts } } } = await ssrPostList.getServerPage({});
 
   return {

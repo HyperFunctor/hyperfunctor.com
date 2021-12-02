@@ -1,0 +1,5 @@
+query PostElement($slug: String!) {
+  post(where: { slug: $slug }) {
+    ...PostFragment
+  }
+}
