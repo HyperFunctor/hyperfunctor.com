@@ -6,6 +6,34 @@ import { QueryHookOptions, useQuery } from "@apollo/client";
 import * as Apollo from "@apollo/client";
 import type React from "react";
 import { getApolloClient } from "../lib/apolloClient";
+export async function getServerPagePostList(
+  options: Omit<Apollo.QueryOptions<Types.PostListQueryVariables>, "query">,
+  ctx?: any
+) {
+  const apolloClient = getApolloClient(ctx);
+
+  const data = await apolloClient.query<Types.PostListQuery>({
+    ...options,
+    query: Operations.PostListDocument,
+  });
+
+  const apolloState = apolloClient.cache.extract();
+
+  return {
+    props: {
+      apolloState: apolloState,
+      data: data?.data,
+      error: data?.error ?? data?.errors ?? null,
+    },
+  };
+}
+export type PagePostListComp = React.FC<{
+  data?: Types.PostListQuery;
+  error?: Apollo.ApolloError;
+}>;
+export const ssrPostList = {
+  getServerPage: getServerPagePostList,
+};
 export async function getServerPageWebsite(
   options: Omit<Apollo.QueryOptions<Types.WebsiteQueryVariables>, "query">,
   ctx?: any

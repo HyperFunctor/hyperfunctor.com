@@ -8,7 +8,7 @@ const status = {
   link: "Powrót do strony głównej",
   success: {
     title: 'Sukces',
-    blob: "Dzięki za złożenie zamówienia. Na Twój adres e-mail została wysłana faktura potwierdzająca zakup. W ciągu kilku dni dostaniejsz wiadomość z informacją o kolejnych krokach. Dla przypomnienia, kurs rozpoczenie się w lutym 2021."
+    blob: "Dzięki za złożenie zamówienia. Na Twój adres e-mail została wysłana faktura potwierdzająca zakup. W ciągu kilku dni dostaniejsz wiadomość z informacją o kolejnych krokach. Dla przypomnienia, kurs rozpoczenie się w styczniu 2022."
   },
   cancel: {
     blob: "Twoje zamówienie zostało anulowane."

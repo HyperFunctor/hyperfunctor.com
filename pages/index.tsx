@@ -5,7 +5,6 @@ import { Fragment } from "react";
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero2 } from "../components/Hero2";
 import { LogoCloud } from "../components/LogoCloud";
-import { Pricing } from "../components/Pricing";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
 import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";

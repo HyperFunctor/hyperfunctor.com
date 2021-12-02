@@ -5,9 +5,11 @@ import { Nav } from "./Nav";
 
 export const Layout = ({ children }: PropsWithChildren<{}>) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen antialiased">
       <Nav />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow">
+        {children}
+      </main>
       <Footer />
     </div>
   );
