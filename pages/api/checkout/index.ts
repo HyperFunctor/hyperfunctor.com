@@ -5,26 +5,25 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2020-08-27",
 });
 
-const TaxRate = process.env.STRIPE_TAXRATE;
-const Price = process.env.STRIPE_PRICE;
+const payment_method_types = [
+  "card",
+  "p24",
+] as Stripe.Checkout.SessionCreateParams.PaymentMethodType[];
+const domain = "https://zaisteprogramuj.pl";
+
 const Discount = process.env.STRIPE_DISCOUNT;
+
+const price = process.env.STRIPE_PRICE;
+const tax_rates = [process.env.STRIPE_TAXRATE] as string[];
 
 const handler: NextApiHandler = async (req, res) => {
   const {
     method,
-    query: { type },
+    query: { bundle },
   } = req;
 
-  const payment_method_types = [
-    "card",
-    "p24",
-  ] as Stripe.Checkout.SessionCreateParams.PaymentMethodType[];
-  const domain = "https://zaisteprogramuj.pl";
-
-  const price = Price;
-  const coupon = Discount;
-
-  const tax_rates = [TaxRate] as string[];
+  const { data } = await stripe.promotionCodes.list({ code: bundle as string });
+  const coupon = data[0].coupon.id;
 
   const payload = {
     discounts: [{ coupon }],
