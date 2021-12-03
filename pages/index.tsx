@@ -34,8 +34,7 @@ export const pricing = {
     cheaper: "mniej o",
     until: "do 24/01/2021",
     price: {
-      regular: 7500,
-      discounted: 1125
+      regular: 3000,
     },
     elements: [
       "kurs wideo",

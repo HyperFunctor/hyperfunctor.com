@@ -6,8 +6,8 @@ const stripePromise = loadStripe(
 
 const method = "POST";
 
-export const checkout = async (type: string, data: object) => {
-  const response = await fetch(`/api/checkout/?type=${type}`, { method });
+export const checkout = async (bundle: string, data: object) => {
+  const response = await fetch(`/api/checkout/?bundle=${bundle}`, { method });
   const { id: sessionId } = await response.json();
 
   const headers = { "Content-Type": "application/json" };
@@ -17,7 +17,7 @@ export const checkout = async (type: string, data: object) => {
   const body = JSON.stringify({
     id: sessionId,
     paid: false,
-    bundle: type.toUpperCase(),
+    bundle: bundle.toUpperCase(),
     date,
     ...data,
   });

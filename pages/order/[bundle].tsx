@@ -1,4 +1,4 @@
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
 import Stripe from 'stripe';
@@ -29,7 +29,7 @@ const order = {
   info: "Nastąpi przekierowanie do płatności Stripe"
 }
 
-export default function Order({ bundle }: OrderPageProps) {
+export default function Order({ bundle, discount }: OrderPageProps) {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = handleSubmit(data => checkout(bundle, data))
 
@@ -155,7 +155,7 @@ export default function Order({ bundle }: OrderPageProps) {
                       {formatAsMoney(pkg.price.regular)}
                     </div>
                     <div className='text-3xl font-semibold'>
-                      {formatAsMoney(pkg.price.discounted)}
+                      {formatAsMoney(pkg.price.regular * (1 - (discount || 0) / 100))}
                     </div>
                   </div>
                   <div className="text-gray-600 text-sm">{pricing.vat}</div>
@@ -163,7 +163,7 @@ export default function Order({ bundle }: OrderPageProps) {
               </div>
               <button
                 type="submit"
-                className="mt-4 inline-flex w-full justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                className="mt-4 inline-flex w-full justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-pink-600 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 {order.button}
               </button>
               <div className="mt-2 text-center text-gray-500">
@@ -177,9 +177,18 @@ export default function Order({ bundle }: OrderPageProps) {
   );
 }
 
-export function getStaticProps({ params }: any) {
+// FIXME how to type this?
+export async function getStaticProps({ params }: any) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: "2020-08-27",
+  });
+
+  const { bundle: code } = params as Record<string, string>;
+  const { data } = await stripe.promotionCodes.list({ code })
+  const { coupon: { percent_off: discount } } = data[0]
+
   return {
-    props: { bundle: 'full' }
+    props: { bundle: code, discount }
   }
 }
 
@@ -187,10 +196,10 @@ export async function getStaticPaths() {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: "2020-08-27",
   });
+  const { data } = await stripe.promotionCodes.list({ limit: 30 });
 
-  const { data } = await stripe.promotionCodes.list({ limit: 10 });
-  const codes = data.filter(_ => _.active).map(_ => _.code)
-  const paths = codes.map(_ => ({ params: { bundle: _.toLowerCase() } }))
+  const codes = data.filter(_ => _.active).map(_ => ({ bundle: _.code.toLowerCase() }))
+  const paths = codes.map(_ => ({ params: _ }))
 
   return {
     paths,
