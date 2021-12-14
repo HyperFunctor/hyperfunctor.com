@@ -29,7 +29,7 @@ export default function CancelPage({ }) {
   );
 }
 
-export async function getStaticProps({ }) {
+export function getStaticProps({ }) {
   return {
     props: {}
   }
