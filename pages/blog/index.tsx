@@ -21,7 +21,7 @@ export default function PostListPage({ posts }: PostListPageProps) {
             <div className="col-span-2">
               {posts.map((post) => (
                 <div key={post.title} className="mb-8">
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.slug!}`}>
                     <a className="block">
                       <p className="text-xl font-semibold text-gray-900">{post.title}</p>
                       <p className="text-sm text-gray-500">
@@ -31,7 +31,7 @@ export default function PostListPage({ posts }: PostListPageProps) {
                     </a>
                   </Link>
                   <div className="mt-3">
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`/blog/${post.slug!}`}>
                       <a className="text-base font-semibold text-yellow-600 hover:text-yellow-500">
                         Read full story
                       </a>
