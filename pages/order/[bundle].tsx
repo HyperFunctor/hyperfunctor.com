@@ -152,10 +152,10 @@ export default function Order({ bundle, discount }: OrderPageProps) {
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <div className="">
                     <div className='text-xl font-bold line-through text-red-500'>
-                      {formatAsMoney(pkg.price.regular)}
+                      {formatAsMoney(pkg.price)}
                     </div>
                     <div className='text-3xl font-semibold'>
-                      {formatAsMoney(pkg.price.regular * (1 - (discount || 0) / 100))}
+                      {formatAsMoney(pkg.price * (1 - (discount || 0) / 100))}
                     </div>
                   </div>
                   <div className="text-gray-600 text-sm">{pricing.vat}</div>

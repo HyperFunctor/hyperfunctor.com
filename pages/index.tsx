@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero2 } from "../components/Hero2";
 import { LogoCloud } from "../components/LogoCloud";
+import { Pricing } from "../components/Pricing";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
 import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
@@ -25,22 +26,19 @@ export const pricing = {
   title: "Kurs Next.js",
   choose: "Wybierz pakiet",
   presale: "Przedsprzedaż do 24 stycznia 2021",
-  info: "* ceny obowiązują tylko dla obywateli Polski",
   vat: "cena uwzględnia 23% VAT",
   full: {
     buy: "Kup",
     key: "full",
-    name: "Pełen Pakiet",
+    name: "Popularny ;)",
     cheaper: "mniej o",
     until: "do 24/01/2021",
-    price: {
-      regular: 3000,
-    },
+    price: 2999,
     elements: [
       "kurs wideo",
       "napisy w wersji polskiej, angielskiej i francuskiej",
       "konsultacje wideo (grupowo)",
-      "dostęp do <strong>prywatnego kanału Discord</strong> z autorem i współuczestnikami kursu"
+      "dostęp do <strong>prywatnego kanału Discord</strong> z autorami i współuczestnikami kursu"
     ]
   },
 }
@@ -99,6 +97,7 @@ export default function HomePage({
           />
         );
       })}
+      <Pricing pricing={pricing} />
     </Layout>
   );
 }
