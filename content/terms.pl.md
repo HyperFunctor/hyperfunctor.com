@@ -1,21 +1,19 @@
-reactnextaz.pl
-
 # Regulamin
 
 ### 1. INFORMACJE OGÓLNE, DEFINICJE
 
-Niniejszy Regulamin określa zasady korzystania z serwisu internetowego reactnextaz.pl prowadzonego przez:
+Niniejszy Regulamin określa zasady korzystania z serwisu internetowego [zaisteprogramuj.pl](https://zaisteprogramuj.pl) prowadzonego przez:
 
-Fundacja Zaiste z siedzibą w Poznaniu przy ul. Grobla 7/20, 61-858 Poznań, wpisana do KRS pod numerem 0000519071, NIP 779-242-40-14, REGON 302809535, email: hello@zaiste.org
+Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@kretes.dev
 
 Użyte w niniejszym regulaminie określenia mają następujące znaczenie:
 
 - Klient – osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, składająca Zamówienia i dokonująca zakupu Produktów w Sklepie;
 - Produkt – produkty fizyczne (materialne), produkty elektroniczne (treści cyfrowe) dostępne w Sklepie;
-- Regulamin – niniejszy regulamin, dostępny pod adresem https://reactnextaz.pl/terms/;
-- Sklep – serwis internetowy dostępny pod adresem https://reactnextaz.pl, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
+- Regulamin – niniejszy regulamin, dostępny pod adresem https://zaisteprogramuj.pl/regulamin/;
+- Sklep – serwis internetowy dostępny pod adresem https://zaisteprogramuj.pl, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
 - Umowa sprzedaży – umowa sprzedaży Produktów zawarta pomiędzy Właścicielem a Klientem z wykorzystaniem serwisu internetowego Sklepu;
-- Właściciel – Fundacja Zaiste z siedzibą w Poznaniu przy ul. Grobla 7/20, 61-858 Poznań, wpisana do KRS pod numerem 0000519071, NIP 779-242-40-14, REGON 302809535, email: hello@zaiste.org, prowadzący sprzedaż za pośrednictwem Sklepu;
+- Właściciel – Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@kretes.dev - prowadzący sprzedaż za pośrednictwem Sklepu;
 - Zamówienie – oświadczenie woli Klienta zmierzające do zawarcia Umowy sprzedaży, stanowiące ofertę zawarcia umowy sprzedaży, określające w szczególności rodzaj i ilość Produktu.
 
 Materiały użyte do prezentacji produktów, tj.: zdjęcia, opisy i inne są częścią Sklepu, stanowią własność jego Właściciela i chronione są prawami autorskimi. Zabrania się ich używania w celach handlowych lub prezentacji w jakichkolwiek mediach bez zgody Właściciela.
@@ -71,10 +69,10 @@ Do każdego zakupu dokonanego przez Klienta dołączany jest dowód zakupu: fakt
 
 Klient może dokonać płatności za zakupione Produkty w następujący sposób:
 
-- kartą poprzez elektroniczny system Stripe
-- przelewem lub blik poprzez elektroniczny system Stripe
+- kartą poprzez elektroniczny system EasyCart
+- przelewem lub blik poprzez elektroniczny system EasyCart
 
-Płatności są obsługiwane przez spółkę Stripe Ltd.
+Płatności są obsługiwane przez spółkę EasyCart
 
 Zamówienia na Produkty elektroniczne realizowane są po otrzymaniu płatności poprzez wysyłkę Produktu lub instrukcji skorzystania z Produktu w wiadomości e‑mail. Wysyłka Produktu następuje niezwłocznie po otrzymaniu płatności, do 24 godzin od chwili otrzymania płatności.
 
@@ -137,7 +135,7 @@ Do złożenia zamówienia i skorzystania z funkcjonalności Sklepu, a także do 
 
 Sklep wykorzystuje pliki cookies w celu zabezpieczenia bezpieczeństwa i wysokiego poziomu obsługi Klientów. Klient może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies – określić warunki ich przechowywania i uzyskiwania dostępu przez pliki cookies do swojego urządzenia za pomocą ustawień przeglądarki internetowej lub za pomocą konfiguracji usługi.
 
-Klient ma prawo złożyć reklamację dotyczącą funkcjonowania Sklepu, wysyłając wiadomość e‑mail pod adres hello@zaiste.org.
+Klient ma prawo złożyć reklamację dotyczącą funkcjonowania Sklepu, wysyłając wiadomość e‑mail pod adres siema@zaisteprogramuj.pl.
 
 Odpowiedź na reklamację zostanie wysłana w terminie 14 dni od jej otrzymania na adres wskazany w reklamacji.
 
