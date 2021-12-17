@@ -19,7 +19,7 @@ export default function RegulaminPage({
       <section className="relative py-16 bg-white">
         <div className="container mx-auto px-8">
           <div className="text-lg text-gray-400 mb-4">reactnextaz.com</div>
-          <div className="prose lg:prose-lg xl:prose-xl max-w-full">
+          <div className="prose prose-brand lg:prose-lg xl:prose-xl max-w-full">
             <MDXComponent {...markdown} />
           </div>
         </div>

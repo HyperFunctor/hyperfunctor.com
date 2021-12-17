@@ -33,7 +33,7 @@ export const pricing = {
     name: "Popularny ;)",
     cheaper: "mniej o",
     until: "do 24/01/2021",
-    price: 2999,
+    price: 2100,
     elements: [
       "kurs wideo",
       "napisy w wersji polskiej, angielskiej i francuskiej",

@@ -151,9 +151,10 @@ export default function Order({ bundle, discount }: OrderPageProps) {
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <div className="">
-                    <div className='text-xl font-bold line-through text-red-500'>
-                      {formatAsMoney(pkg.price)}
-                    </div>
+                    {(discount || 0) > 0 &&
+                      <div className='text-xl font-bold line-through text-red-500'>
+                        {formatAsMoney(pkg.price)}
+                      </div>}
                     <div className='text-3xl font-semibold'>
                       {formatAsMoney(pkg.price * (1 - (discount || 0) / 100))}
                     </div>
@@ -184,12 +185,20 @@ export async function getStaticProps({ params }: any) {
   });
 
   const { bundle: code } = params as Record<string, string>;
-  const { data } = await stripe.promotionCodes.list({ code })
-  const { coupon: { percent_off: discount } } = data[0]
 
-  return {
-    props: { bundle: code, discount }
+  if (code !== 'finish') {
+    const { data } = await stripe.promotionCodes.list({ code })
+    const { coupon: { percent_off: discount } } = data[0]
+
+    return {
+      props: { bundle: code, discount }
+    }
+  } else {
+    return {
+      props: { bundle: code, discount: 0 }
+    }
   }
+
 }
 
 export async function getStaticPaths() {
@@ -199,7 +208,7 @@ export async function getStaticPaths() {
   const { data } = await stripe.promotionCodes.list({ limit: 30 });
 
   const codes = data.filter(_ => _.active).map(_ => ({ bundle: _.code.toLowerCase() }))
-  const paths = codes.map(_ => ({ params: _ }))
+  const paths = [...codes.map(_ => ({ params: _ })), { params: { bundle: 'finish' } }]
 
   return {
     paths,

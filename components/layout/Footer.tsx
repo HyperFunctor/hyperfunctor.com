@@ -15,9 +15,9 @@ export const Footer = () => {
               <div>
                 <ul className="space-y-4">
                   <li>
-                    <Link href="/terms">
-                      <a className="text-blue-400 font-semibold hover:text-blue-500">
-                        Terms & Conditions
+                    <Link href="/regulamin">
+                      <a className="text-pink-400 font-semibold hover:text-pink-500">
+                        Regulamin
                       </a>
                     </Link>
                   </li>
