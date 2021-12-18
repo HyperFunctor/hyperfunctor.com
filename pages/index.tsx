@@ -1,6 +1,7 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { getPlaiceholder } from "plaiceholder";
 
+import { CallToActionInternship } from "../components/CallToActionInternship";
 import { CallToActionSection } from "../components/CallToActionSection";
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero } from "../components/Hero";
@@ -11,7 +12,8 @@ import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
-import { ssrWebsite } from "../generated/page";
+import { CompanyFragment } from "../generated/graphql";
+import { ssrWebsite, ssrCompanyList } from "../generated/page";
 import { InferGetStaticPropsType } from "../types";
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -37,16 +39,17 @@ export const pricing = {
   },
 }
 
-export default function HomePage({ data: { sections, ...otherData } }: HomePageProps) {
+export default function HomePage({ sections, companies, ...otherData }: HomePageProps) {
 
   return (
     // easily manage the order of sections
     <Layout>
       <Hero startDate={otherData.startDate} section={sections.hero} />
-      {otherData.internships.length > 0 && <LogoCloud internships={otherData.internships} />}
+      {companies.length > 0 && <LogoCloud companies={companies as CompanyFragment[]} />}
       <ForWhom />
-      <CourseContent section={sections.course} reasons={sections.course.content} />
       <CallToActionSection />
+      <CourseContent section={sections.course} reasons={sections.course.content} />
+      <CallToActionInternship />
       <LearningUnitList
         courseDetailsTitle={otherData.courseDetailsTitle}
         courseDetailsParagraph={otherData.courseDetailsParagraph}
@@ -70,6 +73,9 @@ function toMdx(content: string | undefined | null) {
 export async function getStaticProps() {
   const response = await ssrWebsite.getServerPage({});
   const website = response.props.data.websites[0];
+
+  const r = await ssrCompanyList.getServerPage({});
+  const companies = r.props.data.companies
 
   if (response.props.error || !website) {
     return {
@@ -121,7 +127,6 @@ export async function getStaticProps() {
                 };
               }
               default: {
-                console.log('here', content)
                 return content;
               }
             }
@@ -138,11 +143,12 @@ export async function getStaticProps() {
     ...website,
     courseDetailsParagraph,
     courseDetailsBox,
-    sections: sectionsBySlug
+    sections: sectionsBySlug,
+    companies
   };
 
   return {
-    props: { data },
+    props: { ...data },
     revalidate: 75,
   };
 }
