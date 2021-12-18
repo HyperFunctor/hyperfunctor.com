@@ -1,7 +1,7 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { getPlaiceholder } from "plaiceholder";
-import { Fragment } from "react";
 
+import { CallToActionSection } from "../components/CallToActionSection";
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero } from "../components/Hero";
 import { LogoCloud } from "../components/LogoCloud";
@@ -12,15 +12,9 @@ import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
 import { ssrWebsite } from "../generated/page";
-import { groupByType } from "../lib/utils";
 import { InferGetStaticPropsType } from "../types";
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
-type Section = HomePageProps["data"]["sections"][number];
-interface SectionContentProps {
-  section: Section;
-  startDate: string;
-}
 
 export const pricing = {
   title: "Kurs Next.js",
@@ -43,61 +37,25 @@ export const pricing = {
   },
 }
 
-const SectionContent = ({
-  section: { content, ...section },
-  startDate,
-}: SectionContentProps) => {
-  if (content.length === 0) {
-    return <Hero startDate={startDate} section={section} />;
-  }
+export default function HomePage({ data: { sections, ...otherData } }: HomePageProps) {
 
-  // assumption: All elements in the content actually have the same type
-  const contents = groupByType(content, "__typename");
-
-  // if (contents.AgendaWeek) {
-  //   return <Agenda section={section} agenda={contents.AgendaWeek} />;
-  // }
-  if (contents.Author) {
-    return <AboutAuthor section={section} authors={contents.Author} />;
-  }
-  if (contents.Faq) {
-    return <FAQ section={section} faqs={contents.Faq} />;
-  }
-  if (contents.Reason) {
-    return <CourseContent section={section} reasons={contents.Reason} />;
-  }
-  return null;
-};
-
-export default function HomePage({
-  data: { sections, ...otherData },
-}: HomePageProps) {
   return (
+    // easily manage the order of sections
     <Layout>
-      {sections.map((s, idx) => {
-        if (idx === 1) {
-          return (
-            <Fragment key={s.id}>
-              {otherData.internships.length > 0 && <LogoCloud internships={otherData.internships} />}
-              <ForWhom />
-              <SectionContent startDate={otherData.startDate} section={s} />
-              <LearningUnitList
-                courseDetailsTitle={otherData.courseDetailsTitle}
-                courseDetailsParagraph={otherData.courseDetailsParagraph}
-                courseDetailsBox={otherData.courseDetailsBox}
-              />
-            </Fragment>
-          );
-        }
-        return (
-          <SectionContent
-            section={s}
-            key={s.id}
-            startDate={otherData.startDate}
-          />
-        );
-      })}
+      <Hero startDate={otherData.startDate} section={sections.hero} />
+      {otherData.internships.length > 0 && <LogoCloud internships={otherData.internships} />}
+      <ForWhom />
+      <CourseContent section={sections.course} reasons={sections.course.content} />
+      <CallToActionSection />
+      <LearningUnitList
+        courseDetailsTitle={otherData.courseDetailsTitle}
+        courseDetailsParagraph={otherData.courseDetailsParagraph}
+        courseDetailsBox={otherData.courseDetailsBox}
+      />
+      {/* <Agenda section={sections.agenda} agenda={sections.agenda.content} /> */}
       <Pricing pricing={pricing} />
+      <FAQ section={sections.faq} faqs={sections.faq.content} />
+      <AboutAuthor section={sections.authors} authors={sections.authors.content} />
     </Layout>
   );
 }
@@ -119,59 +77,68 @@ export async function getStaticProps() {
     };
   }
 
+  const courseDetailsParagraph = await toMdx(website.courseDetailsParagraph);
+  const courseDetailsBox = await Promise.all(
+    website.courseDetailsBox.map((content) => toMdx(content))
+  );
+
+  const sections = await Promise.all(
+    website.sections.map(async (section) => {
+      return {
+        ...section,
+        subTitle: await toMdx(section.subTitle),
+        content: await Promise.all(
+          section.content.map(async (content) => {
+            switch (content.__typename) {
+              case "Reason": {
+                const plaiceholder = content.image?.url
+                  ? await getPlaiceholder(content.image.url)
+                  : null;
+
+                return {
+                  ...content,
+                  description: await toMdx(content.description),
+                  ...(plaiceholder && {
+                    image: {
+                      width: plaiceholder.img.width,
+                      height: plaiceholder.img.height,
+                      url: plaiceholder.img.src,
+                    },
+                    plaiceholder: plaiceholder.base64,
+                  }),
+                };
+              }
+              case "Author": {
+                return {
+                  ...content,
+                  bio: await toMdx(content.bio),
+                };
+              }
+              case "Faq": {
+                return {
+                  ...content,
+                  answer: await toMdx(content.answer),
+                };
+              }
+              default: {
+                console.log('here', content)
+                return content;
+              }
+            }
+          })
+        ),
+      };
+    }, {})
+  )
+
+  const bySlug = (stored: any, current: any) => ({ ...stored, [current.slug]: current })
+  const sectionsBySlug = sections.reduce(bySlug, {});
+
   const data = {
     ...website,
-    courseDetailsParagraph: await toMdx(website.courseDetailsParagraph),
-    courseDetailsBox: await Promise.all(
-      website.courseDetailsBox.map((content) => toMdx(content))
-    ),
-    sections: await Promise.all(
-      website.sections.map(async (section) => {
-        return {
-          ...section,
-          subTitle: await toMdx(section.subTitle),
-          content: await Promise.all(
-            section.content.map(async (content) => {
-              switch (content.__typename) {
-                case "Reason": {
-                  const plaiceholder = content.image?.url
-                    ? await getPlaiceholder(content.image.url)
-                    : null;
-
-                  return {
-                    ...content,
-                    description: await toMdx(content.description),
-                    ...(plaiceholder && {
-                      image: {
-                        width: plaiceholder.img.width,
-                        height: plaiceholder.img.height,
-                        url: plaiceholder.img.src,
-                      },
-                      plaiceholder: plaiceholder.base64,
-                    }),
-                  };
-                }
-                case "Author": {
-                  return {
-                    ...content,
-                    bio: await toMdx(content.bio),
-                  };
-                }
-                case "Faq": {
-                  return {
-                    ...content,
-                    answer: await toMdx(content.answer),
-                  };
-                }
-                default: {
-                  return content;
-                }
-              }
-            })
-          ),
-        };
-      })
-    ),
+    courseDetailsParagraph,
+    courseDetailsBox,
+    sections: sectionsBySlug
   };
 
   return {
