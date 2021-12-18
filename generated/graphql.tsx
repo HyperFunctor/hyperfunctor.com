@@ -5946,6 +5946,7 @@ export type Section = Node & {
   /** User that last published this document */
   readonly publishedBy?: Maybe<User>;
   readonly scheduledIn: ReadonlyArray<ScheduledOperation>;
+  readonly slug?: Maybe<Scalars["String"]>;
   /** System stage field */
   readonly stage: Stage;
   readonly subTitle?: Maybe<Scalars["String"]>;
@@ -6130,6 +6131,7 @@ export type SectionCreateInput = {
   readonly ckw3ylwmf05q701xlbyf4bijp?: InputMaybe<WebsiteCreateManyInlineInput>;
   readonly content?: InputMaybe<SectionContentCreateManyInlineInput>;
   readonly createdAt?: InputMaybe<Scalars["DateTime"]>;
+  readonly slug?: InputMaybe<Scalars["String"]>;
   readonly subTitle?: InputMaybe<Scalars["String"]>;
   readonly title: Scalars["String"];
   readonly updatedAt?: InputMaybe<Scalars["DateTime"]>;
@@ -6222,6 +6224,25 @@ export type SectionManyWhereInput = {
   readonly scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   readonly scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   readonly scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  readonly slug?: InputMaybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  readonly slug_contains?: InputMaybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  readonly slug_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  readonly slug_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  readonly slug_not?: InputMaybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  readonly slug_not_contains?: InputMaybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  readonly slug_not_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  readonly slug_not_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  readonly slug_not_starts_with?: InputMaybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  readonly slug_starts_with?: InputMaybe<Scalars["String"]>;
   readonly subTitle?: InputMaybe<Scalars["String"]>;
   /** All values containing the given string. */
   readonly subTitle_contains?: InputMaybe<Scalars["String"]>;
@@ -6285,6 +6306,8 @@ export enum SectionOrderByInput {
   IdDesc = "id_DESC",
   PublishedAtAsc = "publishedAt_ASC",
   PublishedAtDesc = "publishedAt_DESC",
+  SlugAsc = "slug_ASC",
+  SlugDesc = "slug_DESC",
   SubTitleAsc = "subTitle_ASC",
   SubTitleDesc = "subTitle_DESC",
   TitleAsc = "title_ASC",
@@ -6296,6 +6319,7 @@ export enum SectionOrderByInput {
 export type SectionUpdateInput = {
   readonly ckw3ylwmf05q701xlbyf4bijp?: InputMaybe<WebsiteUpdateManyInlineInput>;
   readonly content?: InputMaybe<SectionContentUpdateManyInlineInput>;
+  readonly slug?: InputMaybe<Scalars["String"]>;
   readonly subTitle?: InputMaybe<Scalars["String"]>;
   readonly title?: InputMaybe<Scalars["String"]>;
 };
@@ -6433,6 +6457,25 @@ export type SectionWhereInput = {
   readonly scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   readonly scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   readonly scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  readonly slug?: InputMaybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  readonly slug_contains?: InputMaybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  readonly slug_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  readonly slug_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  readonly slug_not?: InputMaybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  readonly slug_not_contains?: InputMaybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  readonly slug_not_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  readonly slug_not_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  readonly slug_not_starts_with?: InputMaybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  readonly slug_starts_with?: InputMaybe<Scalars["String"]>;
   readonly subTitle?: InputMaybe<Scalars["String"]>;
   /** All values containing the given string. */
   readonly subTitle_contains?: InputMaybe<Scalars["String"]>;
@@ -6492,6 +6535,7 @@ export type SectionWhereInput = {
 /** References Section record uniquely */
 export type SectionWhereUniqueInput = {
   readonly id?: InputMaybe<Scalars["ID"]>;
+  readonly slug?: InputMaybe<Scalars["String"]>;
 };
 
 export enum SocialMedia {
@@ -7651,6 +7695,7 @@ export type SectionsFragment = {
   readonly sections: ReadonlyArray<{
     readonly __typename?: "Section";
     readonly id: string;
+    readonly slug?: string | null | undefined;
     readonly title: string;
     readonly subTitle?: string | null | undefined;
     readonly content: ReadonlyArray<
@@ -7717,6 +7762,7 @@ export type WebsiteQuery = {
     readonly sections: ReadonlyArray<{
       readonly __typename?: "Section";
       readonly id: string;
+      readonly slug?: string | null | undefined;
       readonly title: string;
       readonly subTitle?: string | null | undefined;
       readonly content: ReadonlyArray<
@@ -7832,6 +7878,7 @@ export const SectionsFragmentDoc = gql`
   fragment SectionsFragment on Website {
     sections {
       id
+      slug
       title
       subTitle
       content {

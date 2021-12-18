@@ -53,6 +53,7 @@ fragment CourseDetailsFragment on Website {
 fragment SectionsFragment on Website {
   sections {
     id
+    slug
     title
     subTitle
     content {
