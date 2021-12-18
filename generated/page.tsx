@@ -6,6 +6,34 @@ import { QueryHookOptions, useQuery } from "@apollo/client";
 import * as Apollo from "@apollo/client";
 import type React from "react";
 import { getApolloClient } from "../lib/apolloClient";
+export async function getServerPageCompanyList(
+  options: Omit<Apollo.QueryOptions<Types.CompanyListQueryVariables>, "query">,
+  ctx?: any
+) {
+  const apolloClient = getApolloClient(ctx);
+
+  const data = await apolloClient.query<Types.CompanyListQuery>({
+    ...options,
+    query: Operations.CompanyListDocument,
+  });
+
+  const apolloState = apolloClient.cache.extract();
+
+  return {
+    props: {
+      apolloState: apolloState,
+      data: data?.data,
+      error: data?.error ?? data?.errors ?? null,
+    },
+  };
+}
+export type PageCompanyListComp = React.FC<{
+  data?: Types.CompanyListQuery;
+  error?: Apollo.ApolloError;
+}>;
+export const ssrCompanyList = {
+  getServerPage: getServerPageCompanyList,
+};
 export async function getServerPagePostElement(
   options: Omit<Apollo.QueryOptions<Types.PostElementQueryVariables>, "query">,
   ctx?: any

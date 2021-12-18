@@ -1,0 +1,10 @@
+fragment CompanyFragment on Company {
+  id
+  name
+  url
+  logo {
+    url
+    width
+    height
+  }
+}
