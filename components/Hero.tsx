@@ -4,9 +4,9 @@ import { SectionMetadataMDX } from "../props";
 import { BlogNotification } from "./BlogNotification";
 import { Newsletter } from "./Newsletter";
 import { MDXComponent } from "./NextMdx";
-import * as cl from "./hero2.module.css";
+import * as cl from "./hero.module.css";
 
-export function Hero2({
+export function Hero({
   startDate,
   section,
 }: {

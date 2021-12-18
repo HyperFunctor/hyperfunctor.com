@@ -14,10 +14,7 @@
     "@apollo/client": "^3.5.6",
     "@heroicons/react": "^1.0.5",
     "@plaiceholder/next": "2.2.0",
-    "@stripe/stripe-js": "^1.22.0",
-    "@types/google-spreadsheet": "^3.1.5",
     "clsx": "^1.1.1",
-    "google-spreadsheet": "^3.2.0",
     "graphql": "16.2.0",
     "invariant": "2.2.4",
     "next": "^12.0.7",
@@ -29,7 +26,6 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.2",
     "sharp": "0.29.3",
-    "stripe": "^8.194.0",
     "swr": "^1.1.1",
     "ts-essentials": "9.0.0"
   },

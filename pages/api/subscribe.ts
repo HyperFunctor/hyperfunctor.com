@@ -3,7 +3,7 @@ export default async function subscribe(req, res) {
   const { email } = req.body;
 
   if (!email) {
-    return res.status(400).json({ error: 'Email jest wymagany' });
+    return res.status(400).json({ error: "Email jest wymagany" });
   }
 
   try {
@@ -18,21 +18,21 @@ export default async function subscribe(req, res) {
       {
         body: JSON.stringify(data),
         headers: {
-          'X-MailerLite-ApiKey': `${APIKEY}`,
-          'Content-Type': 'application/json'
+          "X-MailerLite-ApiKey": `${APIKEY}`,
+          "Content-Type": "application/json",
         },
-        method: 'POST'
+        method: "POST",
       }
     );
 
     if (response.status >= 400) {
       return res.status(400).json({
-        error: `Pojawił się problem przy zapisie do Newslettera. Napisz do nas bezpośrednio na siema@zaisteprogramuj.pl`
+        error: `Pojawił się problem przy zapisie do Newslettera. Napisz do nas bezpośrednio na siema@zaisteprogramuj.pl`,
       });
     }
 
-    return res.status(201).json({ error: '' });
-  } catch (error) {
+    return res.status(201).json({ error: "" });
+  } catch (error: any) {
     return res.status(500).json({ error: error.message || error.toString() });
   }
-};
+}
