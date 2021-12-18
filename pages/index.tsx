@@ -3,7 +3,7 @@ import { getPlaiceholder } from "plaiceholder";
 import { Fragment } from "react";
 
 import { FAQ } from "../components/FAQ/FAQ";
-import { Hero2 } from "../components/Hero2";
+import { Hero } from "../components/Hero";
 import { LogoCloud } from "../components/LogoCloud";
 import { Pricing } from "../components/Pricing";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
@@ -48,7 +48,7 @@ const SectionContent = ({
   startDate,
 }: SectionContentProps) => {
   if (content.length === 0) {
-    return <Hero2 startDate={startDate} section={section} />;
+    return <Hero startDate={startDate} section={section} />;
   }
 
   // assumption: All elements in the content actually have the same type
