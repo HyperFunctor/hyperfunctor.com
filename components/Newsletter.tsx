@@ -54,7 +54,7 @@ export function Newsletter() {
         <div className="mt-4 sm:mt-0 sm:ml-3">
           <button
             type="submit"
-            className="block w-full rounded-md border border-transparent px-5 py-3 bg-pink-600 text-base font-medium text-white shadow hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:px-10"
+            className="button"
           >
             Chcę wziąć udział
           </button>

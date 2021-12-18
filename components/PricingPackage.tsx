@@ -44,7 +44,7 @@ export const PricingPackage = ({ className, pkg }) => {
         </ul>
         <div className="">
           {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo */}
-          <a href="https://sandbox.easycart.pl/checkout/kretes/kurs-nextjs" className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-lg leading-6 font-bold rounded-md text-white bg-pink-400 hover:bg-pink-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+          <a href="https://sandbox.easycart.pl/checkout/kretes/kurs-nextjs" className="button">
             {pkg.buy}
           </a>
           <div className="mt-2 text-gray-600 text-sm text-center">nastąpi przekierowanie do bramki płatności</div>
