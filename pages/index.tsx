@@ -32,7 +32,6 @@ export const pricing = {
     price: 2100,
     elements: [
       "kurs wideo",
-      "napisy w wersji polskiej, angielskiej i francuskiej",
       "konsultacje wideo (grupowo)",
       "dostęp do <strong>prywatnego kanału Discord</strong> z autorami i współuczestnikami kursu"
     ]
