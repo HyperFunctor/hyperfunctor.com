@@ -18,7 +18,7 @@ export const seo: NextSeoProps = {
       "Kurs jest zbudowany z myślą o osobach początkujących. Jeśli szukasz pierwszego kontaktu z programowaniem bądź programujesz w języku innymi niż JavaScript, ten kurs jest dla Ciebie.",
     images: [
       {
-        url: "https://zaisteprogramuj.pl/og-pl.png",
+        url: "https://zaisteprogramuj.pl/og-zaiste-programuj.png",
         alt: title,
         width: 1280,
         height: 720,
