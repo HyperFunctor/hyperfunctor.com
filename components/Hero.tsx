@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { formatDate } from "../lib/utils";
 import { SectionMetadataMDX } from "../props";
 
@@ -16,7 +18,7 @@ export function Hero({
   return (
     <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
-        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-3 lg:gap-24">
+        <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-3 lg:gap-4">
           <div className="col-span-2 bg-white">
             <div>{/* Logo */}</div>
             <div>
@@ -40,8 +42,12 @@ export function Hero({
               </div>
             </div>
           </div>
-          <div className="z-10 flex items-center justify-center">
-            <div>
+          <div className="hidden z-10 lg:flex items-center justify-center">
+            <div className="">
+              <Image alt="Kurs Zaiste, Programuj: React.js" src="/react.svg" height={500} width={500} />
+              <Image alt="Kurs Zaiste, Programuj: Next.js" src="/programming.svg" height={500} width={500} />
+
+
               {/* <Image
                 className="inline-block h-64 w-64 rounded-full border-8"
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
