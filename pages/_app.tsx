@@ -11,6 +11,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          defer
+          data-domain="zaisteprogramuj.pl"
+          data-api="/api/event"
+          src="/js/script.js"
+        />
       </Head>
       <DefaultSeo {...seo} />
       <AppWrapper>

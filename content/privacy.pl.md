@@ -47,3 +47,5 @@ Używamy plików cookies, które pamiętają, które podstrony odwiedzasz.
 Wykorzystujemy Pixel Facebooka (czyt. Facebook Cię śledzi na naszej stronie)
 
 Wykorzystujemy Google Analytics (czyt. Google Cię śledzi na naszej stronie)
+
+Wykorzystujemy Plausible (czyt. zliczamy odwiedziny na stronie)
