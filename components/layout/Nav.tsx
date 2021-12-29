@@ -3,37 +3,29 @@ const navigation = [
   { name: "Agenda", href: "#agenda" },
   { name: "FAQ", href: "#faq" },
   { name: "O autorach", href: "#autorzy" },
+  { name: "Kup teraz ", href: "#kup-teraz" },
 ];
 
 export function Nav() {
   return (
     <header className="bg-gray-700">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="w-full py-4 flex items-center justify-between border-b border-gray-500 lg:border-none">
-          <div className="flex items-center">
-            <a href="#">
-              <span className="sr-only">Zaiste, Programuj!</span>
-            </a>
-            <div className="hidden mr-10 space-x-8 lg:block">
-              {navigation.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-base font-bold text-white hover:text-pink-300"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="ml-10 space-x-4"></div>
-        </div>
-        <div className="py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
-          {navigation.map((link) => (
+        <a href="#" className="sr-only">
+          <h1>Zaiste, Programuj!</h1>
+        </a>
+        <div className="w-full py-4 flex items-center justify-between lg:justify-start border-b border-gray-500 lg:border-none">
+          {navigation.map((link, index) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-white hover:text-indigo-50"
+              className={`block text-base font-bold text-white hover:text-pink-300 lg:mr-8 ${
+                index === 2 ? "hidden sm:block" : ""
+              }
+              ${
+                index === 4
+                  ? "underline underline-offset-2 decoration-pink-300 decoration-wavy"
+                  : ""
+              }`}
             >
               {link.name}
             </a>

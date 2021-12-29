@@ -52,10 +52,7 @@ export function Newsletter() {
           />
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-3">
-          <button
-            type="submit"
-            className="button"
-          >
+          <button type="submit" className="button">
             Chcę wziąć udział
           </button>
         </div>

@@ -27,27 +27,36 @@ export const pricing = {
     buy: "Kup",
     key: "full",
     name: "Popularny ;)",
-    cheaper: "mniej o",
-    until: "do 24/01/2021",
+    discountName: "Promocja Świąteczna",
     price: 2100,
+    discountPrice: 1199,
+    until: new Date("2021-12-31T22:59:00.000Z"),
     elements: [
       "kurs wideo",
       "konsultacje wideo (grupowo)",
-      "dostęp do <strong>prywatnego kanału Discord</strong> z autorami i współuczestnikami kursu"
-    ]
+      "dostęp do <strong>prywatnego kanału Discord</strong> z&nbsp;autorami i współuczestnikami kursu",
+    ],
   },
-}
+};
 
-export default function HomePage({ sections, companies, ...otherData }: HomePageProps) {
-
+export default function HomePage({
+  sections,
+  companies,
+  ...otherData
+}: HomePageProps) {
   return (
     // easily manage the order of sections
     <Layout>
       <Hero startDate={otherData.startDate} section={sections.hero} />
-      {companies.length > 0 && <LogoCloud companies={companies as CompanyFragment[]} />}
+      {companies.length > 0 && (
+        <LogoCloud companies={companies as CompanyFragment[]} />
+      )}
       <ForWhom />
       <CallToActionSection />
-      <CourseContent section={sections.course} reasons={sections.course.content} />
+      <CourseContent
+        section={sections.course}
+        reasons={sections.course.content}
+      />
       <CallToActionInternship />
       <LearningUnitList
         courseDetailsTitle={otherData.courseDetailsTitle}
@@ -57,7 +66,10 @@ export default function HomePage({ sections, companies, ...otherData }: HomePage
       {/* <Agenda section={sections.agenda} agenda={sections.agenda.content} /> */}
       <Pricing pricing={pricing} />
       <FAQ section={sections.faq} faqs={sections.faq.content} />
-      <AboutAuthor section={sections.authors} authors={sections.authors.content} />
+      <AboutAuthor
+        section={sections.authors}
+        authors={sections.authors.content}
+      />
     </Layout>
   );
 }
@@ -74,7 +86,7 @@ export async function getStaticProps() {
   const website = response.props.data.websites[0];
 
   const r = await ssrCompanyList.getServerPage({});
-  const companies = r.props.data.companies
+  const companies = r.props.data.companies;
 
   if (response.props.error || !website) {
     return {
@@ -133,9 +145,12 @@ export async function getStaticProps() {
         ),
       };
     }, {})
-  )
+  );
 
-  const bySlug = (stored: any, current: any) => ({ ...stored, [current.slug]: current })
+  const bySlug = (stored: any, current: any) => ({
+    ...stored,
+    [current.slug]: current,
+  });
   const sectionsBySlug = sections.reduce(bySlug, {});
 
   const data = {
@@ -143,7 +158,7 @@ export async function getStaticProps() {
     courseDetailsParagraph,
     courseDetailsBox,
     sections: sectionsBySlug,
-    companies
+    companies,
   };
 
   return {

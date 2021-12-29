@@ -3,28 +3,28 @@ const { withPlaiceholder } = require("@plaiceholder/next");
 
 const withBundleAnalyzer = (
   ({ enabled = true } = {}) =>
-    (nextConfig = {}) => {
-      return Object.assign({}, nextConfig, {
-        webpack(config, options) {
-          if (enabled && !options.isServer) {
-            const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-            config.plugins.push(
-              new BundleAnalyzerPlugin({
-                analyzerMode: "static",
-                reportFilename: "./analyze/client.html",
-                excludeAssets: /polyfills-.*\.js/,
-                defaultSizes: "gzip",
-              })
-            );
-          }
+  (nextConfig = {}) => {
+    return Object.assign({}, nextConfig, {
+      webpack(config, options) {
+        if (enabled && !options.isServer) {
+          const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+          config.plugins.push(
+            new BundleAnalyzerPlugin({
+              analyzerMode: "static",
+              reportFilename: "./analyze/client.html",
+              excludeAssets: /polyfills-.*\.js/,
+              defaultSizes: "gzip",
+            })
+          );
+        }
 
-          if (typeof nextConfig.webpack === "function") {
-            return nextConfig.webpack(config, options);
-          }
-          return config;
-        },
-      });
-    }
+        if (typeof nextConfig.webpack === "function") {
+          return nextConfig.webpack(config, options);
+        }
+        return config;
+      },
+    });
+  }
 )({
   enabled: process.env.ANALYZE === "true",
 });

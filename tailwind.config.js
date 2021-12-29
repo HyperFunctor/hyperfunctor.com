@@ -1,9 +1,12 @@
-const colors = require('tailwindcss/colors');
-const brand = colors.pink[400]
+const colors = require("tailwindcss/colors");
+const brand = colors.pink[400];
 
 module.exports = {
   future: {},
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   mode: "jit",
   theme: {
     fontFamily: {
@@ -26,17 +29,17 @@ module.exports = {
       typography: {
         brand: {
           css: {
-            color: '#333',
+            color: "#333",
             a: {
-              'color': colors.gray[600],
-              'font-weight': 'bold',
-              'text-decoration': 'none',
-              'border-bottom-width': '2px',
-              'border-color': brand,
-              '&:hover': {
+              color: colors.gray[600],
+              "font-weight": "bold",
+              "text-decoration": "none",
+              "border-bottom-width": "2px",
+              "border-color": brand,
+              "&:hover": {
                 color: colors.black,
-                'background-color': colors.pink[100],
-              }
+                "background-color": colors.pink[100],
+              },
             },
           },
         },

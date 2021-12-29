@@ -30,7 +30,7 @@ export default function Post({ post }: PostPageProps) {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 function toMdx(content: string | undefined | null) {
@@ -41,22 +41,26 @@ function toMdx(content: string | undefined | null) {
 }
 
 export async function getStaticPaths() {
-  const { props: { data } } = await ssrPostList.getServerPage({})
+  const {
+    props: { data },
+  } = await ssrPostList.getServerPage({});
 
-  const paths = data.posts.map(_ => ({ params: { slug: _.slug } }))
+  const paths = data.posts.map((_) => ({ params: { slug: _.slug } }));
 
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-  const { props: { data } } = await ssrPostElement.getServerPage({ variables: { slug } });
+  const {
+    props: { data },
+  } = await ssrPostElement.getServerPage({ variables: { slug } });
 
   return {
     props: {
-      post: { ...data.post, body: await toMdx(data.post?.body as string) }
-    }
-  }
+      post: { ...data.post, body: await toMdx(data.post?.body as string) },
+    },
+  };
 }

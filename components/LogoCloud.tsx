@@ -16,10 +16,14 @@ export const LogoCloud = ({ companies }: LogoCloudProps) => {
         <div className="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
           {companies.map((company) => {
             return (
-              <a href={company.url!} target="_blank" key={company.id} className="hover:bg-gray-100 p-2 flex flex-col items-center" rel="noreferrer">
-                <div
-                  className="col-span-1 flex justify-center sm:col-span-2 lg:col-span-1"
-                >
+              <a
+                href={company.url!}
+                target="_blank"
+                key={company.id}
+                className="hover:bg-gray-100 p-2 flex flex-col items-center"
+                rel="noreferrer"
+              >
+                <div className="col-span-1 flex justify-center sm:col-span-2 lg:col-span-1">
                   <Image
                     className="h-12"
                     src={company.logo?.url!}

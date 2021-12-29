@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { ExternalLinkIcon } from '@heroicons/react/solid'
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 
 export function CallToActionInternship() {
   return (
@@ -13,10 +13,15 @@ export function CallToActionInternship() {
       </div>
       <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="md:ml-auto md:w-1/2 md:pl-10">
-          <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">Pierwsza Praca w IT</h2>
-          <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Staze Programistyczne</p>
+          <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+            Pierwsza Praca w IT
+          </h2>
+          <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Staże Programistyczne
+          </p>
           <p className="mt-3 text-lg text-gray-300">
-            Staze programistyczne dają mozliwość rozpoczęcia przygody w branzy informatycznej.
+            Staże programistyczne dają mozliwość rozpoczęcia przygody w branzy
+            informatycznej.
           </p>
           <div className="mt-8">
             <div className="inline-flex rounded-md shadow">
@@ -24,13 +29,16 @@ export function CallToActionInternship() {
                 href="#"
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
               >
-                Zobacz ofertę stazy programistycznych
-                <ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
+                Zobacz ofertę staży programistycznych
+                <ExternalLinkIcon
+                  className="-mr-1 ml-3 h-5 w-5 text-gray-400"
+                  aria-hidden="true"
+                />
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 import { formatDate } from "../lib/utils";
 import { SectionMetadataMDX } from "../props";
@@ -44,9 +44,18 @@ export function Hero({
           </div>
           <div className="hidden z-10 lg:flex items-center justify-center">
             <div className="">
-              <Image alt="Kurs Zaiste, Programuj: React.js" src="/react.svg" height={500} width={500} />
-              <Image alt="Kurs Zaiste, Programuj: Next.js" src="/programming.svg" height={500} width={500} />
-
+              <Image
+                alt="Kurs Zaiste, Programuj: React.js"
+                src="/react.svg"
+                height={500}
+                width={500}
+              />
+              <Image
+                alt="Kurs Zaiste, Programuj: Next.js"
+                src="/programming.svg"
+                height={500}
+                width={500}
+              />
 
               {/* <Image
                 className="inline-block h-64 w-64 rounded-full border-8"

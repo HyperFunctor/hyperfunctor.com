@@ -46,7 +46,6 @@ export const Footer = () => {
           <div className="max-w-md lg:mt-0">
             <Newsletter />
           </div>
-
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
           {/* <div className="flex space-x-6 md:order-2">
@@ -108,6 +107,6 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-    </footer >
+    </footer>
   );
 };
