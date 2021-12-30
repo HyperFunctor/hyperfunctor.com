@@ -36,9 +36,9 @@ export const CourseContentItem = ({
       </div>
       <div className="w-full md:w-1/2 pb-4">
         <h3 className="text-2xl font-bold">{reason.title}</h3>
-        <p className="mt-2 text-lg text-gray-600">
+        <div className="mt-2 text-lg text-gray-600">
           {reason.description && <MDXComponent {...reason.description} />}
-        </p>
+        </div>
       </div>
     </div>
   );

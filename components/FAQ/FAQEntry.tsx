@@ -8,9 +8,9 @@ export const FAQEntry = ({ question, answer }: FaqFragmentMDX) => {
         {question}
       </dt>
       <dd className="mt-2 md:mt-0 md:col-span-7">
-        <p className="text-base leading-6 text-gray-700">
+        <div className="text-base leading-6 text-gray-700">
           {answer && <MDXComponent {...answer} />}
-        </p>
+        </div>
       </dd>
     </div>
   );

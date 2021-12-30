@@ -1,4 +1,8 @@
+import { polishPlurals } from "polish-plurals";
 import { useEffect, useState } from "react";
+
+const dni = polishPlurals.bind(null, "dzień", "dni", "dni");
+const godzin = polishPlurals.bind(null, "godzina", "godziny", "godzin");
 
 interface PricingPackageProps {
   className?: string;
@@ -26,7 +30,14 @@ const formatUntil = (until: Date, now: Date) => {
     (diff - days * DAY_MS - hours * HOUR_MS - minutes * MINUTE_MS) / SECOND_MS
   );
 
-  return `${days} dni ${hours} godzin ${minutes} min ${seconds} sek`;
+  return (
+    <>
+      <span className="tabular-nums">{days}</span> {dni(days)}{" "}
+      <span className="tabular-nums">{hours}</span> {godzin(hours)}{" "}
+      <span className="tabular-nums">{minutes}</span> min{" "}
+      <span className="tabular-nums">{seconds}</span> sek{" "}
+    </>
+  );
 };
 
 const useCountdown = (until: Date) => {
@@ -49,7 +60,7 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
   const hasDiscount = Boolean(countDown && pkg.price && pkg.discountPrice);
 
   return (
-    <div className={`overflow-hidden mt-12 lg:mt-0 ${className || ""}`}>
+    <div className={`overflow-hidden mt-12 lg:mt-0 {className || ""}`}>
       <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
         <div className="flex justify-center">
           <span className="inline-flex px-4 py-1 rounded-full text-sm leading-5 font-semibold tracking-wide uppercase bg-pink-100 text-pink-600">
