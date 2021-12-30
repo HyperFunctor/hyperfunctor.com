@@ -2,12 +2,10 @@ const colors = require("tailwindcss/colors");
 const brand = colors.pink[400];
 
 module.exports = {
-  future: {},
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  mode: "jit",
   theme: {
     fontFamily: {
       sans: ["Fira Sans", "Arial", "Helvetica", "sans-serif"],

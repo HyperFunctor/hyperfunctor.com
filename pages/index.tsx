@@ -7,6 +7,7 @@ import { FAQ } from "../components/FAQ/FAQ";
 import { Hero } from "../components/Hero";
 import { LogoCloud } from "../components/LogoCloud";
 import { Pricing } from "../components/Pricing";
+import { Agenda } from "../components/agenda/Agenda";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
 import { CourseContent } from "../components/courseContent/CourseContent";
 import { ForWhom } from "../components/forWhom/ForWhom";
@@ -28,11 +29,13 @@ export const pricing = {
     key: "full",
     name: "Popularny ;)",
     discountName: "Promocja Świąteczna",
+    discountBuy: "Kup w promocji",
     price: 2100,
     discountPrice: 1199,
     until: new Date("2021-12-31T22:59:00.000Z"),
+    // until: new Date("2021-12-31T22:59:00.000Z"),
     elements: [
-      "kurs wideo",
+      "kurs wideo (12 tygodni)",
       "konsultacje wideo (grupowo)",
       "dostęp do <strong>prywatnego kanału Discord</strong> z&nbsp;autorami i współuczestnikami kursu",
     ],
@@ -63,7 +66,7 @@ export default function HomePage({
         courseDetailsParagraph={otherData.courseDetailsParagraph}
         courseDetailsBox={otherData.courseDetailsBox}
       />
-      {/* <Agenda section={sections.agenda} agenda={sections.agenda.content} /> */}
+      <Agenda section={sections.agenda} agenda={sections.agenda.content} />
       <Pricing pricing={pricing} />
       <FAQ section={sections.faq} faqs={sections.faq.content} />
       <AboutAuthor

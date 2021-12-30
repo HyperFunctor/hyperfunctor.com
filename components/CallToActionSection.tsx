@@ -5,7 +5,7 @@ export function CallToActionSection() {
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
           <span className="block">Gotowi na naukę programowania?</span>
           <span className="block text-pink-500">
-            Zarezerwuj miejsce juz dziś
+            Zarezerwuj miejsce już dziś
           </span>
         </h2>
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">

@@ -5,7 +5,7 @@ import { FaqFragmentMDX, SectionMetadataMDX } from "../../props";
 import { FAQEntry } from "./FAQEntry";
 
 interface FaqProps {
-  faqs: DeepReadonly<FaqFragmentMDX[]>;
+  readonly faqs: DeepReadonly<FaqFragmentMDX[]>;
   readonly section: SectionMetadataMDX;
 }
 
@@ -21,8 +21,8 @@ export const FAQ = ({ faqs, section }: FaqProps) => {
         </h2>
 
         <dl>
-          {faqs.map((entry, idx) => (
-            <FAQEntry {...entry} key={idx} />
+          {faqs.map((entry) => (
+            <FAQEntry {...entry} key={entry.id} />
           ))}
         </dl>
       </div>

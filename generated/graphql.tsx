@@ -46,6 +46,7 @@ export type AgendaWeek = Node & {
   /** The unique identifier */
   readonly id: Scalars["ID"];
   readonly items: ReadonlyArray<Scalars["String"]>;
+  readonly outcome?: Maybe<Scalars["String"]>;
   /** The time the document was published. Null on documents in draft stage. */
   readonly publishedAt?: Maybe<Scalars["DateTime"]>;
   /** User that last published this document */
@@ -119,6 +120,7 @@ export type AgendaWeekConnection = {
 export type AgendaWeekCreateInput = {
   readonly createdAt?: InputMaybe<Scalars["DateTime"]>;
   readonly items?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  readonly outcome?: InputMaybe<Scalars["String"]>;
   readonly section?: InputMaybe<SectionCreateOneInlineInput>;
   readonly title: Scalars["String"];
   readonly updatedAt?: InputMaybe<Scalars["DateTime"]>;
@@ -202,6 +204,25 @@ export type AgendaWeekManyWhereInput = {
   readonly items_contains_some?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
   /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
   readonly items_not?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  readonly outcome?: InputMaybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  readonly outcome_contains?: InputMaybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  readonly outcome_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  readonly outcome_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  readonly outcome_not?: InputMaybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  readonly outcome_not_contains?: InputMaybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  readonly outcome_not_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  readonly outcome_not_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  readonly outcome_not_starts_with?: InputMaybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  readonly outcome_starts_with?: InputMaybe<Scalars["String"]>;
   readonly publishedAt?: InputMaybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   readonly publishedAt_gt?: InputMaybe<Scalars["DateTime"]>;
@@ -266,6 +287,8 @@ export enum AgendaWeekOrderByInput {
   IdDesc = "id_DESC",
   ItemsAsc = "items_ASC",
   ItemsDesc = "items_DESC",
+  OutcomeAsc = "outcome_ASC",
+  OutcomeDesc = "outcome_DESC",
   PublishedAtAsc = "publishedAt_ASC",
   PublishedAtDesc = "publishedAt_DESC",
   TitleAsc = "title_ASC",
@@ -276,6 +299,7 @@ export enum AgendaWeekOrderByInput {
 
 export type AgendaWeekUpdateInput = {
   readonly items?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  readonly outcome?: InputMaybe<Scalars["String"]>;
   readonly section?: InputMaybe<SectionUpdateOneInlineInput>;
   readonly title?: InputMaybe<Scalars["String"]>;
 };
@@ -303,6 +327,7 @@ export type AgendaWeekUpdateManyInlineInput = {
 
 export type AgendaWeekUpdateManyInput = {
   readonly items?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  readonly outcome?: InputMaybe<Scalars["String"]>;
   readonly title?: InputMaybe<Scalars["String"]>;
 };
 
@@ -404,6 +429,25 @@ export type AgendaWeekWhereInput = {
   readonly items_contains_some?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
   /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
   readonly items_not?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  readonly outcome?: InputMaybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  readonly outcome_contains?: InputMaybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  readonly outcome_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  readonly outcome_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  readonly outcome_not?: InputMaybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  readonly outcome_not_contains?: InputMaybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  readonly outcome_not_ends_with?: InputMaybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  readonly outcome_not_in?: InputMaybe<ReadonlyArray<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  readonly outcome_not_starts_with?: InputMaybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  readonly outcome_starts_with?: InputMaybe<Scalars["String"]>;
   readonly publishedAt?: InputMaybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   readonly publishedAt_gt?: InputMaybe<Scalars["DateTime"]>;
@@ -8376,6 +8420,7 @@ export type AgendaWeekFragment = {
   readonly __typename: "AgendaWeek";
   readonly id: string;
   readonly title: string;
+  readonly outcome?: string | null | undefined;
   readonly items: ReadonlyArray<string>;
 };
 
@@ -8445,6 +8490,7 @@ export type SectionsFragment = {
           readonly __typename: "AgendaWeek";
           readonly id: string;
           readonly title: string;
+          readonly outcome?: string | null | undefined;
           readonly items: ReadonlyArray<string>;
         }
       | {
@@ -8512,6 +8558,7 @@ export type WebsiteQuery = {
             readonly __typename: "AgendaWeek";
             readonly id: string;
             readonly title: string;
+            readonly outcome?: string | null | undefined;
             readonly items: ReadonlyArray<string>;
           }
         | {
@@ -8592,6 +8639,7 @@ export const AgendaWeekFragmentDoc = gql`
     __typename
     id
     title
+    outcome
     items
   }
 `;

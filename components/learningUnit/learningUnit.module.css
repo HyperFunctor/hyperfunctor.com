@@ -7,7 +7,7 @@
 }
 
 .content p {
-  @apply mt-2 text-gray-800 leading-relaxed h-12 mx-4 mb-5;
+  @apply mt-2 text-gray-800 leading-relaxed sm:h-12 mx-4 mb-5;
 }
 
 .content ul {

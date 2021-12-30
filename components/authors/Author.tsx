@@ -10,7 +10,7 @@ interface AuthorProps {
 export const Author = ({ author }: AuthorProps) => {
   return (
     <div className="prose lg:prose-lg">
-      <h2 className="mt-2 mb-8 leading-9 font-extrabold sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-none">
+      <h2 className="mt-2 mb-8 leading-9 font-extrabold text-3xl sm:leading-10 lg:text-4xl lg:leading-none">
         {author.name}
       </h2>
 
@@ -30,7 +30,6 @@ export const Author = ({ author }: AuthorProps) => {
         {author.bio && <MDXComponent {...author.bio} />}
       </div>
 
-      {/* @todo */}
       <ul>
         {author.socialMedias.map((sm) => {
           const { className, label } = matchSm(sm);
