@@ -1,6 +1,7 @@
 const navigation = [
   { name: "Dla Kogo", href: "#dlakogo" },
-  { name: "Agenda", href: "#agenda" },
+  // { name: "Agenda", href: "#agenda" },
+  { name: "Agenda", href: "#content" },
   { name: "FAQ", href: "#faq" },
   { name: "O autorach", href: "#autorzy" },
   { name: "Kup teraz ", href: "#kup-teraz" },
