@@ -18,7 +18,7 @@ const formatUntil = (until: Date, now: Date) => {
   const diff = until.getTime() - now.getTime();
 
   if (diff <= 0) {
-    return ``;
+    return null;
   }
 
   const days = Math.floor(diff / DAY_MS);
@@ -41,7 +41,7 @@ const formatUntil = (until: Date, now: Date) => {
 };
 
 const useCountdown = (until: Date) => {
-  const [now, setNow] = useState(new Date());
+  const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,7 +52,7 @@ const useCountdown = (until: Date) => {
     };
   });
 
-  return formatUntil(until, now);
+  return now && formatUntil(until, now);
 };
 
 export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
@@ -79,7 +79,7 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
             <>{pkg.price}&nbsp;zł</>
           )}
         </div>
-        {hasDiscount && (
+        {hasDiscount && countDown && (
           <div className="text-sm text-center">
             Do końca promocji: <strong>{countDown}</strong>
           </div>
