@@ -32,7 +32,8 @@ const formatUntil = (until: Date, now: Date) => {
 
   return (
     <span className="tabular-nums whitespace-nowrap">
-      {days} {dni(days)} {hours} {godzin(hours)} {minutes} min {seconds} sek{" "}
+      {days && `${days} ${dni(days)}`} {hours && `${hours} ${godzin(hours)}`}{" "}
+      {minutes} min {seconds} sek
     </span>
   );
 };

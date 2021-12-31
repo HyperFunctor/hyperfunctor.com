@@ -22,8 +22,6 @@ type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 export const pricing = {
   title: "Kurs Next.js",
   choose: "Wybierz pakiet",
-  presale: "Przedsprzedaż do 24 stycznia 2021",
-  vat: "cena uwzględnia 23% VAT",
   full: {
     buy: "Kup",
     key: "full",
@@ -33,7 +31,6 @@ export const pricing = {
     price: 2100,
     discountPrice: 1199,
     until: new Date("2021-12-31T22:59:00.000Z"),
-    // until: new Date("2021-12-31T22:59:00.000Z"),
     elements: [
       "kurs wideo (12 tygodni)",
       "konsultacje wideo (grupowo)",
