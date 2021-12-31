@@ -10,27 +10,17 @@ export const Footer = () => {
       </h2>
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:py-12 lg:px-8">
         <div className="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-4">
-            <div className="flex">
-              <div>
-                <Link href="/regulamin">
-                  <a className="text-pink-400 font-semibold hover:text-pink-500">
-                    Regulamin
-                  </a>
-                </Link>
-              </div>
-              <div className="ml-4 mt-12 md:mt-0">
-                <Link href="/polityka-prywatnosci">
-                  <a className="text-pink-400 font-semibold hover:text-pink-500">
-                    Polityka Prywatności
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div></div>
-              <div className="mt-12 md:mt-0"></div>
-            </div>
+          <div className="flex flex-row">
+            <Link href="/regulamin">
+              <a className="block whitespace-nowrap text-pink-400 font-semibold hover:text-pink-500">
+                Regulamin
+              </a>
+            </Link>
+            <Link href="/polityka-prywatnosci">
+              <a className="block ml-4 whitespace-nowrap text-pink-400 font-semibold hover:text-pink-500">
+                Polityka Prywatności
+              </a>
+            </Link>
           </div>
         </div>
         <div className="border-t border-gray-700 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">

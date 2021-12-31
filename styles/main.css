@@ -6,15 +6,28 @@ html {
   scroll-behavior: smooth;
 }
 
+main {
+  padding-top: 3.56rem;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .translucent {
   opacity: 0.9;
   backdrop-filter: blur(4px);
 }
 
 [id] {
-  scroll-margin: 4rem 0 0 0;
+  scroll-margin: 3.56rem 0 0 0;
 }
 
 .button {
   @apply w-full flex items-center justify-center px-5 py-3 border border-transparent text-lg leading-6 font-bold rounded-md text-white bg-pink-400 hover:bg-pink-500 focus:outline-none transition duration-150 ease-in-out;
+}
+
+.button-xl {
+  @apply text-3xl;
 }

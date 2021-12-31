@@ -9,8 +9,8 @@ const navigation = [
 
 export function Nav() {
   return (
-    <header className="bg-gray-700">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+    <header className="bg-gray-700 fixed z-50 w-full">
+      <nav className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" aria-label="Top">
         <a href="#" className="sr-only">
           <h1>Zaiste, Programuj!</h1>
         </a>

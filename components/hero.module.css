@@ -1,5 +1,5 @@
 .content h2 {
-  @apply text-5xl font-extrabold text-gray-900 tracking-tight;
+  @apply text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight;
 }
 
 .content h2 strong {

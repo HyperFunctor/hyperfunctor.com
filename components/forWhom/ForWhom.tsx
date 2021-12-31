@@ -7,7 +7,7 @@ export const ForWhom = () => {
       id="dlakogo"
     >
       <div className="max-w-7xl mx-auto px-8">
-        <h2 className="mt-2 mb-8 text-center leading-9 font-extrabold sm:text-3xl sm:leading-10 lg:text-4xl lg:leading-none">
+        <h2 className="mt-2 mb-8 text-center leading-9 font-extrabold text-3xl sm:leading-10 lg:text-4xl lg:leading-none">
           {data.title}
         </h2>
 

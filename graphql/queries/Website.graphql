@@ -2,6 +2,7 @@ fragment AgendaWeekFragment on AgendaWeek {
   __typename
   id
   title
+  outcome
   items
 }
 

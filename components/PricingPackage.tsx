@@ -31,12 +31,9 @@ const formatUntil = (until: Date, now: Date) => {
   );
 
   return (
-    <>
-      <span className="tabular-nums">{days}</span> {dni(days)}{" "}
-      <span className="tabular-nums">{hours}</span> {godzin(hours)}{" "}
-      <span className="tabular-nums">{minutes}</span> min{" "}
-      <span className="tabular-nums">{seconds}</span> sek{" "}
-    </>
+    <span className="tabular-nums whitespace-nowrap">
+      {days} {dni(days)} {hours} {godzin(hours)} {minutes} min {seconds} sek{" "}
+    </span>
   );
 };
 
@@ -101,7 +98,7 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M5 13l4 4L19 7"
-                  ></path>
+                  />
                 </svg>
               </div>
               <p
@@ -112,12 +109,11 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
           ))}
         </ul>
         <div className="">
-          {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- @todo */}
           <a
             href="https://app.easycart.pl/checkout/kretes/kurs-nextjs"
-            className="button"
+            className="button button-xl"
           >
-            {pkg.buy}
+            {hasDiscount && pkg.discountBuy ? pkg.discountBuy : pkg.buy}
           </a>
           <div className="mt-2 text-gray-600 text-sm text-center">
             nastąpi przekierowanie do bramki płatności
