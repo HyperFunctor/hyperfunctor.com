@@ -116,9 +116,20 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
           >
             {hasDiscount && pkg.discountBuy ? pkg.discountBuy : pkg.buy}
           </a>
-          <div className="mt-2 text-gray-600 text-sm text-center">
+          <p className="mt-2 text-gray-600 text-sm text-center">
             nastąpi przekierowanie do bramki płatności
-          </div>
+          </p>
+
+          <p className="mt-4 text-gray-500 max-w-lg mx-auto font-bold text-sm text-center">
+            Jeśli chcesz zapłacić zwykłym przelewem albo planujesz zakupy
+            większej liczby dostępów do kursu – skontaktuj się z nami!{" "}
+            <a
+              href="mailto:siema@kretes.dev"
+              className="text-gray-600 border-b-2 border-pink-300 hover:bg-pink-100"
+            >
+              siema@kretes.dev
+            </a>
+          </p>
         </div>
       </div>
     </div>
