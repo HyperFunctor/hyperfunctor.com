@@ -29,13 +29,16 @@ export const Footer = () => {
               O Nas
             </h3>
             <p className="mt-2 text-base text-gray-300">
-              Kretes sp. z o.o.<br />
-              Chmielna 2 / 31<br />
+              Kretes sp. z o.o.
+              <br />
+              ul. Chmielna 2/31
+              <br />
               00-020 Warszawa
+              <br />
+              KRS: 0000932801
             </p>
           </div>
-          <div className="max-w-md lg:mt-0">
-          </div>
+          <div className="max-w-md lg:mt-0"></div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
