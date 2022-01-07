@@ -4,7 +4,7 @@
 
 Niniejszy Regulamin określa zasady korzystania z serwisu internetowego [zaisteprogramuj.pl](https://zaisteprogramuj.pl) prowadzonego przez:
 
-Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@kretes.dev
+Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@zaisteprogramuj.pl
 
 Użyte w niniejszym regulaminie określenia mają następujące znaczenie:
 
@@ -13,7 +13,7 @@ Użyte w niniejszym regulaminie określenia mają następujące znaczenie:
 - Regulamin – niniejszy regulamin, dostępny pod adresem https://zaisteprogramuj.pl/regulamin/;
 - Sklep – serwis internetowy dostępny pod adresem https://zaisteprogramuj.pl, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
 - Umowa sprzedaży – umowa sprzedaży Produktów zawarta pomiędzy Właścicielem a Klientem z wykorzystaniem serwisu internetowego Sklepu;
-- Właściciel – Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@kretes.dev - prowadzący sprzedaż za pośrednictwem Sklepu;
+- Właściciel – Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@zaisteprogramuj.pl - prowadzący sprzedaż za pośrednictwem Sklepu;
 - Zamówienie – oświadczenie woli Klienta zmierzające do zawarcia Umowy sprzedaży, stanowiące ofertę zawarcia umowy sprzedaży, określające w szczególności rodzaj i ilość Produktu.
 
 Materiały użyte do prezentacji produktów, tj.: zdjęcia, opisy i inne są częścią Sklepu, stanowią własność jego Właściciela i chronione są prawami autorskimi. Zabrania się ich używania w celach handlowych lub prezentacji w jakichkolwiek mediach bez zgody Właściciela.

@@ -124,10 +124,10 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
             Jeśli chcesz zapłacić zwykłym przelewem albo planujesz zakupy
             większej liczby dostępów do kursu – skontaktuj się z nami!{" "}
             <a
-              href="mailto:siema@kretes.dev"
+              href="mailto:siema@zaisteprogramuj.pl"
               className="text-gray-600 border-b-2 border-pink-300 hover:bg-pink-100"
             >
-              siema@kretes.dev
+              siema@zaisteprogramuj.pl
             </a>
           </p>
         </div>

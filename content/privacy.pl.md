@@ -2,7 +2,7 @@
 
 ## Administrator danych
 
-Administratorem danych osobowych jest Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@kretes.dev
+Administratorem danych osobowych jest Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@zaisteprogramuj.pl
 
 Dane będą przetwarzane na podstawie art. 6 ust. 1 lit. a RODO w celu przesyłania Ci newslettera. Dane będą przechowywane w bazie administratora przez czas funkcjonowania newslettera, chyba że wcześniej zrezygnujesz z otrzymywania newslettera, co spowoduje usunięcie danych z bazy.
 
