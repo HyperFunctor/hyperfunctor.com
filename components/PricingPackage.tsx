@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { polishPlurals } from "polish-plurals";
 import { useEffect, useState } from "react";
 
@@ -56,6 +57,12 @@ const useCountdown = (until: Date) => {
 export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
   const countDown = useCountdown(pkg.until);
   const hasDiscount = Boolean(countDown && pkg.price && pkg.discountPrice);
+  const router = useRouter();
+
+  const shouldLinkToPromo = !!router.query.utm_source;
+  const easyCartUrl =
+    `https://app.easycart.pl/checkout/kretes/kurs-nextjs` +
+    (shouldLinkToPromo ? "?promo=1" : "");
 
   return (
     <div className={`overflow-hidden mt-12 lg:mt-0 {className || ""}`}>
@@ -110,10 +117,7 @@ export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
           ))}
         </ul>
         <div className="">
-          <a
-            href="https://app.easycart.pl/checkout/kretes/kurs-nextjs"
-            className="button button-xl"
-          >
+          <a href={easyCartUrl} className="button button-xl">
             {hasDiscount && pkg.discountBuy ? pkg.discountBuy : pkg.buy}
           </a>
           <p className="mt-2 text-gray-600 text-sm text-center">
