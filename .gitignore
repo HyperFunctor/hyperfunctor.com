@@ -38,4 +38,4 @@ yarn-error.log*
 # vercel
 .vercel
 client_secret.json
-
+tsconfig.tsbuildinfo
