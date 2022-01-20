@@ -1,92 +1,58 @@
 import { useRouter } from "next/router";
-import { polishPlurals } from "polish-plurals";
-import { useEffect, useState } from "react";
 
-const dni = polishPlurals.bind(null, "dzień", "dni", "dni");
-const godzin = polishPlurals.bind(null, "godzina", "godziny", "godzin");
+import { useCountdown } from "../lib/hooks";
 
 interface PricingPackageProps {
   className?: string;
-  pkg: typeof import("../pages/index").pricing["full"];
+  pkg: typeof import("../lib/pricing").pricing["full"];
 }
 
-const formatUntil = (until: Date, now: Date) => {
-  const SECOND_MS = 1000;
-  const MINUTE_MS = SECOND_MS * 60;
-  const HOUR_MS = MINUTE_MS * 60;
-  const DAY_MS = HOUR_MS * 24;
-
-  const diff = until.getTime() - now.getTime();
-
-  if (diff <= 0) {
-    return null;
-  }
-
-  const days = Math.floor(diff / DAY_MS);
-  const hours = Math.floor((diff - days * DAY_MS) / HOUR_MS);
-  const minutes = Math.floor(
-    (diff - days * DAY_MS - hours * HOUR_MS) / MINUTE_MS
-  );
-  const seconds = Math.floor(
-    (diff - days * DAY_MS - hours * HOUR_MS - minutes * MINUTE_MS) / SECOND_MS
-  );
-
-  return (
-    <span className="tabular-nums whitespace-nowrap">
-      {days > 0 && `${days} ${dni(days)}`}{" "}
-      {hours > 0 && `${hours} ${godzin(hours)}`} {minutes} min {seconds} sek
-    </span>
-  );
-};
-
-const useCountdown = (until: Date) => {
-  const [now, setNow] = useState<Date | null>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNow(new Date());
-    }, 100);
-    return () => {
-      clearInterval(interval);
-    };
-  });
-
-  return now && formatUntil(until, now);
-};
-
-export const PricingPackage = ({ className, pkg }: PricingPackageProps) => {
+export const PricingPackage = ({ pkg }: PricingPackageProps) => {
   const countDown = useCountdown(pkg.until);
-  const hasDiscount = Boolean(countDown && pkg.price && pkg.discountPrice);
+  const hasDiscount = Boolean(
+    countDown &&
+      pkg.price &&
+      pkg.discountPrice &&
+      pkg.price !== pkg.discountPrice
+  );
   const router = useRouter();
 
-  const shouldLinkToPromo = !!router.query.utm_source;
+  const utm = router.query.utm_source?.toString().trim();
   const easyCartUrl =
     `https://app.easycart.pl/checkout/kretes/kurs-nextjs` +
-    (shouldLinkToPromo ? "?promo=1" : "");
+    (utm ? `?promo=1&ref=${encodeURIComponent(utm)}` : "");
 
   return (
-    <div className={`overflow-hidden mt-12 lg:mt-0 {className || ""}`}>
+    <div className="overflow-hidden mt-12 lg:mt-0 shadow-md">
       <div className="px-6 py-8 bg-white sm:p-10 sm:pb-6">
         <div className="flex justify-center">
           <span className="inline-flex px-4 py-1 rounded-full text-sm leading-5 font-semibold tracking-wide uppercase bg-pink-100 text-pink-600">
             {hasDiscount ? pkg.discountName : pkg.name}
           </span>
         </div>
-        <div className="mt-4 flex justify-center text-center items-baseline text-6xl leading-none font-extrabold">
-          {hasDiscount ? (
-            <>
-              <del className="text-2xl text-pink-500 mr-2">
-                {pkg.price}&nbsp;zł
-              </del>{" "}
-              {pkg.discountPrice}&nbsp;zł
-            </>
-          ) : (
-            <>{pkg.price}&nbsp;zł</>
-          )}
+        <div className="mt-4 flex flex-col items-center text-center justify-baseline text-6xl leading-none font-extrabold">
+          <span>
+            {hasDiscount ? (
+              <>
+                <del className="text-2xl text-pink-500 mr-2">
+                  {pkg.price}&nbsp;zł
+                </del>{" "}
+                {pkg.discountPrice}&nbsp;zł
+              </>
+            ) : (
+              <>{pkg.price}&nbsp;zł</>
+            )}
+          </span>
+          <small className="text-sm font-extralight -mt-2 mb-2">(brutto)</small>
         </div>
         {hasDiscount && countDown && (
           <div className="text-sm text-center">
             Do końca promocji: <strong>{countDown}</strong>
+          </div>
+        )}
+        {!hasDiscount && countDown && (
+          <div className="text-sm text-center">
+            Do końca sprzedaży: <strong>{countDown}</strong>
           </div>
         )}
       </div>

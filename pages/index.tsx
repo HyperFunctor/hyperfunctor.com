@@ -15,29 +15,10 @@ import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
 import { CompanyFragment } from "../generated/graphql";
 import { ssrWebsite, ssrCompanyList } from "../generated/page";
+import { pricing } from "../lib/pricing";
 import { InferGetStaticPropsType } from "../types";
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
-
-export const pricing = {
-  title: "Kurs Next.js",
-  choose: "Wybierz pakiet",
-  full: {
-    buy: "Kup",
-    key: "full",
-    name: "Popularny ;)",
-    discountName: "Promocja Noworoczna",
-    discountBuy: "Kup w promocji",
-    price: 2100,
-    discountPrice: 1260,
-    until: new Date("2022-01-09T22:59:00.000Z"),
-    elements: [
-      "kurs wideo (12 tygodni)",
-      "konsultacje wideo (grupowo)",
-      "dostęp do <strong>prywatnego kanału Discord</strong> z&nbsp;autorami i współuczestnikami kursu",
-    ],
-  },
-};
 
 export default function HomePage({
   sections,
@@ -45,7 +26,6 @@ export default function HomePage({
   ...otherData
 }: HomePageProps) {
   return (
-    // easily manage the order of sections
     <Layout>
       <Hero startDate={otherData.startDate} section={sections.hero} />
       {companies.length > 0 && (

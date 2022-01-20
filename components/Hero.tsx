@@ -23,7 +23,7 @@ export function Hero({
             <div>{/* Logo */}</div>
             <div>
               <BlogNotification />
-              <div className="mt-6 sm:max-w-2xl z-40 ">
+              <div className="mt-12 sm:max-w-2xl z-40 ">
                 {/* @ts-ignore */}
                 <div className={cl.content}>
                   {section.subTitle && <MDXComponent {...section.subTitle} />}
