@@ -31,3 +31,27 @@ main {
 .button-xl {
   @apply text-3xl;
 }
+
+.fab {
+  @apply w-8 h-8 inline-block hover:brightness-125 transition-all;
+  background-size: contain;
+}
+
+.fa-facebook {
+  background-image: url(../images/facebook.svg);
+}
+.fa-twitter {
+  background-image: url(../images/twitter.svg);
+}
+.fa-linkedin {
+  background-image: url(../images/linkedin.svg);
+}
+.fa-github {
+  background-image: url(../images/github.svg);
+}
+.fa-youtube {
+  background-image: url(../images/youtube.svg);
+}
+.fa-link {
+  background-image: url(../images/link.svg);
+}

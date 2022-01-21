@@ -6,7 +6,7 @@ import { CallToActionSection } from "../components/CallToActionSection";
 import { FAQ } from "../components/FAQ/FAQ";
 import { Hero } from "../components/Hero";
 import { LogoCloud } from "../components/LogoCloud";
-import { Pricing } from "../components/Pricing";
+import { Pricing, Pricing2 } from "../components/Pricing";
 import { Agenda } from "../components/agenda/Agenda";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
 import { CourseContent } from "../components/courseContent/CourseContent";
@@ -50,6 +50,7 @@ export default function HomePage({
         section={sections.authors}
         authors={sections.authors.content}
       />
+      <Pricing2 pricing={pricing} authors={sections.authors.content} />
     </Layout>
   );
 }

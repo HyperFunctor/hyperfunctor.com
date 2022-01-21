@@ -1,7 +1,6 @@
 export const pricing = {
-  title: "Kurs Next.js",
   full: {
-    buy: "Kup",
+    buy: "Kupuję i uczę się od najlepszych",
     key: "full",
     name: "Ostatnia szansa",
     discountName: "Promocja Noworoczna",
@@ -11,7 +10,7 @@ export const pricing = {
     until: new Date("2022-02-07T23:59:59+01:00"),
     elements: [
       "kurs wideo (12 tygodni)",
-      "konsultacje wideo (grupowo)",
+      "konsultacje wideo",
       "dostęp do <strong>prywatnego kanału Discord</strong> z&nbsp;autorami i współuczestnikami kursu",
     ],
   },
