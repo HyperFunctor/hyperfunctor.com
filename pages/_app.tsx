@@ -59,6 +59,10 @@ fbq('track', 'PageView');`}</Script>
         <link rel="shortcut icon" href="/favicon.ico?v=42" />
         <meta name="msapplication-TileColor" content="#00aba9" />
         <meta name="theme-color" content="#ffffff" />
+        <meta
+          name="google-site-verification"
+          content="SiPrRJJyiYXMKAZhjo8QJsKBfMzPeFEXta_QjHjl81s"
+        />
       </Head>
       <DefaultSeo {...seo} />
       <AppWrapper>
