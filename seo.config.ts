@@ -1,4 +1,10 @@
-import { NextSeoProps } from "next-seo";
+import {
+  NextSeoProps,
+  ProductJsonLdProps,
+  SocialProfileJsonLdProps,
+} from "next-seo";
+
+import { pricing } from "./lib/pricing";
 
 const title =
   "Kurs programowania Next.js, React.js i TypeScripta | Zaiste, Programuj";
@@ -30,4 +36,32 @@ export const seo: NextSeoProps = {
     site: "zaisteprogramuj.pl",
     cardType: "summary_large_image",
   },
+};
+
+export const productJsonLd: ProductJsonLdProps = {
+  productName: title,
+  images: ["https://zaisteprogramuj.pl/og-zaiste-programuj.png"],
+  description,
+  brand: "Zaiste, Programuj!",
+  releaseDate: pricing.full.until.toISOString(),
+  offers: {
+    price: pricing.full.discountPrice.toFixed(2),
+    priceValidUntil: pricing.full.until.toISOString(),
+    priceCurrency: "PLN",
+    availability: "https://schema.org/OnlineOnly",
+    seller: {
+      name: "Zaiste, Programuj!",
+    },
+    url: "https://app.easycart.pl/checkout/kretes/kurs-nextjs",
+  },
+};
+
+export const socialProfileJsonLd: SocialProfileJsonLdProps = {
+  type: "Organization",
+  name: "Zaiste, Programuj!",
+  url: "https://zaisteprogramuj.pl",
+  sameAs: [
+    "https://www.facebook.com/zaiste.programuj",
+    "https://www.instagram.com/zaiste.programuj/",
+  ],
 };

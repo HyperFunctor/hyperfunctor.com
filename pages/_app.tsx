@@ -1,11 +1,11 @@
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, ProductJsonLd, SocialProfileJsonLd } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/main.css";
 import Script from "next/script";
 
 import { AppWrapper } from "../components/AppContext";
-import { seo } from "../seo.config";
+import { productJsonLd, seo, socialProfileJsonLd } from "../seo.config";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -80,6 +80,8 @@ fbq('track', 'PageView');`}</Script>
         </noscript>
         <Component {...pageProps} />
       </AppWrapper>
+      <ProductJsonLd {...productJsonLd} />
+      <SocialProfileJsonLd {...socialProfileJsonLd} />
     </>
   );
 };

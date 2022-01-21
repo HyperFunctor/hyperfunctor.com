@@ -13,7 +13,6 @@ export default function PrivacyPage({
     <>
       <Head>
         <title>Terms & Conditions - React.js + Next.js from A to Z</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className="relative py-16 bg-white">
