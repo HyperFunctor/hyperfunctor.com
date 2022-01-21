@@ -146,11 +146,13 @@ export const PricingPackage = ({
                   return (
                     <li key={author.id} className="flex items-center">
                       <span className="rounded-full mr-2 overflow-hidden inline-block w-[64px] h-[64px]  shadow-sm border-pink-500 border">
-                        <NextImage
-                          src={author.avatar?.url}
-                          width={64}
-                          height={64}
-                        />
+                        {author.avatar?.url && (
+                          <NextImage
+                            src={author.avatar.url}
+                            width={64}
+                            height={64}
+                          />
+                        )}
                       </span>
                       {author.name}
                     </li>
