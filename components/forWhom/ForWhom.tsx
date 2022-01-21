@@ -41,14 +41,14 @@ export const ForWhom = () => {
 const data = {
   title: "Dla Kogo?",
   description:
-    "Kurs jest zbudowany z myślą o osobach początkujących. Jeśli szukasz pierwszego kontaktu z programowaniem bądź programujesz w języku innymi niż JavaScript, ten kurs jest dla Ciebie. Ponadto, jeśli czujesz, że brakuje Ci wiedzy w pewnych obszarach (na przykład umiesz budować aplikacje frontendowe, ale nie jest dla Ciebie do końca jasne, jak połączyć je z backendem) również skorzystasz z udziału w tym kursie.",
+    "Kurs jest zbudowany z myślą o osobach, które chcą rozwinąć swoje umiejętności budowania aplikacji. Jeśli szukasz pierwszego kontaktu z TypeScriptem, Next.js lub React, albo programujesz już w języku innymi niż JS/TS, ten kurs jest dla Ciebie. Ponadto, jeśli czujesz, że brakuje Ci wiedzy w pewnych obszarach (na przykład umiesz budować aplikacje frontendowe, ale nie jest dla Ciebie do końca jasne, jak połączyć je z backendem) również skorzystasz na udziale w tym kursie.",
   yes: {
     title: "Kurs jest dla Ciebie, jeśli:",
     reasons: [
-      "chcesz nauczyć się budować interaktywną stronę internetową",
-      "szukasz praktycznego wprowadzenia do React.js",
-      "chcesz poznać nowoczesne sposoby tworzenia stron internetowych",
-      "szukasz prostszego wprowadzenia do programowania przed nauką pisania pełnoprawnych aplikacji webowych",
+      "chcesz nauczyć się budować interaktywną aplikację internetową",
+      "szukasz praktycznego wprowadzenia do Next.js, React.js i TypeScripta",
+      "chcesz poznać nowoczesne praktyki i wzorce programiania w TypeScripcie",
+      "szukasz łatwego wejścia do świata tworzenia rozbudowanych komercyjnych aplikacji internetowych",
     ],
   },
   no: {
