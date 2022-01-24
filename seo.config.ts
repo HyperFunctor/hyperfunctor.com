@@ -26,8 +26,8 @@ export const seo: NextSeoProps = {
       {
         url: "https://zaisteprogramuj.pl/og-zaiste-programuj.png",
         alt: title,
-        width: 1280,
-        height: 720,
+        width: 1200,
+        height: 630,
       },
     ],
   },
