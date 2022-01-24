@@ -24,7 +24,7 @@ export const seo: NextSeoProps = {
     description,
     images: [
       {
-        url: "https://zaisteprogramuj.pl/og-zaiste-programuj.png",
+        url: "https://zaisteprogramuj.pl/og-zaiste-programuj_new.png",
         alt: title,
         width: 1200,
         height: 630,
@@ -40,7 +40,7 @@ export const seo: NextSeoProps = {
 
 export const productJsonLd: ProductJsonLdProps = {
   productName: title,
-  images: ["https://zaisteprogramuj.pl/og-zaiste-programuj.png"],
+  images: ["https://zaisteprogramuj.pl/og-zaiste-programuj_new.png"],
   description,
   brand: "Zaiste, Programuj!",
   releaseDate: pricing.full.until.toISOString(),
