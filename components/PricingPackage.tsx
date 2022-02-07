@@ -75,16 +75,20 @@ export const PricingPackage = ({
             </span>
             .
           </p>
-          <p className="text-xl text-center mt-6 mb-2">
-            {hasDiscount && countDown && "Promocja kończy się: "}
-            {!hasDiscount && countDown && "Sprzedaż kończy się: "}
-            <strong className="underline decoration-2 underline-offset-2 decoration-solid">
-              7.&nbsp;lutego o godz. 23:59
-            </strong>
-          </p>
-          <p className="text-xl text-center mb-2">
-            Pozostało <strong>{countDown}</strong>
-          </p>
+          {countDown && (
+            <p className="text-xl text-center mt-6 mb-2">
+              {hasDiscount && countDown && "Promocja kończy się: "}
+              {!hasDiscount && countDown && "Sprzedaż kończy się: "}
+              <strong className="underline decoration-2 underline-offset-2 decoration-solid">
+                7.&nbsp;lutego o godz. 23:59
+              </strong>
+            </p>
+          )}
+          {countDown && (
+            <p className="text-xl text-center mb-2">
+              Pozostało <strong>{countDown}</strong>
+            </p>
+          )}
         </div>
       )}
       <div className="px-6 pt-6 pb-8 bg-gray-50 border-t sm:p-10">
