@@ -57,7 +57,7 @@ export function Newsletter() {
           </button>
         </div>
       </form>
-      <div className="mt-2 text-gray-500">{message ? message : ``}</div>
+      <div className="mt-2 text-gray-500">{message || ""}</div>
     </>
   );
 }
