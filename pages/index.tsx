@@ -1,5 +1,6 @@
 import { serialize } from "next-mdx-remote/serialize";
 import { getPlaiceholder } from "plaiceholder";
+import { DeepReadonly } from "ts-essentials";
 
 import { CallToActionInternship } from "../components/CallToActionInternship";
 import { CallToActionSection } from "../components/CallToActionSection";
@@ -10,12 +11,14 @@ import { Pricing, Pricing2 } from "../components/Pricing";
 import { Agenda } from "../components/agenda/Agenda";
 import { AboutAuthor } from "../components/authors/AboutAuthor";
 import { CourseContent } from "../components/courseContent/CourseContent";
+import { ReasonItem } from "../components/courseContent/CourseContentItem";
 import { ForWhom } from "../components/forWhom/ForWhom";
 import { Layout } from "../components/layout/Layout";
 import { LearningUnitList } from "../components/learningUnit/LearningUnitList";
-import { CompanyFragment } from "../generated/graphql";
+import { AgendaWeekFragment, CompanyFragment } from "../generated/graphql";
 import { ssrWebsite, ssrCompanyList } from "../generated/page";
 import { pricing } from "../lib/pricing";
+import { AuthorFragmentMDX, FaqFragmentMDX } from "../props";
 import { InferGetStaticPropsType } from "../types";
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -125,14 +128,28 @@ export async function getStaticProps() {
           })
         ),
       };
-    }, {})
+    })
   );
 
-  const bySlug = (stored: any, current: any) => ({
-    ...stored,
-    [current.slug]: current,
-  });
-  const sectionsBySlug = sections.reduce(bySlug, {});
+  interface SectionsBySlug {
+    agenda: SectionWithContent<readonly AgendaWeekFragment[]>;
+    authors: SectionWithContent<readonly AuthorFragmentMDX[]>;
+    course: SectionWithContent<readonly ReasonItem[]>;
+    faq: SectionWithContent<DeepReadonly<FaqFragmentMDX[]>>;
+    hero: Section;
+  }
+  type Section = typeof sections[number];
+  type SectionWithContent<Content> = Omit<Section, "content"> & {
+    content: Content;
+  };
+  const sectionsBySlug = sections.reduce((acc, current) => {
+    return current.slug
+      ? {
+          ...acc,
+          [current.slug]: current,
+        }
+      : acc;
+  }, {}) as SectionsBySlug;
 
   const data = {
     ...website,
@@ -143,7 +160,7 @@ export async function getStaticProps() {
   };
 
   return {
-    props: { ...data },
+    props: data,
     revalidate: 75,
   };
 }

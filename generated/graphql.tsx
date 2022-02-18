@@ -8346,24 +8346,21 @@ export enum _SystemDateTimeFieldVariation {
 export type CompanyFragment = {
   readonly __typename?: "Company";
   readonly id: string;
-  readonly name?: string | null | undefined;
-  readonly url?: string | null | undefined;
-  readonly logo?:
-    | {
-        readonly __typename?: "Asset";
-        readonly url: string;
-        readonly width?: number | null | undefined;
-        readonly height?: number | null | undefined;
-      }
-    | null
-    | undefined;
+  readonly name?: string | null;
+  readonly url?: string | null;
+  readonly logo?: {
+    readonly __typename?: "Asset";
+    readonly url: string;
+    readonly width?: number | null;
+    readonly height?: number | null;
+  } | null;
 };
 
 export type PostFragment = {
   readonly __typename?: "Post";
-  readonly title?: string | null | undefined;
-  readonly slug?: string | null | undefined;
-  readonly body?: string | null | undefined;
+  readonly title?: string | null;
+  readonly slug?: string | null;
+  readonly body?: string | null;
 };
 
 export type CompanyListQueryVariables = Exact<{ [key: string]: never }>;
@@ -8373,17 +8370,14 @@ export type CompanyListQuery = {
   readonly companies: ReadonlyArray<{
     readonly __typename?: "Company";
     readonly id: string;
-    readonly name?: string | null | undefined;
-    readonly url?: string | null | undefined;
-    readonly logo?:
-      | {
-          readonly __typename?: "Asset";
-          readonly url: string;
-          readonly width?: number | null | undefined;
-          readonly height?: number | null | undefined;
-        }
-      | null
-      | undefined;
+    readonly name?: string | null;
+    readonly url?: string | null;
+    readonly logo?: {
+      readonly __typename?: "Asset";
+      readonly url: string;
+      readonly width?: number | null;
+      readonly height?: number | null;
+    } | null;
   }>;
 };
 
@@ -8393,15 +8387,12 @@ export type PostElementQueryVariables = Exact<{
 
 export type PostElementQuery = {
   readonly __typename?: "Query";
-  readonly post?:
-    | {
-        readonly __typename?: "Post";
-        readonly title?: string | null | undefined;
-        readonly slug?: string | null | undefined;
-        readonly body?: string | null | undefined;
-      }
-    | null
-    | undefined;
+  readonly post?: {
+    readonly __typename?: "Post";
+    readonly title?: string | null;
+    readonly slug?: string | null;
+    readonly body?: string | null;
+  } | null;
 };
 
 export type PostListQueryVariables = Exact<{ [key: string]: never }>;
@@ -8410,9 +8401,9 @@ export type PostListQuery = {
   readonly __typename?: "Query";
   readonly posts: ReadonlyArray<{
     readonly __typename?: "Post";
-    readonly title?: string | null | undefined;
-    readonly slug?: string | null | undefined;
-    readonly body?: string | null | undefined;
+    readonly title?: string | null;
+    readonly slug?: string | null;
+    readonly body?: string | null;
   }>;
 };
 
@@ -8420,7 +8411,7 @@ export type AgendaWeekFragment = {
   readonly __typename: "AgendaWeek";
   readonly id: string;
   readonly title: string;
-  readonly outcome?: string | null | undefined;
+  readonly outcome?: string | null;
   readonly items: ReadonlyArray<string>;
 };
 
@@ -8428,16 +8419,13 @@ export type ReasonFragment = {
   readonly __typename: "Reason";
   readonly id: string;
   readonly title: string;
-  readonly description?: string | null | undefined;
-  readonly image?:
-    | {
-        readonly __typename?: "Asset";
-        readonly width?: number | null | undefined;
-        readonly height?: number | null | undefined;
-        readonly url: string;
-      }
-    | null
-    | undefined;
+  readonly description?: string | null;
+  readonly image?: {
+    readonly __typename?: "Asset";
+    readonly width?: number | null;
+    readonly height?: number | null;
+    readonly url: string;
+  } | null;
 };
 
 export type FaqFragment = {
@@ -8451,12 +8439,12 @@ export type AuthorFragment = {
   readonly __typename: "Author";
   readonly id: string;
   readonly name: string;
-  readonly bio?: string | null | undefined;
+  readonly bio?: string | null;
   readonly socialMedias: ReadonlyArray<string>;
-  readonly avatar?:
-    | { readonly __typename?: "Asset"; readonly url: string }
-    | null
-    | undefined;
+  readonly avatar?: {
+    readonly __typename?: "Asset";
+    readonly url: string;
+  } | null;
 };
 
 export type InternshipsFragment = {
@@ -8465,15 +8453,15 @@ export type InternshipsFragment = {
     readonly __typename?: "Asset";
     readonly id: string;
     readonly url: string;
-    readonly width?: number | null | undefined;
-    readonly height?: number | null | undefined;
+    readonly width?: number | null;
+    readonly height?: number | null;
   }>;
 };
 
 export type CourseDetailsFragment = {
   readonly __typename?: "Website";
-  readonly courseDetailsTitle?: string | null | undefined;
-  readonly courseDetailsParagraph?: string | null | undefined;
+  readonly courseDetailsTitle?: string | null;
+  readonly courseDetailsParagraph?: string | null;
   readonly courseDetailsBox: ReadonlyArray<string>;
 };
 
@@ -8482,27 +8470,27 @@ export type SectionsFragment = {
   readonly sections: ReadonlyArray<{
     readonly __typename?: "Section";
     readonly id: string;
-    readonly slug?: string | null | undefined;
+    readonly slug?: string | null;
     readonly title: string;
-    readonly subTitle?: string | null | undefined;
+    readonly subTitle?: string | null;
     readonly content: ReadonlyArray<
       | {
           readonly __typename: "AgendaWeek";
           readonly id: string;
           readonly title: string;
-          readonly outcome?: string | null | undefined;
+          readonly outcome?: string | null;
           readonly items: ReadonlyArray<string>;
         }
       | {
           readonly __typename: "Author";
           readonly id: string;
           readonly name: string;
-          readonly bio?: string | null | undefined;
+          readonly bio?: string | null;
           readonly socialMedias: ReadonlyArray<string>;
-          readonly avatar?:
-            | { readonly __typename?: "Asset"; readonly url: string }
-            | null
-            | undefined;
+          readonly avatar?: {
+            readonly __typename?: "Asset";
+            readonly url: string;
+          } | null;
         }
       | {
           readonly __typename: "Faq";
@@ -8514,16 +8502,13 @@ export type SectionsFragment = {
           readonly __typename: "Reason";
           readonly id: string;
           readonly title: string;
-          readonly description?: string | null | undefined;
-          readonly image?:
-            | {
-                readonly __typename?: "Asset";
-                readonly width?: number | null | undefined;
-                readonly height?: number | null | undefined;
-                readonly url: string;
-              }
-            | null
-            | undefined;
+          readonly description?: string | null;
+          readonly image?: {
+            readonly __typename?: "Asset";
+            readonly width?: number | null;
+            readonly height?: number | null;
+            readonly url: string;
+          } | null;
         }
     >;
   }>;
@@ -8537,40 +8522,40 @@ export type WebsiteQuery = {
     readonly __typename?: "Website";
     readonly id: string;
     readonly startDate: string;
-    readonly courseDetailsTitle?: string | null | undefined;
-    readonly courseDetailsParagraph?: string | null | undefined;
+    readonly courseDetailsTitle?: string | null;
+    readonly courseDetailsParagraph?: string | null;
     readonly courseDetailsBox: ReadonlyArray<string>;
     readonly internships: ReadonlyArray<{
       readonly __typename?: "Asset";
       readonly id: string;
       readonly url: string;
-      readonly width?: number | null | undefined;
-      readonly height?: number | null | undefined;
+      readonly width?: number | null;
+      readonly height?: number | null;
     }>;
     readonly sections: ReadonlyArray<{
       readonly __typename?: "Section";
       readonly id: string;
-      readonly slug?: string | null | undefined;
+      readonly slug?: string | null;
       readonly title: string;
-      readonly subTitle?: string | null | undefined;
+      readonly subTitle?: string | null;
       readonly content: ReadonlyArray<
         | {
             readonly __typename: "AgendaWeek";
             readonly id: string;
             readonly title: string;
-            readonly outcome?: string | null | undefined;
+            readonly outcome?: string | null;
             readonly items: ReadonlyArray<string>;
           }
         | {
             readonly __typename: "Author";
             readonly id: string;
             readonly name: string;
-            readonly bio?: string | null | undefined;
+            readonly bio?: string | null;
             readonly socialMedias: ReadonlyArray<string>;
-            readonly avatar?:
-              | { readonly __typename?: "Asset"; readonly url: string }
-              | null
-              | undefined;
+            readonly avatar?: {
+              readonly __typename?: "Asset";
+              readonly url: string;
+            } | null;
           }
         | {
             readonly __typename: "Faq";
@@ -8582,16 +8567,13 @@ export type WebsiteQuery = {
             readonly __typename: "Reason";
             readonly id: string;
             readonly title: string;
-            readonly description?: string | null | undefined;
-            readonly image?:
-              | {
-                  readonly __typename?: "Asset";
-                  readonly width?: number | null | undefined;
-                  readonly height?: number | null | undefined;
-                  readonly url: string;
-                }
-              | null
-              | undefined;
+            readonly description?: string | null;
+            readonly image?: {
+              readonly __typename?: "Asset";
+              readonly width?: number | null;
+              readonly height?: number | null;
+              readonly url: string;
+            } | null;
           }
       >;
     }>;

@@ -48,6 +48,7 @@ const config = {
   urlImports: ["https://cdn.skypack.dev"],
   images: {
     loader: "default",
+    dangerouslyAllowSVG: true,
     domains: [
       "res.cloudinary.com",
       "images.unsplash.com",
