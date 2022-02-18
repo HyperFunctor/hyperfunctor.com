@@ -1,4 +1,8 @@
-import { NextSeoProps, ProductJsonLdProps } from "next-seo";
+import {
+  NextSeoProps,
+  ProductJsonLdProps,
+  SocialProfileJsonLdProps,
+} from "next-seo";
 
 import { pricing } from "./lib/pricing";
 
@@ -52,7 +56,7 @@ export const productJsonLd: ProductJsonLdProps = {
   },
 };
 
-export const socialProfileJsonLd: any = {
+export const socialProfileJsonLd: SocialProfileJsonLdProps = {
   type: "Organization",
   name: "Zaiste, Programuj!",
   url: "https://zaisteprogramuj.pl",
