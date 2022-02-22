@@ -41,11 +41,6 @@ export default function HomePage({
         reasons={sections.course.content}
       />
       <CallToActionInternship />
-      <LearningUnitList
-        courseDetailsTitle={otherData.courseDetailsTitle}
-        courseDetailsParagraph={otherData.courseDetailsParagraph}
-        courseDetailsBox={otherData.courseDetailsBox}
-      />
       <Agenda section={sections.agenda} agenda={sections.agenda.content} />
       <Pricing pricing={pricing} />
       <FAQ section={sections.faq} faqs={sections.faq.content} />

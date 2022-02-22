@@ -11,7 +11,16 @@ export const ForWhom = () => {
           {data.title}
         </h2>
 
-        <p className="leading-relaxed text-lg mb-8">{data.description}</p>
+        {data.description
+          .trim()
+          .split("\n")
+          .map((el) => el.trim())
+          .filter((el) => el.length > 0)
+          .map((text, idx) => (
+            <p key={idx} className="leading-relaxed text-lg mb-8">
+              {text}
+            </p>
+          ))}
 
         <div className="flex flex-wrap -mx-8">
           <div className="w-full md:w-1/2 px-8 pb-4">
@@ -40,13 +49,16 @@ export const ForWhom = () => {
 
 const data = {
   title: "Dla Kogo?",
-  description:
-    "Kurs jest zbudowany z myślą o osobach, które chcą rozwinąć swoje umiejętności budowania aplikacji. Jeśli szukasz pierwszego kontaktu z TypeScriptem, Next.js lub React, albo programujesz już w języku innymi niż JS/TS, ten kurs jest dla Ciebie. Ponadto, jeśli czujesz, że brakuje Ci wiedzy w pewnych obszarach (na przykład umiesz budować aplikacje frontendowe, ale nie jest dla Ciebie do końca jasne, jak połączyć je z backendem) również skorzystasz na udziale w tym kursie.",
+  description: `
+Chcesz budować aplikacje internetowe? Niestety, odnalezienie się w gąszczu różnych technologii webowych nie jest łatwe, a szukanie dobrych wzorców i praktyk to często godziny przedzierania się przez wątpliwej jakości materiały. My to zmieniamy!
+
+Kurs jest zbudowany z myślą o osobach, które chcą rozwinąć swoje umiejętności budowania aplikacji internetowych. Jeśli szukasz praktycznego kursu online Next.js, Reacta i TypeScripta, to ten kurs jest dla Ciebie. Co ważniejsze, nawet jeśli czujesz, że brakuje Ci wiedzy tylko w pewnych obszarach (na przykład umiesz budować aplikacje frontendowe, ale nie jest dla Ciebie do końca jasne, jak połączyć je z backendem), to również skorzystasz na udziale w tym kursie!
+`,
   yes: {
     title: "Kurs jest dla Ciebie, jeśli:",
     reasons: [
       "chcesz nauczyć się budować interaktywną aplikację internetową",
-      "szukasz praktycznego wprowadzenia do Next.js, React.js i TypeScripta",
+      "szukasz praktycznego kursu online Next.js, React.js i TypeScripta",
       "chcesz poznać nowoczesne praktyki i wzorce programiania w TypeScripcie",
       "szukasz łatwego wejścia do świata tworzenia rozbudowanych komercyjnych aplikacji internetowych",
     ],
@@ -54,9 +66,8 @@ const data = {
   no: {
     title: "Kurs NIE jest dla Ciebie, jeśli:",
     reasons: [
-      "znasz zarówno frontend, backend i sposoby komunikacji między nimi",
       "nie interesuje Cię ani React.js, ani Next.js",
-      "potrafisz już pisać aplikacje webowe",
+      "znasz Next.js na wylot i wiesz co to jest reactRoot=concurrent",
     ],
   },
 };

@@ -6,10 +6,9 @@ import {
 
 import { pricing } from "./lib/pricing";
 
-const title =
-  "Kurs programowania Next.js, React.js i TypeScripta | Zaiste, Programuj";
+const title = "Kurs Next.js, React.js i TypeScripta | Zaiste, Programuj!";
 const description =
-  "Praktyczny kurs Next.js, najpopularniejszego z frameworków do tworzenia aplikacji internetowych! TypeScript, Next.js i React.js od podstaw. Dla najlepszych staże programistyczne!";
+  "Praktyczny kurs Next.js i React.js z TypeScript –, najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
 
 export const seo: NextSeoProps = {
   title,
@@ -18,7 +17,7 @@ export const seo: NextSeoProps = {
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    site_name: "zaisteprogramuj.pl",
+    site_name: "zaisteprogramuj.pl – kurs next.js",
     url: "https://zaisteprogramuj.pl",
     title,
     description,

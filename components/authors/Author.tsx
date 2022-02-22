@@ -34,7 +34,6 @@ export const Author = ({ author }: AuthorProps) => {
 
       <ul className="p-0 mt-2">
         {author.socialMedias.map((sm) => {
-          console.log(sm);
           const { className, label } = matchSm(sm);
           return (
             <a
