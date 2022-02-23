@@ -45,13 +45,13 @@ export function Hero({
           <div className="hidden z-10 lg:flex items-center justify-center">
             <div className="">
               <Image
-                alt="Kurs Zaiste, Programuj: React.js"
+                alt="Kurs online React.js"
                 src="/react.svg"
                 height={500}
                 width={500}
               />
               <Image
-                alt="Kurs Zaiste, Programuj: Next.js"
+                alt="Kurs online Next.js"
                 src="/programming.svg"
                 height={500}
                 width={500}
