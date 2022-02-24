@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { SVGProps } from "react";
 
-const navigation = [
+interface NavigationItem {
+  name: string;
+  href: string;
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+}
+
+const navigation: NavigationItem[] = [
   {
     name: "Facebook",
     href: "#",
