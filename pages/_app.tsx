@@ -24,14 +24,14 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '481020725889556');
 fbq('track', 'PageView');`}</Script>
+      <Script
+        defer
+        data-domain="zaisteprogramuj.pl"
+        data-api="/api/event"
+        src="/js/script.js"
+      />
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <script
-          defer
-          data-domain="zaisteprogramuj.pl"
-          data-api="/api/event"
-          src="/js/script.js"
-        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -73,11 +73,13 @@ fbq('track', 'PageView');`}</Script>
         ></iframe>
       </noscript>
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           height={1}
           width={1}
           style={{ display: "none" }}
           src="https://www.facebook.com/tr?id=624234665563627&ev=PageView&noscript=1"
+          alt=""
         />
       </noscript>
       <Component {...pageProps} />

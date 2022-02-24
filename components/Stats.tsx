@@ -8,7 +8,8 @@ export function Stats() {
             Naszym szkoleniom zaufało już kilkaset osób
           </h2>
           <p className="mt-3 text-xl text-pink-200 sm:mt-4">
-            Nie zwlekaj i dołącz do kursu online Next.js, React i TypeScripta
+            Nie zwlekaj i dołącz do kursu online Next.js, React, GraphQL i
+            TypeScripta
           </p>
         </div>
         <dl className="mt-10 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">

@@ -65,7 +65,7 @@ const agenda = [
     title: "Koszyk sklepowy",
     outcome: "Funkcjonalny koszyk",
     items: [
-      "Czym jest Context w React.js",
+      "Czym jest Context w React",
       "Konfiguracja Context w Next.js",
       "Stan koszyka w Context",
       "Stylowanie koszyka",

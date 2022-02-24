@@ -1,11 +1,18 @@
 import { AcademicCapIcon } from "@heroicons/react/outline";
-import Image from "next/image";
+import { useState } from "react";
 
 import demoScreen from "../images/demo.png";
 
+import { NewsletterModal } from "./NewsletterModal";
+
 export function DemoApp() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="relative bg-gray-50 pt-16 pb-32 overflow-hidden">
+    <section
+      className="relative bg-gray-50 pt-16 pb-32 overflow-hidden"
+      id="co-zbudujesz"
+    >
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
         <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
           <div className="py-8">
@@ -31,12 +38,12 @@ export function DemoApp() {
                 a zdobywana wiedza wprost odpowiada rynkowym wymaganiom.
               </p>
               <div className="mt-6">
-                <a
-                  href=""
+                <button
+                  onClick={() => setOpen(true)}
                   className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-pink-600 hover:bg-pink-700"
                 >
                   Zapisz się teraz
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -52,6 +59,7 @@ export function DemoApp() {
           </div>
         </div>
       </div>
-    </div>
+      <NewsletterModal open={open} close={() => setOpen(false)} />
+    </section>
   );
 }

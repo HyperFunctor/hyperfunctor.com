@@ -7,60 +7,40 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tsc": "tsc --noEmit",
-    "generate": "graphql-codegen"
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@apollo/client": "3.5.9",
     "@headlessui/react": "1.5.0",
     "@heroicons/react": "1.0.5",
     "@plaiceholder/next": "2.3.0",
     "@tailwindcss/aspect-ratio": "0.4.0",
-    "clsx": "1.1.1",
-    "graphql": "15.8.0",
-    "invariant": "2.2.4",
     "next": "12.1.0",
     "next-mdx-remote": "3.0.8",
     "next-seo": "4.29.0",
     "plaiceholder": "2.3.0",
     "polish-plurals": "1.1.0",
-    "ramda": "0.28.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "7.27.0",
-    "sharp": "0.30.1",
-    "swr": "1.2.1",
-    "ts-essentials": "9.1.2"
+    "sharp": "0.30.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.6.2",
-    "@graphql-codegen/import-types-preset": "2.1.12",
-    "@graphql-codegen/introspection": "2.1.1",
-    "@graphql-codegen/typescript": "2.4.5",
-    "@graphql-codegen/typescript-apollo-client-helpers": "2.1.12",
-    "@graphql-codegen/typescript-operations": "2.3.2",
-    "@graphql-codegen/typescript-react-apollo": "3.2.8",
     "@svgr/webpack": "6.2.1",
     "@tailwindcss/forms": "0.4.0",
     "@tailwindcss/typography": "0.5.2",
-    "@types/invariant": "2.2.35",
     "@types/node": "14",
-    "@types/ramda": "0.27.64",
     "@types/react": "17.0.39",
     "@typescript-eslint/eslint-plugin": "5.12.0",
     "@typescript-eslint/parser": "5.12.0",
     "autoprefixer": "10.4.2",
-    "classnames": "2.3.1",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
-    "graphql-codegen-apollo-next-ssr": "1.7.1",
     "husky": "7.0.4",
-    "js-yaml": "4.1.0",
     "lint-staged": "12.3.4",
     "postcss": "8.4.6",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "7.4.1",
     "prettier": "2.5.1",
+    "svgo": "2.8.0",
     "tailwindcss": "3.0.23",
     "typescript": "4.6.1-rc",
     "webpack-bundle-analyzer": "4.5.0"
@@ -68,9 +48,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --resolve-plugins-relative-to . --fix",
-      "yarn prettier --write"
-    ],
-    "*.{json,md,yaml,yml,graphql,scss,css}": [
       "yarn prettier --write"
     ]
   }

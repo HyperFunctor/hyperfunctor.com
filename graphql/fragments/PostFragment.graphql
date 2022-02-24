@@ -1,5 +1,0 @@
-fragment PostFragment on Post {
-  title
-  slug
-  body
-}

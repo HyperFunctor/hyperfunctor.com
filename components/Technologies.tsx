@@ -1,14 +1,13 @@
-import Image from "next/image";
-
-import bitnoise from "../images/partners/bitnoise.png";
-import gyfted from "../images/partners/gyfted.png";
-import nextapps from "../images/partners/nextapps.png";
+import Graphql from "../images/tech/graphql.svg";
+import Next from "../images/tech/next.svg";
+import React from "../images/tech/react.svg";
+import Typescript from "../images/tech/typescript.svg";
 
 const partners = [
-  { alt: "Next.js", logo: bitnoise },
-  { alt: "React", logo: gyfted },
-  { alt: "TypeScript", logo: nextapps },
-  { alt: "GraphQL", logo: nextapps },
+  { alt: "Next.js", logo: Next },
+  { alt: "React", logo: React },
+  { alt: "TypeScript", logo: Typescript },
+  { alt: "GraphQL", logo: Graphql },
 ];
 
 export function Technologies() {
@@ -22,9 +21,10 @@ export function Technologies() {
           {partners.map((p) => (
             <div
               key={p.alt}
-              className="col-span-1 w-24 flex flex-col justify-center md:col-span-2 lg:col-span-1"
+              title={p.alt}
+              className="col-span-1 h-24 flex flex-col justify-center md:col-span-2 lg:col-span-1"
             >
-              <Image src={p.logo} alt={p.alt} />
+              <p.logo className="w-full" />
               <span className="uppercase text-center text-sm font-semibold mt-2 text-gray-500 tracking-wide">
                 {p.alt}
               </span>

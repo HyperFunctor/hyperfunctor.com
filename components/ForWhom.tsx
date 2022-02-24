@@ -7,34 +7,34 @@ import {
 
 const features = [
   {
-    name: "Competitive rates",
+    name: "Pragmatyzm ponad wszystko",
     description:
-      "Consequuntur omnis dicta cumque, inventore atque ab dolores aspernatur tempora ab doloremque.",
+      "Next.js, React, TypeScript i GraphQL – wszystko, co potrzebne, aby stworzyć rozbudowaną aplikację internetową poznasz w 13 tygodni. To jest dokładnie to, czego teraz potrzebuje rynek, a program kursu jest dopracowany pod kątem pragmatyzmu.",
     icon: GlobeAltIcon,
   },
   {
-    name: "No hidden fees",
+    name: "Nauka przez eksperymentowanie",
     description:
-      "Corporis quisquam nostrum nulla veniam recusandae temporibus aperiam officia incidunt at distinctio ratione.",
+      "Wierzymy, że najlepszym sposobem, aby nauczyć się programowania jest praca metodą prób i błędów. Niczym dziecko uczące się języka, nasi kursanci od początku będą pracować z prawdziwą aplikacją i mierzyć się z realnymi problemami.",
     icon: ScaleIcon,
   },
   {
-    name: "Instant transfers",
+    name: "Stały kontakt z mentorami",
     description:
-      "Omnis, illo delectus? Libero, possimus nulla nemo tenetur adipisci repellat dolore eligendi velit doloribus mollitia.",
+      "Jeśli tylko potrzebujesz pomocy, podpowiedzi, albo ciekawostek, to nasi mentorzy są online każdego dnia. Rozwiązania problemów albo nowe wyzwania, to wszystko jest na wyciągnięcie ręki. Jesteś na głębokiej wodzie, ale nie jesteś sam!",
     icon: LightningBoltIcon,
   },
   {
-    name: "Reminder emails",
+    name: "Dla każdego coś…",
     description:
-      "Veniam necessitatibus reiciendis fugit explicabo dolorem nihil et omnis assumenda odit? Quisquam unde accusantium.",
+      "Znasz JS i nie wiesz co dalej? Pokierujemy Cię. Oprócz autorskich filmów, otrzymujesz również wyselekcjonowane przez nas materiały wysokiej jakości do poczytania i obejrzenia – poza zakresem kursu.",
     icon: MailIcon,
   },
 ];
 
-export function Features() {
+export function ForWhom() {
   return (
-    <div className="bg-gray-50 overflow-hidden py-20">
+    <section className="bg-gray-50 overflow-hidden py-20" id="o-kursie">
       <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <svg
           className="absolute top-0 left-full transform -translate-x-1/2 -translate-y-3/4 lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-80"
@@ -76,7 +76,7 @@ export function Features() {
               Wszystko czego potrzebujesz
             </h2>
             <p className="mt-2 text-3xl font-extrabold text-gray-900">
-              Dla kogo?
+              O kursie
             </p>
             <p className="mt-4 text-lg text-gray-600">
               Chcesz budować aplikacje internetowe? Niestety, odnalezienie się w
@@ -104,6 +104,6 @@ export function Features() {
           </dl>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

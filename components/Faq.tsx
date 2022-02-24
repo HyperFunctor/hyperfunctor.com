@@ -1,9 +1,8 @@
-/* This example requires Tailwind CSS v2.0+ */
 const faqs = [
   {
     question: "Czy po tym kursie zostanę programistą/ką?",
     answer:
-      "Nie. Każdy zawód wymaga lat doświadczenia, aby wykonywać go dobrze. Po tym kursie będziesz mieć całościowy pogląd na tworzenie nawet rozbudowanych aplikacji internetowych przy użyciu React.js, Next.js i TypeScripta. Będziesz w stanie połączyć wszystkie elementy, aby stworzyć nowoczesną i interaktywną aplikację internetową, od A do Z. Kurs pozwoli także wybrać dalszą drogę i zgłębić tajniki front-endu, back-endu, języka programowania TypeScript, itd.",
+      "Nie. Każdy zawód wymaga lat doświadczenia, aby wykonywać go dobrze. Po tym kursie będziesz mieć całościowy pogląd na tworzenie nawet rozbudowanych aplikacji internetowych przy użyciu React, Next.js i TypeScripta. Będziesz w stanie połączyć wszystkie elementy, aby stworzyć nowoczesną i interaktywną aplikację internetową, od A do Z. Kurs pozwoli także wybrać dalszą drogę i zgłębić tajniki front-endu, back-endu, języka programowania TypeScript, itd.",
   },
   {
     question: "W jakim jęzku będzie prowadzone szkolenie?",
@@ -12,12 +11,12 @@ const faqs = [
   {
     question: "Jak dokładnie przebiega szkolenie?",
     answer:
-      "Przez 12 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem aplikacji internetowych w React.js, Next.js i TypeScript. Każdy tydzień to wycinek funkcji docelowej rozbudowanej aplikacji internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec każdego tygodnia będzie do wykonania praktyczne zadanie domowe. Postępy będą na bieżąco konsultowane z prowadzącymi w postaci otwartych, grupowych drzwi otwartych (tzw. Office Hours).",
+      "Przez 13 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem aplikacji internetowych w Next.js, React, GraphQL i TypeScript. Każdy tydzień to wycinek funkcji docelowej rozbudowanej aplikacji internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec każdego tygodnia będzie do wykonania praktyczne zadanie domowe. Postępy będą na bieżąco konsultowane z prowadzącymi w postaci otwartych, grupowych drzwi otwartych (tzw. Office Hours).",
   },
   {
     question: "Jestem początkujący/a. Czy ten kurs jest dla mnie?",
     answer:
-      "Nie będziemy omawiać najbardziej podstawowych zagadnień typu „co to jest zmienna” czy „jak uruchomić aplikację w przeglądarce”. Chcemy mierzyć dalej i wyżej, więc nasz kurs zakłada pewien poziom znajomości pojęć związanych z programowaniem. Jednakże, przy odpowiednim poziomie determinacji, zaangażowania i regularności każdy powinien sobie poradzić. Służymy pomocą i dodatkowymi materiałami.",
+      "Nie będziemy omawiać najbardziej podstawowych zagadnień typu „co to jest zmienna” czy „jak uruchomić aplikację w przeglądarce”. Chcemy mierzyć dalej i wyżej, więc nasz kurs zakłada pewien poziom znajomości pojęć związanych z programowaniem. Oczekujemy swobody w korzystaniu z JavaScriptu oraz podstawowego zapoznania się z Reactem. Jednakże, przy odpowiednim poziomie determinacji, zaangażowania i regularności każdy powinien sobie poradzić. Służymy pomocą i dodatkowymi materiałami.",
   },
   {
     question:
@@ -52,7 +51,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <div className="bg-gray-50">
+    <section className="bg-gray-50" id="faq">
       <div className="max-w-7xl mx-auto py-12 px-4 divide-y divide-gray-200 sm:px-6 lg:py-16 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900">
           FAQ (Często Zadawane Pytania)
@@ -75,6 +74,6 @@ export function Faq() {
           </dl>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

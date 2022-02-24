@@ -12,7 +12,7 @@ export default function RegulaminPage({
   return (
     <>
       <Head>
-        <title>Terms & Conditions - React.js + Next.js from A to Z</title>
+        <title>Terms & Conditions - React + Next.js from A to Z</title>
       </Head>
 
       <section className="relative py-16 bg-white">

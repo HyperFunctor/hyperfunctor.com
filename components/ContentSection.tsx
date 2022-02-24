@@ -95,7 +95,7 @@ export function ContentSection() {
 
         <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
           {/* Content area */}
-          <div className="pt-12 sm:pt-16 lg:pt-20">
+          <div className="pt-12 sm:pt-16">
             <div className="mt-6 text-gray-500 prose lg:prose-lg prose-pink ">
               <h2 className="font-extrabold tracking-tight">
                 Gotów na tworzenie rozbudowanych aplikacji?

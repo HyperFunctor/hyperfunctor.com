@@ -1,5 +1,0 @@
-query CompanyList {
-  companies(first: 10) {
-    ...CompanyFragment
-  }
-}

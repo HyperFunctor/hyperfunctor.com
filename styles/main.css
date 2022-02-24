@@ -6,52 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 
-main {
-  padding-top: 3.56rem;
-}
-
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.translucent {
-  opacity: 0.9;
-  backdrop-filter: blur(4px);
-}
-
-[id] {
-  scroll-margin: 3.56rem 0 0 0;
-}
-
-.button {
-  @apply w-full flex items-center justify-center px-5 py-3 border border-transparent text-lg leading-6 font-bold rounded-md text-white bg-pink-400 hover:bg-pink-500 focus:outline-none transition duration-150 ease-in-out;
-}
-
-.button-xl {
-  @apply text-3xl;
-}
-
-.fab {
-  @apply w-8 h-8 inline-block hover:brightness-125 transition-all;
-  background-size: contain;
-}
-
-.fa-facebook {
-  background-image: url(../images/facebook.svg);
-}
-.fa-twitter {
-  background-image: url(../images/twitter.svg);
-}
-.fa-linkedin {
-  background-image: url(../images/linkedin.svg);
-}
-.fa-github {
-  background-image: url(../images/github.svg);
-}
-.fa-youtube {
-  background-image: url(../images/youtube.svg);
-}
-.fa-link {
-  background-image: url(../images/link.svg);
 }

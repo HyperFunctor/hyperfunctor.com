@@ -1,27 +1,19 @@
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import Image from "next/image";
 import { Fragment } from "react";
 
 import Logo from "../images/logo.svg";
 
 import { Newsletter } from "./Newsletter";
+import { YouTubePlayer } from "./YouTubePlayer";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "O kursie", href: "#o-kursie" },
+  { name: "Agenda", href: "#agenda" },
+  { name: "Co zbudujesz?", href: "#co-zbudujesz" },
+  { name: "Mentorzy", href: "#mentorzy" },
+  { name: "FAQ", href: "#faq" },
 ];
-
-// http://www.get-youtube-thumbnail.com/
-const videoUrl = `https://www.youtube.com/watch?v=yiVPYrw13eU`;
-const videoCoverMatches = videoUrl.match(
-  /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
-);
-const maxresdefault = videoCoverMatches
-  ? `https://i3.ytimg.com/vi/${videoCoverMatches[1]}/maxresdefault.jpg`
-  : null;
 
 export function Hero() {
   return (
@@ -161,9 +153,8 @@ export function Hero() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                Kurs Next.js, React.js, GraphQL i TypeScripta:
-                najpopularniejszych narzędzi do tworzenia aplikacji
-                internetowych!
+                Kurs Next.js, React, GraphQL i TypeScripta: najpopularniejszych
+                narzędzi do tworzenia aplikacji internetowych!
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                 <p className="text-base font-medium text-gray-900">
@@ -214,46 +205,7 @@ export function Hero() {
                   fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)"
                 />
               </svg>
-              {maxresdefault && (
-                <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-                  <button
-                    type="button"
-                    className="relative block w-full bg-white rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
-                    // @todo lazy youtube player
-                  >
-                    <span className="sr-only">
-                      Obejrzyj pierwszą lekcję za darmo
-                    </span>
-                    <Image
-                      className="w-full"
-                      layout="responsive"
-                      width={1920}
-                      height={1080}
-                      src={maxresdefault}
-                      alt=""
-                    />
-                    <div
-                      className="absolute inset-0 w-full h-full flex items-center justify-center"
-                      aria-hidden="true"
-                    >
-                      <svg
-                        className="h-20 w-20 text-pink-500"
-                        fill="currentColor"
-                        viewBox="0 0 84 84"
-                      >
-                        <circle
-                          opacity="0.9"
-                          cx={42}
-                          cy={42}
-                          r={42}
-                          fill="white"
-                        />
-                        <path d="M55.5039 40.3359L37.1094 28.0729C35.7803 27.1869 34 28.1396 34 29.737V54.263C34 55.8604 35.7803 56.8131 37.1094 55.9271L55.5038 43.6641C56.6913 42.8725 56.6913 41.1275 55.5039 40.3359Z" />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-              )}
+              <YouTubePlayer video="https://www.youtube.com/watch?v=yiVPYrw13eU" />
             </div>
           </div>
         </main>

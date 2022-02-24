@@ -1,8 +1,14 @@
 import Link from "next/link";
-import React, { FormEventHandler, useRef, useState } from "react";
+import React, { FormEventHandler, ForwardedRef, useRef, useState } from "react";
 
-export function Newsletter({ variant }: { variant?: "inverse" | "pink" }) {
-  const inputEl = useRef<HTMLInputElement>(null);
+export function Newsletter({
+  variant,
+  initalFocusRef,
+}: {
+  variant?: "inverse" | "pink";
+  initalFocusRef?: ForwardedRef<HTMLInputElement>;
+}) {
+  const inputEl = useRef<HTMLInputElement | null>(null);
   const [message, setMessage] = useState("");
 
   const onSubmit: FormEventHandler = async (e) => {
@@ -61,7 +67,17 @@ export function Newsletter({ variant }: { variant?: "inverse" | "pink" }) {
             type="email"
             name="email"
             id="email"
-            ref={inputEl}
+            ref={(el) => {
+              inputEl.current = el;
+
+              if (initalFocusRef) {
+                if (typeof initalFocusRef === "function") {
+                  initalFocusRef(el);
+                } else {
+                  initalFocusRef.current = el;
+                }
+              }
+            }}
             className="block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:flex-1 border-gray-300"
             placeholder="Podaj adres email"
             required

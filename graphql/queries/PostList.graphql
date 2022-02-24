@@ -1,5 +1,0 @@
-query PostList {
-  posts(first: 10) {
-    ...PostFragment
-  }
-}
