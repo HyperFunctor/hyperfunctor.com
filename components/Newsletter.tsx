@@ -1,6 +1,6 @@
 import React, { FormEventHandler, useRef, useState } from "react";
 
-export function Newsletter() {
+export function Newsletter({ variant }: { variant?: "inverse" | "pink" }) {
   const inputEl = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState("");
 
@@ -34,28 +34,55 @@ export function Newsletter() {
     setMessage("Udało się! Jesteś na liście oczekujących.");
   };
 
+  const btnStyles =
+    variant === "inverse"
+      ? "text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
+      : "text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500";
+
+  const textStyles =
+    variant === "inverse" || variant === "pink"
+      ? "text-gray-300 prose-a:text-gray-200"
+      : "text-gray-500 prose-gray";
+
   return (
     <>
-      <form className="mt-12 sm:max-w-lg sm:w-full sm:flex" onSubmit={onSubmit}>
-        <div className="min-w-0 flex-1">
-          <label htmlFor="hero-email" className="sr-only">
-            Email address
+      <form
+        action="#"
+        method="POST"
+        className="mt-3 flex flex-col"
+        onSubmit={onSubmit}
+      >
+        <div className="sm:flex">
+          <label htmlFor="email" className="sr-only">
+            Email
           </label>
           <input
-            id="hero-email"
-            aria-label="Email address"
             type="email"
+            name="email"
+            id="email"
             ref={inputEl}
-            className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-pink-500 focus:ring-pink-500"
+            className="block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:flex-1 border-gray-300"
             placeholder="Podaj adres email"
             required
           />
-        </div>
-        <div className="mt-4 sm:mt-0 sm:ml-3">
-          <button type="submit" className="button">
+          <button
+            type="submit"
+            className={`mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto ${btnStyles}`}
+          >
             Chcę wziąć udział
           </button>
         </div>
+        <label className={`mt-3 prose text-xs ${textStyles} max-w-full`}>
+          <input
+            type="checkbox"
+            required
+            className="focus:ring-pink-500 h-4 w-4 text-pink-600 border-gray-300 rounded mr-2"
+          />
+          Rozumiem i akceptuję <a href="#">Regulamin Newslettera</a> oraz{" "}
+          <a href="#">Politykę Prywatności</a>. Wyrażam zgodę na otrzymywanie na
+          podany adres e-mail informacji handlowych w rozumieniu ustawy z dnia
+          18 lipca 2002 r. o świadczeniu usług drogą elektroniczną.
+        </label>
       </form>
       <div className="mt-2 text-gray-500">{message || ""}</div>
     </>

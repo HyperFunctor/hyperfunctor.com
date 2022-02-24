@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@apollo/client": "3.5.9",
+    "@headlessui/react": "1.5.0",
     "@heroicons/react": "1.0.5",
     "@plaiceholder/next": "2.3.0",
+    "@tailwindcss/aspect-ratio": "0.4.0",
     "clsx": "1.1.1",
     "graphql": "15.8.0",
     "invariant": "2.2.4",

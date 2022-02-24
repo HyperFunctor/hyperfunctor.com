@@ -4,7 +4,6 @@ import Head from "next/head";
 import "../styles/main.css";
 import Script from "next/script";
 
-import { AppWrapper } from "../components/AppContext";
 import { productJsonLd, seo, socialProfileJsonLd } from "../seo.config";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -65,25 +64,23 @@ fbq('track', 'PageView');`}</Script>
         />
       </Head>
       <DefaultSeo {...seo} />
-      <AppWrapper>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M3XQX83"
-            height={0}
-            width={0}
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        <noscript>
-          <img
-            height={1}
-            width={1}
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=624234665563627&ev=PageView&noscript=1"
-          />
-        </noscript>
-        <Component {...pageProps} />
-      </AppWrapper>
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-M3XQX83"
+          height={0}
+          width={0}
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
+      <noscript>
+        <img
+          height={1}
+          width={1}
+          style={{ display: "none" }}
+          src="https://www.facebook.com/tr?id=624234665563627&ev=PageView&noscript=1"
+        />
+      </noscript>
+      <Component {...pageProps} />
       <ProductJsonLd {...productJsonLd} />
       <SocialProfileJsonLd {...socialProfileJsonLd} />
     </>

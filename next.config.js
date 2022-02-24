@@ -50,6 +50,7 @@ const config = {
     loader: "default",
     dangerouslyAllowSVG: true,
     domains: [
+      "i3.ytimg.com",
       "res.cloudinary.com",
       "images.unsplash.com",
       "tailwindui.com",

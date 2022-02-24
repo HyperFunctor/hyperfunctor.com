@@ -39,3 +39,4 @@ yarn-error.log*
 .vercel
 client_secret.json
 tsconfig.tsbuildinfo
+*.mp4
