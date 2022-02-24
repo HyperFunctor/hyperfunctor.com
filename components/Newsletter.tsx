@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { FormEventHandler, useRef, useState } from "react";
 
 export function Newsletter({ variant }: { variant?: "inverse" | "pink" }) {
@@ -78,10 +79,17 @@ export function Newsletter({ variant }: { variant?: "inverse" | "pink" }) {
             required
             className="focus:ring-pink-500 h-4 w-4 text-pink-600 border-gray-300 rounded mr-2"
           />
-          Rozumiem i akceptuję <a href="#">Regulamin Newslettera</a> oraz{" "}
-          <a href="#">Politykę Prywatności</a>. Wyrażam zgodę na otrzymywanie na
-          podany adres e-mail informacji handlowych w rozumieniu ustawy z dnia
-          18 lipca 2002 r. o świadczeniu usług drogą elektroniczną.
+          Rozumiem i akceptuję{" "}
+          <Link href="/regulamin">
+            <a>Regulamin Newslettera</a>
+          </Link>{" "}
+          oraz{" "}
+          <Link href="/polityka-prywatnosci">
+            <a>Politykę Prywatności</a>
+          </Link>
+          . Wyrażam zgodę na otrzymywanie na podany adres e-mail informacji
+          handlowych w rozumieniu ustawy z dnia 18 lipca 2002 r. o świadczeniu
+          usług drogą elektroniczną.
         </label>
       </form>
       <div className="mt-2 text-gray-500">{message || ""}</div>
