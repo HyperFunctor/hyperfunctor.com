@@ -73,6 +73,7 @@ export const YouTubePlayer = ({ video }: { video: string }) => {
             controlsList="nodownload"
             crossOrigin="anonymous"
             playsInline={true}
+            src={videoSources[0].url}
           >
             {videoSources.map((s) => (
               <source
