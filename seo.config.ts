@@ -6,24 +6,24 @@ import {
 
 import { pricing } from "./lib/pricing";
 
-const title = "Kurs Next.js, React, GraphQL i TypeScripta | Zaiste, Programuj!";
+const title = "Kurs Next.js, React, GraphQL i TypeScripta | Hyper Functor";
 const description =
   "Praktyczny kurs Next.js, React i GraphQL z TypeScriptem –, najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
 
 export const seo: NextSeoProps = {
   title,
   description,
-  canonical: "https://zaisteprogramuj.pl",
+  canonical: "https://hyperfunctor.com",
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    site_name: "zaisteprogramuj.pl – kurs Next.js",
-    url: "https://zaisteprogramuj.pl",
+    site_name: "hyperfunctor.com – kurs Next.js",
+    url: "https://hyperfunctor.com",
     title,
     description,
     images: [
       {
-        url: "https://zaisteprogramuj.pl/og-zaiste-programuj_new.png",
+        url: "https://hyperfunctor.com/og-hyper-functor.png",
         alt: title,
         width: 1200,
         height: 630,
@@ -31,17 +31,17 @@ export const seo: NextSeoProps = {
     ],
   },
   twitter: {
-    handle: "@zaisteprogramuj",
-    site: "zaisteprogramuj.pl",
+    handle: "@hyperfunctor",
+    site: "hyperfunctor.com",
     cardType: "summary_large_image",
   },
 };
 
 export const productJsonLd: ProductJsonLdProps = {
   productName: title,
-  images: ["https://zaisteprogramuj.pl/og-zaiste-programuj_new.png"],
+  images: ["https://hyperfunctor.com/og-hyper-functor.png"],
   description,
-  brand: "Zaiste, Programuj!",
+  brand: "Hyper Functor",
   releaseDate: pricing.full.until.toISOString(),
   offers: {
     price: pricing.full.discountPrice.toFixed(2),
@@ -49,7 +49,7 @@ export const productJsonLd: ProductJsonLdProps = {
     priceCurrency: "PLN",
     availability: "https://schema.org/OnlineOnly",
     seller: {
-      name: "Zaiste, Programuj!",
+      name: "Hyper Functor",
     },
     url: "https://app.easycart.pl/checkout/kretes/kurs-nextjs",
   },
@@ -57,8 +57,8 @@ export const productJsonLd: ProductJsonLdProps = {
 
 export const socialProfileJsonLd: SocialProfileJsonLdProps = {
   type: "Organization",
-  name: "Zaiste, Programuj!",
-  url: "https://zaisteprogramuj.pl",
+  name: "Hyper Functor",
+  url: "https://hyperfunctor.com",
   sameAs: [
     "https://www.facebook.com/zaiste.programuj",
     "https://www.instagram.com/zaiste.programuj/",

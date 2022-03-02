@@ -55,7 +55,7 @@ const config = {
       "images.unsplash.com",
       "tailwindui.com",
       "media.graphcms.com",
-      "zaisteprogramuj.pl",
+      "hyperfunctor.com",
       "reactnextaz.com",
       "reactnextaz.pl",
     ],

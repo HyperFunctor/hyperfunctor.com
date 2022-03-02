@@ -73,12 +73,12 @@ export function Hero() {
             <div className="flex items-center flex-1">
               <div className="flex items-center justify-between w-full md:w-auto">
                 <a href="#">
-                  <span className="sr-only">Workflow</span>
+                  <span className="sr-only">Hyper Functor</span>
                   <Logo className="h-8 w-auto sm:h-10" />
                 </a>
                 <div className="-mr-2 flex items-center md:hidden">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500">
-                    <span className="sr-only">Open main menu</span>
+                    <span className="sr-only">Otwórz menu główne</span>
                     <MenuIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>

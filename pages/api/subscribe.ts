@@ -27,7 +27,7 @@ export default async function subscribe(req, res) {
 
     if (response.status >= 400) {
       return res.status(400).json({
-        error: `Pojawił się problem przy zapisie do Newslettera. Napisz do nas bezpośrednio na siema@zaisteprogramuj.pl`,
+        error: `Pojawił się problem przy zapisie do Newslettera. Napisz do nas bezpośrednio na michal@hyperfunctor.com`,
       });
     }
 

@@ -2,18 +2,18 @@
 
 ### 1. INFORMACJE OGÓLNE, DEFINICJE
 
-Niniejszy Regulamin określa zasady korzystania z serwisu internetowego [zaisteprogramuj.pl](https://zaisteprogramuj.pl) prowadzonego przez:
+Niniejszy Regulamin określa zasady korzystania z serwisu internetowego [hyperfunctor.com](https://hyperfunctor.com) prowadzonego przez:
 
-Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@zaisteprogramuj.pl
+Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: michal@hyperfunctor.com
 
 Użyte w niniejszym regulaminie określenia mają następujące znaczenie:
 
 - Klient – osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, składająca Zamówienia i dokonująca zakupu Produktów w Sklepie;
 - Produkt – produkty fizyczne (materialne), produkty elektroniczne (treści cyfrowe) dostępne w Sklepie;
-- Regulamin – niniejszy regulamin, dostępny pod adresem https://zaisteprogramuj.pl/regulamin/;
-- Sklep – serwis internetowy dostępny pod adresem https://zaisteprogramuj.pl, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
+- Regulamin – niniejszy regulamin, dostępny pod adresem https://hyperfunctor.com/regulamin/;
+- Sklep – serwis internetowy dostępny pod adresem https://hyperfunctor.com, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
 - Umowa sprzedaży – umowa sprzedaży Produktów zawarta pomiędzy Właścicielem a Klientem z wykorzystaniem serwisu internetowego Sklepu;
-- Właściciel – Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@zaisteprogramuj.pl - prowadzący sprzedaż za pośrednictwem Sklepu;
+- Właściciel – Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: michal@hyperfunctor.com - prowadzący sprzedaż za pośrednictwem Sklepu;
 - Zamówienie – oświadczenie woli Klienta zmierzające do zawarcia Umowy sprzedaży, stanowiące ofertę zawarcia umowy sprzedaży, określające w szczególności rodzaj i ilość Produktu.
 
 Materiały użyte do prezentacji produktów, tj.: zdjęcia, opisy i inne są częścią Sklepu, stanowią własność jego Właściciela i chronione są prawami autorskimi. Zabrania się ich używania w celach handlowych lub prezentacji w jakichkolwiek mediach bez zgody Właściciela.
@@ -36,7 +36,7 @@ Klient jest odpowiedzialny za nieudostępnianie swojego hasła osobom trzecim or
 
 ### 3. ZŁOŻENIE ZAMÓWIENIA
 
-Zamówienia na Produkty przyjmowane są wyłącznie drogą elektroniczną poprzez złożenie Zamówienia z wykorzystaniem serwisu internetowego Sklepu bądź poprzez wiadomość e-mail na adres hello@zaiste.org.
+Zamówienia na Produkty przyjmowane są wyłącznie drogą elektroniczną poprzez złożenie Zamówienia z wykorzystaniem serwisu internetowego Sklepu bądź poprzez wiadomość e-mail na adres michal@hyperfunctor.com.
 
 Warunkiem niezbędnym do złożenia Zamówienia jest prawidłowe wypełnienie formularza Zamówienia. Zamówienie z błędnie wypełnionym formularzem może nie zostać zrealizowane.
 Wypełniając formularz Klient ma obowiązek podania prawidłowych danych osobowych, adresu e-mail, telefonu kontaktowego, dokładnego adresu zamieszkania oraz adresu dostawy (jeżeli jest wymagany i różny od adresu zamieszkania).
@@ -135,7 +135,7 @@ Do złożenia zamówienia i skorzystania z funkcjonalności Sklepu, a także do 
 
 Sklep wykorzystuje pliki cookies w celu zabezpieczenia bezpieczeństwa i wysokiego poziomu obsługi Klientów. Klient może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies – określić warunki ich przechowywania i uzyskiwania dostępu przez pliki cookies do swojego urządzenia za pomocą ustawień przeglądarki internetowej lub za pomocą konfiguracji usługi.
 
-Klient ma prawo złożyć reklamację dotyczącą funkcjonowania Sklepu, wysyłając wiadomość e‑mail pod adres siema@zaisteprogramuj.pl.
+Klient ma prawo złożyć reklamację dotyczącą funkcjonowania Sklepu, wysyłając wiadomość e‑mail pod adres michal@hyperfunctor.com.
 
 Odpowiedź na reklamację zostanie wysłana w terminie 14 dni od jej otrzymania na adres wskazany w reklamacji.
 

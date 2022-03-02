@@ -2,7 +2,7 @@
 
 ## Administrator danych
 
-Administratorem danych osobowych jest Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: siema@zaisteprogramuj.pl
+Administratorem danych osobowych jest Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: michal@hyperfunctor.com
 
 Dane będą przetwarzane na podstawie art. 6 ust. 1 lit. a RODO w celu przesyłania Ci newslettera. Dane będą przechowywane w bazie administratora przez czas funkcjonowania newslettera, chyba że wcześniej zrezygnujesz z otrzymywania newslettera, co spowoduje usunięcie danych z bazy.
 
@@ -22,7 +22,7 @@ Witryna wykorzystuje szyfrowany protokół https
 
 Podawanie danych osobowych w naszych formularzach jest dobrowolne. Przed ich podaniem upewnij się, że połączenie jest szyfrowane (protokół https).
 
-Twoje dane nie są przechowywane w formie fizycznej. Trzymamy je tylko w formie elektronicznej w systemie mailingowym (newsletter i uczestnictwo w kursach) oraz na platformie zaisteprogramuj.pl (uczestnicy kursów).
+Twoje dane nie są przechowywane w formie fizycznej. Trzymamy je tylko w formie elektronicznej w systemie mailingowym (newsletter i uczestnictwo w kursach) oraz na platformie hyperfunctor.com (uczestnicy kursów).
 
 ## Zapisy na kurs
 

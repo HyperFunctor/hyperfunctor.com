@@ -26,7 +26,7 @@ fbq('init', '481020725889556');
 fbq('track', 'PageView');`}</Script>
       <Script
         defer
-        data-domain="zaisteprogramuj.pl"
+        data-domain="hyperfunctor.com"
         data-api="/api/event"
         src="/js/script.js"
       />
