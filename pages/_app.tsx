@@ -63,7 +63,12 @@ fbq('track', 'PageView');`}</Script>
           content="SiPrRJJyiYXMKAZhjo8QJsKBfMzPeFEXta_QjHjl81s"
         />
       </Head>
-      <DefaultSeo {...seo} />
+      <DefaultSeo
+        {...seo}
+        dangerouslyDisableGooglebot={true}
+        dangerouslySetAllPagesToNoIndex={true}
+        dangerouslySetAllPagesToNoFollow={true}
+      />
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-M3XQX83"
