@@ -66,8 +66,8 @@ const people = [
         </p>
       </>
     ),
-    twitterUrl: "#",
-    linkedinUrl: "#",
+    twitterUrl: "http://twitter.com/zaiste",
+    linkedinUrl: "https://linkedin.com/in/mmiszczyszyn",
   },
   {
     name: "Michał Miszczyszyn",
@@ -130,10 +130,9 @@ const people = [
         </p>
       </>
     ),
-    twitterUrl: "#",
-    linkedinUrl: "#",
+    twitterUrl: "http://twitter.com/mmiszy",
+    linkedinUrl: "https://linkedin.com/in/mmiszczyszyn",
   },
-  // More people...
 ];
 
 export function Authors() {

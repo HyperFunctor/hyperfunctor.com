@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import styles from "./yt.module.css";
-
 export const YouTubePlayer = ({ video }: { video: string }) => {
   // http://www.get-youtube-thumbnail.com/
   const videoCoverMatches = video.match(

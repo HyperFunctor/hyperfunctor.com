@@ -10,3 +10,47 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  src: url("/-OCFormatShardsGX.woff2") format("woff2-variations");
+  font-family: "-OC Format Shards";
+  font-style: normal;
+}
+
+.hyperfunctor-logo {
+  margin: 0;
+  padding: 0;
+  font-family: "-OC Format Shards", sans-serif;
+  font-size: 4rem;
+  font-weight: 100;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+  font-variation-settings: "SHTR" 300;
+  animation: shatter 2s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.hyperfunctor-logo strong {
+  color: white;
+  font-size: 1em;
+  font-weight: 900;
+  /* vertical-align: top; */
+}
+
+@keyframes shatter {
+  0% {
+    font-variation-settings: "SHTR" 300;
+  }
+  30% {
+    font-variation-settings: "SHTR" 300;
+  }
+  45% {
+    font-variation-settings: "SHTR" 100;
+  }
+  100% {
+    font-variation-settings: "SHTR" 100;
+  }
+}

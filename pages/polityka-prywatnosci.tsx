@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 
 import { InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 import { MDXComponent } from "../components/NextMdx";
 
@@ -11,9 +11,7 @@ export default function PrivacyPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <Head>
-        <title>Terms & Conditions - React + Next.js from A to Z</title>
-      </Head>
+      <NextSeo title="Polityka Prywatności" />
 
       <section className="relative py-16 bg-white">
         <div className="container mx-auto px-8">

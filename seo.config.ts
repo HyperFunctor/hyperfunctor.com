@@ -11,6 +11,8 @@ const description =
   "Praktyczny kurs Next.js, React i GraphQL z TypeScriptem –, najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
 
 export const seo: NextSeoProps = {
+  titleTemplate: "%s | Hyper Functor",
+  defaultTitle: title,
   title,
   description,
   canonical: "https://hyperfunctor.com",
