@@ -12,9 +12,32 @@ import {
   rn,
 } from "./helpers";
 
-const error = (...args) => console.error(...args);
+const error = (...args: any[]) => console.error(...args);
 
 class VantaBase {
+  afterRender: any;
+  camera: any;
+  el: any;
+  fps: any;
+  height: any;
+  mouseEaseX: any;
+  mouseEaseY: any;
+  mouseX: any;
+  mouseY: any;
+  onDestroy: any;
+  onInit: any;
+  onMouseMove: any;
+  onResize: any;
+  onRestart: any;
+  onUpdate: any;
+  renderer: any;
+  req: any;
+  scale: any;
+  scene: any;
+  t: any;
+  t2: any;
+  uniforms: any;
+  width: any;
   options = {
     mouseControls: true,
     touchControls: true,
@@ -42,9 +65,11 @@ class VantaBase {
 
     // Set element
     this.options = { ...this.options, ...userOptions };
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'el' does not exist on type '{ mouseContr... Remove this comment to see the full error message
     this.el = this.options.el;
     if (this.el == null) {
       error('Instance needs "el" param!');
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'el' does not exist on type '{ mouseContr... Remove this comment to see the full error message
     } else if (!(this.options.el instanceof HTMLElement)) {
       const selector = this.el;
       this.el = q(selector);
@@ -98,6 +123,7 @@ class VantaBase {
 
   setOptions(userOptions = {}) {
     Object.assign(this.options, userOptions);
+    // @ts-expect-error ts-migrate(2554) FIXME: Expected 2 arguments, but got 0.
     this.triggerMouseMove();
   }
 
@@ -131,7 +157,7 @@ class VantaBase {
     }
   }
 
-  applyCanvasStyles(canvasEl, opts = {}) {
+  applyCanvasStyles(canvasEl: any, opts = {}) {
     Object.assign(canvasEl.style, {
       position: "absolute",
       zIndex: 0,
@@ -155,7 +181,9 @@ class VantaBase {
     });
     this.el.appendChild(this.renderer.domElement);
     this.applyCanvasStyles(this.renderer.domElement);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'backgroundAlpha' does not exist on type ... Remove this comment to see the full error message
     if (isNaN(this.options.backgroundAlpha)) {
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'backgroundAlpha' does not exist on type ... Remove this comment to see the full error message
       this.options.backgroundAlpha = 1;
     }
 
@@ -172,7 +200,7 @@ class VantaBase {
     return canvas.getBoundingClientRect();
   }
 
-  windowMouseMoveWrapper(e) {
+  windowMouseMoveWrapper(e: any) {
     const rect = this.getCanvasRect();
     if (!rect) return false;
     const x = e.clientX - rect.left;
@@ -180,10 +208,11 @@ class VantaBase {
     if (x >= 0 && y >= 0 && x <= rect.width && y <= rect.height) {
       this.mouseX = x;
       this.mouseY = y;
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseEase' does not exist on type '{ mou... Remove this comment to see the full error message
       if (!this.options.mouseEase) this.triggerMouseMove(x, y);
     }
   }
-  windowTouchWrapper(e) {
+  windowTouchWrapper(e: any) {
     const rect = this.getCanvasRect();
     if (!rect) return false;
     if (e.touches.length === 1) {
@@ -192,11 +221,12 @@ class VantaBase {
       if (x >= 0 && y >= 0 && x <= rect.width && y <= rect.height) {
         this.mouseX = x;
         this.mouseY = y;
+        // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseEase' does not exist on type '{ mou... Remove this comment to see the full error message
         if (!this.options.mouseEase) this.triggerMouseMove(x, y);
       }
     }
   }
-  windowGyroWrapper(e) {
+  windowGyroWrapper(e: any) {
     const rect = this.getCanvasRect();
     if (!rect) return false;
     const x = Math.round(e.alpha * 2) - rect.left;
@@ -204,12 +234,14 @@ class VantaBase {
     if (x >= 0 && y >= 0 && x <= rect.width && y <= rect.height) {
       this.mouseX = x;
       this.mouseY = y;
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseEase' does not exist on type '{ mou... Remove this comment to see the full error message
       if (!this.options.mouseEase) this.triggerMouseMove(x, y);
     }
   }
 
-  triggerMouseMove(x, y) {
+  triggerMouseMove(x: any, y: any) {
     if (x === undefined && y === undefined) {
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseEase' does not exist on type '{ mou... Remove this comment to see the full error message
       if (this.options.mouseEase) {
         x = this.mouseEaseX;
         y = this.mouseEaseY;
@@ -286,11 +318,13 @@ class VantaBase {
     this.t += 1;
     // Uniform time
     this.t2 || (this.t2 = 0);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'speed' does not exist on type '{ mouseCo... Remove this comment to see the full error message
     this.t2 += this.options.speed || 1;
     if (this.uniforms) {
       this.uniforms.iTime.value = this.t2 * 0.016667; // iTime is in seconds
     }
 
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseEase' does not exist on type '{ mou... Remove this comment to see the full error message
     if (this.options.mouseEase) {
       this.mouseEaseX = this.mouseEaseX || this.mouseX || 0;
       this.mouseEaseY = this.mouseEaseY || this.mouseY || 0;
@@ -306,6 +340,7 @@ class VantaBase {
     }
 
     // Only animate if element is within view
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'forceAnimate' does not exist on type '{ ... Remove this comment to see the full error message
     if (this.isOnScreen() || this.options.forceAnimate) {
       if (typeof this.onUpdate === "function") {
         this.onUpdate();
@@ -314,6 +349,7 @@ class VantaBase {
         this.renderer.render(this.scene, this.camera);
         this.renderer.setClearColor(
           this.options.backgroundColor,
+          // @ts-expect-error ts-migrate(2339) FIXME: Property 'backgroundAlpha' does not exist on type ... Remove this comment to see the full error message
           this.options.backgroundAlpha
         );
       }
@@ -371,12 +407,27 @@ class VantaBase {
 }
 
 export class Net extends VantaBase {
-  constructor(userOptions) {
+  blending: any;
+  camera: any;
+  cont: any;
+  height: any;
+  lineColors: any;
+  linePositions: any;
+  linesMesh: any;
+  points: any;
+  rayCaster: any;
+  rcMouseX: any;
+  rcMouseY: any;
+  scene: any;
+  spot: any;
+  t: any;
+  width: any;
+  constructor(userOptions: any) {
     super(userOptions);
     this.init();
   }
 
-  genPoint(x, y, z) {
+  genPoint(x: any, y: any, z: any) {
     let sphere;
     if (!this.points) {
       this.points = [];
@@ -391,14 +442,19 @@ export class Net extends VantaBase {
       sphere = new THREE.Object3D();
     }
     this.cont.add(sphere);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'ox' does not exist on type 'Mesh<SphereG... Remove this comment to see the full error message
     sphere.ox = x;
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'oy' does not exist on type 'Mesh<SphereG... Remove this comment to see the full error message
     sphere.oy = y;
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'oz' does not exist on type 'Mesh<SphereG... Remove this comment to see the full error message
     sphere.oz = z;
     sphere.position.set(x, y, z);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'r' does not exist on type 'Mesh<SphereGe... Remove this comment to see the full error message
     sphere.r = rn(-2, 2); // rotation rate
     return this.points.push(sphere);
   }
 
+  // @ts-expect-error ts-migrate(2425) FIXME: Class 'VantaBase' defines instance member property... Remove this comment to see the full error message
   onInit() {
     this.cont = new THREE.Group();
     this.cont.position.set(0, 0, 0);
@@ -435,7 +491,9 @@ export class Net extends VantaBase {
     geometry.computeBoundingSphere();
     geometry.setDrawRange(0, 0);
     const material = new THREE.LineBasicMaterial({
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'VertexColors' does not exist on type 'ty... Remove this comment to see the full error message
       vertexColors: THREE.VertexColors,
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'Blending | null' is not assignable to type '... Remove this comment to see the full error message
       blending: this.blending === "additive" ? THREE.AdditiveBlending : null,
       transparent: true,
     });
@@ -487,6 +545,7 @@ export class Net extends VantaBase {
     return this.scene.add(this.spot);
   }
 
+  // @ts-expect-error ts-migrate(2425) FIXME: Class 'VantaBase' defines instance member property... Remove this comment to see the full error message
   onDestroy() {
     if (this.scene) this.scene.remove(this.linesMesh);
     this.spot =
@@ -497,16 +556,17 @@ export class Net extends VantaBase {
         null;
   }
 
-  setOptions(userOptions) {
+  setOptions(userOptions: any) {
     // allow setOptions to change point colors
     super.setOptions(userOptions);
     if (userOptions.color) {
-      this.points.forEach((p) => {
+      this.points.forEach((p: any) => {
         p.material.color = new THREE.Color(userOptions.color);
       });
     }
   }
 
+  // @ts-expect-error ts-migrate(2425) FIXME: Class 'VantaBase' defines instance member property... Remove this comment to see the full error message
   onUpdate() {
     let diff, t;
     const c = this.camera;
@@ -550,6 +610,7 @@ export class Net extends VantaBase {
       p.scale.x =
         p.scale.y =
         p.scale.z =
+          // @ts-expect-error ts-migrate(2339) FIXME: Property 'clamp' does not exist on type 'number'.
           ((15 - distClamp) * 0.25).clamp(1, 100);
 
       if (p.r !== 0) {
@@ -570,6 +631,7 @@ export class Net extends VantaBase {
         dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
         if (dist < this.options.maxDistance) {
           let lineColor;
+          // @ts-expect-error ts-migrate(2339) FIXME: Property 'clamp' does not exist on type 'number'.
           const alpha = ((1.0 - dist / this.options.maxDistance) * 2).clamp(
             0,
             1
@@ -605,7 +667,8 @@ export class Net extends VantaBase {
     return this.t * 0.001;
   }
 
-  onMouseMove(x, y) {
+  // @ts-expect-error ts-migrate(2425) FIXME: Class 'VantaBase' defines instance member property... Remove this comment to see the full error message
+  onMouseMove(x: any, y: any) {
     const c = this.camera;
     if (!c.oy) {
       c.oy = c.position.y;
@@ -614,9 +677,11 @@ export class Net extends VantaBase {
     }
     const ang = Math.atan2(c.oz, c.ox);
     const dist = Math.sqrt(c.oz * c.oz + c.ox * c.ox);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseCoeffX' does not exist on type '{ m... Remove this comment to see the full error message
     const tAng = ang + (x - 0.5) * 2 * (this.options.mouseCoeffX || 1);
     c.tz = dist * Math.sin(tAng);
     c.tx = dist * Math.cos(tAng);
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'mouseCoeffY' does not exist on type '{ m... Remove this comment to see the full error message
     c.ty = c.oy + (y - 0.5) * 50 * (this.options.mouseCoeffY || 1);
 
     if (!this.rayCaster) {
@@ -625,6 +690,7 @@ export class Net extends VantaBase {
     this.rcMouseY = -x * 2 + 1;
   }
 
+  // @ts-expect-error ts-migrate(2425) FIXME: Class 'VantaBase' defines instance member property... Remove this comment to see the full error message
   onRestart() {
     if (this.scene) this.scene.remove(this.linesMesh);
     this.points = [];
