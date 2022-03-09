@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { HomepageBg } from "../components/HomepageBg";
+import { HomepageBg } from "../components/HomepageBg/HomepageBg";
 
 export default function HomePage() {
   return (

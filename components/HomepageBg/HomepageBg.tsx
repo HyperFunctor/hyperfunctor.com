@@ -1,23 +1,9 @@
 import { useEffect, useRef, ReactNode } from "react";
 import * as THREE from "three";
-import NET from "vanta/dist/vanta.net.min";
 
-const stfu = (fn: () => void) => {
-  try {
-    fn();
-  } catch {}
-};
+import { throttle, stfu } from "../../utils";
 
-const throttle = (fn: () => void, timeFrame: number) => {
-  let lastTime = 0;
-  return () => {
-    const now = Date.now();
-    if (now - lastTime >= timeFrame) {
-      fn();
-      lastTime = now;
-    }
-  };
-};
+import { Net } from "./animation";
 
 export const HomepageBg = ({ children }: { children: ReactNode }) => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -29,7 +15,7 @@ export const HomepageBg = ({ children }: { children: ReactNode }) => {
       return;
     }
 
-    const effect = NET({
+    const effect = new Net({
       THREE,
       el: rootRef.current,
       mouseControls: true,
