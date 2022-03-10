@@ -1,75 +1,93 @@
-Number.prototype.clamp = function (min, max) {
-  return Math.min(Math.max(this, min), max);
+export const clamp = function (value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
 };
-
-// # module.exports = helpers
 
 export function mobileCheck() {
   if (typeof navigator !== "undefined") {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    ) || window.innerWidth < 600;
+    return (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      ) || window.innerWidth < 600
+    );
   }
   return null;
 }
-export const sample = (items) =>
+
+export const sample = <T>(items: readonly T[]): T =>
   items[Math.floor(Math.random() * items.length)];
 
-export function rn(start, end) {
+export function rn(
+  start?: number | null | undefined,
+  end?: number | null | undefined
+) {
   if (start == null) start = 0;
   if (end == null) end = 1;
   return start + Math.random() * (end - start);
 }
 
-export function ri(start, end) {
+export function ri(
+  start?: number | null | undefined,
+  end?: number | null | undefined
+) {
   if (start == null) start = 0;
   if (end == null) end = 1;
   return Math.floor(start + Math.random() * (end - start + 1));
 }
 
-export const q = (sel) => document.querySelector(sel);
+export const q = <K extends keyof HTMLElementTagNameMap>(sel: K) =>
+  document.querySelector(sel);
 
-export const color2Hex = (color) => {
+type ColorInput = number | string;
+type Color = { r: number; g: number; b: number };
+
+export const color2Hex = (color: ColorInput) => {
   if (typeof color == "number") {
     return "#" + ("00000" + color.toString(16)).slice(-6);
-  } else return color;
+  } else {
+    return color;
+  }
 };
 
-export const color2Rgb = (color, alpha = 1) => {
+export const color2Rgb = (color: ColorInput, alpha = 1) => {
   const hex = color2Hex(color);
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  const obj = result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
-  return "rgba(" + obj.r + "," + obj.g + "," + obj.b + "," + alpha + ")";
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
+  const obj: Color = {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16),
+  };
+  return `rgba(${obj.r},${obj.g},${obj.b},${alpha})`;
 };
 
-export const getBrightness = (threeColor) => {
+export const getBrightness = (threeColor: Color) => {
   return 0.299 * threeColor.r + 0.587 * threeColor.g + 0.114 * threeColor.b;
 };
 
-export function clearThree(obj) {
-  // https://stackoverflow.com/questions/30359830/how-do-i-clear-three-js-scene/48722282
+export function clearThree(obj: THREE.Scene | THREE.Object3D | THREE.Line) {
   while (obj.children && obj.children.length > 0) {
     clearThree(obj.children[0]);
     obj.remove(obj.children[0]);
   }
-  if (obj.geometry) obj.geometry.dispose();
-  if (obj.material) {
-    // in case of map, bumpMap, normalMap, envMap ...
-    Object.keys(obj.material).forEach((prop) => {
-      if (!obj.material[prop]) return;
+  if ("geometry" in obj) obj.geometry.dispose();
+  if ("material" in obj) {
+    if (Array.isArray(obj.material)) {
+      obj.material.forEach(dispose);
+    } else {
+      dispose(obj.material);
+    }
+  }
+
+  function dispose(material: THREE.Material) {
+    Object.keys(material).forEach((_prop) => {
+      const prop = _prop as keyof typeof material;
+      if (!material[prop]) return;
       if (
-        obj.material[prop] !== null &&
-        typeof obj.material[prop].dispose === "function"
+        material[prop] !== null &&
+        typeof material[prop].dispose === "function"
       ) {
-        obj.material[prop].dispose();
+        material[prop].dispose();
       }
     });
-    obj.material.dispose();
+    material.dispose();
   }
 }

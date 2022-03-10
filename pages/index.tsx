@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 import { HomepageBg } from "../components/HomepageBg/HomepageBg";
+import { HyperFunctorLogo } from "../components/HyperFunctorLogo";
 
 export default function HomePage() {
   return (
     <HomepageBg>
-      <header className="flex flex-row justify-between items-center max-w-7xl mx-auto">
-        <h1 className="hyperfunctor-logo">
-          <strong className="-translate-y-[1px] inline-block">HYPER</strong>
-          FUNCTOR
+      <header className="flex flex-col h-screen items-center justify-center gap-y-2 max-w-7xl mx-auto px-4 py-2">
+        <h1>
+          <HyperFunctorLogo />
         </h1>
         <nav className="text-white">
           <Link href="/nextjs-react-graphql-typescript">

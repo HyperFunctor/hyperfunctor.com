@@ -11,6 +11,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#__next,
+body,
+html {
+  @apply min-h-full h-full;
+}
+
 @font-face {
   src: url("/-OCFormatShardsGX.woff2") format("woff2-variations");
   font-family: "-OC Format Shards";
