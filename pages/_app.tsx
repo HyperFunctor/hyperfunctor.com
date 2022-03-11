@@ -7,19 +7,48 @@ import Script from "next/script";
 import { productJsonLd, seo, socialProfileJsonLd } from "../seo.config";
 
 declare global {
+  interface Fbq {
+    (name: string, value: string, ...rest: string[]): void;
+    (...rest: string[]): void;
+    push: Fbq;
+    loaded: boolean;
+    version: string;
+    queue: Array<string[]>;
+  }
+
   interface Window {
     dataLayer: Parameters<Gtag.Gtag>[];
+    fbq?: Fbq;
+    _fbq?: Fbq;
   }
 }
 
+const GOOGLE_ID = `G-3CVF7Z0P4M`;
+const FB_PIXEL = `481020725889556`;
+// const FB_PIXEL = `624234665563627`;
+
 if (typeof window !== "undefined") {
+  // Google
   window.dataLayer = window.dataLayer || [];
   const gtag = ((...args: Parameters<Gtag.Gtag>) => {
     window.dataLayer.push(args);
   }) as Gtag.Gtag;
   gtag("js", new Date());
+  gtag("config", GOOGLE_ID);
 
-  gtag("config", "G-3CVF7Z0P4M");
+  // Facebook
+  const fbq: Fbq = (...args: string[]) => {
+    fbq.queue.push(args);
+  };
+  fbq.push = fbq;
+  fbq.loaded = true;
+  fbq.version = "2.0";
+  fbq.queue = [];
+  window.fbq ??= fbq;
+  window._fbq ??= fbq;
+
+  fbq("init", FB_PIXEL);
+  fbq("track", "PageView");
 }
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -27,21 +56,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <>
       <Script
         id="gtag"
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-3CVF7Z0P4M"
-      ></Script>
-      <Script id="pixel">{`!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '481020725889556');
-fbq('track', 'PageView');`}</Script>
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ID}`}
+      />
       <Script
-        defer
+        id="pixel"
+        src="https://connect.facebook.net/en_US/fbevents.js"
+        strategy="lazyOnload"
+      />
+      <Script
+        strategy="lazyOnload"
         data-domain="hyperfunctor.com"
         data-api="/api/event"
         src="/js/script.js"
@@ -90,7 +114,7 @@ fbq('track', 'PageView');`}</Script>
           height={1}
           width={1}
           style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=624234665563627&ev=PageView&noscript=1"
+          src={`https://www.facebook.com/tr?id=${FB_PIXEL}&ev=PageView&noscript=1`}
           alt=""
         />
       </noscript>
