@@ -16,16 +16,10 @@ export const HomepageBg = ({ children }: { children: ReactNode }) => {
 
     const effect = new Net({
       el: rootRef.current,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
       minHeight: window.innerHeight,
       minWidth: window.innerWidth,
-      scale: 1.0,
-      scaleMobile: 1.0,
       color: 0xec4899,
       backgroundColor: 0x1f2937,
-      backgroundAlpha: 1,
       maxDistance: maxDistanceRef.current,
       points: Math.floor(Math.random() * 10 + 10 / 2),
       spacing: Math.floor(Math.random() * 15 + 15 / 2),
@@ -67,7 +61,7 @@ export const HomepageBg = ({ children }: { children: ReactNode }) => {
 
   return (
     <div ref={rootRef} className="min-h-full bg-[#1f2937]">
-      {children}
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };
