@@ -1,6 +1,6 @@
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef } from "react";
 
-import { throttle, stfu } from "../../utils";
+import { throttle, stfu, debounce } from "../../utils";
 
 import { Net } from "./animation";
 
@@ -45,14 +45,12 @@ export const HomepageBg = () => {
       effect.current?.setOptions({ maxDistance: maxDistanceRef.current });
     }, 100);
 
-    const onResize = throttle(() => {
-      setTimeout(() => {
-        effect.current?.setOptions({
-          minHeight: window.innerHeight,
-          minWidth: window.innerWidth,
-        });
-      }, 0);
-    }, 100);
+    const onResize = debounce(() => {
+      effect.current?.setOptions({
+        minHeight: window.innerHeight,
+        minWidth: window.innerWidth,
+      });
+    }, 300);
 
     window.addEventListener("resize", onResize, { passive: true });
 

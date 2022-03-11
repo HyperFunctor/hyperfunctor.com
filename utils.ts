@@ -14,3 +14,14 @@ export const throttle = (fn: () => void, timeFrame: number) => {
     }
   };
 };
+
+export const debounce = (fn: () => void, timeout: number) => {
+  let timer: ReturnType<typeof setTimeout>;
+
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn();
+    }, timeout);
+  };
+};

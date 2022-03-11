@@ -20,6 +20,8 @@ import {
   Vector3,
 } from "three";
 
+import { debounce, throttle } from "../../utils";
+
 import { mobileCheck, getBrightness, ri, clamp, clearThree } from "./helpers";
 
 interface VantaOptions {
@@ -202,13 +204,13 @@ export class Net {
     this.triggerMouseMove();
   }
 
-  private resize = () => {
+  private resize = debounce(() => {
     this.setSize();
     this.camera.aspect = this.width / this.height;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(this.width, this.height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
-  };
+  }, 300);
 
   private isOnScreen() {
     const elHeight = this.el.offsetHeight;
