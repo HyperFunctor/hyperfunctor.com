@@ -22,6 +22,9 @@ const apply = <T>(value: T | T[], fn: (value: T) => void): void => {
   return fn(value);
 };
 
+const requestIdleCallback = (fn: () => void) =>
+  (window.requestIdleCallback || window.setTimeout)(fn);
+
 export class Net {
   camera!: THREE.PerspectiveCamera;
   el!: HTMLElement;
@@ -68,16 +71,23 @@ export class Net {
 
     this.el = this.options.el;
 
-    this.initThree();
-    this.setSize();
-    this.init();
-    this.initMouse();
-    this.resize();
-    this.animationLoop();
+    requestIdleCallback(() => {
+      this.initThree();
+
+      requestIdleCallback(() => {
+        this.setSize();
+
+        requestIdleCallback(() => {
+          this.init();
+          this.initMouse();
+          window.requestAnimationFrame(this.animationLoop);
+          window.requestAnimationFrame(this.resize);
+        });
+      });
+    });
 
     // Event listeners
     window.addEventListener("resize", this.resize);
-    window.requestAnimationFrame(this.resize); // Force a resize after the first frame
     window.addEventListener(
       "scroll",
       this.windowMouseMoveWrapper as EventListener
@@ -165,8 +175,8 @@ export class Net {
   };
 
   private setSize() {
-    this.width = Math.max(this.el.offsetWidth, this.options.minWidth || 0);
-    this.height = Math.max(this.el.offsetHeight, this.options.minHeight || 0);
+    this.width = Math.max(this.el.offsetWidth, this.options.minWidth);
+    this.height = Math.max(this.el.offsetHeight, this.options.minHeight);
   }
 
   private initMouse() {
@@ -268,17 +278,19 @@ export class Net {
     this.linesMesh = new THREE.LineSegments(geometry, material);
     this.cont.add(this.linesMesh);
 
-    for (let i = 0; i <= points; i++) {
-      for (let j = 0; j <= points; j++) {
-        const y = ri(-3, 3);
-        const x = (i - points / 2) * spacing + ri(-5, 5);
-        let z = (j - points / 2) * spacing + ri(-5, 5);
-        if (i % 2) {
-          z += spacing * 0.5;
-        }
+    for (let i = 0; i < points; i++) {
+      for (let j = 0; j < points; j++) {
+        requestAnimationFrame(() => {
+          const y = ri(-3, 3);
+          const x = (i - points / 2) * spacing + ri(-5, 5);
+          let z = (j - points / 2) * spacing + ri(-5, 5);
+          if (i % 2) {
+            z += spacing * 0.5;
+          }
 
-        this.genPoint(x, y - ri(5, 15), z);
-        this.genPoint(x + ri(-5, 5), y + ri(5, 15), z + ri(-5, 5));
+          this.genPoint(x, y - ri(5, 15), z);
+          this.genPoint(x + ri(-5, 5), y + ri(5, 15), z + ri(-5, 5));
+        });
       }
     }
 

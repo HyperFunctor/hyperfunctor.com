@@ -25,14 +25,9 @@ export function rn(
   return start + Math.random() * (end - start);
 }
 
-export function ri(
-  start?: number | null | undefined,
-  end?: number | null | undefined
-) {
-  if (start == null) start = 0;
-  if (end == null) end = 1;
+export const ri = (start = 0, end = 1) => {
   return Math.floor(start + Math.random() * (end - start + 1));
-}
+};
 
 export const q = <K extends keyof HTMLElementTagNameMap>(sel: K) =>
   document.querySelector(sel);
