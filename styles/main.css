@@ -21,6 +21,7 @@ html {
   src: url("/-OCFormatShardsGX.woff2") format("woff2-variations");
   font-family: "-OC Format Shards";
   font-style: normal;
+  font-display: swap;
 }
 
 .hyperfunctor-logo {
