@@ -4,7 +4,7 @@ import { throttle, stfu } from "../../utils";
 
 import { Net } from "./animation";
 
-export const HomepageBg = ({ children }: { children: ReactNode }) => {
+export const HomepageBg = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   const effect = useRef<Net | null>(null);
   const maxDistanceRef = useRef(0);
@@ -63,9 +63,5 @@ export const HomepageBg = ({ children }: { children: ReactNode }) => {
     };
   }, []);
 
-  return (
-    <div ref={rootRef} className="min-h-full bg-[#1f2937]">
-      <div className="relative z-10">{children}</div>
-    </div>
-  );
+  return <div ref={rootRef}></div>;
 };
