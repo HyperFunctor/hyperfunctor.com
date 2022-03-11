@@ -19,7 +19,7 @@ export default function HomePage() {
           <HyperFunctorLogo />
         </h1>
         <nav className="text-white">
-          <Link href="/nextjs-react-graphql-typescript">
+          <Link prefetch={false} href="/nextjs-react-graphql-typescript">
             <a className="hover:text-pink-400 text-xl underline underline-offset-2 font-bold">
               Kurs Next.js, React, GraphQL i TypeScript
             </a>
