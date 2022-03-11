@@ -1,6 +1,24 @@
 // based on https://github.com/tengbao/vanta
 
-import * as THREE from "three";
+import {
+  PerspectiveCamera,
+  WebGLRenderer,
+  Scene,
+  Group,
+  LineSegments,
+  Mesh,
+  SphereGeometry,
+  MeshLambertMaterial,
+  SpotLight,
+  Color,
+  BufferGeometry,
+  BufferAttribute,
+  DynamicDrawUsage,
+  LineBasicMaterial,
+  AdditiveBlending,
+  AmbientLight,
+  Vector3,
+} from "three";
 
 import { mobileCheck, getBrightness, ri, clamp, clearThree } from "./helpers";
 
@@ -26,34 +44,33 @@ const requestIdleCallback = (fn: () => void) =>
   (window.requestIdleCallback || window.setTimeout)(fn);
 
 export class Net {
-  camera!: THREE.PerspectiveCamera;
+  camera!: PerspectiveCamera;
   el!: HTMLElement;
   fps: unknown;
   height!: number;
   mouseX!: number;
   mouseY!: number;
-  renderer = new THREE.WebGLRenderer({
+  renderer = new WebGLRenderer({
     alpha: true,
     antialias: true,
   });
   req!: number;
-  scene!: THREE.Scene;
+  scene!: Scene;
   t!: number;
   t2!: number;
   uniforms: unknown;
   width!: number;
 
   blending: "additive" | "subtractive" = "additive";
-  cont!: THREE.Group;
+  cont!: Group;
   lineColors!: Float32Array;
   linePositions!: Float32Array;
-  linesMesh!: THREE.LineSegments;
-  points: Array<THREE.Mesh<THREE.SphereGeometry, THREE.MeshLambertMaterial>> =
-    [];
+  linesMesh!: LineSegments;
+  points: Array<Mesh<SphereGeometry, MeshLambertMaterial>> = [];
   rayCaster: unknown;
   rcMouseX?: number;
   rcMouseY?: number;
-  spot!: THREE.SpotLight;
+  spot!: SpotLight;
 
   options: VantaOptions;
 
@@ -121,7 +138,7 @@ export class Net {
       this.points.forEach((p) =>
         apply(
           p.material,
-          (material) => (material.color = new THREE.Color(userOptions.color))
+          (material) => (material.color = new Color(userOptions.color))
         )
       );
     }
@@ -137,7 +154,7 @@ export class Net {
       background: "",
     });
 
-    this.scene = new THREE.Scene();
+    this.scene = new Scene();
   }
 
   private getCanvasElement() {
@@ -223,18 +240,18 @@ export class Net {
   };
 
   private genPoint = (x: number, y: number, z: number) => {
-    const geometry = new THREE.SphereGeometry(0.25, 12, 12); // radius, width, height
-    const material = new THREE.MeshLambertMaterial({
+    const geometry = new SphereGeometry(0.25, 12, 12); // radius, width, height
+    const material = new MeshLambertMaterial({
       color: this.options.color,
     });
-    const sphere = new THREE.Mesh(geometry, material);
+    const sphere = new Mesh(geometry, material);
     sphere.position.set(x, y, z);
     this.cont.add(sphere);
     this.points.push(sphere);
   };
 
   init = () => {
-    this.cont = new THREE.Group();
+    this.cont = new Group();
     this.cont.position.set(0, 0, 0);
     this.scene.add(this.cont);
 
@@ -249,33 +266,28 @@ export class Net {
     this.linePositions = new Float32Array(numPoints * numPoints * 3);
     this.lineColors = new Float32Array(numPoints * numPoints * 3);
 
-    const colorB = getBrightness(new THREE.Color(this.options.color));
-    const bgB = getBrightness(new THREE.Color(this.options.backgroundColor));
+    const colorB = getBrightness(new Color(this.options.color));
+    const bgB = getBrightness(new Color(this.options.backgroundColor));
     this.blending = colorB > bgB ? "additive" : "subtractive";
 
-    const geometry = new THREE.BufferGeometry();
+    const geometry = new BufferGeometry();
     geometry.setAttribute(
       "position",
-      new THREE.BufferAttribute(this.linePositions, 3).setUsage(
-        THREE.DynamicDrawUsage
-      )
+      new BufferAttribute(this.linePositions, 3).setUsage(DynamicDrawUsage)
     );
     geometry.setAttribute(
       "color",
-      new THREE.BufferAttribute(this.lineColors, 3).setUsage(
-        THREE.DynamicDrawUsage
-      )
+      new BufferAttribute(this.lineColors, 3).setUsage(DynamicDrawUsage)
     );
     geometry.computeBoundingSphere();
     geometry.setDrawRange(0, 0);
-    const material = new THREE.LineBasicMaterial({
+    const material = new LineBasicMaterial({
       vertexColors: true,
-      blending:
-        this.blending === "additive" ? THREE.AdditiveBlending : undefined,
+      blending: this.blending === "additive" ? AdditiveBlending : undefined,
       transparent: true,
     });
 
-    this.linesMesh = new THREE.LineSegments(geometry, material);
+    this.linesMesh = new LineSegments(geometry, material);
     this.cont.add(this.linesMesh);
 
     for (let i = 0; i < points; i++) {
@@ -294,7 +306,7 @@ export class Net {
       }
     }
 
-    this.camera = new THREE.PerspectiveCamera(
+    this.camera = new PerspectiveCamera(
       25,
       this.width / this.height,
       0.01,
@@ -303,10 +315,10 @@ export class Net {
     this.camera.position.set(50, 100, 150);
     this.scene.add(this.camera);
 
-    const ambience = new THREE.AmbientLight(0xffffff, 0.75);
+    const ambience = new AmbientLight(0xffffff, 0.75);
     this.scene.add(ambience);
 
-    this.spot = new THREE.SpotLight(0xffffff, 1);
+    this.spot = new SpotLight(0xffffff, 1);
     this.spot.position.set(0, 200, 0);
     this.spot.distance = 400;
     this.spot.target = this.cont;
@@ -323,14 +335,14 @@ export class Net {
       const diff = c.userData.ty - c.position.y;
       c.position.y += diff * 0.02;
     }
-    c.lookAt(new THREE.Vector3(0, 0, 0));
+    c.lookAt(new Vector3(0, 0, 0));
 
     let vertexpos = 0;
     let colorpos = 0;
     let numConnected = 0;
 
-    const bgColor = new THREE.Color(this.options.backgroundColor);
-    const color = new THREE.Color(this.options.color);
+    const bgColor = new Color(this.options.backgroundColor);
+    const color = new Color(this.options.color);
     const diffColor = color.clone().sub(bgColor);
 
     for (let i = 0; i < this.points.length; i++) {
@@ -359,7 +371,7 @@ export class Net {
 
           const lineColor =
             this.blending === "additive"
-              ? new THREE.Color(0x000000).lerp(diffColor, alpha)
+              ? new Color(0x000000).lerp(diffColor, alpha)
               : bgColor.clone().lerp(color, alpha);
 
           this.linePositions[vertexpos++] = p.position.x;
