@@ -1,32 +1,42 @@
 import {
+  DefaultSeo,
+  DefaultSeoProps,
   NextSeoProps,
   ProductJsonLdProps,
   SocialProfileJsonLdProps,
 } from "next-seo";
 
-import { pricing } from "./lib/pricing";
+const hyperfunctorTitle = "";
+const hyperfunctorDescription = "";
 
-const title = "Kurs Next.js, React, GraphQL i TypeScripta | Hyper Functor";
-const description =
-  "Praktyczny kurs Next.js, React i GraphQL z TypeScriptem –, najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
+export const socialProfileJsonLd: SocialProfileJsonLdProps = {
+  type: "Organization",
+  name: "Hyper Functor",
+  url: "https://hyperfunctor.com",
+  sameAs: [
+    "https://www.facebook.com/zaiste.programuj",
+    "https://www.instagram.com/zaiste.programuj",
+  ],
+};
 
-export const seo: NextSeoProps = {
+export const defaultSeo: DefaultSeoProps = {
   titleTemplate: "%s | Hyper Functor",
-  defaultTitle: title,
-  title,
-  description,
+  defaultTitle: hyperfunctorTitle,
+  title: hyperfunctorTitle,
+  description: hyperfunctorDescription,
   canonical: "https://hyperfunctor.com",
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    site_name: "hyperfunctor.com – kurs Next.js",
+    site_name:
+      "hyperfunctor.com – szkoła programowania JavaScript, TypeScript, GraphQL",
     url: "https://hyperfunctor.com",
-    title,
-    description,
+    title: hyperfunctorTitle,
+    description: hyperfunctorDescription,
     images: [
       {
         url: "https://hyperfunctor.com/og-hyper-functor.png",
-        alt: title,
+        alt: hyperfunctorTitle,
         width: 1200,
         height: 630,
       },
@@ -37,32 +47,4 @@ export const seo: NextSeoProps = {
     site: "hyperfunctor.com",
     cardType: "summary_large_image",
   },
-};
-
-export const productJsonLd: ProductJsonLdProps = {
-  productName: title,
-  images: ["https://hyperfunctor.com/og-hyper-functor.png"],
-  description,
-  brand: "Hyper Functor",
-  releaseDate: pricing.full.until.toISOString(),
-  offers: {
-    price: pricing.full.discountPrice.toFixed(2),
-    priceValidUntil: pricing.full.until.toISOString(),
-    priceCurrency: "PLN",
-    availability: "https://schema.org/OnlineOnly",
-    seller: {
-      name: "Hyper Functor",
-    },
-    url: "https://app.easycart.pl/checkout/kretes/kurs-nextjs",
-  },
-};
-
-export const socialProfileJsonLd: SocialProfileJsonLdProps = {
-  type: "Organization",
-  name: "Hyper Functor",
-  url: "https://hyperfunctor.com",
-  sameAs: [
-    "https://www.facebook.com/zaiste.programuj",
-    "https://www.instagram.com/zaiste.programuj/",
-  ],
 };

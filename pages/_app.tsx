@@ -4,7 +4,7 @@ import Head from "next/head";
 import "../styles/main.css";
 import Script from "next/script";
 
-import { productJsonLd, seo, socialProfileJsonLd } from "../seo.config";
+import { defaultSeo, socialProfileJsonLd } from "../seo.config";
 
 declare global {
   interface Fbq {
@@ -71,43 +71,33 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         src="/js/script.js"
       />
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png?v=42"
+          href="/apple-touch-icon.png?v=69"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png?v=42"
+          href="/favicon-32x32.png?v=69"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png?v=42"
+          href="/favicon-16x16.png?v=69"
         />
-        <link rel="manifest" href="/site.webmanifest?v=42" />
+        <link rel="manifest" href="/site.webmanifest?v=69" />
         <link
           rel="mask-icon"
-          href="/safari-pinned-tab.svg?v=42"
-          color="#62a26c"
+          href="/safari-pinned-tab.svg?v=69"
+          color="#1f2937"
         />
-        <link rel="shortcut icon" href="/favicon.ico?v=42" />
-        <meta name="msapplication-TileColor" content="#00aba9" />
+        <link rel="shortcut icon" href="/favicon.ico?v=69" />
+        <meta name="msapplication-TileColor" content="#1f2937" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <DefaultSeo
-        {...seo}
-        noindex={true}
-        nofollow={true}
-        disableGooglebot={true}
-        dangerouslyDisableGooglebot={true}
-        dangerouslySetAllPagesToNoIndex={true}
-        dangerouslySetAllPagesToNoFollow={true}
-      />
       <noscript>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -119,7 +109,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </noscript>
       <Component {...pageProps} />
-      <ProductJsonLd {...productJsonLd} />
+      <DefaultSeo
+        {...defaultSeo}
+        noindex={true}
+        nofollow={true}
+        disableGooglebot={true}
+        dangerouslyDisableGooglebot={true}
+        dangerouslySetAllPagesToNoIndex={true}
+        dangerouslySetAllPagesToNoFollow={true}
+      />
       <SocialProfileJsonLd {...socialProfileJsonLd} />
     </>
   );
