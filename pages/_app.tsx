@@ -111,10 +111,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Component {...pageProps} />
       <DefaultSeo
         {...defaultSeo}
-        noindex={true}
-        nofollow={true}
-        disableGooglebot={true}
-        dangerouslyDisableGooglebot={true}
         dangerouslySetAllPagesToNoIndex={true}
         dangerouslySetAllPagesToNoFollow={true}
       />
