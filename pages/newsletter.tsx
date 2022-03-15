@@ -11,7 +11,7 @@ export default function RegulaminPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <NextSeo title="Polityka prywatności" />
+      <NextSeo title="Regulamin Newslettera" />
 
       <StaticPage markdown={markdown} />
     </>
@@ -19,7 +19,7 @@ export default function RegulaminPage({
 }
 
 export async function getStaticProps() {
-  const source = await fs.readFile(`content/privacy.pl.md`, "utf8");
+  const source = await fs.readFile(`content/newsletter.pl.md`, "utf8");
   const markdown = await serialize(source);
 
   return {

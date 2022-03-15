@@ -17,14 +17,14 @@ export function Technologies() {
         <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
           Technologie na kursie
         </p>
-        <div className="mt-6 flex flex-row justify-evenly gap-8">
+        <div className="mt-6 flex flex-row justify-between sm:justify-evenly gap-x-2">
           {partners.map((p) => (
             <div
               key={p.alt}
               title={p.alt}
-              className="col-span-1 h-24 flex flex-col justify-center md:col-span-2 lg:col-span-1"
+              className="h-24 flex flex-1 flex-col justify-center items-center"
             >
-              <p.logo className="w-full" />
+              <p.logo className="flex-1 w-60 max-w-full" />
               <span className="uppercase text-center text-sm font-semibold mt-2 text-gray-500 tracking-wide">
                 {p.alt}
               </span>

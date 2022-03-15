@@ -17,12 +17,9 @@ export function Companies() {
         <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
           Staże programistyczne dostarczane przez
         </p>
-        <div className="mt-6 flex flex-row justify-evenly gap-8">
+        <div className="mt-6 flex flex-row justify-between sm:justify-evenly gap-x-2">
           {partners.map((p) => (
-            <div
-              key={p.alt}
-              className="col-span-1 w-24 flex flex-col justify-center md:col-span-2 lg:col-span-1"
-            >
+            <div key={p.alt} className="w-24 flex flex-col justify-center">
               <Image src={p.logo} alt={p.alt} />
               <span className="uppercase text-center text-sm font-semibold mt-2 text-gray-500 tracking-wide">
                 {p.alt}

@@ -3,26 +3,38 @@ import { ReactNode } from "react";
 const agenda = [
   {
     title: "Wprowadzenie",
+    outcome: "Przygotowanie do kursu",
+    items: [
+      "Motywacja: React, Next, TypeScript, GraphQL, Tailwind CSS",
+      "Wymagania",
+      "Narzędzia: VS Code - Edytor kodu",
+      "Narzędzia: Git & GitHub",
+      "Przygotowanie środowiska do kursu",
+      "Dodatkowe materiały wspomagające",
+    ],
+  },
+  {
+    title: "Pierwsze kroki",
     outcome: "Powstanie struktury aplikacji",
     items: [
       "Konfiguracja Next.js z TypeScript",
-      "Dodawanie stron",
-      "Nawigacja i przekazywanie danych",
-      "Dynamiczne strony",
+      "Struktura aplikacji Next.js",
       "Konfiguracja repozytorium GitHub",
       "Deploy na Vercela jednym kliknięciem",
+      "Narzędzia deweloperskie w Chrome: Dev Tools & React Dev Tools",
+      "Dodawanie stron",
     ],
   },
   {
     title: "Stylowanie",
     outcome: "Ostylowane podstrony",
     items: [
-      "React Dev Tools",
-      "Podział strony na komponenty",
-      "Konfiguracja Tailwind i Tailwind UI",
-      "Responsywność w Tailwindzie",
-      "Podstawy Flexbox i Grid w Tailwindzie",
-      "Nawigacja; kolekcje",
+      "Filozofia Tailwind CSS",
+      "Komponenty i re-organizacja aplikacji",
+      "Podział strony na sekcje i Flexbox",
+      "Responsywność, Breakpointy i Grid",
+      "Komponenty i dane dynamiczne",
+      "Propsy komponentów i dane dynamiczne",
     ],
   },
   {
@@ -34,7 +46,7 @@ const agenda = [
       "Treść renderowana po stronie serwera (SSR)",
       "Pobieranie treści po stronie klienta (CSR)",
       "React Query",
-      "Pobieranie danych z API Stripe",
+      "Inferencja typów przy SSG",
     ],
   },
   {
@@ -55,10 +67,10 @@ const agenda = [
     items: [
       "Wprowadzenie komponentu Layout",
       "Konfiguracja SEO przy użyciu next-seo",
-      "Nawigacja z użyciem aktywnych odnośników",
       "Wprowadzenie do Markdowna",
       "Biblioteka react-markdown",
       "Omówienie next-mdx-remote",
+      "Obsługa odnośników w Markdown",
     ],
   },
   {
@@ -71,18 +83,6 @@ const agenda = [
       "Stylowanie koszyka",
       "Dodawanie i usuwanie z koszyka",
       "Zmiana ilości produktu w koszyku",
-    ],
-  },
-  {
-    title: "Next.js i API",
-    outcome: "W pełni działający koszyk",
-    items: [
-      "Wprowadzenie do API Routes",
-      "Rozgraniczenie klient / serwer",
-      "API koszyka",
-      "Biblioteki SWR i React Query",
-      "Optymistyczne aktualizacje widoku",
-      "Leniwe ładowanie i Suspense",
     ],
   },
   {
@@ -118,6 +118,18 @@ const agenda = [
       "Konfiguracja graphql-codegen",
       "Automatyczne generowanie komponentów",
       "Złożenie zamówienia",
+    ],
+  },
+  {
+    title: "Next.js i API",
+    outcome: "W pełni działający koszyk",
+    items: [
+      "Wprowadzenie do API Routes",
+      "Rozgraniczenie klient / serwer",
+      "Pliki .env i zmienne środowiskowe",
+      "Dodawanie recenzji produktów",
+      "Operowanie na cache w Apollo GraphQL",
+      "Optymistyczne aktualizacje widoku",
     ],
   },
   {
@@ -173,7 +185,7 @@ export function Agenda() {
         </div>
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {agenda.map((item, idx) => (
-            <AgendaWeek key={idx} number={idx + 1} item={item} />
+            <AgendaWeek key={idx} number={idx} item={item} />
           ))}
         </ol>
       </div>
@@ -195,7 +207,7 @@ const AgendaWeek = ({ item, number }: AgendaWeekProps) => {
     <li className="break-words w-full hover:bg-white rounded-lg">
       <div className="px-4 py-5">
         <p className="text-pink-400 font-bold text-base">Tydzień {number}</p>
-        <h4 className="text-2xl font-semibold">{item.title}</h4>
+        <h3 className="text-2xl font-semibold">{item.title}</h3>
         <p className="text-gray-600 text-sm">{item.outcome}</p>
       </div>
       <div className="px-4 py-2">

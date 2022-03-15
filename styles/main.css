@@ -28,7 +28,6 @@ html {
   margin: 0;
   padding: 0;
   font-family: "-OC Format Shards", sans-serif;
-  font-size: 4rem;
   font-weight: 100;
   line-height: 1;
   color: rgba(255, 255, 255, 0.9);
@@ -42,9 +41,7 @@ html {
 
 .hyperfunctor-logo strong {
   color: white;
-  font-size: 1em;
   font-weight: 900;
-  /* vertical-align: top; */
 }
 
 @keyframes shatter {
@@ -60,4 +57,28 @@ html {
   100% {
     font-variation-settings: "SHTR" 100;
   }
+}
+
+.regulations ol {
+  list-style-type: upper-roman;
+}
+
+.regulations ol ol {
+  list-style-type: decimal;
+}
+
+.regulations ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.regulations ol ol ol ol {
+  list-style-type: decimal;
+}
+
+.regulations ol ol ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.regulations ol ol ol ol ol ol {
+  list-style-type: upper-latin;
 }

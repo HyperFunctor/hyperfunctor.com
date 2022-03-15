@@ -9,23 +9,32 @@ const HomepageBg = dynamic<{}>(
   { ssr: false }
 );
 import { HyperFunctorLogo } from "../components/HyperFunctorLogo";
+import { Newsletter } from "../components/Newsletter";
 
 export default function HomePage() {
   return (
-    <div className="min-h-full bg-[#1f2937]">
+    <div className="min-h-full max-h-full h-full overflow-hidden bg-brand-black">
       <HomepageBg />
-      <header className="flex flex-col h-screen items-center justify-center gap-y-2 max-w-7xl mx-auto px-4 py-2 -translate-y-8 text-center">
-        <h1>
-          <HyperFunctorLogo />
-        </h1>
-        <nav className="text-white">
-          <Link prefetch={false} href="/nextjs-react-graphql-typescript">
-            <a className="hover:text-pink-400 text-xl underline underline-offset-2 font-bold">
-              Kurs Next.js, React, GraphQL i TypeScript
-            </a>
-          </Link>
-        </nav>
-      </header>
+      <div className="flex flex-col h-screen items-center justify-between sm:justify-center gap-y-8 max-w-7xl mx-auto px-4 py-10 sm:py-2 translate-y-0 text-center">
+        <header>
+          <h1 className="text-[10vmin]">
+            <HyperFunctorLogo />
+          </h1>
+          <nav className="text-white">
+            <Link prefetch={false} href="/nextjs-react-graphql-typescript">
+              <a className="hover:text-pink-400 text-xl underline underline-offset-2 font-bold">
+                Kurs Next.js, React, GraphQL i TypeScript
+              </a>
+            </Link>
+          </nav>
+        </header>
+        <main className="mx-auto w-[91%] max-w-[666px]">
+          <Newsletter
+            buttonText="Daj mi znać o następnych kursach"
+            variant="inverse"
+          />
+        </main>
+      </div>
     </div>
   );
 }

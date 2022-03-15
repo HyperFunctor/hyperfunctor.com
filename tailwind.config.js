@@ -25,6 +25,9 @@ module.exports = {
     },
 
     extend: {
+      colors: {
+        "brand-black": "#1f2937",
+      },
       typography: {
         brand: {
           css: {

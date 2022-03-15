@@ -4,9 +4,11 @@ import React, { FormEventHandler, ForwardedRef, useRef, useState } from "react";
 export function Newsletter({
   variant,
   initalFocusRef,
+  buttonText = "Chcę wziąć udział",
 }: {
   variant?: "inverse" | "pink";
   initalFocusRef?: ForwardedRef<HTMLInputElement>;
+  buttonText?: string;
 }) {
   const inputEl = useRef<HTMLInputElement | null>(null);
   const [message, setMessage] = useState("");
@@ -86,7 +88,7 @@ export function Newsletter({
             type="submit"
             className={`mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto ${btnStyles}`}
           >
-            Chcę wziąć udział
+            {buttonText}
           </button>
         </div>
         <label className={`mt-3 prose text-xs ${textStyles} max-w-full`}>
@@ -96,7 +98,7 @@ export function Newsletter({
             className="focus:ring-pink-500 h-4 w-4 text-pink-600 border-gray-300 rounded mr-2"
           />
           Rozumiem i akceptuję{" "}
-          <Link href="/regulamin">
+          <Link href="/newsletter">
             <a>Regulamin Newslettera</a>
           </Link>{" "}
           oraz{" "}

@@ -21,7 +21,7 @@ import {
 
 import { debounce } from "../../utils";
 
-import { mobileCheck, getBrightness, ri, clamp, clearThree } from "./helpers";
+import { mobileCheck, ri, clamp, clearThree } from "./helpers";
 
 interface VantaOptions {
   el: HTMLElement;
@@ -35,7 +35,7 @@ export class Net {
     alpha: true,
     antialias: true,
   });
-  private camera!: PerspectiveCamera;
+  private camera?: PerspectiveCamera;
   private el!: HTMLElement;
   private height!: number;
   private mouseX!: number;
@@ -153,8 +153,10 @@ export class Net {
 
   private resizeNOW = () => {
     this.setSize();
-    this.camera.aspect = this.width / this.height;
-    this.camera.updateProjectionMatrix();
+    if (this.camera) {
+      this.camera.aspect = this.width / this.height;
+      this.camera.updateProjectionMatrix();
+    }
     this.renderer.setSize(this.width, this.height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
   };
@@ -176,11 +178,14 @@ export class Net {
 
       if (this.maxDistance <= 0) {
         this.maxDistanceIncreasing = true;
-      } else if (this.maxDistance >= 47) {
+      } else if (this.maxDistance >= 44) {
         this.maxDistanceIncreasing = false;
       }
     }
     this.t = now;
+    if (!this.camera) {
+      return;
+    }
 
     this.onUpdate();
     this.renderer.render(this.scene, this.camera);
@@ -270,6 +275,10 @@ export class Net {
 
   onUpdate = () => {
     const c = this.camera;
+    if (!c) {
+      return;
+    }
+
     const diffX = c.userData.tx - c.position.x;
     if (Math.abs(diffX) > 0.01) {
       c.position.x += diffX * 0.02;
@@ -327,6 +336,10 @@ export class Net {
 
   onMouseMove = (x: number, y: number) => {
     const c = this.camera;
+    if (!c) {
+      return;
+    }
+
     const oy = typeof c.userData.oy === "number" ? c.userData.oy : c.position.y;
     const ox = typeof c.userData.ox === "number" ? c.userData.ox : c.position.x;
     const oz = typeof c.userData.oz === "number" ? c.userData.oz : c.position.z;

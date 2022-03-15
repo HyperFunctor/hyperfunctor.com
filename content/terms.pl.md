@@ -1,166 +1,408 @@
-# Regulamin
-
-### 1. INFORMACJE OGÓLNE, DEFINICJE
-
-Niniejszy Regulamin określa zasady korzystania z serwisu internetowego [hyperfunctor.com](https://hyperfunctor.com) prowadzonego przez:
-
-Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: michal@hyperfunctor.com
-
-Użyte w niniejszym regulaminie określenia mają następujące znaczenie:
-
-- Klient – osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, składająca Zamówienia i dokonująca zakupu Produktów w Sklepie;
-- Produkt – produkty fizyczne (materialne), produkty elektroniczne (treści cyfrowe) dostępne w Sklepie;
-- Regulamin – niniejszy regulamin, dostępny pod adresem https://hyperfunctor.com/regulamin/;
-- Sklep – serwis internetowy dostępny pod adresem https://hyperfunctor.com, za pośrednictwem którego Klient składa Zamówienia na zakup Produktów;
-- Umowa sprzedaży – umowa sprzedaży Produktów zawarta pomiędzy Właścicielem a Klientem z wykorzystaniem serwisu internetowego Sklepu;
-- Właściciel – Kretes sp. z o.o. z siedzibą w Warszawie przy ul. Chmielna 2/31, 00-020 Warszawa, wpisana do KRS pod numerem 0000932801, NIP 525-288-43-95, REGON 520455815, email: michal@hyperfunctor.com - prowadzący sprzedaż za pośrednictwem Sklepu;
-- Zamówienie – oświadczenie woli Klienta zmierzające do zawarcia Umowy sprzedaży, stanowiące ofertę zawarcia umowy sprzedaży, określające w szczególności rodzaj i ilość Produktu.
-
-Materiały użyte do prezentacji produktów, tj.: zdjęcia, opisy i inne są częścią Sklepu, stanowią własność jego Właściciela i chronione są prawami autorskimi. Zabrania się ich używania w celach handlowych lub prezentacji w jakichkolwiek mediach bez zgody Właściciela.
-
-Ceny znajdujące się przy Produktach wyrażone są w polskich złotych i podane są w wartościach brutto wraz z podatkiem VAT.
-
-### 2. KORZYSTANIE ZE SKLEPU
-
-W celu złożenia Zamówienia na stronie internetowej Sklepu należy dokonać wyboru Produktów, podejmując kolejne czynności techniczne na podstawie wyświetlanych Klientowi komunikatów i informacji zawartych na stronie internetowej Sklepu.
-
-W toku procesu Zamówienia Klient precyzuje szczegóły Zamówienia takie jak: dane do faktury, sposób płatności i inne.
-
-Klient w toku procesu Zamówienia może dokonać rejestracji. Rejestracja może być niezbędna do późniejszego korzystania z Produktów elektronicznych.
-
-Rejestracja Klienta w Sklepie umożliwia zapamiętanie w bazie danych Sklepu danych osobowych Klienta oraz historii jego Zamówień, a także umożliwia dostęp do Produktów elektronicznych.
-
-Podczas rejestracji Klient zobowiązany jest podać unikalne i znane tylko sobie hasło. Proces rejestracji jest szyfrowany odpowiednim protokołem.
-
-Klient jest odpowiedzialny za nieudostępnianie swojego hasła osobom trzecim oraz ponosi wszelkie ewentualne konsekwencje finansowe i prawne takiego udostępnienia.
-
-### 3. ZŁOŻENIE ZAMÓWIENIA
-
-Zamówienia na Produkty przyjmowane są wyłącznie drogą elektroniczną poprzez złożenie Zamówienia z wykorzystaniem serwisu internetowego Sklepu bądź poprzez wiadomość e-mail na adres michal@hyperfunctor.com.
-
-Warunkiem niezbędnym do złożenia Zamówienia jest prawidłowe wypełnienie formularza Zamówienia. Zamówienie z błędnie wypełnionym formularzem może nie zostać zrealizowane.
-Wypełniając formularz Klient ma obowiązek podania prawidłowych danych osobowych, adresu e-mail, telefonu kontaktowego, dokładnego adresu zamieszkania oraz adresu dostawy (jeżeli jest wymagany i różny od adresu zamieszkania).
-
-Podany adres e-mail oraz numer telefonu kontaktowego mogą zostać wykorzystane jedynie do kontaktu w procesie realizacji zamówienia, chyba że Klient wyrazi zgodę na kontakt w innych celach (np. newsletter).
-
-Kupujący przed akceptacją Zamówienia zostanie poinformowany o:
-
-- głównych cechach Produktu,
-- łącznej cenie lub wynagrodzeniu za Produkt wraz z podatkami, a także opłatach za transport, dostarczenie, usługi pocztowe oraz o innych kosztach,
-- możliwości odstąpienia od umowy.
-
-Klient wyraża wolę zawarcia Umowy sprzedaży poprzez naciśnięcie przycisku „zamówienie z obowiązkiem zapłaty” lub równoważnego.
-
-Złożenie zamówienia nie jest równoważne z zawarciem Umowy sprzedaży, lecz stanowi złożenie oferty zawarcia takiej umowy.
-
-Umowa sprzedaży zostaje zawarta w chwili przyjęcia Zamówienia do realizacji przez Właściciela, o czym Klient jest informowany poprzez wiadomość e-mail potwierdzającą dokonanie zakupu.
-
-Realizacja zamówienia rozpoczyna się w chwili zaksięgowania przelewu na rachunku bankowym Właściciela bądź przez innego operatora płatności.
-
-W przypadku niedostępności części Produktów objętych zamówieniem Klient zostanie poinformowany o stanie zamówienia i podejmie decyzję o sposobie jego realizacji (częściowa realizacja lub anulowanie całości zamówienia).
-
-Do sprzedaży promocyjnej oraz wyprzedaży przeznaczona jest ograniczona liczba Produktów. Realizacja zamówień następuje według kolejności wpływania potwierdzonych zamówień na te Produkty, aż do wyczerpania się zapasów objętych tą formą sprzedaży.
-
-### 4. CENY, PŁATNOŚCI I DOSTAWA
-
-Wszystkie ceny Produktów podawane są w polskich złotych i zawierają podatek VAT. Cena podana przy każdym Produkcie jest wiążąca w chwili złożenia przez Klienta zamówienia. Właściciel zastrzega sobie prawo do zmiany cen Produktów znajdujących się w Sklepie, wprowadzania nowych Produktów do Sklepu, przeprowadzania i odwoływania akcji promocyjnych na stronach Sklepu, stosowania unikalnych kodów promocyjnych dostępnych poza Sklepem. Uprawnienie powyższe nie ma wpływu na ceny Produktów w zamówieniach złożonych przed datą wejścia w życie zmiany ceny lub akcji promocyjnych. Cena podana przy każdym Produkcie jest wiążąca w chwili złożenia zamówienia.
-
-Do każdego zakupu dokonanego przez Klienta dołączany jest dowód zakupu: faktura VAT przesyłany drogą elektroniczną. Na żądanie Klienta dowód zakupu zostanie doręczony w wersji papierowej.
-
-Klient może dokonać płatności za zakupione Produkty w następujący sposób:
-
-- kartą poprzez elektroniczny system EasyCart
-- przelewem lub blik poprzez elektroniczny system EasyCart
-
-Płatności są obsługiwane przez spółkę EasyCart
-
-Zamówienia na Produkty elektroniczne realizowane są po otrzymaniu płatności poprzez wysyłkę Produktu lub instrukcji skorzystania z Produktu w wiadomości e‑mail. Wysyłka Produktu następuje niezwłocznie po otrzymaniu płatności, do 24 godzin od chwili otrzymania płatności.
-
-Dostawa Produktów fizycznych następuje w sposób wybrany przez Klienta w toku składania Zamówienia. Koszt dostarczenia przesyłki podawany jest Klientowi po dokonaniu wyboru Produktów oraz po dokonaniu wyboru sposobu zapłaty.
-
-Wysyłka Produktów fizycznych następuje niezwłocznie po otrzymaniu płatności, nie później niż w terminie do 10 dni roboczych po otrzymaniu płatności. Do czasu dostawy Produktów fizycznych należy doliczyć czas realizacji dostawy przez podmiot świadczący usługi dostawy. Czas dostawy, jej koszt oraz podmiot świadczący usługi dostawy zostanie podany w toku składania Zamówienia.
-
-Dostawa Produktów fizycznych odbywa się wyłącznie na terenie Polski.
-
-### 5. PRAWO ODSTĄPIENIA OD UMOWY
-
-Klient może zrezygnować w drodze odstąpienia od Umowy sprzedaży z Produktu kupionego w Sklepie bez podania przyczyny w ciągu 30 dni od daty jego otrzymania. Do zachowania tego terminu wystarczy wysłanie oświadczenia o odstąpieniu na adres siedziby Sklepu lub na adres e-mail podany w Regulaminie.
-
-W przypadku odstąpienia od Umowy sprzedaży zawartej na odległość, umowa jest uważana za niezawartą.
-
-W razie odstąpienia od zawartej Umowy sprzedaży dotyczącej Produktu fizycznego Klient zobowiązany jest zwrócić Produkt najpóźniej w terminie 14 dni od dnia, w którym od umowy odstąpił.
-
-Właściciel gwarantuje zwrot ceny i kosztów uiszczonych przez Klienta, w tym kosztów dostarczenia sprzedanych Produktów Klientowi. Klient ponosi bezpośrednie koszty zwrotu Produktu.
-
-Klient ponosi odpowiedzialność za zmniejszenie wartości rzeczy będące wynikiem korzystania z niej w sposób wykraczający poza konieczny do stwierdzenia charakteru, cech i funkcjonowania rzeczy.
-
-Wszelkie zwroty należności będą regulowane przez Właściciela nie później niż w terminie 14 dni od otrzymania oświadczenia o odstąpieniu od umowy, za pomocą takiego samego sposobu zapłaty, jakiego użył Klient, chyba że Klient wyraził zgodę na inny sposób zwrotu. Zwrot należności nie jest związany z dodatkowymi kosztami. Właściciel może wstrzymać się ze zwrotem należności otrzymanych przez Klienta do chwili otrzymania Produktu z powrotem lub dostarczenia przez konsumenta dowodu jego odesłania, w zależności od tego, co nastąpi wcześniej.
-
-Prawo do odstąpienia od umowy przysługuje również Klientom nabywającym Produkt elektroniczny (treści cyfrowe), chyba że wyraźnie w opisie Produktu zastrzeżono inaczej, na co Klient wyraził wyraźną zgodę.
-
-### 6. ODPOWIEDZIALNOŚĆ ZA WADY
-
-Właściciel ma obowiązek dostarczenia Produktu wolnego od wad.
-
-Jeżeli otrzymany Produkt jest wadliwy, Klient może skorzystać, według swojego wyboru, z uprawnień gwarancyjnych, bezpośrednio u gwaranta (producenta lub dystrybutora), o ile ten udzielił gwarancji na Produkt lub uprawnień przysługujących mu z tytułu rękojmi za wady wobec Właściciela, na warunkach określonych w Kodeksie cywilnym.
-
-W przypadku ujawnienia się wady Produktu Klientowi przysługuje prawo do złożenia reklamacji. Uprawnienie przysługuje w ciągu dwóch lat od daty doręczenia Produktu.
-
-Wraz z reklamowanym Produktem należy złożyć reklamację określającym charakter wady oraz zawierającym żądanie usunięcia wady.
-
-Właściciel ustosunkuje się do żądania Klienta niezwłocznie, nie później niż w terminie 14 dni, licząc od dnia otrzymania od Klienta reklamowanego produktu wraz z pismem reklamacyjnym.
-
-O wyniku reklamacji Klient zostanie poinformowany w taki sam sposób, w jaki przesłał reklamację.
-
-Jeżeli żądanie Klienta będzie zasadne, Właściciel ponosi wszelkie koszty związane z dostawą naprawionego lub nowego produktu pozbawionego wad do Klienta.
-
-W przypadku uznania reklamacji Produkt uszkodzony zostanie naprawiony lub wymieniony na inny, pełnowartościowy. Jeżeli nie będzie to możliwe (na przykład z powodu wyczerpania zapasów), Sklep zwróci równowartość ceny Produktu lub obniży cenę.
-
-### 7. WYMAGANIA TECHNICZNE, FUNKCJONALNOŚĆ I INTEROPERACYJNOŚĆ TREŚCI CYFROWYCH, ŚWIADCZENIE USŁUG DROGĄ ELEKTRONICZNĄ
-
-Właściciel świadczy na rzecz Klienta usługę drogą elektroniczną polegającą na umożliwieniu zawarcia umowy o dostarczenie Produktów elektronicznych oraz fizycznych oraz korzystania z niektórych Produktów elektronicznych.
-
-Do zawarcia umowy sprzedaży nie jest konieczne posiadanie konta w Sklepie.
-
-Świadczenie usługi dostępu do funkcjonalności Sklepu następuje nieodpłatnie. Nabycie Produktów dostępnych w Sklepie następuje odpłatnie.
-
-Do złożenia zamówienia i skorzystania z funkcjonalności Sklepu, a także do skorzystania z Produktów elektronicznych, konieczne jest:
-
-- posiadanie aktywnego konta poczty elektronicznej (do dokonywania zakupów w Sklepie),
-  przeglądarka internetowa uwzględniająca bieżące aktualizacje, z włączoną obsługą języka JavaScript,
-- włączona obsługa cookies w przeglądarce,
-- dostęp do Internetu,
-- zainstalowanie aplikacji umożliwiających odczytywanie plików PDF,
-- możliwość odtwarzania materiałów wideo (do korzystania z niektórych Produktów elektronicznych).
-
-Sklep wykorzystuje pliki cookies w celu zabezpieczenia bezpieczeństwa i wysokiego poziomu obsługi Klientów. Klient może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies – określić warunki ich przechowywania i uzyskiwania dostępu przez pliki cookies do swojego urządzenia za pomocą ustawień przeglądarki internetowej lub za pomocą konfiguracji usługi.
-
-Klient ma prawo złożyć reklamację dotyczącą funkcjonowania Sklepu, wysyłając wiadomość e‑mail pod adres michal@hyperfunctor.com.
-
-Odpowiedź na reklamację zostanie wysłana w terminie 14 dni od jej otrzymania na adres wskazany w reklamacji.
-
-### 8. DANE OSOBOWE I PLIKI COOKIES
-
-Dane osobowe są zbierane i przetwarzane w celu realizacji umowy sprzedaży oraz zapewnienia dostępu do Produktów elektronicznych.
-
-Właściciel Sklepu wydaje newsletter, w którym zamieszczane są m.in. informacje na temat oferty i nowych Produktów. Newsletter jest wysyłany tylko do Klientów, którzy wyrazili chęć jego otrzymywania. Klient może w dowolnym momencie zrezygnować z otrzymywania newslettera.
-
-Podanie danych osobowych przez Klienta jest dobrowolne, jednak brak zgody na ich przetwarzanie w celu, o którym mowa w ust. 1, uniemożliwi zrealizowanie Zamówienia. Dane osobowe są chronione zgodnie z obowiązującymi przepisami prawa.
-
-Szczegółowe zasady przetwarzania danych osobowych oraz wykorzystania plików cookies opisane są w Polityce Prywatności.
-
-### 9. POSTANOWIENIA KOŃCOWE
-
-W celu uniknięcia wątpliwości stwierdza się, że żadne z postanowień niniejszego regulaminu nie ogranicza uprawnień konsumenta, jakie przysługują mu na podstawie przepisów obowiązującego na terytorium Rzeczypospolitej Polskiej prawa. W przypadku stwierdzenia istnienia postanowienia o takim charakterze zastosowanie znajdują przepisy obowiązującego na terytorium Rzeczypospolitej Polskiej prawa, a w szczególności Kodeksu cywilnego oraz ustawy o prawach konsumenta.
-
-Właściciel wskazuje, że wszelkie Produkty dostępne w Sklepie chronione są prawem autorskim. Dalsze rozpowszechnianie Produktów bez zgody ich twórcy stanowi naruszenie praw autorskich i może skutkować odpowiedzialnością cywilną i karną.
-
-Rozstrzygnięcie ewentualnych sporów powstałych pomiędzy Właścicielem a Klientem, który jest konsumentem, zostaje poddane sądom właściwym zgodnie z postanowieniami właściwych przepisów Kodeksu postępowania cywilnego, przy czym Właściciel dopuszcza drogę postępowania mediacyjnego. Konsument uprawniony jest do zwrócenia się do stałego polubownego sądu konsumenckiego działającego przy Inspekcji Handlowej lub do wojewódzkiego inspektora Inspekcji Handlowej, a także może uzyskać bezpłatną pomoc w sprawie rozstrzygnięcia sporu między Klientem będącym konsumentem a Właścicielem, korzystając z bezpłatnej pomocy powiatowego (miejskiego) rzecznika konsumentów.
-
-Konsument może również skorzystać z platformy ODR, która dostępna jest pod adresem http://ec.europa.eu/consumers/odr. Platforma służy rozstrzyganiu sporów pomiędzy konsumentami i przedsiębiorcami dążącymi do pozasądowego rozstrzygnięcia sporu dotyczącego zobowiązań umownych wynikających z internetowej umowy sprzedaży lub umowy o świadczenie usług.
-
-Rozstrzygnięcie ewentualnych sporów powstałych między Właścicielem a Klientem, który nie jest konsumentem, zostaje poddane sądowi właściwemu ze względu na siedzibę Sklepu.
-
-Niniejszy Regulamin obowiązuje od dnia 1 grudnia 2020.
-
-Właściciel zastrzega sobie prawo do zmiany Regulaminu. Wszelkie zmiany Regulaminu wchodzą w życie w terminie wskazanym przez Sklep. Zamówienia złożone przed datą wejścia w życie zmian do niniejszego Regulaminu są realizowane na podstawie postanowień obowiązujących w dniu złożenia zamówienia.
+# Regulamin Sklepu
+
+Wersja z 4. lipca 2020 r.
+
+<div className="regulations">
+<ol>
+  <li>
+    Postanowienia ogólne
+    <ol>
+      <li>
+        Regulamin określa rodzaje, zakres i warunki świadczenia usług drogą
+        elektroniczną przez Usługodawcę i skierowany jest zarówno do
+        konsumentów, jak i do przedsiębiorców korzystających ze Sklepu
+        Internetowego.
+      </li>
+      <li>
+        Użyte w Regulaminie określenia oznaczają:
+        <ol>
+          <li>„Regulamin” - niniejszy Regulamin Sklepu Internetowego;</li>
+          <li>
+            „Usługodawca” - Michał Miszczyszyn prowadzący działalność
+            gospodarczą pod firmą „Type of Web - Michał Miszczyszyn”,
+            zarejestrowaną w Centralnej Ewidencji i Informacji o Działalności
+            Gospodarczej pod adresem ul. Bażantowa 9/21, 80-175 Gdańsk, NIP:
+            6040080451. Adres do korespondencji: ul. Bażantowa 9/21, 80-175
+            Gdańsk; adres e-mail: michal@hyperfunctor.com
+          </li>
+          <li>
+            „Klient” - osoba fizyczna, osoba prawna lub jednostka organizacyjna
+            nieposiadająca osobowości prawnej, której ustawa przyznaje zdolność
+            prawną, która dokonała lub zamierza dokonać zakupu w Sklepie
+            Internetowym;
+          </li>
+          <li>
+            „Konto” - oznaczony indywidualną nazwą (loginem) i hasłem podanym
+            przez Klienta zbiór zasobów w systemie teleinformatycznym
+            Usługodawcy, w którym gromadzone są dane podane przez Klienta oraz
+            informacje o złożonych przez niego zamówieniach w Sklepie
+            Internetowym.
+          </li>
+          <li>
+            „Sklep Internetowy” - sklep internetowy Usługodawcy dostępny pod
+            adresem: <a href="https://hyperfunctor.com/">https://hyperfunctor.com</a>;
+          </li>
+          <li>
+            „Formularz Zamówienia” - interaktywny formularz dostępny w Sklepie
+            Internetowym, umożliwiający złożenie zamówienia, w szczególności
+            poprzez dodanie produktów oferowanych w Sklepie Internetowym do
+            elektronicznego koszyka oraz określenie warunków umowy sprzedaży, w
+            tym sposobu dostawy i płatności, a także podanie ewentualnego kodu
+            rabatowego;
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    Warunki korzystania z konta
+    <ol>
+      <li>
+        Korzystanie z Konta jest dobrowolne, bezpłatne i trwa przez czas
+        nieoznaczony.
+      </li>
+      <li>
+        Założenie Konta polega na podaniu adresu e-mail Klienta (służącego jako
+        login) oraz hasła. Do założenia konta niezbędne jest potwierdzenie
+        zapoznania się z Regulaminem oraz z Polityką Prywatności i
+        zaakceptowanie ich treści, a także wyrażenie zgody na przetwarzanie
+        danych osobowych zgodnie z Polityką Prywatności.
+      </li>
+      <li>
+        Klient ma możliwość w każdej chwili, bez podania przyczyny, usunąć Konto
+        (zrezygnować z Konta) poprzez wysłanie żądania do Usługodawcy za
+        pośrednictwem poczty tradycyjnej lub poczty elektronicznej.
+      </li>
+      <li>
+        W przypadku stwierdzenia przez Usługodawcę, że Klient korzysta z Konta
+        lub Sklepu Internetowego w sposób niezgodny z Regulaminem, Polityką
+        Prywatności lub powszechnie obowiązującym prawem, Konto może zostać
+        zablokowane, o czym Klient zostanie powiadomiony pocztą elektroniczną.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Warunki korzystania ze sklepu internetowego
+    <ol>
+      <li>
+        Cena produktów widoczna w Sklepie Internetowym podana jest w Złotych
+        Polskich i zawiera podatki. Cena nie zawiera kosztów dostawy.
+      </li>
+      <li>
+        Proces zakupu rozpoczyna się od wyboru i określenia ilości produktów
+        dostępnych w Sklepie Internetowym poprzez dodanie ich do elektronicznego
+        koszyka.
+      </li>
+      <li>Dokonanie zakupu nie wymaga założenia Konta.</li>
+      <li>
+        Dokonanie zakupu wymaga wypełnienia Formularza Zamówienia poprzez wybór
+        sposobu dostawy i płatności oraz podanie imienia i nazwiska płatnika, a
+        opcjonalnie nazwy (firmy) i NIP przedsiębiorcy, nr telefonu oraz adresu
+        do korespondencji, celem wystawienia faktury VAT (podstawa prawna: art.
+        106e pkt 3 ustawy z dnia 11 marca 2004 r. o podatku od towarów i usług).
+        Ponadto wymagane jest podanie adresu do wysyłki zakupionych produktów, a
+        także wyrażenie zgody na:
+        <ol>
+          <li>
+            przetwarzanie tych danych osobowych zgodnie z Regulaminem i Polityką
+            Prywatności;
+          </li>
+          <li>
+            w przypadku zakupu treści cyfrowych (e-book) – otrzymanie produktu
+            przed upływem terminu do odstąpienia do umowy.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Klient ponosi odpowiedzialność za poprawność danych, które podaje na
+        Koncie oraz w Formularzu Zamówienia.
+      </li>
+      <li>
+        Usługodawca wysyła produkty kupione przez Klienta w Sklepie Internetowym
+        wyłącznie na adresy znajdujące się na terenie Polski, w związku z czym
+        podany przez Klienta adres do wysyłki musi spełniać ten warunek.
+      </li>
+      <li>
+        W przypadku woli Klienta skorzystania z posiadanego kodu rabatowego
+        upoważniającego go do otrzymania rabatu na dokonywany zakup, Klient ma
+        obowiązek podania kodu w dedykowanym miejscu na Formularzu Zamówienia,
+        przed zawarciem umowy sprzedaży.
+      </li>
+      <li>
+        Zawarcie umowy sprzedaży następuje po prawidłowym wypełnieniu Formularza
+        Zamówienia, poprzez kliknięcie przycisku „Kupuję i płacę”.
+      </li>
+      <li>
+        Po zawarciu umowy sprzedaży Usługodawca przesyła na podany przez Klienta
+        adres poczty elektronicznej:
+        <ol>
+          <li>potwierdzenie złożonego zamówienia,</li>
+          <li>pouczenie o prawie i skutkach odstąpienia od umowy,</li>
+          <li>aktualną treść Regulaminu,</li>
+          <li>
+            wzór oświadczenia odstąpienia od umowy zgodny z Załącznikiem nr 1,
+          </li>
+          <li>
+            linki do samodzielnego pobrania Regulaminu i wzoru oświadczenia o
+            odstąpieniu od umowy.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Prawidłowe korzystanie ze Sklepu Internetowego wymaga od Klienta:
+        <ol>
+          <li>
+            dysponowania jedną z przeglądarek internetowych: Internet Explorer
+            wersji 9 lub wyższej, Microsoft Edge w wersji 12 lub wyższej, Chrome
+            w wersji 30 lub wyższej, Firefox w wersji 30 lub wyższej, Safari w
+            wersji 9 lub wyższej, Opera w wersji 36 lub wyższej, Internet
+            Explorer mobile w wersji 10 lub wyższej, Chrome Android w wersji 30
+            lub wyższej, Android w wersji 4.4 lub wyższej, iOS Safari w wersji 9
+            lub wyższej; z włączoną obsługą plików Cookies i Local Storage;
+          </li>
+          <li>posiadania konta poczty elektronicznej (e-mail);</li>
+          <li>dostępu do Internetu (łącze min. 0,5 Mb/s);</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    Dostawa i płatność
+    <ol>
+      <li>
+        O ile Usługodawca nie postanowi inaczej, Klient pokrywa koszty dostawy
+        produktów kupionych w Sklepie Internetowym.
+      </li>
+      <li>
+        Aktualne dostępne metody i terminy dostawy wyświetlane są każdorazowo
+        przed zawarciem umowy sprzedaży.
+      </li>
+      <li>
+        Aktualne dostępne metody płatności wyświetlane są każdorazowo przed
+        zawarciem umowy sprzedaży. Usługodawca nie przyjmuje płatności gotówką.
+        Usługodawca przewiduje w szczególności następujące metody płatności, ale
+        mogą one ulegać zmianie:
+      </li>
+      <li>
+        płatność przelewem na rachunek bankowy wskazany przez Usługodawcę po
+        zawarciu umowy sprzedaży;
+      </li>
+      <li>
+        płatność za pośrednictwem zewnętrznego operatora płatności, np. mBank
+        Paynow.
+      </li>
+      <li>
+        Przewidywany termin realizacji zamówienia uzależniony jest od
+        dostępności wybranych przez Klienta produktów i wyświetlany każdorazowo
+        na stronie danego produktu w Sklepie Internetowym. W przypadku braku
+        produktów w magazynie, Klient zostanie poinformowany o wydłużonym czasie
+        realizacji zamówienia.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Odstąpienie od umowy
+    <ol>
+      <li>
+        Każde zamówienie może być przez Klienta anulowane do chwili jego
+        wysłania przez Usługodawcę. W przypadku anulowania zamówienia, które
+        zostało już opłacone przez Klienta, Usługodawca zwróci otrzymane środki
+        w terminie 14 dni od dnia ich wpływu na rachunek bankowy Usługobiorcy.
+      </li>
+      <li>
+        Konsument może w terminie 14 dni od dnia doręczenia produktów odstąpić
+        od umowy sprzedaży bez podawania przyczyny i bez ponoszenia kosztów, na
+        warunkach określonych w niniejszym rozdziale.
+      </li>
+      <li>
+        Oświadczenie o odstąpieniu od umowy, którego przykładowy wzór stanowi
+        Załącznik nr 1 do Regulaminu, może przed upływem terminu zostać wysłane
+        listem poleconym na adres Usługodawcy lub w formie elektronicznej na
+        adres e-mail Usługodawcy.
+      </li>
+      <li>
+        Usługodawca niezwłocznie, nie później niż w terminie 14 dni od dnia
+        otrzymania oświadczenia o odstąpieniu od umowy zwróci Konsumentowi
+        wszystkie dokonane przez niego płatności, w tym koszty dostawy (z
+        wyjątkiem dodatkowych kosztów wynikających z wybranego przez Konsumenta
+        sposobu dostawy innego niż najtańszy zwykły sposób dostawy dostępny w
+        Sklepie Internetowym). Usługodawca dokonuje zwrotu płatności przy użyciu
+        takiego samego sposobu płatności, jakiego użył Konsument, chyba że
+        Konsument wyraźnie zgodził się na inny sposób zwrotu. Usługodawca może
+        wstrzymać się ze zwrotem płatności otrzymanych od Konsumenta do chwili
+        otrzymania produktów z powrotem lub dostarczenia przez Konsumenta dowodu
+        ich odesłania, w zależności od tego, które zdarzenie nastąpi wcześniej.
+      </li>
+      <li>
+        Konsument ma obowiązek niezwłocznie, nie później niż w terminie 14 dni
+        od dnia, w którym odstąpił od umowy, zwrócić produkty Usługodawcy. Do
+        zachowania terminu wystarczy odesłanie produktów przed jego upływem na
+        adres Usługodawcy. Konsument ponosi bezpośrednie koszty zwrotu
+        produktów.
+      </li>
+      <li>
+        Prawo do odstąpienia od umowy sprzedaży treści cyfrowych (np. e-booków),
+        o którym mowa w niniejszym rozdziale, nie przysługuje Klientowi, jeżeli
+        za jego wyraźną zgodą otrzymał on przedmiot umowy przed upływem terminu
+        do odstąpienia od umowy. Zgoda Konsumenta wyrażana jest poprzez
+        zaznaczenie checkboxa przed zawarciem umowy sprzedaży.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Reklamacje
+    <ol>
+      <li>
+        W przypadku stwierdzenia niezgodności produktów z umową, Klient może
+        złożyć reklamację, korzystając z formularza reklamacji stanowiącego
+        Załącznik nr 2 do Regulaminu i wysyłając go pocztą tradycyjną na adres
+        Usługodawcy lub za pośrednictwem poczty elektronicznej na adres e-mail
+        Usługodawcy.
+      </li>
+      <li>
+        Usługodawca rozpatrzy reklamację w terminie 14 dni, a odpowiedź zostanie
+        wysłana na wskazany przez Klienta adres.
+      </li>
+      <li>
+        W przypadku uznania reklamacji za zasadną, Usługodawca wymieni
+        reklamowany produkt na wolny od wad. W przypadku, gdy wymiana produktu
+        nie będzie możliwa, nastąpi zwrot zapłaconej przez Klienta kwoty lub
+        obniżenie ceny, w zależności od wniosku Klienta i decyzji Usługodawcy.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Newsletter
+    <ol>
+      <li>
+        Usługodawca oferuje elektroniczną usługę dystrybucyjną świadczoną za
+        pośrednictwem poczty elektronicznej (e-mail), która umożliwia wszystkim
+        korzystającym z niej Klientom automatyczne otrzymywanie od Usługobiorcy
+        informacji o oferowanych produktach, nowościach i promocjach w Sklepie
+        Internetowym („Newsletter”).
+      </li>
+      <li>
+        Zapisanie się na Newsletter jest bezpłatne, dobrowolne i wymaga
+        wyrażenia zgody na przetwarzanie w tym celu danych osobowych Klienta.
+      </li>
+      <li>
+        Klient może w każdej chwili, bez podania przyczyny i bez ponoszenia
+        kosztów, zmienić wskazany uprzednio adres e-mail, na który wysyłany jest
+        Newsletter, lub zrezygnować z usługi postępując zgodnie z informacją
+        umieszczoną w stopce każdego Newslettera.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Ochrona danych osobowych
+    <ol>
+      <li>
+        Usługodawca zapewnia należytą ochronę danych osobowych Klienta. Wszelkie
+        dane osobowe przekazane przez Klienta są gromadzone, przechowywane i
+        przetwarzane wyłącznie zgodnie z powszechnie obowiązującymi w tym
+        zakresie przepisami prawa, co znajduje wyraz w sporządzonej i
+        przestrzeganej przez Usługodawcę Polityce Prywatności.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Informacje o szczególnych zagrożeniach związanych z korzystaniem z usług
+    ŚWIADCZONYCH DROGĄ ELEKTRONICZNĄ
+    <ol>
+      <li>
+        Podstawowym zagrożeniem każdego użytkownika Internetu, w tym osób
+        korzystających z usług świadczonych drogą elektroniczną, jest możliwość
+        „zainfekowania” systemu teleinformatycznego przez różnego rodzaju
+        oprogramowanie tworzone głównie w celu wyrządzania szkód, typu wirusy,
+        „robaki” (Worms) czy „konie trojańskie”. By uniknąć zagrożeń z tym
+        związanych, w tym pojawiających się w momencie otwierania wiadomości
+        e-mail ważne jest, by Klient zaopatrzył swoje urządzenie w program
+        antywirusowy i stale go aktualizował, instalując jego najnowsze wersje,
+        niezwłocznie po pojawieniu się ich na rynku. Usługodawca informuje
+        również, że szczególne zagrożenia związane z korzystaniem z usługi
+        świadczonej drogą elektroniczną, w tym i opisywanej w Regulaminie, wiążą
+        się z działalnością tzw. hakerów, zmierzających do włamania się zarówno
+        do systemu Usługodawcy (np. ataki na jego witryny), jak i Klienta.
+        Klient przyjmuje zatem do wiadomości, że mimo stosowania przez
+        Usługodawcę różnorodnych, nowoczesnych technologii „obronnych”, nie
+        istnieje perfekcyjne zabezpieczenie chroniące przed opisanymi wyżej
+        niepożądanymi działaniami.
+      </li>
+      <li>
+        W zakresie stosowanej przez Usługodawcę polityki ochrony prywatności
+        oraz informacji o funkcjach i celach oprogramowania i danych niebędących
+        składnikiem treści usługi, wprowadzanych przez Usługodawcę do systemu
+        teleinformatycznego, którym posługuje się Klient, Usługodawca odsyła do
+        Polityki Prywatności.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Postanowienia końcowe
+    <ol>
+      <li>
+        Usługodawca może zmienić treść Regulaminu, o czym każdorazowo
+        poinformuje Klientów posiadających Konta w Sklepie Internetowym drogą
+        elektroniczną (na wskazany na Koncie adres e-mail) w terminie 14 dni
+        przed wejściem w życie nowej treści Regulaminu.
+      </li>
+      <li>
+        Usługodawca zapewnia nieodpłatnie dostęp do aktualnej treści Regulaminu
+        przed założeniem Konta po adresem: <a href="https://hyperfunctor.com/regulamin/">https://hyperfunctor.com/regulamin/</a>, a także z poziomu Konta.
+      </li>
+      <li>
+        Szczegółowe informacje dotyczące możliwości skorzystania przez Klienta
+        będącego konsumentem z pozasądowych sposobów rozpatrywania reklamacji i
+        dochodzenia roszczeń oraz zasady dostępu do tych procedur dostępne są w
+        siedzibach oraz na stronach internetowych powiatowych (miejskich)
+        rzeczników konsumentów, organizacji społecznych, do których zadań
+        statutowych należy ochrona konsumentów, Wojewódzkich Inspektoratów
+        Inspekcji Handlowej oraz pod następującymi adresami internetowymi Urzędu
+        Ochrony Konkurencji i Konsumentów:
+        <ol>
+          <li><a rel="nofollow noopener noreferrer" href="https://www.uokik.gov.pl/spory_konsumenckie.php">https://www.uokik.gov.pl/spory_konsumenckie.php</a>;</li>
+          <li><a rel="nofollow noopener noreferrer" href="https://www.uokik.gov.pl/sprawy_indywidualne.php">https://www.uokik.gov.pl/sprawy_indywidualne.php</a>;</li>
+          <li><a rel="nofollow noopener noreferrer" href="https://www.uokik.gov.pl/wazne_adresy.php">https://www.uokik.gov.pl/wazne_adresy.php</a>.</li>
+        </ol>
+      </li>
+      <li>
+        Klient będący konsumentem posiada następujące przykładowe możliwości
+        skorzystania z pozasądowych sposobów rozpatrywania reklamacji i
+        dochodzenia roszczeń:
+        <ol>
+          <li>
+            Klient uprawniony jest do zwrócenia się do stałego polubownego sądu
+            konsumenckiego, o którym mowa w art. 37 ustawy z dnia 15 grudnia
+            2000 r. o Inspekcji Handlowej, z wnioskiem o rozstrzygnięcie sporu
+            wynikłego z zawartej umowy sprzedaży. Regulamin organizacji i
+            działania stałych polubownych sądów konsumenckich określa
+            rozporządzenie ministra sprawiedliwości z dnia 6 lipca 2017 r. w
+            sprawie określenia regulaminu organizacji i działania stałych sądów
+            polubownych przy wojewódzkich inspektorach inspekcji handlowej;
+          </li>
+          <li>
+            Klient uprawniony jest do zwrócenia się do wojewódzkiego inspektora
+            Inspekcji Handlowej, zgodnie z art. 36 ustawy o Inspekcji Handlowej,
+            z wnioskiem o wszczęcie postępowania mediacyjnego w sprawie
+            polubownego zakończenia sporu między Klientem, a Sprzedawcą.
+            Informacja na temat zasad i trybu procedury mediacji prowadzonej
+            przez wojewódzkiego inspektora Inspekcji Handlowej dostępna jest w
+            siedzibach oraz na stronach internetowych poszczególnych
+            Wojewódzkich Inspektoratów Inspekcji Handlowej;
+          </li>
+          <li>
+            Klient może uzyskać bezpłatną pomoc w sprawie rozstrzygnięcia sporu
+            między Klientem, a Usługodawcą, korzystając także z bezpłatnej
+            pomocy powiatowego (miejskiego) rzecznika konsumentów lub
+            organizacji społecznej, do której zadań statutowych należy ochrona
+            konsumentów (np. <a rel="nofollow noopener noreferrer" href="http://www.federacja-konsumentow.org.pl/">http://www.federacja-konsumentow.org.pl/</a>).
+          </li>
+        </ol>
+      </li>
+      <li>Regulamin wchodzi w życie 4. lipca 2020 r.</li>
+    </ol>
+  </li>
+</ol>
+</div>
+
+<ul><li><a href="https://hyperfunctor.com/content/uploads/2020/07/20200704_zalacznik_1-wzor_odstapienia_od_umowy.pdf" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">Załącznik 1 – Wzór oświadczenia o odstąpieniu od umowy</a></li><li><a href="https://hyperfunctor.com/content/uploads/2020/07/20200704_zalacznik_2-formularz_reklamacji.pdf" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">Załącznik 2 – Formularz reklamacji</a></li></ul>
