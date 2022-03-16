@@ -26,7 +26,8 @@ export function DemoApp() {
             </div>
             <div className="mt-6">
               <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                Zbuduj prawdziwą aplikację
+                Zbuduj prawdziwą aplikację z użyciem GraphQL, TypeScripta
+                i Next.js
               </h2>
               <p className="mt-4 text-lg text-gray-500">
                 W czasie kursu Next.js, React, TypeScrpta i GraphQL zbudujesz

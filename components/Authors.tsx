@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/outline";
+import Image from "next/image";
 
 import Neander from "/public/neander.png";
 import Miszczyszyn from "/public/miszczyszyn.jpg";
@@ -142,7 +142,7 @@ export function Authors() {
         <div className="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
           <div className="space-y-5 sm:space-y-4">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Mentorzy
+              Mentorzy z doświadczeniem w TypeScript, Next.js i GraphQL
             </h2>
             <p className="text-xl text-gray-500">
               Prowadzący to senior-deweloperzy z kilkunastoma latami

@@ -32,6 +32,7 @@ export default function HomePage() {
           <Newsletter
             buttonText="Daj mi znać o następnych kursach"
             variant="inverse"
+            id="landing"
           />
         </main>
       </div>

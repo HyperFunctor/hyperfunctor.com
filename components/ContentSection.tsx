@@ -92,7 +92,7 @@ export function ContentSection() {
           <div className="pt-12 sm:pt-16">
             <div className="mt-6 text-gray-500 prose lg:prose-lg prose-pink ">
               <h2 className="font-extrabold tracking-tight">
-                Gotów na tworzenie rozbudowanych aplikacji?
+                Gotów na tworzenie rozbudowanych aplikacji w Next.js?
               </h2>
               <p className="lead">
                 Bez ogródek, prostym i zrozumiałym językiem, dla każdego. Takie

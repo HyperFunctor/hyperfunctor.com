@@ -74,12 +74,12 @@ export default function ZaisteProgramujPage() {
       <Companies />
       <DemoApp />
       <Authors />
-      <NewsletterSection variant="inverse">
+      <NewsletterSection id="first" variant="inverse">
         Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko ruszą
         zapisy na drugą edycję kursu Next.js, React i TypeScripta.
       </NewsletterSection>
       <Faq />
-      <NewsletterSection>
+      <NewsletterSection id="second">
         Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko ruszą
         zapisy na drugą edycję kursu Next.js, React i TypeScripta.
       </NewsletterSection>

@@ -5,7 +5,7 @@ export function Stats() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Naszym szkoleniom zaufało już kilkaset osób
+            Naszym szkoleniom z JavaScriptu i Reacta zaufało już kilkaset osób
           </h2>
           <p className="mt-3 text-xl text-pink-200 sm:mt-4">
             Nie zwlekaj i dołącz do kursu online Next.js, React, GraphQL i

@@ -78,7 +78,7 @@ export function NewsletterModal({
                 </div>
               </div>
               <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                <Newsletter initalFocusRef={initalFocusRef} />
+                <Newsletter initalFocusRef={initalFocusRef} id="modal" />
               </div>
             </div>
           </Transition.Child>

@@ -5,10 +5,12 @@ export function Newsletter({
   variant,
   initalFocusRef,
   buttonText = "Chcę wziąć udział",
+  id,
 }: {
   variant?: "inverse" | "pink";
   initalFocusRef?: ForwardedRef<HTMLInputElement>;
   buttonText?: string;
+  id: string;
 }) {
   const inputEl = useRef<HTMLInputElement | null>(null);
   const [message, setMessage] = useState("");
@@ -62,13 +64,13 @@ export function Newsletter({
         onSubmit={onSubmit}
       >
         <div className="sm:flex">
-          <label htmlFor="email" className="sr-only">
+          <label htmlFor={`email-${id}`} className="sr-only">
             Email
           </label>
           <input
             type="email"
             name="email"
-            id="email"
+            id={`email-${id}`}
             ref={(el) => {
               inputEl.current = el;
 
