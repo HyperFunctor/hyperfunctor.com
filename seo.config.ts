@@ -1,13 +1,9 @@
-import {
-  DefaultSeo,
-  DefaultSeoProps,
-  NextSeoProps,
-  ProductJsonLdProps,
-  SocialProfileJsonLdProps,
-} from "next-seo";
+import { DefaultSeoProps, SocialProfileJsonLdProps } from "next-seo";
 
-const hyperfunctorTitle = "";
-const hyperfunctorDescription = "";
+const hyperfunctorTitle =
+  "Szkoła programowania JavaScript, TypeScript, GraphQL";
+const hyperfunctorDescription =
+  "Szkoła programowania JavaScript, TypeScript, GraphQL dla ambitnych; bootcamp; webdevelopment";
 
 export const socialProfileJsonLd: SocialProfileJsonLdProps = {
   type: "Organization",

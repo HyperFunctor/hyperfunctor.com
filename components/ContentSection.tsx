@@ -65,22 +65,22 @@ export function ContentSection() {
                 </div>
               </div>
               <cite className="relative flex items-center sm:items-start bg-pink-600 rounded-b-lg not-italic py-5 px-6 sm:py-5 sm:pl-12 sm:pr-10 sm:mt-10">
-                <div className="relative rounded-full border-2 border-white sm:absolute sm:top-0 sm:transform sm:-translate-y-1/2">
-                  <div className="w-12 h-12 sm:w-20 sm:h-20">
+                <span className="block relative rounded-full border-2 border-white sm:absolute sm:top-0 sm:transform sm:-translate-y-1/2">
+                  <span className="block w-12 h-12 sm:w-20 sm:h-20">
                     <Image
                       layout="fill"
                       className="rounded-full bg-pink-300"
                       src={Miszczyszyn}
                       alt=""
                     />
-                  </div>
-                </div>
+                  </span>
+                </span>
                 <span className="relative ml-4 text-pink-300 font-semibold leading-6 sm:ml-24 sm:pl-1">
-                  <p className="text-white font-semibold sm:inline">
+                  <span className="text-white font-semibold sm:inline">
                     Michał Miszczyszyn
-                  </p>
-                  {" – "}
-                  <p className="sm:inline">mentor</p>
+                  </span>
+                  <span className="hidden sm:inline">{" – "}</span>
+                  <span className="block sm:inline">mentor</span>
                 </span>
               </cite>
             </blockquote>

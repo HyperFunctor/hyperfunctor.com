@@ -150,13 +150,10 @@ export function Authors() {
             </p>
           </div>
           <div className="lg:col-span-2">
-            <ul
-              role="list"
-              className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8"
-            >
+            <ul className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
               {people.map((person) => (
                 <li key={person.name}>
-                  <div className="space-y-4">
+                  <article className="space-y-4">
                     <div className="aspect-1 object-top">
                       <Image
                         className="object-cover shadow-lg rounded-lg"
@@ -174,7 +171,7 @@ export function Authors() {
                       <Disclosure as="div">
                         {({ open }) => (
                           <>
-                            <dt className="text-lg">
+                            <div className="text-lg">
                               <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
                                 <span className="h-7 flex items-center">
                                   <span className="mr-2">Czytaj dalej…</span>
@@ -188,7 +185,7 @@ export function Authors() {
                                   />
                                 </span>
                               </Disclosure.Button>
-                            </dt>
+                            </div>
                             <Disclosure.Panel as="div">
                               {person.bio}
                             </Disclosure.Panel>
@@ -197,7 +194,7 @@ export function Authors() {
                       </Disclosure>
                     </div>
 
-                    <ul role="list" className="flex space-x-5">
+                    <ul className="flex space-x-5">
                       <li>
                         <a
                           href={person.twitterUrl}
@@ -235,7 +232,7 @@ export function Authors() {
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  </article>
                 </li>
               ))}
             </ul>
