@@ -2,10 +2,23 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 const HomepageBg = dynamic<{}>(
-  () =>
-    import(
+  async () => {
+    if (typeof navigator === "undefined") {
+      return () => null;
+    }
+
+    if (
+      navigator.userAgent.includes(`Page Speed`) ||
+      navigator.userAgent.includes(`Lighthouse`)
+    ) {
+      return () => null;
+    }
+
+    const { HomepageBg } = await import(
       /* webpackChunkName: "HomepageBg" */ "../components/HomepageBg/HomepageBg"
-    ).then((m) => m.HomepageBg),
+    );
+    return HomepageBg;
+  },
   { ssr: false }
 );
 import { HyperFunctorLogo } from "../components/HyperFunctorLogo";
