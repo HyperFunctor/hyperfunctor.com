@@ -103,6 +103,21 @@ const config = {
       },
     ]);
   },
+  redirects: () => {
+    return Promise.resolve([
+      {
+        source: "/",
+        destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
+        has: [
+          {
+            type: "host",
+            value: "zaisteprogramuj.pl",
+          },
+        ],
+        permanent: true,
+      },
+    ]);
+  },
   rewrites: () => {
     return Promise.resolve([
       {
