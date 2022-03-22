@@ -205,7 +205,10 @@ export function Hero() {
                   fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)"
                 />
               </svg>
-              <YouTubePlayer video="https://www.youtube.com/watch?v=yiVPYrw13eU" />
+              <YouTubePlayer
+                wistiaId="cskuanstrv"
+                youTubeUrl="https://www.youtube.com/watch?v=Jd1eJoQLnIE"
+              />
             </div>
           </div>
         </main>

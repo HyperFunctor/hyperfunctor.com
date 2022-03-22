@@ -1,9 +1,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export const YouTubePlayer = ({ video }: { video: string }) => {
+export const YouTubePlayer = ({
+  youTubeUrl,
+  wistiaId,
+}: {
+  youTubeUrl: string;
+  wistiaId: string;
+}) => {
   // http://www.get-youtube-thumbnail.com/
-  const videoCoverMatches = video.match(
+  const videoCoverMatches = youTubeUrl.match(
     /(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/
   );
   const maxresdefault = videoCoverMatches
@@ -26,7 +32,7 @@ export const YouTubePlayer = ({ video }: { video: string }) => {
 
     try {
       const res = await fetch(
-        `https://fast.wistia.com/embed/medias/mhl6s7sb6u.json`
+        `https://fast.wistia.com/embed/medias/${wistiaId}.json`
       );
       json = await res.json();
     } catch (err) {
@@ -35,9 +41,7 @@ export const YouTubePlayer = ({ video }: { video: string }) => {
 
     if (!json) {
       // fallback
-      return window.open(
-        `https://player.vimeo.com/video/681285700?h=e50ad696f5&autoplay=1&title=0&byline=0&like=0&share=0&portrait=0&logo=0`
-      );
+      return window.open(youTubeUrl);
     }
 
     const sources = json.media.assets

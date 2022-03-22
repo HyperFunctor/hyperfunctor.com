@@ -109,11 +109,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </noscript>
       <Component {...pageProps} />
-      <DefaultSeo
-        {...defaultSeo}
-        dangerouslySetAllPagesToNoIndex={true}
-        dangerouslySetAllPagesToNoFollow={true}
-      />
+      <DefaultSeo {...defaultSeo} />
       <SocialProfileJsonLd {...socialProfileJsonLd} />
     </>
   );
