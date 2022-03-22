@@ -108,8 +108,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           alt=""
         />
       </noscript>
-      <Component {...pageProps} />
       <DefaultSeo {...defaultSeo} />
+      <Component {...pageProps} />
       <SocialProfileJsonLd {...socialProfileJsonLd} />
     </>
   );
