@@ -14,6 +14,7 @@ export function Newsletter({
 }) {
   const inputEl = useRef<HTMLInputElement | null>(null);
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit: FormEventHandler = async (e) => {
     e.preventDefault();
@@ -23,26 +24,32 @@ export function Newsletter({
 
     const email = inputEl.current.value;
 
-    const res = await fetch("/api/subscribe", {
-      body: JSON.stringify({ email }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/subscribe", {
+        body: JSON.stringify({ email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
-    const { error } = await res.json();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- @todo
+      const { error } = await res.json();
 
-    inputEl.current.value = "";
+      inputEl.current.value = "";
 
-    if (error) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- @todo
-      setMessage(error);
-      return;
+      if (error) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument -- @todo
+        setMessage(error);
+      } else {
+        setMessage("Udało się! Jesteś na liście oczekujących.");
+      }
+    } catch (error) {
+      setMessage(String(error));
+    } finally {
+      setIsLoading(false);
     }
-
-    setMessage("Udało się! Jesteś na liście oczekujących.");
   };
 
   const btnStyles =
@@ -58,9 +65,7 @@ export function Newsletter({
   return (
     <>
       <form
-        action="#"
-        method="POST"
-        className="mt-3 flex flex-col"
+        className={`mt-3 flex flex-col ${isLoading ? "cursor-wait" : ""}`}
         onSubmit={onSubmit}
       >
         <div className="sm:flex">
@@ -82,22 +87,33 @@ export function Newsletter({
                 }
               }
             }}
-            className="block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:flex-1 border-gray-300"
+            disabled={isLoading}
+            className={`block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:flex-1 border-gray-300 ${
+              isLoading ? "cursor-wait" : ""
+            }`}
             placeholder="Podaj adres email"
             required
           />
           <button
             type="submit"
-            className={`mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto ${btnStyles}`}
+            disabled={isLoading}
+            className={`mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto ${btnStyles} ${
+              isLoading ? "cursor-wait" : ""
+            }`}
           >
             {buttonText}
           </button>
         </div>
-        <label className={`mt-3 prose text-xs ${textStyles} max-w-full`}>
+        <label
+          className={`mt-3 prose text-xs ${textStyles} max-w-full ${
+            isLoading ? "cursor-wait" : ""
+          }`}
+        >
           <input
             type="checkbox"
             required
-            className="focus:ring-pink-500 h-4 w-4 text-pink-600 border-gray-300 rounded mr-2"
+            disabled={isLoading}
+            className={`focus:ring-pink-500 h-4 w-4 text-pink-600 border-gray-300 rounded mr-2`}
           />
           Rozumiem i akceptuję{" "}
           <Link href="/newsletter">
@@ -112,7 +128,7 @@ export function Newsletter({
           usług drogą elektroniczną.
         </label>
       </form>
-      <div className="mt-2 text-gray-500">{message || ""}</div>
+      <div className="mt-2 text-gray-500 h-6">{message}</div>
     </>
   );
 }
