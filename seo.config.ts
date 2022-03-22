@@ -20,7 +20,6 @@ export const defaultSeo: DefaultSeoProps = {
   defaultTitle: hyperfunctorTitle,
   title: hyperfunctorTitle,
   description: hyperfunctorDescription,
-  canonical: "https://hyperfunctor.com",
   openGraph: {
     type: "website",
     locale: "pl_PL",
