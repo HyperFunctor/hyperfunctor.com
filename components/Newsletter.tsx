@@ -54,12 +54,12 @@ export function Newsletter({
 
   const btnStyles =
     variant === "inverse"
-      ? "text-white bg-pink-500 hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
+      ? "text-white bg-pink-600 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
       : "text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500";
 
   const textStyles =
     variant === "inverse" || variant === "pink"
-      ? "text-gray-300 prose-a:text-gray-200"
+      ? "text-gray-200 prose-a:text-gray-200"
       : "text-gray-500 prose-gray";
 
   return (
@@ -97,7 +97,7 @@ export function Newsletter({
           <button
             type="submit"
             disabled={isLoading}
-            className={`mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto ${btnStyles} ${
+            className={`mt-3 w-full px-6 py-3 border border-transparent text-lg font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto ${btnStyles} ${
               isLoading ? "cursor-wait" : ""
             }`}
           >

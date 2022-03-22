@@ -75,8 +75,8 @@ export function ContentSection() {
                     />
                   </span>
                 </span>
-                <span className="relative ml-4 text-pink-300 font-semibold leading-6 sm:ml-24 sm:pl-1">
-                  <span className="text-white font-semibold sm:inline">
+                <span className="relative ml-4 text-white font-normal leading-6 sm:ml-24 sm:pl-1">
+                  <span className="font-semibold sm:inline">
                     Michał Miszczyszyn
                   </span>
                   <span className="hidden sm:inline">{" – "}</span>

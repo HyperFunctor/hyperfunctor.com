@@ -172,7 +172,7 @@ export function Agenda() {
     <section className="bg-gray-50" id="agenda">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base font-semibold text-pink-600 tracking-wide uppercase">
+          <h2 className="text-base font-semibold text-pink-700 tracking-wide uppercase">
             Agenda kursu Next.js, GraphQL i TypeScript
           </h2>
           <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
@@ -206,7 +206,7 @@ const AgendaWeek = ({ item, number }: AgendaWeekProps) => {
   return (
     <li className="break-words w-full hover:bg-white rounded-lg">
       <div className="px-4 py-5">
-        <p className="text-pink-400 font-bold text-base">Tydzień {number}</p>
+        <p className="text-pink-700 font-bold text-base">Tydzień {number}</p>
         <h3>
           <span className="text-2xl font-semibold">{item.title}</span>
           <span className="sr-only">: </span>

@@ -18,7 +18,7 @@ export function NewsletterSection({
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             Zapisz się na listę oczekujących na kurs Next.js
           </h2>
-          <p className="mt-3 max-w-3xl text-lg leading-6 text-gray-300">
+          <p className="mt-3 max-w-3xl text-lg leading-6 text-gray-200">
             {children}
           </p>
         </div>

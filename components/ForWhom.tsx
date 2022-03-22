@@ -72,7 +72,7 @@ export function ForWhom() {
 
         <div className="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
           <div className="lg:col-span-1">
-            <h2 className="text-base font-semibold text-pink-600 uppercase tracking-wide">
+            <h2 className="text-base font-semibold text-pink-700 uppercase tracking-wide">
               Wszystko czego potrzebujesz do Next.js, GraphQL i TypeScripta
             </h2>
             <p className="mt-2 text-3xl font-extrabold text-gray-900">
