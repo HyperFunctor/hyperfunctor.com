@@ -21,7 +21,7 @@ import { pricing } from "../lib/pricing";
 
 const zaisteProgramujTitle = "Kurs Next.js, React, GraphQL i TypeScripta";
 const zaisteProgramujDescription =
-  "Praktyczny kurs Next.js, React i GraphQL z TypeScriptem –, najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
+  "Praktyczny kurs Next.js, React i GraphQL z TypeScriptem – najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
 
 const zaisteProgramujSeo: NextSeoProps = {
   title: zaisteProgramujTitle,
