@@ -25,6 +25,9 @@ module.exports = {
     },
 
     extend: {
+      colors: {
+        "brand-black": "#1f2937",
+      },
       typography: {
         brand: {
           css: {
@@ -50,5 +53,9 @@ module.exports = {
       opacity: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

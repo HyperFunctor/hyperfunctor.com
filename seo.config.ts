@@ -1,66 +1,45 @@
-import {
-  NextSeoProps,
-  ProductJsonLdProps,
-  SocialProfileJsonLdProps,
-} from "next-seo";
+import { DefaultSeoProps, SocialProfileJsonLdProps } from "next-seo";
 
-import { pricing } from "./lib/pricing";
+const hyperfunctorTitle =
+  "Szkoła programowania JavaScript, TypeScript, GraphQL";
+const hyperfunctorDescription =
+  "Szkoła programowania JavaScript, TypeScript, GraphQL dla ambitnych; bootcamp; webdevelopment";
 
-const title = "Kurs Next.js, React.js i TypeScripta | Zaiste, Programuj!";
-const description =
-  "Praktyczny kurs Next.js i React.js z TypeScript –, najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
+export const socialProfileJsonLd: SocialProfileJsonLdProps = {
+  type: "Organization",
+  name: "Hyper Functor",
+  url: "https://hyperfunctor.com",
+  sameAs: [
+    "https://www.facebook.com/zaiste.programuj",
+    "https://www.instagram.com/zaiste.programuj",
+  ],
+};
 
-export const seo: NextSeoProps = {
-  title,
-  description,
-  canonical: "https://zaisteprogramuj.pl",
+export const defaultSeo: DefaultSeoProps = {
+  titleTemplate: "%s | Hyper Functor",
+  defaultTitle: hyperfunctorTitle,
+  title: hyperfunctorTitle,
+  description: hyperfunctorDescription,
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    site_name: "zaisteprogramuj.pl – kurs next.js",
-    url: "https://zaisteprogramuj.pl",
-    title,
-    description,
+    site_name:
+      "hyperfunctor.com – szkoła programowania JavaScript, TypeScript, GraphQL",
+    url: "https://hyperfunctor.com",
+    title: hyperfunctorTitle,
+    description: hyperfunctorDescription,
     images: [
       {
-        url: "https://zaisteprogramuj.pl/og-zaiste-programuj_new.png",
-        alt: title,
+        url: "https://hyperfunctor.com/og-hyper-functor.png",
+        alt: hyperfunctorTitle,
         width: 1200,
         height: 630,
       },
     ],
   },
   twitter: {
-    handle: "@zaisteprogramuj",
-    site: "zaisteprogramuj.pl",
+    handle: "@hyperfunctor",
+    site: "hyperfunctor.com",
     cardType: "summary_large_image",
   },
-};
-
-export const productJsonLd: ProductJsonLdProps = {
-  productName: title,
-  images: ["https://zaisteprogramuj.pl/og-zaiste-programuj_new.png"],
-  description,
-  brand: "Zaiste, Programuj!",
-  releaseDate: pricing.full.until.toISOString(),
-  offers: {
-    price: pricing.full.discountPrice.toFixed(2),
-    priceValidUntil: pricing.full.until.toISOString(),
-    priceCurrency: "PLN",
-    availability: "https://schema.org/OnlineOnly",
-    seller: {
-      name: "Zaiste, Programuj!",
-    },
-    url: "https://app.easycart.pl/checkout/kretes/kurs-nextjs",
-  },
-};
-
-export const socialProfileJsonLd: SocialProfileJsonLdProps = {
-  type: "Organization",
-  name: "Zaiste, Programuj!",
-  url: "https://zaisteprogramuj.pl",
-  sameAs: [
-    "https://www.facebook.com/zaiste.programuj",
-    "https://www.instagram.com/zaiste.programuj/",
-  ],
 };

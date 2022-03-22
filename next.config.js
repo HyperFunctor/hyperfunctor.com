@@ -50,11 +50,12 @@ const config = {
     loader: "default",
     dangerouslyAllowSVG: true,
     domains: [
+      "i3.ytimg.com",
       "res.cloudinary.com",
       "images.unsplash.com",
       "tailwindui.com",
       "media.graphcms.com",
-      "zaisteprogramuj.pl",
+      "hyperfunctor.com",
       "reactnextaz.com",
       "reactnextaz.pl",
     ],
