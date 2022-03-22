@@ -30,7 +30,7 @@ export const defaultSeo: DefaultSeoProps = {
     description: hyperfunctorDescription,
     images: [
       {
-        url: "https://hyperfunctor.com/og-hyper-functor.png",
+        url: "https://hyperfunctor.com/og-hyper-functor.png?v2",
         alt: hyperfunctorTitle,
         width: 1200,
         height: 630,
