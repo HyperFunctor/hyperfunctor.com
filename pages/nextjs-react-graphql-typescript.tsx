@@ -33,7 +33,7 @@ const zaisteProgramujSeo: NextSeoProps = {
     description: zaisteProgramujDescription,
     images: [
       {
-        url: "https://hyperfunctor.com/og-zaiste-programuj.png",
+        url: "https://hyperfunctor.com/og-next.png",
         alt: zaisteProgramujTitle,
         width: 1200,
         height: 630,
@@ -44,7 +44,7 @@ const zaisteProgramujSeo: NextSeoProps = {
 
 const zaisteProgramujProductLd: ProductJsonLdProps = {
   productName: zaisteProgramujTitle,
-  images: ["https://hyperfunctor.com/og-zaiste-programuj.png"],
+  images: ["https://hyperfunctor.com/og-next.png"],
   description: zaisteProgramujDescription,
   brand: "Hyper Functor",
   releaseDate: pricing.full.until.toISOString(),
