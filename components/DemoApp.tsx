@@ -41,9 +41,9 @@ export function DemoApp() {
               <div className="mt-6">
                 <button
                   onClick={() => setOpen(true)}
-                  className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-pink-600 hover:bg-pink-700"
+                  className="px-8 py-4 w-full text-center border border-transparent text-3xl font-medium rounded-md shadow-sm text-white bg-pink-600 hover:bg-pink-700"
                 >
-                  Zapisz się teraz
+                  Zapisuję się teraz
                 </button>
               </div>
             </div>

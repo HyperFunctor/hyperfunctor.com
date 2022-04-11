@@ -9,9 +9,10 @@ import { YouTubePlayer } from "./YouTubePlayer";
 
 const navigation = [
   { name: "O kursie", href: "#o-kursie" },
-  { name: "Agenda", href: "#agenda" },
+  { name: "Dla kogo?", href: "#dla-kogo" },
   { name: "Co zbudujesz?", href: "#co-zbudujesz" },
   { name: "Mentorzy", href: "#mentorzy" },
+  { name: "Agenda", href: "#agenda" },
   { name: "FAQ", href: "#faq" },
 ];
 
@@ -64,7 +65,7 @@ export function Hero() {
         </svg>
       </div>
 
-      <div className="relative pt-6 pb-16 sm:pb-24 lg:pb-32">
+      <div className="relative pt-6 pb-8 sm:pb-12 lg:pb-8">
         <Popover>
           <nav
             className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
@@ -146,15 +147,21 @@ export function Hero() {
                   Druga edycja
                 </span>{" "}
                 <span className="mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-6xl">
-                  <span className="text-gray-900">Praktyczny kurs</span>{" "}
+                  <span className="text-gray-900">
+                    Praktyczny kurs: Nowoczesny Frontend
+                  </span>{" "}
                   <span className="text-pink-500">
-                    Next.js, React i TypeScripta
+                    Next.js, React, GraphQL i TypeScript
                   </span>
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                 Kurs Next.js, React, GraphQL i TypeScripta: najpopularniejszych
-                narzędzi do tworzenia aplikacji internetowych!
+                narzędzi do tworzenia aplikacji internetowych.
+              </p>
+              <p className="mt-3 text-base font-bold text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                Wiedza uniwersalna i przenośna niezależnie od technologii,
+                a jednocześnie maksymalnie praktyczna i przydatna!
               </p>
               <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                 <p className="text-base font-medium text-gray-900">

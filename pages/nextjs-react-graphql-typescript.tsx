@@ -6,9 +6,8 @@ import {
 } from "next-seo";
 
 import { Agenda } from "../components/Agenda";
+import { AllYouNeed } from "../components/AllYouNeed";
 import { Authors } from "../components/Authors";
-import { Companies } from "../components/Companies";
-import { ContentSection } from "../components/ContentSection";
 import { DemoApp } from "../components/DemoApp";
 import { Faq } from "../components/Faq";
 import { Footer } from "../components/Footer";
@@ -17,6 +16,7 @@ import { Hero } from "../components/Hero";
 import { NewsletterSection } from "../components/NewsletterSection";
 import { Stats } from "../components/Stats";
 import { Technologies } from "../components/Technologies";
+import { Why } from "../components/Why";
 import { pricing } from "../lib/pricing";
 
 const zaisteProgramujTitle = "Kurs Next.js, React, GraphQL i TypeScripta";
@@ -66,14 +66,14 @@ export default function ZaisteProgramujPage() {
       <NextSeo {...zaisteProgramujSeo} />
       <ProductJsonLd {...zaisteProgramujProductLd} />
       <Hero />
+      <Why />
       <Technologies />
       <ForWhom />
-      <ContentSection />
+      <AllYouNeed />
       <Stats />
-      <Agenda />
-      <Companies />
       <DemoApp />
       <Authors />
+      <Agenda />
       <NewsletterSection id="first" variant="inverse">
         Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko ruszą
         zapisy na drugą edycję kursu Next.js, React i TypeScripta.

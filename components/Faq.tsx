@@ -2,7 +2,7 @@ const faqs = [
   {
     question: "Czy po tym kursie zostanę programistą/ką?",
     answer:
-      "Nie. Każdy zawód wymaga lat doświadczenia, aby wykonywać go dobrze. Po tym kursie będziesz mieć całościowy pogląd na tworzenie nawet rozbudowanych aplikacji internetowych przy użyciu React, Next.js i TypeScripta. Będziesz w stanie połączyć wszystkie elementy, aby stworzyć nowoczesną i interaktywną aplikację internetową, od A do Z. Kurs pozwoli także wybrać dalszą drogę i zgłębić tajniki front-endu, back-endu, języka programowania TypeScript, itd.",
+      "Nie. Każdy zawód wymaga lat doświadczenia, aby wykonywać go dobrze. Po tym kursie będziesz mieć całościowy pogląd na tworzenie nawet rozbudowanych aplikacji internetowych przy użyciu React, Next.js, GraphQL i TypeScripta. Będziesz w stanie połączyć wszystkie elementy, aby stworzyć nowoczesną i interaktywną aplikację internetową, od A do Z. Kurs pozwoli także wybrać dalszą drogę i zgłębić tajniki front-endu, back-endu, języka programowania TypeScript, itd.",
   },
   {
     question: "W jakim jęzku będzie prowadzone szkolenie?",
@@ -22,7 +22,7 @@ const faqs = [
     question:
       "Co, jeśli szkolenie nie przypadnie mi do gustu lub okaże się za trudne bądź za proste?",
     answer:
-      "W ciągu dwóch pierwszych tygodni możesz zrezygnować z uczestnictwa i pieniądze zostaną Ci zwrócone.",
+      "Napisz nam w czym problem i zwrócimy Ci pieniądze. Masz na to 13 tygodni od startu kursu.",
   },
   {
     question: "Czy są zniżki studenckie?",

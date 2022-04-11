@@ -148,6 +148,10 @@ export function Authors() {
               Prowadzący to senior-deweloperzy z kilkunastoma latami
               komercyjnego doświadczenia oraz bogatym portfolio dydaktycznym.
             </p>
+            <p className="text-xl font-bold text-gray-500">
+              Nie jesteśmy specjalistami od marketingu, tylko od programowania.
+              Jesteśmy rzetelni i prawdziwi.
+            </p>
           </div>
           <div className="lg:col-span-2">
             <ul className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
