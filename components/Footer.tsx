@@ -1,4 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
+
+import TypeofwebLogoWhite from "../images/typeofweb_logo_white.png";
+import ZaisteLogo from "../images/zaiste_logo.png";
 
 interface NavigationItem {
   name: string;
@@ -72,6 +76,23 @@ export function Footer() {
               <a>Polityka Prywatności</a>
             </Link>
           </p>
+        </div>
+        <div className="md:order-1 flex flex-row gap-4 items-center mt-8 md:mt-0 ">
+          <p className="text-gray-200 font-sans font-bold">By:</p>
+          <Image
+            width={64}
+            height={64}
+            src={TypeofwebLogoWhite}
+            title="Type of Web - Michał Miszczyszyn"
+            alt=""
+          />
+          <Image
+            width={64}
+            height={64}
+            src={ZaisteLogo}
+            title="Zaiste.net – Jakub Neander"
+            alt=""
+          />
         </div>
       </div>
     </footer>
