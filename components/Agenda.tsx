@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-const agenda = [
+export const agenda = [
   {
     title: "Wprowadzenie",
     outcome: "Przygotowanie do kursu",

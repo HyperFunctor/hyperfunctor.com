@@ -1,10 +1,20 @@
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 import { Fragment } from "react";
 
 import Logo from "../images/logo.svg";
+import { useCountdown } from "../lib/hooks";
+import {
+  formatDate,
+  formatMoney,
+  getCurrentPricing,
+  getLastDate,
+} from "../lib/pricing";
 
+import { BuyNow } from "./BuyNow";
 import { Newsletter } from "./Newsletter";
+import { PulseDot } from "./PulseDot";
 import { YouTubePlayer } from "./YouTubePlayer";
 
 const navigation = [
@@ -17,6 +27,8 @@ const navigation = [
 ];
 
 export function Hero() {
+  const { currentPricing } = getCurrentPricing();
+
   return (
     <div className="relative bg-white overflow-hidden">
       <div
@@ -144,7 +156,7 @@ export function Hero() {
             <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
               <h1>
                 <span className="block text-sm font-semibold uppercase tracking-wide text-gray-500 sm:text-base lg:text-sm xl:text-base">
-                  Druga edycja
+                  Druga edycja {currentPricing && "już w sprzedaży!"}
                 </span>{" "}
                 <span className="mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-6xl">
                   <span className="text-gray-900">
@@ -163,12 +175,18 @@ export function Hero() {
                 Wiedza uniwersalna i przenośna niezależnie od technologii,
                 a jednocześnie maksymalnie praktyczna i przydatna!
               </p>
-              <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-                <p className="text-base font-medium text-gray-900">
-                  Zapisz się, aby dostać informację, gdy ruszy druga edycja!
-                </p>
-                <Newsletter id="hero" />
-              </div>
+              {currentPricing ? (
+                <BuyNow>
+                  Kup teraz <PulseDot />
+                </BuyNow>
+              ) : (
+                <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                  <p className="text-base font-medium text-gray-900">
+                    Zapisz się, aby dostać informację, gdy ruszy druga edycja!
+                  </p>
+                  <Newsletter id="hero" />
+                </div>
+              )}
             </div>
             <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
               <svg
