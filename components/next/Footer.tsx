@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import TypeofwebLogoWhite from "../images/typeofweb_logo_white.png";
-import ZaisteLogo from "../images/zaiste_logo.png";
+import TypeofwebLogoWhite from "../../images/typeofweb_logo_white.png";
+import ZaisteLogo from "../../images/zaiste_logo.png";
 
 interface NavigationItem {
   name: string;

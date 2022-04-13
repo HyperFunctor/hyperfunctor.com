@@ -3,17 +3,17 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { Fragment } from "react";
 
-import Logo from "../images/logo.svg";
-import { useCountdown } from "../lib/hooks";
+import Logo from "../../images/logo.svg";
+import { useCountdown } from "../../lib/hooks";
 import {
   formatDate,
   formatMoney,
   getCurrentPricing,
   getLastDate,
-} from "../lib/pricing";
+} from "../../lib/pricing";
+import { Newsletter } from "../Newsletter";
 
 import { BuyNow } from "./BuyNow";
-import { Newsletter } from "./Newsletter";
 import { PulseDot } from "./PulseDot";
 import { YouTubePlayer } from "./YouTubePlayer";
 

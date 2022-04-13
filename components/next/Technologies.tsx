@@ -1,7 +1,7 @@
-import Graphql from "../images/tech/graphql.svg";
-import Next from "../images/tech/next.svg";
-import React from "../images/tech/react.svg";
-import Typescript from "../images/tech/typescript.svg";
+import Graphql from "../../images/tech/graphql.svg";
+import Next from "../../images/tech/next.svg";
+import React from "../../images/tech/react.svg";
+import Typescript from "../../images/tech/typescript.svg";
 
 const partners = [
   { alt: "Next.js", logo: Next },

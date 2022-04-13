@@ -1,8 +1,8 @@
 import { AcademicCapIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
-import demoScreen from "../images/demo.png";
-import { getCurrentPricing } from "../lib/pricing";
+import demoScreen from "../../images/demo.png";
+import { getCurrentPricing } from "../../lib/pricing";
 
 import { BuyNow } from "./BuyNow";
 import { NewsletterModal } from "./NewsletterModal";

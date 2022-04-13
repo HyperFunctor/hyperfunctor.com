@@ -5,21 +5,21 @@ import {
   ProductJsonLdProps,
 } from "next-seo";
 
-import { Agenda } from "../components/Agenda";
-import { AllYouNeed } from "../components/AllYouNeed";
-import { Authors } from "../components/Authors";
-import { DemoApp } from "../components/DemoApp";
-import { Faq } from "../components/Faq";
-import { Footer } from "../components/Footer";
-import { ForWhom } from "../components/ForWhom";
-import { Hero } from "../components/Hero";
-import { NewsletterSection } from "../components/NewsletterSection";
-import { PricingFooter } from "../components/PricingFooter";
-import { PricingSection } from "../components/PricingSection.tsx";
-import { Questions } from "../components/Questions";
-import { Stats } from "../components/Stats";
-import { Technologies } from "../components/Technologies";
-import { Why } from "../components/Why";
+import { Agenda } from "../components/next/Agenda";
+import { AllYouNeed } from "../components/next/AllYouNeed";
+import { Authors } from "../components/next/Authors";
+import { DemoApp } from "../components/next/DemoApp";
+import { Faq } from "../components/next/Faq";
+import { Footer } from "../components/next/Footer";
+import { ForWhom } from "../components/next/ForWhom";
+import { Hero } from "../components/next/Hero";
+import { NewsletterSection } from "../components/next/NewsletterSection";
+import { PricingFooter } from "../components/next/PricingFooter";
+import { PricingSection } from "../components/next/PricingSection.tsx";
+import { Questions } from "../components/next/Questions";
+import { Stats } from "../components/next/Stats";
+import { Technologies } from "../components/next/Technologies";
+import { Why } from "../components/next/Why";
 import {
   getCurrentPricing,
   getGrossPrice,
