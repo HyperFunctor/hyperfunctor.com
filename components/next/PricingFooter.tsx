@@ -28,7 +28,6 @@ export function PricingFooter() {
             <Link href={currentPricing.cartUrl}>
               <a
                 target="_blank"
-                type="submit"
                 className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-3xl text-gray-900 bg-white hover:bg-gray-100 focus:ring-offset-2 focus:ring-offset-pink-900 focus:ring-pink-500"
               >
                 Kupuję dożywotni dostęp

@@ -14,14 +14,16 @@ export const formatMoney = (price: number) =>
   );
 
 export const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat("pl-PL", { dateStyle: "long" }).format(date);
+  new Intl.DateTimeFormat("pl-PL", { dateStyle: "long" })
+    .format(date)
+    .replace(/(\d{1,2}) /, "$1 ");
 
 export const pricings = [
   {
     buy: "Kupuję i uczę się od najlepszych",
     name: "Majóweczka",
     price: 1200,
-    cartUrl: "@TODO",
+    cartUrl: "/@TODO",
     from: new Date("2022-05-01T00:00:00+01:00"),
     to: new Date("2022-05-08T23:59:59+01:00"),
   },
@@ -29,7 +31,7 @@ export const pricings = [
     buy: "Kupuję i uczę się od najlepszych",
     name: "Promocja ograniczona czasowo",
     price: 1500,
-    cartUrl: "@TODO",
+    cartUrl: "/@TODO",
     from: new Date("2022-05-09T00:00:00+01:00"),
     to: new Date("2022-05-15T23:59:59+01:00"),
   },
@@ -37,7 +39,7 @@ export const pricings = [
     buy: "Kupuję i uczę się od najlepszych",
     name: "Promocja ograniczona czasowo",
     price: 1800,
-    cartUrl: "@TODO",
+    cartUrl: "/@TODO",
     from: new Date("2022-05-16T00:00:00+01:00"),
     to: new Date("2022-05-22T23:59:59+01:00"),
   },
@@ -45,7 +47,7 @@ export const pricings = [
     buy: "Kupuję i uczę się od najlepszych",
     name: "Promocja ograniczona czasowo",
     price: 2100,
-    cartUrl: "@TODO",
+    cartUrl: "/@TODO",
     from: new Date("2022-05-23T00:00:00+01:00"),
     to: new Date("2022-05-29T23:59:59+01:00"),
   },
@@ -53,7 +55,7 @@ export const pricings = [
     buy: "Kupuję i uczę się od najlepszych",
     name: "Ostatnia szansa",
     price: 2400,
-    cartUrl: "@TODO",
+    cartUrl: "/@TODO",
     from: new Date("2022-05-30T00:00:00+01:00"),
     to: new Date("2022-05-31T23:59:59+01:00"),
   },

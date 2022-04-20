@@ -162,7 +162,6 @@ export function PricingSection() {
             <Link href={currentPricing.cartUrl}>
               <a
                 target="_blank"
-                type="submit"
                 className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-4xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
               >
                 Kupuję dożywotni dostęp <PulseDot />
@@ -172,7 +171,7 @@ export function PricingSection() {
               Całkowite zamknięcie sprzedaży {formatDate(getLastDate())}. <br />
               Start kursu {formatDate(releaseDate)}.
             </p>
-            <p className="text-white font-bold text-center text-3xl">
+            <p className="text-white font-bold text-center text-2xl sm:text-3xl">
               Do końca sprzedaży: {finalCountDown}
             </p>
           </div>

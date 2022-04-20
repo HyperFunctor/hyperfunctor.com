@@ -58,7 +58,7 @@ export function ForWhom() {
               />
             </svg>
           </div>
-          <div className="relative text-base max-w-prose mx-auto lg:max-w-none">
+          <div className="relative px-4 text-base max-w-prose mx-auto lg:max-w-none">
             <blockquote className="relative bg-white rounded-lg shadow-lg">
               <div className="rounded-t-lg px-6 py-8 sm:px-10 sm:pt-10 sm:pb-8">
                 <div className="relative text-lg text-gray-700 font-medium mt-8">

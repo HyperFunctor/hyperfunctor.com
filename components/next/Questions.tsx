@@ -1,8 +1,8 @@
 export function Questions() {
   return (
     <section className="bg-gray-600 flex" id="mentorzy">
-      <div className="container mx-auto space-y-8 px-8 py-16 md:space-y-0 md:space-x-16 flex flex-col md:flex-row">
-        <div className="mx-auto max-w-7xl">
+      <div className="container mx-auto space-y-8 px-8 py-16 md:space-y-0 gap-4 grid grid-cols-1 md:grid-cols-2">
+        <div className="md:mr-8">
           <h2 className="text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
             Pytania?
           </h2>
@@ -18,7 +18,7 @@ export function Questions() {
             . Przejrzyj też FAQ poniżej.
           </p>
         </div>
-        <div className="mx-auto max-w-7xl text-xl text-white space-y-2">
+        <div className="md:ml-8 text-xl text-white space-y-2">
           <h2 className="text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
             Satysfakcja lub zwrot pieniędzy
           </h2>
