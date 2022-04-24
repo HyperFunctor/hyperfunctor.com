@@ -19,6 +19,7 @@ import { PricingSection } from "../components/next/PricingSection.tsx";
 import { Questions } from "../components/next/Questions";
 import { Stats } from "../components/next/Stats";
 import { Technologies } from "../components/next/Technologies";
+import { Testimonials } from "../components/next/Testimonials";
 import { Why } from "../components/next/Why";
 import {
   getCurrentPricing,
@@ -90,6 +91,7 @@ export default function ZaisteProgramujPage() {
       <ForWhom />
       <AllYouNeed />
       <Stats />
+      <Testimonials />
       <DemoApp />
       <Authors />
       <Agenda />

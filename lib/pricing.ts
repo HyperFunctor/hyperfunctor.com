@@ -64,17 +64,17 @@ export const pricings = [
 export const getCurrentPricing = () => {
   const now = new Date();
 
-  // const currentPricing = pricings.find((el) => now > el.from && now <= el.to);
-  const currentPricing = pricings[0] as
-    | {
-        buy: string;
-        name: string;
-        price: number;
-        cartUrl: string;
-        from: Date;
-        to: Date;
-      }
-    | undefined;
+  const currentPricing = pricings.find((el) => now > el.from && now <= el.to);
+  // const currentPricing = pricings[0] as
+  //   | {
+  //       buy: string;
+  //       name: string;
+  //       price: number;
+  //       cartUrl: string;
+  //       from: Date;
+  //       to: Date;
+  //     }
+  //   | undefined;
 
   return {
     currentPricing,

@@ -21,6 +21,7 @@ const navigation = [
   { name: "O kursie", href: "#o-kursie" },
   { name: "Dla kogo?", href: "#dla-kogo" },
   { name: "Co zbudujesz?", href: "#co-zbudujesz" },
+  { name: "Opinie", href: "#opinie" },
   { name: "Mentorzy", href: "#mentorzy" },
   { name: "Agenda", href: "#agenda" },
   { name: "FAQ", href: "#faq" },
