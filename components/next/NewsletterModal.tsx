@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { AcademicCapIcon } from "@heroicons/react/outline";
 import { Fragment, useRef } from "react";
 
-import { Newsletter } from "./Newsletter";
+import { Newsletter } from "../Newsletter";
 
 export function NewsletterModal({
   open,

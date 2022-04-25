@@ -150,7 +150,7 @@ export function Authors() {
             </p>
             <p className="text-xl font-bold text-gray-500">
               Nie jesteśmy specjalistami od marketingu, tylko od programowania.
-              Jesteśmy rzetelni i prawdziwi.
+              Jesteśmy rzetelni i autentyczni.
             </p>
           </div>
           <div className="lg:col-span-2">

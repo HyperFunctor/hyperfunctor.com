@@ -121,6 +121,17 @@ const config = {
   rewrites: () => {
     return Promise.resolve([
       {
+        source: "/:path*",
+        destination:
+          "https://hyperfunctor.com/nextjs-react-graphql-typescript/:path*",
+        has: [
+          {
+            type: "host",
+            value: "next.hyperfunctor.com",
+          },
+        ],
+      },
+      {
         source: "/js/script.js",
         destination: "https://plausible.io/js/plausible.outbound-links.js",
       },

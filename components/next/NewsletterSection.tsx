@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Newsletter } from "./Newsletter";
+import { Newsletter } from "../Newsletter";
 
 export function NewsletterSection({
   variant,

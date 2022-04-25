@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import bitnoise from "../images/partners/bitnoise.png";
-import gyfted from "../images/partners/gyfted.png";
-import nextapps from "../images/partners/nextapps.png";
+import bitnoise from "../../images/partners/bitnoise.png";
+import gyfted from "../../images/partners/gyfted.png";
+import nextapps from "../../images/partners/nextapps.png";
 
 const partners = [
   { alt: "bitnoise", logo: bitnoise },

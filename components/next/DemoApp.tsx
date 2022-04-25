@@ -1,11 +1,15 @@
 import { AcademicCapIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
-import demoScreen from "../images/demo.png";
+import demoScreen from "../../images/demo.png";
+import { getCurrentPricing } from "../../lib/pricing";
 
+import { BuyNow } from "./BuyNow";
 import { NewsletterModal } from "./NewsletterModal";
+import { PulseDot } from "./PulseDot";
 
 export function DemoApp() {
+  const { currentPricing } = getCurrentPricing();
   const [open, setOpen] = useState(false);
 
   return (
@@ -39,12 +43,18 @@ export function DemoApp() {
                 a zdobywana wiedza wprost odpowiada rynkowym wymaganiom.
               </p>
               <div className="mt-6">
-                <button
-                  onClick={() => setOpen(true)}
-                  className="px-8 py-4 w-full text-center border border-transparent text-3xl font-medium rounded-md shadow-sm text-white bg-pink-600 hover:bg-pink-700"
-                >
-                  Zapisuję się teraz
-                </button>
+                {currentPricing ? (
+                  <BuyNow>
+                    Kupuję teraz <PulseDot />
+                  </BuyNow>
+                ) : (
+                  <button
+                    onClick={() => setOpen(true)}
+                    className="px-8 py-4 w-full text-center border border-transparent text-3xl font-medium rounded-md shadow-sm text-white bg-pink-600 hover:bg-pink-700"
+                  >
+                    Zapisuję się teraz
+                  </button>
+                )}
               </div>
             </div>
           </div>

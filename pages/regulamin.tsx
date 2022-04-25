@@ -4,7 +4,7 @@ import { InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { NextSeo } from "next-seo";
 
-import { StaticPage } from "../components/StaticPage";
+import { StaticPage } from "../components/next/StaticPage";
 
 export default function RegulaminPage({
   markdown,

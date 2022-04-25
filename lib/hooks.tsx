@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 const dni = polishPlurals.bind(null, "dzień", "dni", "dni");
 const godzin = polishPlurals.bind(null, "godzina", "godziny", "godzin");
 
-export const useCountdown = (until: Date) => {
+export const useCountdown = (until: Date | undefined) => {
   const [now, setNow] = useState<JSX.Element | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setNow(formatUntil(until, new Date()));
+      if (until) {
+        setNow(formatUntil(until, new Date()));
+      }
     }, 100);
     return () => {
       clearInterval(interval);
