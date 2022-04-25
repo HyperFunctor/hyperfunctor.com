@@ -116,21 +116,21 @@ const config = {
         ],
         permanent: true,
       },
-    ]);
-  },
-  rewrites: () => {
-    return Promise.resolve([
       {
-        source: "/:path*",
-        destination:
-          "https://hyperfunctor.com/nextjs-react-graphql-typescript/:path*",
+        source: "/",
+        destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
         has: [
           {
             type: "host",
             value: "next.hyperfunctor.com",
           },
         ],
+        permanent: true,
       },
+    ]);
+  },
+  rewrites: () => {
+    return Promise.resolve([
       {
         source: "/js/script.js",
         destination: "https://plausible.io/js/plausible.outbound-links.js",
