@@ -43,7 +43,7 @@ Wersja z 4. lipca 2020 r.
           </li>
           <li>
             „Sklep Internetowy” - sklep internetowy Usługodawcy dostępny pod
-            adresem: <a href="https://hyperfunctor.com/">https://hyperfunctor.com</a> wraz z koszykami zakupowymi w domenie https://type-of-web.salescrm.pl/…;
+            adresem: <a href="https://hyperfunctor.com/">https://hyperfunctor.com</a> wraz z koszykami zakupowymi w domenie https://sklep.hyperfunctor.com/…;
           </li>
           <li>
             „Formularz Zamówienia” - interaktywny formularz dostępny w Sklepie

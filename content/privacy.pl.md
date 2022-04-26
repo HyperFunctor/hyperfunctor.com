@@ -13,7 +13,7 @@ Wersja z 4. lipca 2020 r.
       <li>
         Niniejsza Polityka prywatności określa zasady przetwarzania danych
         osobowych w Sklepie Internetowym dostępnym pod adresem
-        <a href="https://hyperfunctor.com/">https://hyperfunctor.com/</a> wraz koszykami zakupowymi w domenie https://type-of-web.salescrm.pl/… (zwanym dalej „Sklepem”).
+        <a href="https://hyperfunctor.com/">https://hyperfunctor.com/</a> wraz koszykami zakupowymi w domenie https://sklep.hyperfunctor.com/… (zwanym dalej „Sklepem”).
       </li>
       <li>
         Administratorem Sklepu, a jednocześnie Administratorem danych osobowych
