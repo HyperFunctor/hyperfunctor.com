@@ -1,5 +1,8 @@
 # Polityka prywatności
 
+- [Regulamin](/regulamin)
+- [Polityka prywatności](/polityka-prywatnosci)
+
 Wersja z 4. lipca 2020 r.
 
 <div className="regulations">
@@ -10,8 +13,7 @@ Wersja z 4. lipca 2020 r.
       <li>
         Niniejsza Polityka prywatności określa zasady przetwarzania danych
         osobowych w Sklepie Internetowym dostępnym pod adresem
-        <a href="https://hyperfunctor.com/">https://hyperfunctor.com/</a>
-        (zwanym dalej „Sklepem”).
+        <a href="https://hyperfunctor.com/">https://hyperfunctor.com/</a> wraz koszykami zakupowymi w domenie https://type-of-web.salescrm.pl/… (zwanym dalej „Sklepem”).
       </li>
       <li>
         Administratorem Sklepu, a jednocześnie Administratorem danych osobowych
@@ -166,7 +168,7 @@ Wersja z 4. lipca 2020 r.
                 Stripe (Stripe Technology Europe, The One Building, 1, Lower Grand Canal Street, Dublin 2, Ireland)
               </li>
               <li>
-                Easycart.pl (eduweb sp. z o.o., al. Rzeczypospolitej 10 lok. 46, 02-972 Warszawa, KRS: 0000821672, NIP: 9512495989, REGON: 385228325)
+                SalesCRM (IMKER KRZYSZTOF BARTNIK, ul. Hrubieszowska 26/33, 22-400 Zamość, NIP: 9222625515)
               </li>
             </ol>
           </li>

@@ -1,5 +1,8 @@
 # Regulamin Sklepu
 
+- [Polityka prywatności](/polityka-prywatnosci)
+- [Regulamin](/regulamin)
+
 Wersja z 4. lipca 2020 r.
 
 <div className="regulations">
@@ -40,7 +43,7 @@ Wersja z 4. lipca 2020 r.
           </li>
           <li>
             „Sklep Internetowy” - sklep internetowy Usługodawcy dostępny pod
-            adresem: <a href="https://hyperfunctor.com/">https://hyperfunctor.com</a>;
+            adresem: <a href="https://hyperfunctor.com/">https://hyperfunctor.com</a> wraz z koszykami zakupowymi w domenie https://type-of-web.salescrm.pl/…;
           </li>
           <li>
             „Formularz Zamówienia” - interaktywny formularz dostępny w Sklepie
