@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import {
   NextSeo,
   NextSeoProps,
@@ -116,4 +117,11 @@ export default function ZaisteProgramujPage() {
       <Footer />
     </div>
   );
+}
+
+export function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 60,
+  };
 }
