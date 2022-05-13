@@ -101,6 +101,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="shortcut icon" href="/favicon.ico?v=69" />
         <meta name="msapplication-TileColor" content="#1f2937" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="facebook-domain-verification" content="06g2uajnvytpv7fd5wuqmemx69lcha" />
       </Head>
       <noscript>
         {/* eslint-disable-next-line @next/next/no-img-element */}
