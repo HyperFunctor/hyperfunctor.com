@@ -24,7 +24,8 @@ declare global {
 }
 
 const GOOGLE_ID = `G-3CVF7Z0P4M`;
-const FB_PIXEL = `481020725889556`;
+const FB_PIXEL_1 = `481020725889556`;
+const FB_PIXEL_2 = `704393714174175`;
 // const FB_PIXEL = `624234665563627`;
 
 if (typeof window !== "undefined") {
@@ -47,7 +48,10 @@ if (typeof window !== "undefined") {
   window.fbq ??= fbq;
   window._fbq ??= fbq;
 
-  fbq("init", FB_PIXEL);
+  fbq("init", FB_PIXEL_1);
+  fbq("track", "PageView");
+
+  fbq("init", FB_PIXEL_2);
   fbq("track", "PageView");
 }
 
@@ -104,7 +108,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           height={1}
           width={1}
           style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${FB_PIXEL}&ev=PageView&noscript=1`}
+          src={`https://www.facebook.com/tr?id=${FB_PIXEL_1}&ev=PageView&noscript=1`}
+          alt=""
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          height={1}
+          width={1}
+          style={{ display: "none" }}
+          src={`https://www.facebook.com/tr?id=${FB_PIXEL_2}&ev=PageView&noscript=1`}
           alt=""
         />
       </noscript>
