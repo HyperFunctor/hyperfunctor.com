@@ -24,6 +24,11 @@ export function Newsletter({
 
     const email = inputEl.current.value;
 
+    try {
+      // @ts-ignore
+      fbq("track", "Lead");
+    } catch {}
+
     setIsLoading(true);
     try {
       const res = await fetch("/api/subscribe", {
