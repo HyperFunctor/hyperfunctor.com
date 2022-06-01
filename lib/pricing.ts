@@ -64,6 +64,15 @@ export const pricings = [
     from: new Date("2022-05-30T00:00:00+02:00"),
     to: new Date("2022-05-31T23:59:59+02:00"),
   },
+  {
+    buy: "Kupuję i uczę się od najlepszych",
+    name: "Ostatnia szansa",
+    price: 3000,
+    cartUrl:
+      "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
+    from: new Date("2022-05-30T00:00:00+02:00"),
+    to: new Date("2022-06-06T23:59:59+02:00"),
+  },
 ];
 
 export const getCurrentPricing = () => {

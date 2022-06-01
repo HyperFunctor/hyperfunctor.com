@@ -2,11 +2,18 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 import { useCountdown } from "../../lib/hooks";
-import { getCurrentPricing, getLastDate, formatDate } from "../../lib/pricing";
+import {
+  getCurrentPricing,
+  getLastDate,
+  formatDate,
+  releaseDate,
+} from "../../lib/pricing";
 
 export const BuyNow = ({ children }: { children: ReactNode }) => {
   const { currentPricing } = getCurrentPricing();
   const countdown = useCountdown(getLastDate());
+
+  const isPastDeadline = releaseDate < getLastDate();
 
   if (!currentPricing) {
     return null;
@@ -22,13 +29,17 @@ export const BuyNow = ({ children }: { children: ReactNode }) => {
           {children}
         </a>
       </Link>
-      <p className="mt-2 text-center font-medium">
-        Sprzedaż otwarta jeszcze przez {countdown}.
-      </p>
-      <p className="mt-2 text-center font-medium">
-        Promocyjna oferta obowiązuje tylko do {formatDate(currentPricing.to)}.
-        Później cena rośnie.
-      </p>
+      {!isPastDeadline && (
+        <>
+          <p className="mt-2 text-center font-medium">
+            Sprzedaż otwarta jeszcze przez {countdown}.
+          </p>
+          <p className="mt-2 text-center font-medium">
+            Promocyjna oferta obowiązuje tylko do{" "}
+            {formatDate(currentPricing.to)}. Później cena rośnie.
+          </p>
+        </>
+      )}
     </div>
   );
 };

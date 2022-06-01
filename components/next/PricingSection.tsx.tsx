@@ -58,6 +58,11 @@ export function PricingSection() {
     return null;
   }
 
+  const isPastDeadline = releaseDate < getLastDate();
+  const normalPrice = formatMoney(getGrossPrice(standardPrice));
+  const discountPrice = formatMoney(getGrossPrice(currentPricing.price));
+  const isDiscount = normalPrice !== discountPrice;
+
   return (
     <div className="relative bg-white">
       <div className="absolute inset-0" aria-hidden="true">
@@ -120,25 +125,31 @@ export function PricingSection() {
               <h2 className="sr-only">Cena kursu</h2>
               <p>
                 <span className="flex flex-col text-center">
-                  <del className="text-3xl text-pink-400 mr-2">
-                    {formatMoney(getGrossPrice(standardPrice))}
-                  </del>
+                  {isDiscount && (
+                    <del className="text-3xl text-pink-400 mr-2">
+                      {formatMoney(getGrossPrice(standardPrice))}
+                    </del>
+                  )}
                   <span className="text-5xl font-extrabold text-white tracking-tight mt-1">
                     {formatMoney(getGrossPrice(currentPricing.price))} brutto
                   </span>
                   <small className="text-white">
                     (wystawiamy faktury VAT 23%)
                   </small>
-                  <span className="mt-4 text-2xl font-medium text-gray-200">
-                    Promocja obowiązuje tylko do{" "}
-                    <strong className="underline decoration-2 underline-offset-2 decoration-solid">
-                      {formatDate(currentPricing.to)}
-                    </strong>
-                    !
-                  </span>
-                  <span className="mt-2 text-2xl font-medium text-gray-200">
-                    Później cena rośnie.
-                  </span>
+                  {!isPastDeadline && (
+                    <>
+                      <span className="mt-4 text-2xl font-medium text-gray-200">
+                        Promocja obowiązuje tylko do{" "}
+                        <strong className="underline decoration-2 underline-offset-2 decoration-solid">
+                          {formatDate(currentPricing.to)}
+                        </strong>
+                        !
+                      </span>
+                      <span className="mt-2 text-2xl font-medium text-gray-200">
+                        Później cena rośnie.
+                      </span>
+                    </>
+                  )}
                 </span>
               </p>
             </div>
@@ -167,13 +178,22 @@ export function PricingSection() {
                 Kupuję dożywotni dostęp <PulseDot />
               </a>
             </Link>
-            <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
-              Całkowite zamknięcie sprzedaży {formatDate(getLastDate())}. <br />
-              Start kursu {formatDate(releaseDate)}.
-            </p>
-            <p className="text-white font-bold text-center text-2xl sm:text-3xl">
-              Do końca sprzedaży: {finalCountDown}
-            </p>
+            {isPastDeadline ? (
+              <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
+                Kurs wystartował {formatDate(releaseDate)}.
+              </p>
+            ) : (
+              <>
+                <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
+                  Całkowite zamknięcie sprzedaży {formatDate(getLastDate())}.{" "}
+                  <br />
+                  Start kursu {formatDate(releaseDate)}.
+                </p>
+                <p className="text-white font-bold text-center text-2xl sm:text-3xl">
+                  Do końca sprzedaży: {finalCountDown}
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
