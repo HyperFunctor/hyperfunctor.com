@@ -58,7 +58,7 @@ export function PricingSection() {
     return null;
   }
 
-  const isPastDeadline = releaseDate < getLastDate();
+  const isPastDeadline = new Date() > releaseDate;
   const normalPrice = formatMoney(getGrossPrice(standardPrice));
   const discountPrice = formatMoney(getGrossPrice(currentPricing.price));
   const isDiscount = normalPrice !== discountPrice;

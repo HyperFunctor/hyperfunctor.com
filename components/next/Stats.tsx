@@ -17,13 +17,13 @@ export function Stats() {
             <dt className="order-2 mt-2 text-lg leading-6 font-medium text-pink-200">
               tygodni
             </dt>
-            <dd className="order-1 text-5xl font-extrabold text-white">13</dd>
+            <dd className="order-1 text-5xl font-extrabold text-white">14</dd>
           </div>
           <div className="flex flex-col mt-10 sm:mt-0">
             <dt className="order-2 mt-2 text-lg leading-6 font-medium text-pink-200">
               lekcji
             </dt>
-            <dd className="order-1 text-5xl font-extrabold text-white">70</dd>
+            <dd className="order-1 text-5xl font-extrabold text-white">180</dd>
           </div>
           <div className="flex flex-col mt-10 sm:mt-0">
             <dt className="order-2 mt-2 text-lg leading-6 font-medium text-pink-200">

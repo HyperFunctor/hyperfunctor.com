@@ -65,8 +65,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       />
       <Script
         id="pixel"
-        src="https://connect.facebook.net/en_US/fbevents.js"
         strategy="lazyOnload"
+        src="https://connect.facebook.net/en_US/fbevents.js"
       />
       <Script
         strategy="lazyOnload"

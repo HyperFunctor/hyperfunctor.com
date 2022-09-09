@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Jak dokładnie przebiega szkolenie?",
     answer:
-      "Przez 13 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem aplikacji internetowych w Next.js, React, GraphQL i TypeScript. Każdy tydzień to wycinek funkcji docelowej rozbudowanej aplikacji internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec każdego tygodnia będzie do wykonania praktyczne zadanie domowe. Postępy będą na bieżąco konsultowane z prowadzącymi w postaci otwartych, grupowych drzwi otwartych (tzw. Office Hours).",
+      "Przez 14 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem aplikacji internetowych w Next.js, React, GraphQL i TypeScript. Każdy tydzień to wycinek funkcji docelowej rozbudowanej aplikacji internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec każdego tygodnia będzie do wykonania praktyczne zadanie domowe. Postępy będą na bieżąco konsultowane z prowadzącymi w postaci otwartych, grupowych drzwi otwartych (tzw. Office Hours).",
   },
   {
     question: "Jestem początkujący/a. Czy ten kurs jest dla mnie?",
@@ -22,7 +22,7 @@ const faqs = [
     question:
       "Co, jeśli szkolenie nie przypadnie mi do gustu lub okaże się za trudne bądź za proste?",
     answer:
-      "Napisz nam w czym problem i zwrócimy Ci pieniądze. Masz na to 13 tygodni od startu kursu.",
+      "Napisz nam w czym problem i zwrócimy Ci pieniądze. Masz na to 14 tygodni od startu kursu.",
   },
   {
     question: "Czy są zniżki studenckie?",
