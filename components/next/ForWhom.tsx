@@ -1,5 +1,5 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import Image from "next/future/image";
 
 import Miszczyszyn from "/public/miszczyszyn.jpg";
 
@@ -81,7 +81,8 @@ export function ForWhom() {
                 <span className="block relative rounded-full border-2 border-white sm:absolute sm:top-0 sm:transform sm:-translate-y-1/2">
                   <span className="block w-12 h-12 sm:w-20 sm:h-20">
                     <Image
-                      layout="fill"
+                      fill
+                      loading="lazy"
                       className="rounded-full bg-pink-300"
                       src={Miszczyszyn}
                       alt=""

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 
 import TypeofwebLogoWhite from "../../images/typeofweb_logo_white.png";
@@ -83,6 +83,7 @@ export function Footer() {
             width={64}
             height={64}
             src={TypeofwebLogoWhite}
+            loading="lazy"
             title="Type of Web - Michał Miszczyszyn"
             alt=""
           />
@@ -90,6 +91,7 @@ export function Footer() {
             width={64}
             height={64}
             src={ZaisteLogo}
+            loading="lazy"
             title="Zaiste.net – Jakub Neander"
             alt=""
           />
