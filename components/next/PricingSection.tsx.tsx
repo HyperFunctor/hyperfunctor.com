@@ -138,15 +138,12 @@ export function PricingSection() {
                   </small>
                   {!isPastDeadline && (
                     <>
-                      <span className="mt-4 text-2xl font-medium text-gray-200">
-                        Promocja obowiązuje tylko do{" "}
-                        <strong className="underline decoration-2 underline-offset-2 decoration-solid">
-                          {formatDate(currentPricing.to)}
+                      <span className="mt-4 text-2xl font-medium text-gray-100">
+                        Całkowite zamknięcie sprzedaży{" "}
+                        <strong className="underline decoration-2 underline-offset-2 decoration-solid text-white">
+                          {formatDate(getLastDate())}
                         </strong>
                         !
-                      </span>
-                      <span className="mt-2 text-2xl font-medium text-gray-200">
-                        Później cena rośnie.
                       </span>
                     </>
                   )}
@@ -185,8 +182,6 @@ export function PricingSection() {
             ) : (
               <>
                 <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
-                  Całkowite zamknięcie sprzedaży {formatDate(getLastDate())}.{" "}
-                  <br />
                   Start kursu {formatDate(releaseDate)}.
                 </p>
                 <p className="text-white font-bold text-center text-2xl sm:text-3xl">
