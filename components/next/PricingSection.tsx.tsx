@@ -3,7 +3,7 @@ import {
   BriefcaseIcon,
   CheckIcon,
   KeyIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import { useCountdown } from "../../lib/hooks";

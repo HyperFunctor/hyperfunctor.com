@@ -2,12 +2,10 @@ import {
   AcademicCapIcon,
   BookOpenIcon,
   GlobeAltIcon,
-  LightningBoltIcon,
-  MailIcon,
   ScaleIcon,
-  SupportIcon,
+  LifebuoyIcon,
   UserGroupIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 
 const features = [
   {
@@ -26,7 +24,7 @@ const features = [
     name: "Stały kontakt z mentorami",
     description:
       "Jeśli tylko potrzebujesz pomocy, podpowiedzi, albo ciekawostek, to <strong>nasi mentorzy są online każdego dnia</strong>. Rozwiązania problemów albo nowe wyzwania, to wszystko jest na wyciągnięcie ręki. Jesteś na głębokiej wodzie, ale nie jesteś sam!",
-    icon: SupportIcon,
+    icon: LifebuoyIcon,
   },
   {
     name: "Dla każdego coś…",

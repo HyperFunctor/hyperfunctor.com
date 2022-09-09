@@ -1,4 +1,3 @@
-import { CheckIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 
 import Larto from "/images/testimonials/konrad-nojman.png";

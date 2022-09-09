@@ -30,22 +30,19 @@ const withBundleAnalyzer = (
 });
 
 /**
- * @type import('next/dist/server/config-shared').NextConfig
+ * @type import('next').NextConfig
  */
 const config = {
   trailingSlash: false,
   reactStrictMode: true,
   excludeDefaultMomentLocales: true,
   optimizeFonts: true,
-  webpack5: true,
   httpAgentOptions: { keepAlive: true },
   reactStrictMode: true,
   compress: true,
   generateEtags: true,
   poweredByHeader: false,
-  esmExternals: true,
   swcMinify: true,
-  urlImports: ["https://cdn.skypack.dev"],
   images: {
     loader: "default",
     dangerouslyAllowSVG: true,
@@ -63,10 +60,11 @@ const config = {
   },
 
   experimental: {
-    optimizeImages: true,
     workerThreads: true,
     scrollRestoration: true,
     gzipSize: true,
+    urlImports: ["https://cdn.skypack.dev"],
+    esmExternals: true,
   },
 
   headers() {

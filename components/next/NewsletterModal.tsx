@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { AcademicCapIcon } from "@heroicons/react/outline";
+import { AcademicCapIcon } from "@heroicons/react/24/outline";
 import { Fragment, useRef } from "react";
 
 import { Newsletter } from "../Newsletter";
