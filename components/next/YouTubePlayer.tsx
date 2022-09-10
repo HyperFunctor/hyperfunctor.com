@@ -96,7 +96,7 @@ export const YouTubePlayer = ({
           <span className="sr-only">Obejrzyj pierwszą lekcję za darmo</span>
           <Image
             className="w-full h-auto"
-            sizes="100vw"
+            sizes="512px"
             loading="lazy"
             width={1920}
             height={1080}
