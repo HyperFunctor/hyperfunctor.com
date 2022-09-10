@@ -82,3 +82,17 @@ html {
 .regulations ol ol ol ol ol ol {
   list-style-type: upper-latin;
 }
+
+@keyframes ping-fast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+}
+.animate-ping-fast {
+  animation: ping-fast 1s ease-in-out infinite alternate;
+}

@@ -2,7 +2,9 @@ import { DefaultSeo, ProductJsonLd, SocialProfileJsonLd } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/main.css";
+import { useRouter } from "next/router";
 import Script from "next/script";
+import { useEffect, useRef } from "react";
 
 import { defaultSeo, socialProfileJsonLd } from "../seo.config";
 
@@ -16,64 +18,88 @@ declare global {
     queue: Array<string[]>;
   }
 
+  // eslint-disable-next-line no-var
+  var FB_PIXEL_1: string;
+  // eslint-disable-next-line no-var
+  var FB_PIXEL_2: string;
+  // eslint-disable-next-line no-var
+  var GOOGLE_ID: string;
+
   interface Window {
     dataLayer: Parameters<Gtag.Gtag>[];
     fbq?: Fbq;
     _fbq?: Fbq;
   }
 }
-
-const GOOGLE_ID = `G-3CVF7Z0P4M`;
-const FB_PIXEL_1 = `481020725889556`;
-const FB_PIXEL_2 = `704393714174175`;
+globalThis.GOOGLE_ID = `G-3CVF7Z0P4M`;
+globalThis.FB_PIXEL_1 = `481020725889556`;
+globalThis.FB_PIXEL_2 = `704393714174175`;
 // const FB_PIXEL = `624234665563627`;
 
-if (typeof window !== "undefined") {
-  // Google
-  window.dataLayer = window.dataLayer || [];
-  const gtag = ((...args: Parameters<Gtag.Gtag>) => {
-    window.dataLayer.push(args);
-  }) as Gtag.Gtag;
-  gtag("js", new Date());
-  gtag("config", GOOGLE_ID);
+const runAnalytics = () => {
+  if (typeof window !== "undefined") {
+    // Google
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = ((...args: Parameters<Gtag.Gtag>) => {
+      window.dataLayer.push(args);
+    }) as Gtag.Gtag;
+    gtag("js", new Date());
+    gtag("config", GOOGLE_ID, { send_page_view: false });
 
-  // Facebook
-  const fbq: Fbq = (...args: string[]) => {
-    fbq.queue.push(args);
-  };
-  fbq.push = fbq;
-  fbq.loaded = true;
-  fbq.version = "2.0";
-  fbq.queue = [];
-  window.fbq ??= fbq;
-  window._fbq ??= fbq;
+    // Facebook
+    const fbq: Fbq = (...args: string[]) => {
+      fbq.queue.push(args);
+    };
+    fbq.push = fbq;
+    fbq.loaded = true;
+    fbq.version = "2.0";
+    fbq.queue = [];
+    window.fbq ??= fbq;
+    window._fbq ??= fbq;
 
-  fbq("init", FB_PIXEL_1);
-  fbq("track", "PageView");
+    window.fbq("init", FB_PIXEL_1);
+    window.fbq("track", "PageView");
 
-  fbq("init", FB_PIXEL_2);
-  fbq("track", "PageView");
-}
+    window.fbq("init", FB_PIXEL_2);
+    window.fbq("track", "PageView");
+  }
+};
+
+console.log(runAnalytics.toString());
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+  const prevAsPath = useRef<string | null>(null);
+  useEffect(() => {
+    if (prevAsPath.current === router.asPath) {
+      return;
+    }
+    prevAsPath.current = router.asPath;
+    gtag("event", "page_view");
+  }, [router.asPath]);
+
   return (
     <>
       <Script
         id="gtag"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ID}`}
       />
       <Script
         id="pixel"
+        strategy="afterInteractive"
         src="https://connect.facebook.net/en_US/fbevents.js"
-        strategy="lazyOnload"
       />
       <Script
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         data-domain="hyperfunctor.com"
         data-api="/api/event"
         src="/js/script.js"
       />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+      >{`(${runAnalytics.toString()})()`}</Script>
       <Head>
         <link
           rel="apple-touch-icon"
@@ -101,7 +127,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="shortcut icon" href="/favicon.ico?v=69" />
         <meta name="msapplication-TileColor" content="#1f2937" />
         <meta name="theme-color" content="#ffffff" />
-        <meta name="facebook-domain-verification" content="06g2uajnvytpv7fd5wuqmemx69lcha" />
+        <meta
+          name="facebook-domain-verification"
+          content="06g2uajnvytpv7fd5wuqmemx69lcha"
+        />
       </Head>
       <noscript>
         {/* eslint-disable-next-line @next/next/no-img-element */}

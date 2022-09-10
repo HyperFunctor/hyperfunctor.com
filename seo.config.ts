@@ -10,7 +10,7 @@ export const socialProfileJsonLd: SocialProfileJsonLdProps = {
   name: "Hyper Functor",
   url: "https://hyperfunctor.com",
   sameAs: [
-    "https://www.facebook.com/zaiste.programuj",
+    "https://www.facebook.com/hyperfunctor",
     "https://www.instagram.com/zaiste.programuj",
   ],
 };

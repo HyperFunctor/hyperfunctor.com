@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { useState } from "react";
 
 export const YouTubePlayer = ({
@@ -95,15 +95,16 @@ export const YouTubePlayer = ({
         >
           <span className="sr-only">Obejrzyj pierwszą lekcję za darmo</span>
           <Image
-            className="w-full"
-            layout="responsive"
-            width={1920}
-            height={1080}
+            className="w-full h-auto"
+            sizes="512px"
+            loading="lazy"
+            width={512}
+            height={288}
             src={maxresdefault}
             alt=""
           />
           <span
-            className="absolute inset-0 w-full h-full flex items-center justify-center"
+            className="absolute inset-0 w-full h-full flex items-center justify-center animate-ping-fast"
             aria-hidden="true"
           >
             <svg

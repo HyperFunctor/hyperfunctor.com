@@ -165,6 +165,16 @@ export const agenda = [
       "Deploy pod własną domeną",
     ],
   },
+  {
+    title: "Bonus",
+    outcome: "Zaawansowane",
+    items: [
+      "Stripe Webhooks",
+      "i18n - obsługa wielu języków w Next.js",
+      "Edge API Routes w Next.js",
+      "Persisted Queries w GraphQL",
+    ],
+  },
 ];
 
 export function Agenda() {

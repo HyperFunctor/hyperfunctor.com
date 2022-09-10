@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/outline";
-import Image from "next/image";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import Image from "next/future/image";
 
 import Neander from "/public/neander.png";
 import Miszczyszyn from "/public/miszczyszyn.jpg";
@@ -162,7 +162,7 @@ export function Authors() {
                       <Image
                         className="object-cover shadow-lg rounded-lg"
                         src={person.imageUrl}
-                        // layout="fill"
+                        loading="lazy"
                         alt=""
                       />
                     </div>

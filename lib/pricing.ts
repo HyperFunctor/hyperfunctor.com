@@ -1,6 +1,6 @@
-export const standardPrice = 3000;
+export const standardPrice = 4000;
 export const VAT = 23;
-export const releaseDate = new Date("2022-06-01T12:00:00+02:00");
+export const releaseDate = new Date("2022-10-03T12:00:00+02:00");
 
 export const getLastDate = () => pricings[pricings.length - 1].to;
 
@@ -16,62 +16,27 @@ export const formatMoney = (price: number) =>
 export const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("pl-PL", { dateStyle: "long" })
     .format(date)
-    .replace(/(\d{1,2}) /, "$1 ");
+    .replace(/(\d{1,2}) /, "$1 ")
+    .replace(/ (\d{4})/, " $1");
 
 export const pricings = [
-  {
-    buy: "Kupuję i uczę się od najlepszych",
-    name: "Majóweczka",
-    price: 1200,
-    cartUrl:
-      "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2022-05-01T00:00:00+02:00"),
-    to: new Date("2022-05-08T23:59:59+02:00"),
-  },
   {
     buy: "Kupuję i uczę się od najlepszych",
     name: "Promocja ograniczona czasowo",
     price: 1500,
     cartUrl:
       "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2022-05-09T00:00:00+02:00"),
-    to: new Date("2022-05-15T23:59:59+02:00"),
-  },
-  {
-    buy: "Kupuję i uczę się od najlepszych",
-    name: "Promocja ograniczona czasowo",
-    price: 1800,
-    cartUrl:
-      "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2022-05-16T00:00:00+02:00"),
-    to: new Date("2022-05-22T23:59:59+02:00"),
-  },
-  {
-    buy: "Kupuję i uczę się od najlepszych",
-    name: "Promocja ograniczona czasowo",
-    price: 2100,
-    cartUrl:
-      "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2022-05-23T00:00:00+02:00"),
-    to: new Date("2022-05-29T23:59:59+02:00"),
+    from: new Date("2022-09-19T00:00:00+02:00"),
+    to: new Date("2022-10-02T23:59:59+02:00"),
   },
   {
     buy: "Kupuję i uczę się od najlepszych",
     name: "Ostatnia szansa",
-    price: 2400,
+    price: 1500,
     cartUrl:
       "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2022-05-30T00:00:00+02:00"),
-    to: new Date("2022-05-31T23:59:59+02:00"),
-  },
-  {
-    buy: "Kupuję i uczę się od najlepszych",
-    name: "Ostatnia szansa",
-    price: 3000,
-    cartUrl:
-      "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2022-05-30T00:00:00+02:00"),
-    to: new Date("2022-06-06T23:59:59+02:00"),
+    from: new Date("2022-10-03T00:00:00+02:00"),
+    to: new Date("2022-10-07T23:59:59+02:00"),
   },
 ];
 

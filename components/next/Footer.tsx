@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 
 import TypeofwebLogoWhite from "../../images/typeofweb_logo_white.png";
@@ -13,7 +13,7 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
   {
     name: "Facebook",
-    href: "https://facebook.com/zaiste.programuj/",
+    href: "https://facebook.com/hyperfunctor",
     icon: () => (
       <svg
         className="h-6 w-6"
@@ -79,20 +79,34 @@ export function Footer() {
         </div>
         <div className="md:order-1 flex flex-row gap-4 items-center mt-8 md:mt-0 ">
           <p className="text-gray-200 font-sans font-bold">By:</p>
-          <Image
-            width={64}
-            height={64}
-            src={TypeofwebLogoWhite}
+          <a
+            href="https://typeofweb.com"
+            target="_blank"
+            rel="noreferrer"
             title="Type of Web - Michał Miszczyszyn"
-            alt=""
-          />
-          <Image
-            width={64}
-            height={64}
-            src={ZaisteLogo}
+          >
+            <Image
+              width={64}
+              height={64}
+              src={TypeofwebLogoWhite}
+              loading="lazy"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://zaiste.net"
+            target="_blank"
+            rel="noreferrer"
             title="Zaiste.net – Jakub Neander"
-            alt=""
-          />
+          >
+            <Image
+              width={64}
+              height={64}
+              src={ZaisteLogo}
+              loading="lazy"
+              alt=""
+            />
+          </a>
         </div>
       </div>
     </footer>

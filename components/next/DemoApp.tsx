@@ -1,4 +1,5 @@
-import { AcademicCapIcon } from "@heroicons/react/outline";
+import { AcademicCapIcon } from "@heroicons/react/24/outline";
+import Image from "next/future/image";
 import { useState } from "react";
 
 import demoScreen from "../../images/demo.png";
@@ -62,10 +63,14 @@ export function DemoApp() {
         <div className="mt-12 sm:mt-16 lg:mt-0">
           <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               loading="lazy"
               className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
               src={demoScreen.src}
+              // width={3024}
+              // height={1728}
+              width={1053}
+              height={602}
               alt="Demo aplikacji, którą stworzysz na kursie"
             />
           </div>
