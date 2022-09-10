@@ -98,8 +98,8 @@ export const YouTubePlayer = ({
             className="w-full h-auto"
             sizes="512px"
             loading="lazy"
-            width={1920}
-            height={1080}
+            width={512}
+            height={288}
             src={maxresdefault}
             alt=""
           />
