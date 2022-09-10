@@ -56,5 +56,6 @@
       "eslint --resolve-plugins-relative-to . --fix",
       "pnpm prettier --write"
     ]
-  }
+  },
+  "packageManager": "pnpm@7.11.0"
 }
