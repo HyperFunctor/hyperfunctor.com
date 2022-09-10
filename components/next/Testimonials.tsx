@@ -81,7 +81,7 @@ export function Testimonials() {
   return (
     <section className="bg-white py-16" id="opinie">
       <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-5 lg:items-start">
-        <div className="mx-auto max-w-md sm:max-w-3xl sm:px-6 lg:px-0 lg:col-span-2 mr-8 self-center">
+        <div className="mx-4 mb-4 sm:mx-auto max-w-md sm:max-w-3xl sm:px-6 lg:px-0 lg:col-span-2 mr-8 self-center">
           <div className="text-gray-500 prose lg:prose-xl prose-pink">
             <h2 className="font-extrabold tracking-tight">
               Co mówią nasi kursanci?

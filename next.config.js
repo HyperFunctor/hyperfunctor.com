@@ -65,7 +65,7 @@ const config = {
     gzipSize: true,
     urlImports: ["https://cdn.skypack.dev"],
     esmExternals: true,
-    fallbackNodePolyfills: false,
+    fallbackNodePolyfills: true,
     nextScriptWorkers: false,
     legacyBrowsers: false,
     browsersListForSwc: true,
