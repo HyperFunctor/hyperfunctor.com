@@ -65,6 +65,7 @@ const config = {
     gzipSize: true,
     urlImports: ["https://cdn.skypack.dev"],
     esmExternals: true,
+    fallbackNodePolyfills: false,
   },
 
   headers() {
