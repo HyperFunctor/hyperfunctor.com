@@ -109,6 +109,11 @@ const config = {
     return Promise.resolve([
       {
         source: "/",
+        destination: "/nextjs-react-graphql-typescript",
+        permanent: false,
+      },
+      {
+        source: "/",
         destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
         has: [
           {

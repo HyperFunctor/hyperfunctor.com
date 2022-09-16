@@ -65,8 +65,6 @@ const runAnalytics = () => {
   }
 };
 
-console.log(runAnalytics.toString());
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const prevAsPath = useRef<string | null>(null);
