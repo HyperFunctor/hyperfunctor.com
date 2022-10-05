@@ -180,15 +180,13 @@ export function PricingSection() {
                 Kurs wystartował {formatDate(releaseDate)}.
               </p>
             ) : (
-              <>
-                <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
-                  Start kursu {formatDate(releaseDate)}.
-                </p>
-                <p className="text-white font-bold text-center text-2xl sm:text-3xl">
-                  Do końca sprzedaży: {finalCountDown}
-                </p>
-              </>
+              <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
+                Start kursu {formatDate(releaseDate)}.
+              </p>
             )}
+            <p className="text-white font-bold text-center text-2xl sm:text-3xl">
+              Do końca sprzedaży: {finalCountDown}
+            </p>
           </div>
         </div>
       </div>
