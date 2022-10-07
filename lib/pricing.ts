@@ -36,7 +36,7 @@ export const pricings = [
     cartUrl:
       "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
     from: new Date("2022-10-03T00:00:00+02:00"),
-    to: new Date("2022-10-07T23:59:59+02:00"),
+    to: new Date("2022-10-10T23:59:59+02:00"),
   },
 ];
 

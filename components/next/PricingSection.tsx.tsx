@@ -184,9 +184,9 @@ export function PricingSection() {
                 Start kursu {formatDate(releaseDate)}.
               </p>
             )}
-            <p className="text-white font-bold text-center text-2xl sm:text-3xl">
+            {/* <p className="text-white font-bold text-center text-2xl sm:text-3xl">
               Do końca sprzedaży: {finalCountDown}
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
