@@ -63,3 +63,8 @@ html {
 .animate-pulse-fast {
   animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+p code::before,
+p code::after {
+  content: "`";
+}

@@ -11,7 +11,7 @@ const features = [
   {
     name: "Pragmatyzm ponad wszystko",
     description:
-      "Next.js, React, TypeScript i GraphQL – wszystko, co potrzebne, aby stworzyć rozbudowaną aplikację internetową poznasz w 14 tygodni. To jest dokładnie to, czego teraz potrzebuje rynek, a program kursu jest <strong>dopracowany pod kątem pragmatyzmu.</strong>",
+      "Next.js, React, TypeScript i GraphQL – wszystko, co potrzebne, aby stworzyć rozbudowaną aplikację internetową poznasz w 16 tygodni. To jest dokładnie to, czego teraz potrzebuje rynek, a program kursu jest <strong>dopracowany pod kątem pragmatyzmu.</strong>",
     icon: GlobeAltIcon,
   },
   {

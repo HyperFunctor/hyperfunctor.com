@@ -11,7 +11,7 @@ const faqs = [
   {
     question: "Jak dokładnie przebiega szkolenie?",
     answer:
-      "Przez 14 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem aplikacji internetowych w Next.js, React, GraphQL i TypeScript. Każdy tydzień to wycinek funkcji docelowej rozbudowanej aplikacji internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec każdego tygodnia będzie do wykonania praktyczne zadanie domowe. Postępy będą na bieżąco konsultowane z prowadzącymi w postaci otwartych, grupowych drzwi otwartych (tzw. Office Hours).",
+      "Przez 16 tygodni będziemy omawiali konkretne zagadnienia związane z tworzeniem aplikacji internetowych w Next.js, React, GraphQL i TypeScript. Każdy tydzień to wycinek funkcji docelowej rozbudowanej aplikacji internetowej. W tym czasie będą poruszane zagadnienia z różnych modułów tematycznych. Na koniec każdego tygodnia będzie do wykonania praktyczne zadanie domowe. Postępy będą na bieżąco konsultowane z prowadzącymi w postaci otwartych, grupowych drzwi otwartych (tzw. Office Hours).",
   },
   {
     question: "Jestem początkujący/a. Czy ten kurs jest dla mnie?",
@@ -22,7 +22,7 @@ const faqs = [
     question:
       "Co, jeśli szkolenie nie przypadnie mi do gustu lub okaże się za trudne bądź za proste?",
     answer:
-      "Napisz nam w czym problem i zwrócimy Ci pieniądze. Masz na to 14 tygodni od startu kursu.",
+      "Napisz nam w czym problem i zwrócimy Ci pieniądze. Masz na to 16 tygodni od startu kursu.",
   },
   {
     question: "Czy są zniżki studenckie?",
@@ -45,7 +45,25 @@ const faqs = [
   {
     question: "Czy kurs będzie aktualizowany?",
     answer:
-      "Tak, planujemy nie tylko aktualizować, ale też rozwijać tematykę kursu. Aktualizacje będą darmowe, zaś nowe moduły rozszerzające zakres kursu będą udostępnione za darmo dla wszystkich uczestników pierwszej edycji kursu.",
+      "Tak, planujemy nie tylko aktualizować, ale też rozwijać tematykę kursu. Aktualizacje będą darmowe, zaś nowe moduły rozszerzające zakres kursu będą udostępnione za darmo dla wszystkich uczestników poprzednich edycji kursu.",
+  },
+  {
+    question: (
+      <>
+        Czy kurs omawia zmiany wprowadzone w{" "}
+        <strong className="text-pink-700">Next.js 13</strong>?
+      </>
+    ),
+    answer: (
+      <>
+        Tak! Kurs głównie skupia się na stabilnej wersji Next.js – czyli tej, w
+        której zalecane jest korzystanie z folderu <code>pages</code>. W 2023
+        roku dograliśmy jednak dodatkowe 90 minut materiału, w którym migrujemy
+        stworzoną aplikację na eksperymentalne podejście z folderem{" "}
+        <code>app</code>, wprowadzone w Next.js 13 pod nazwą <code>appDir</code>
+        .
+      </>
+    ),
   },
 ];
 

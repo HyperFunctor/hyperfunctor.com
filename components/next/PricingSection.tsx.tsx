@@ -87,8 +87,8 @@ export function PricingSection() {
                 {Math.round(currentPricing.price / agenda.length / 5) * 5} zł
                 netto
               </strong>
-              . To mniej niż wynosi przeciętna stawka godzinowa programisty
-              aplikacji webowych.
+              . To znacznie mniej niż wynosi przeciętna stawka godzinowa
+              programisty aplikacji webowych.
             </p>
             <p className="mb-6 text-xl">
               Zakup naszego kursu zwróci się{" "}
