@@ -1,9 +1,9 @@
-import { DefaultSeo, ProductJsonLd, SocialProfileJsonLd } from "next-seo";
+import "../styles/main.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import "../styles/main.css";
 import { useRouter } from "next/router";
 import Script from "next/script";
+import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import { useEffect, useRef } from "react";
 
 import { defaultSeo, socialProfileJsonLd } from "../seo.config";
