@@ -1,5 +1,5 @@
 import { AcademicCapIcon } from "@heroicons/react/24/outline";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useState } from "react";
 
 import demoScreen from "../../images/demo.png";

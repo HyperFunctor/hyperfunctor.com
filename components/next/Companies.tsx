@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 import bitnoise from "../../images/partners/bitnoise.png";
 import gyfted from "../../images/partners/gyfted.png";

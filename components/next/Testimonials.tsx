@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 import Larto from "/images/testimonials/konrad-nojman.png";
 import Siemion from "/images/testimonials/jakub-semienowicz.jpg";
