@@ -68,7 +68,6 @@ const config = {
     fallbackNodePolyfills: true,
     nextScriptWorkers: false,
     legacyBrowsers: false,
-    browsersListForSwc: true,
   },
 
   headers() {

@@ -8,9 +8,9 @@ type MDXRemoteProps = Parameters<typeof MDXRemote>[0];
 const components = {
   a: ({ href, ...props }: ComponentProps<"a">) => {
     if (!href) {
-      return <a {...props}></a>;
+      return <a {...props} />;
     }
-    return <Link href={href} {...props}></Link>;
+    return <Link href={href} {...props} ref={null} />;
   },
 };
 
