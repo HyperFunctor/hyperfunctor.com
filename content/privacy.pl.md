@@ -20,9 +20,9 @@ Wersja z 4. lipca 2020 r.
         osób korzystających ze Sklepu (zwanych dalej „Klientami”), jest Michał
         Miszczyszyn prowadzący działalność gospodarczą pod firmą „Type of Web –
         Michał Miszczyszyn”, zarejestrowaną w Centralnej Ewidencji i Informacji
-        o Działalności Gospodarczej pod adresem ul. Bażantowa 9/21, 80-175
+        o Działalności Gospodarczej pod adresem ul. Stolema 6H/2, 80-177
         Gdańsk, NIP: 6040080451 (zwany dalej „Administratorem”). Adres do
-        korespondencji: ul. Bażantowa 9/21, 80-175 Gdańsk; adres e-mail:
+        korespondencji: ul. Stolema 6H/2, 80-177 Gdańsk; adres e-mail:
         michal@hyperfunctor.com.
       </li>
       <li>
