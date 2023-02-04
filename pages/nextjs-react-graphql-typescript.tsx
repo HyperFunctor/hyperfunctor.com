@@ -29,22 +29,23 @@ import {
   releaseDate,
 } from "../lib/pricing";
 
-const zaisteProgramujTitle = "Kurs Next.js, React, GraphQL i TypeScripta";
-const zaisteProgramujDescription =
-  "Praktyczny kurs Next.js, React i GraphQL z TypeScriptem – najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
+const nextjsCourseTitle =
+  "Kurs Nowoczesny Frontend: Next.js, React, GraphQL i TypeScript";
+const nextjsCourseDescription =
+  "Praktyczny kurs Nowoczesny Frontend: Next.js, React, GraphQL, TypeScript – najpopularniejszych frameworków do tworzenia aplikacji internetowych!";
 
-const zaisteProgramujSeo: NextSeoProps = {
-  title: zaisteProgramujTitle,
-  description: zaisteProgramujDescription,
+const nextjsCourseSeo: NextSeoProps = {
+  title: nextjsCourseTitle,
+  description: nextjsCourseDescription,
   canonical: "https://hyperfunctor.com/nextjs-react-graphql-typescript/",
   openGraph: {
     url: "https://hyperfunctor.com/nextjs-react-graphql-typescript/",
-    title: zaisteProgramujTitle,
-    description: zaisteProgramujDescription,
+    title: nextjsCourseTitle,
+    description: nextjsCourseDescription,
     images: [
       {
         url: "https://hyperfunctor.com/og-next.png",
-        alt: zaisteProgramujTitle,
+        alt: nextjsCourseTitle,
         width: 1200,
         height: 630,
       },
@@ -52,10 +53,10 @@ const zaisteProgramujSeo: NextSeoProps = {
   },
 };
 
-const zaisteProgramujProductLd: ProductJsonLdProps = {
-  productName: zaisteProgramujTitle,
+const nextjsCourseProductLd: ProductJsonLdProps = {
+  productName: nextjsCourseTitle,
   images: ["https://hyperfunctor.com/og-next.png"],
-  description: zaisteProgramujDescription,
+  description: nextjsCourseDescription,
   brand: "Hyper Functor",
   releaseDate: releaseDate.toISOString(),
   offers: pricings.map((p) => {
@@ -79,13 +80,13 @@ const zaisteProgramujProductLd: ProductJsonLdProps = {
   }),
 };
 
-export default function ZaisteProgramujPage() {
+export default function nextjsCoursePage() {
   const { currentPricing } = getCurrentPricing();
 
   return (
     <div>
-      <NextSeo {...zaisteProgramujSeo} />
-      <ProductJsonLd {...zaisteProgramujProductLd} />
+      <NextSeo {...nextjsCourseSeo} />
+      <ProductJsonLd {...nextjsCourseProductLd} />
       <Hero />
       <Why />
       <Technologies />
@@ -101,7 +102,7 @@ export default function ZaisteProgramujPage() {
       ) : (
         <NewsletterSection id="first" variant="inverse">
           Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko
-          ruszą zapisy na drugą edycję kursu Next.js, React i TypeScripta.
+          ruszą zapisy na czwartą edycję kursu Next.js, React i TypeScripta.
         </NewsletterSection>
       )}
       <Questions />
@@ -111,7 +112,7 @@ export default function ZaisteProgramujPage() {
       ) : (
         <NewsletterSection id="second">
           Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko
-          ruszą zapisy na drugą edycję kursu Next.js, React i TypeScripta.
+          ruszą zapisy na czwartą edycję kursu Next.js, React i TypeScripta.
         </NewsletterSection>
       )}
       <Footer />

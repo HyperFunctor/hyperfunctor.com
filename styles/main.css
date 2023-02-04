@@ -54,3 +54,12 @@ html {
 .animate-ping-fast {
   animation: ping-fast 1s ease-in-out infinite alternate;
 }
+
+@keyframes pulse-fast {
+  50% {
+    @apply text-gray-800 scale-110;
+  }
+}
+.animate-pulse-fast {
+  animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

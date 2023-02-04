@@ -175,6 +175,27 @@ export const agenda = [
       "Persisted Queries w GraphQL",
     ],
   },
+  {
+    is2023: true,
+    title: (
+      <>
+        Next.js 13 z <code>appDir</code>
+      </>
+    ),
+    outcome: "Eksperymentalne podejście do tworzenia aplikacji",
+    items: [
+      <>
+        Podejście <code>app</code> vs <code>pages</code>
+      </>,
+      "Zagnieżdżanie layoutów",
+      "Dynamiczne renderowanie",
+      "Komponenty jako async function",
+      "Statyczne renderowanie",
+      <>
+        Hook <code>use()</code> i cache
+      </>,
+    ],
+  },
 ];
 
 export function Agenda() {
@@ -205,6 +226,7 @@ export function Agenda() {
 
 interface AgendaWeekProps {
   item: {
+    is2023?: boolean;
     title: ReactNode;
     outcome: ReactNode;
     items: ReactNode[];
@@ -217,7 +239,12 @@ const AgendaWeek = ({ item, number }: AgendaWeekProps) => {
     <li className="break-words w-full hover:bg-white rounded-lg">
       <div className="px-4 py-5">
         <p className="text-pink-700 font-bold text-base">Tydzień {number}</p>
-        <h3>
+        <h3 className="relative">
+          {item.is2023 && (
+            <span className="text-red-500 block font-bold transform-gpu animate-pulse-fast rotate-[30deg] absolute right-[-0.5rem] top-[-1rem]">
+              Nowość 2023 <span className="sr-only">: </span>
+            </span>
+          )}
           <span className="text-2xl font-semibold">{item.title}</span>
           <span className="sr-only">: </span>
           <span className="block text-gray-600 text-sm">{item.outcome}</span>
