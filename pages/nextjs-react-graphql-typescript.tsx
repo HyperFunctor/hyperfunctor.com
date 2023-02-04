@@ -97,12 +97,12 @@ export default function nextjsCoursePage() {
       <DemoApp />
       <Authors />
       <Agenda />
-      {currentPricing ? (
-        <PricingSection />
-      ) : (
-        <NewsletterSection id="first" variant="inverse">
-          Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko
-          ruszą zapisy na czwartą edycję kursu Next.js, React i TypeScripta.
+      <PricingSection />
+      {currentPricing ? null : (
+        <NewsletterSection id="zapisz-sie" variant="inverse">
+          Otrzymasz maila z unikalnym <strong>kodem rabatowym</strong>{" "}
+          natychmiast gdy tylko ruszą zapisy na czwartą edycję kursu Next.js,
+          React i TypeScripta.
         </NewsletterSection>
       )}
       <Questions />
@@ -111,8 +111,9 @@ export default function nextjsCoursePage() {
         <PricingFooter />
       ) : (
         <NewsletterSection id="second">
-          Otrzymasz maila z unikalnym kodem rabatowym natychmiast gdy tylko
-          ruszą zapisy na czwartą edycję kursu Next.js, React i TypeScripta.
+          Otrzymasz maila z unikalnym <strong>kodem rabatowym</strong>{" "}
+          natychmiast gdy tylko ruszą zapisy na czwartą edycję kursu Next.js,
+          React i TypeScripta.
         </NewsletterSection>
       )}
       <Footer />

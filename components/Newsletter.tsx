@@ -70,7 +70,8 @@ export function Newsletter({
   return (
     <>
       <form
-        className={`mt-3 flex flex-col ${isLoading ? "cursor-wait" : ""}`}
+        id={`form-${id}`}
+        className={`mt-3  flex flex-col ${isLoading ? "cursor-wait" : ""}`}
         onSubmit={onSubmit}
       >
         <div className="sm:flex">

@@ -11,6 +11,7 @@ import {
   formatDate,
   formatMoney,
   getCurrentPricing,
+  getFirstDate,
   getGrossPrice,
   getLastDate,
   releaseDate,
@@ -53,14 +54,13 @@ export function PricingSection() {
   const { currentPricing } = getCurrentPricing();
 
   const finalCountDown = useCountdown(getLastDate());
-
-  if (!currentPricing) {
-    return null;
-  }
+  const firstCountDown = useCountdown(getFirstDate());
 
   const isPastDeadline = new Date() > releaseDate;
-  const normalPrice = formatMoney(getGrossPrice(standardPrice));
-  const discountPrice = formatMoney(getGrossPrice(currentPricing.price));
+  const normalPrice =
+    currentPricing && formatMoney(getGrossPrice(standardPrice));
+  const discountPrice =
+    currentPricing && formatMoney(getGrossPrice(currentPricing.price));
   const isDiscount = normalPrice !== discountPrice;
 
   return (
@@ -79,17 +79,19 @@ export function PricingSection() {
               Kurs Nowoczesnego Frontendu kosztuje mniej niż większość
               jednodniowych szkoleń!
             </p>
-            <p className="my-4 text-xl">
-              Materiał jest rozłożony na {agenda.length} tygodni, co oznacza, że
-              tydzień naszego kursu kosztuje{" "}
-              <strong className="bg-pink-500 text-white px-1 shadow-md shadow-pink-300">
-                tylko około{" "}
-                {Math.round(currentPricing.price / agenda.length / 5) * 5} zł
-                netto
-              </strong>
-              . To znacznie mniej niż wynosi przeciętna stawka godzinowa
-              programisty aplikacji webowych.
-            </p>
+            {currentPricing && (
+              <p className="my-4 text-xl">
+                Materiał jest rozłożony na {agenda.length} tygodni, co oznacza,
+                że tydzień naszego kursu kosztuje{" "}
+                <strong className="bg-pink-500 text-white px-1 shadow-md shadow-pink-300">
+                  tylko około{" "}
+                  {Math.round(currentPricing.price / agenda.length / 5) * 5} zł
+                  netto
+                </strong>
+                . To znacznie mniej niż wynosi przeciętna stawka godzinowa
+                programisty aplikacji webowych.
+              </p>
+            )}
             <p className="mb-6 text-xl">
               Zakup naszego kursu zwróci się{" "}
               <span className="underline decoration-pink-500">
@@ -121,35 +123,47 @@ export function PricingSection() {
         </div>
         <div className="bg-gray-800 py-8 px-4 sm:py-24 sm:px-6 lg:bg-none lg:px-0 lg:pl-8 lg:flex lg:items-center lg:justify-end">
           <div className="max-w-lg mx-auto w-full space-y-8 lg:mx-0">
-            <div>
-              <h2 className="sr-only">Cena kursu</h2>
-              <p>
-                <span className="flex flex-col text-center">
-                  {isDiscount && (
-                    <del className="text-3xl text-pink-400 mr-2">
-                      {formatMoney(getGrossPrice(standardPrice))}
-                    </del>
-                  )}
-                  <span className="text-5xl font-extrabold text-white tracking-tight mt-1">
-                    {formatMoney(getGrossPrice(currentPricing.price))} brutto
+            {currentPricing ? (
+              <div>
+                <h2 className="sr-only">Cena kursu</h2>
+                <p>
+                  <span className="flex flex-col text-center">
+                    {isDiscount && (
+                      <del className="text-3xl text-pink-400 mr-2">
+                        {formatMoney(getGrossPrice(standardPrice))}
+                      </del>
+                    )}
+                    <span className="text-5xl font-extrabold text-white tracking-tight mt-1">
+                      {formatMoney(getGrossPrice(currentPricing.price))} brutto
+                    </span>
+                    <small className="text-white">
+                      (wystawiamy faktury VAT 23%)
+                    </small>
+                    {!isPastDeadline && (
+                      <>
+                        <span className="mt-4 text-2xl font-medium text-gray-100">
+                          Całkowite zamknięcie sprzedaży{" "}
+                          <strong className="underline decoration-2 underline-offset-2 decoration-solid text-white">
+                            {formatDate(getLastDate())}
+                          </strong>
+                          !
+                        </span>
+                      </>
+                    )}
                   </span>
-                  <small className="text-white">
-                    (wystawiamy faktury VAT 23%)
-                  </small>
-                  {!isPastDeadline && (
-                    <>
-                      <span className="mt-4 text-2xl font-medium text-gray-100">
-                        Całkowite zamknięcie sprzedaży{" "}
-                        <strong className="underline decoration-2 underline-offset-2 decoration-solid text-white">
-                          {formatDate(getLastDate())}
-                        </strong>
-                        !
-                      </span>
-                    </>
-                  )}
-                </span>
-              </p>
-            </div>
+                </p>
+              </div>
+            ) : (
+              <div>
+                <p className="mt-2 text-center text-white text-4xl font-extrabold">
+                  Początek sprzedaży czwartej edycji już{" "}
+                  <span className="text-pink-500">22. lutego</span>!
+                </p>
+                <p className="text-white mt-8 font-bold text-center text-2xl sm:text-3xl">
+                  za {firstCountDown}
+                </p>
+              </div>
+            )}
             <ul
               role="list"
               className="rounded overflow-hidden grid gap-px sm:grid-cols-2"
@@ -167,26 +181,44 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <Link
-              href={currentPricing.cartUrl}
-              target="_blank"
-              className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-4xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
-            >
-              Kupuję dożywotni dostęp
-              <PulseDot />
-            </Link>
+            {currentPricing ? (
+              <Link
+                href={currentPricing.cartUrl}
+                target="_blank"
+                className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-4xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
+              >
+                Kupuję dożywotni dostęp
+                <PulseDot />
+              </Link>
+            ) : (
+              <Link
+                href="#zapisz-sie"
+                className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-4xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
+                onClick={() => {
+                  document
+                    .querySelector<HTMLInputElement>("#email-zapisz-sie")
+                    ?.focus();
+                }}
+              >
+                Biorę udział
+              </Link>
+            )}
             {isPastDeadline ? (
               <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
                 Kurs wystartował {formatDate(releaseDate)}.
               </p>
             ) : (
-              <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
-                Start kursu {formatDate(releaseDate)}.
+              currentPricing && (
+                <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
+                  Start kursu {formatDate(releaseDate)}.
+                </p>
+              )
+            )}
+            {currentPricing && (
+              <p className="text-white font-bold text-center text-2xl sm:text-3xl">
+                Do końca sprzedaży: {finalCountDown}
               </p>
             )}
-            {/* <p className="text-white font-bold text-center text-2xl sm:text-3xl">
-              Do końca sprzedaży: {finalCountDown}
-            </p> */}
           </div>
         </div>
       </div>

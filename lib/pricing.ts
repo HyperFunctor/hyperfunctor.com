@@ -3,6 +3,7 @@ export const VAT = 23;
 export const releaseDate = new Date("2023-03-06T12:00:00+02:00");
 
 export const getLastDate = () => pricings[pricings.length - 1].to;
+export const getFirstDate = () => pricings[0].from;
 
 export const getGrossPrice = (price: number, vat = VAT) => {
   return (price * (100 + vat)) / 100;
@@ -26,7 +27,7 @@ export const pricings = [
     price: 1540.65,
     cartUrl:
       "https://sklep.hyperfunctor.com/cart/add_product/praktyczny-kurs-nowoczesny-frontend-next-js-react-graphql-i-typescript",
-    from: new Date("2023-02-04T00:00:00+02:00"),
+    from: new Date("2023-02-22T00:00:00+02:00"),
     to: new Date("2023-03-05T23:59:59+02:00"),
   },
   {

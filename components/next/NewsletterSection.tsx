@@ -12,7 +12,12 @@ export function NewsletterSection({
   id: string;
 }) {
   return (
-    <div className={`${variant === "inverse" ? "bg-gray-800" : "bg-pink-700"}`}>
+    <div
+      id={id}
+      className={`${
+        variant === "inverse" ? "bg-gray-800" : "bg-pink-700"
+      } scroll-p-12`}
+    >
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center">
         <div className="lg:w-0 lg:flex-1">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
