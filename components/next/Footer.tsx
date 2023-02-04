@@ -62,19 +62,14 @@ export function Footer() {
         <div className="prose prose-gray prose-p:text-gray-300 prose-a:text-gray-400 prose-a:font-normal mt-8 md:mt-0 md:order-1 space-y-2">
           <p>
             &copy; {new Date().getFullYear()}{" "}
-            <Link href="/">
-              <a className="!text-gray-300">Hyper Functor</a>
+            <Link href="/" className="!text-gray-300">
+              Hyper Functor
             </Link>
             . All rights reserved.
           </p>
           <p>
-            <Link href="/regulamin">
-              <a>Regulamin</a>
-            </Link>{" "}
-            |{" "}
-            <Link href="/polityka-prywatnosci">
-              <a>Polityka Prywatności</a>
-            </Link>
+            <Link href="/regulamin">Regulamin</Link> |{" "}
+            <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>
           </p>
         </div>
         <div className="md:order-1 flex flex-row gap-4 items-center mt-8 md:mt-0 ">

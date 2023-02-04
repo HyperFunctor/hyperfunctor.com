@@ -21,13 +21,12 @@ export const BuyNow = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="mt-8">
-      <Link href={currentPricing.cartUrl}>
-        <a
-          target="_blank"
-          className={`cursor-pointer block mt-3 w-full px-6 py-3 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-3xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-pink-500 focus:ring-offset-gray-50`}
-        >
-          {children}
-        </a>
+      <Link
+        href={currentPricing.cartUrl}
+        target="_blank"
+        className={`cursor-pointer block mt-3 w-full px-6 py-3 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-3xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-pink-500 focus:ring-offset-gray-50`}
+      >
+        {children}
       </Link>
       {!isPastDeadline && (
         <>

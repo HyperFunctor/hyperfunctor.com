@@ -121,14 +121,9 @@ export function Newsletter({
             className={`focus:ring-pink-500 h-4 w-4 text-pink-600 border-gray-300 rounded mr-2`}
           />
           Rozumiem i akceptuję{" "}
-          <Link href="/newsletter">
-            <a>Regulamin Newslettera</a>
-          </Link>{" "}
-          oraz{" "}
-          <Link href="/polityka-prywatnosci">
-            <a>Politykę Prywatności</a>
-          </Link>
-          . Wyrażam zgodę na otrzymywanie na podany adres e-mail informacji
+          <Link href="/newsletter">Regulamin Newslettera</Link> oraz{" "}
+          <Link href="/polityka-prywatnosci">Politykę Prywatności</Link>.
+          Wyrażam zgodę na otrzymywanie na podany adres e-mail informacji
           handlowych w rozumieniu ustawy z dnia 18 lipca 2002 r. o świadczeniu
           usług drogą elektroniczną.
         </label>

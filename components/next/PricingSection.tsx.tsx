@@ -167,13 +167,13 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-            <Link href={currentPricing.cartUrl}>
-              <a
-                target="_blank"
-                className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-4xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
-              >
-                Kupuję dożywotni dostęp <PulseDot />
-              </a>
+            <Link
+              href={currentPricing.cartUrl}
+              target="_blank"
+              className="block mt-3 w-full px-6 py-4 border border-transparent font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 text-center text-4xl text-white bg-pink-600 hover:bg-pink-700 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-pink-500"
+            >
+              Kupuję dożywotni dostęp
+              <PulseDot />
             </Link>
             {isPastDeadline ? (
               <p className="-translate-y-6 text-xl text-center font-medium text-gray-200">
