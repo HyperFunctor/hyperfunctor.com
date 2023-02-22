@@ -215,9 +215,19 @@ export function PricingSection() {
               )
             )}
             {currentPricing && (
-              <p className="text-white font-bold text-center text-2xl sm:text-3xl">
-                Do końca sprzedaży: {finalCountDown}
-              </p>
+              <>
+                <p className="text-white font-bold text-center text-2xl sm:text-3xl">
+                  Do końca sprzedaży: {finalCountDown}
+                </p>
+                <p>
+                  <small className="block text-center text-gray-300">
+                    Najniższa cena z 30 dni przed obniżką: 4920,00 zł
+                  </small>
+                  <small className="block text-center text-gray-300">
+                    Cena bezpośrednio przed obniżką: 5000,00 zł
+                  </small>
+                </p>
+              </>
             )}
           </div>
         </div>
