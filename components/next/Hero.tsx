@@ -176,7 +176,7 @@ export function Hero() {
               ) : (
                 <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                   <p className="text-base font-medium text-gray-900">
-                    Zapisz się, aby dostać informację, gdy ruszy trzecia edycja!
+                    Zapisz się, aby dostać informację, gdy ruszy piąta edycja!
                   </p>
                   <Newsletter id="hero" />
                 </div>
