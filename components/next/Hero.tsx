@@ -147,7 +147,10 @@ export function Hero() {
 
         <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-16">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-            <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+            <div className="relative sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+              <span className="text-red-500 block font-bold transform-gpu animate-pulse-fast rotate-[30deg] absolute right-[0.5rem] top-[1rem]">
+                Nowość 2023 <span className="sr-only">: </span>
+              </span>
               <h1>
                 <span className="block text-sm font-semibold uppercase tracking-wide text-gray-500 sm:text-base lg:text-sm xl:text-base">
                   Czwarta edycja {currentPricing && "już w sprzedaży!"}
