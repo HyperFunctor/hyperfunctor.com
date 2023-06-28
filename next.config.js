@@ -107,33 +107,40 @@ const config = {
   redirects: () => {
     return Promise.resolve([
       {
-        source: "/",
-        destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
-        has: [
-          {
-            type: "host",
-            value: "zaisteprogramuj.pl",
-          },
-        ],
+        source: "/:path*",
+        destination: "https://next13masters.pl/",
         permanent: true,
-      },
-      {
-        source: "/",
-        destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
-        has: [
-          {
-            type: "host",
-            value: "next.hyperfunctor.com",
-          },
-        ],
-        permanent: true,
-      },
-      {
-        source: "/",
-        destination: "/nextjs-react-graphql-typescript",
-        permanent: false,
       },
     ]);
+    // return Promise.resolve([
+    //   {
+    //     source: "/",
+    //     destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
+    //     has: [
+    //       {
+    //         type: "host",
+    //         value: "zaisteprogramuj.pl",
+    //       },
+    //     ],
+    //     permanent: true,
+    //   },
+    //   {
+    //     source: "/",
+    //     destination: "https://hyperfunctor.com/nextjs-react-graphql-typescript",
+    //     has: [
+    //       {
+    //         type: "host",
+    //         value: "next.hyperfunctor.com",
+    //       },
+    //     ],
+    //     permanent: true,
+    //   },
+    //   {
+    //     source: "/",
+    //     destination: "/nextjs-react-graphql-typescript",
+    //     permanent: false,
+    //   },
+    // ]);
   },
   rewrites: () => {
     return Promise.resolve([
