@@ -22,7 +22,7 @@
     "polish-plurals": "1.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "0.31.3"
+    "sharp": "0.32.6"
   },
   "devDependencies": {
     "@builder.io/partytown": "0.7.5",
